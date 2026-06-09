@@ -159,12 +159,17 @@
 
 | 項目 | 提供方式 |
 |---|---|
-| GitHub Repository 存取 | 邀請開發方為 Collaborator |
+| GitHub Repository 建立 | 由開發方於其帳號下建立並託管，邀請客戶為 Viewer（結清尾款後移交 ownership） |
 | AWS Lightsail 存取 | 提供 IAM 使用者帳號或邀請為 Lightsail 管理員 |
-| Apple Developer Team 存取 | 於 App Store Connect 新增為 App Manager |
 | Google Play Console 存取 | 新增為 Release Manager |
 | Stripe 帳戶 API 金鑰 | 客戶自行建立並提供（KYC 為法律要求） |
 | motise.net 網域存取權限 | 提供 DNS 管理權限或由客戶協助完成 DNS 設定 |
+
+### 軌道 B 啟動前（2026 年 06 月 23 日前）
+
+| 項目 | 提供方式 |
+|---|---|
+| Firebase 專案存取 | 於 Firebase Console 新增開發方為 Editor |
 
 ### Landing Page 素材（第一期款項結清後盡速提供）
 
@@ -175,11 +180,11 @@
 
 > ⚠️ Landing Page 素材未提供不影響開發時程，開發方將依審核需求自行決定內容與版面，完成後即為最終版。
 
-### 上線前
+### 上線與送審前（軌道 C 啟動前，目標 2026 年 07 月 07 日前）
 
 | 項目 | 說明 |
 |---|---|
-| Firebase 專案存取 | 於 Firebase Console 新增開發方為 Editor |
+| Apple Developer Team 存取 | 於 App Store Connect 新增為 App Manager（須先完成組織帳號啟用） |
 | App 圖示 | 1024 × 1024 PNG 格式 |
 | 隱私政策 URL | Notion 頁面或任何公開網址 |
 | 範例課程資料 | 用於測試與展示 |
