@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOFTWARE DEVELOPMENT SERVICES AGREEMENT MTS-2026-001</title>
+  <style>
+    /* ─── Fonts ─── */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500&display=swap');
+
+    /* ─── CSS Variables ─── */
+    :root {
+      --page-width: 210mm;
+      --page-height: 297mm;
+      --margin-top: 25mm;
+      --margin-right: 20mm;
+      --margin-bottom: 25mm;
+      --margin-left: 25mm;
+      --color-text: #1a1a1a;
+      --color-muted: #555;
+      --color-border: #bbb;
+      --color-border-light: #ddd;
+      --color-accent: #1a3a5c;
+      --font-serif: 'Noto Serif TC', 'STSong', '宋體', Georgia, serif;
+      --font-sans: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+      --size-base: 10.5pt;
+      --size-sm: 9pt;
+      --size-xs: 8pt;
+    }
+
+    /* ─── Reset ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ─── Screen wrapper ─── */
+    body {
+      background: #e8e8e8;
+      font-family: var(--font-serif);
+      font-size: var(--size-base);
+      color: var(--color-text);
+      line-height: 1.8;
+    }
+
+    .page-wrapper {
+      max-width: var(--page-width);
+      margin: 32px auto;
+      background: #fff;
+      box-shadow: 0 4px 32px rgba(0,0,0,.18);
+      padding: var(--margin-top) var(--margin-right) var(--margin-bottom) var(--margin-left);
+    }
+
+    /* ─── Print button (screen only) ─── */
+    .print-btn {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      background: var(--color-accent);
+      color: #fff;
+      border: none;
+      padding: 8px 20px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 4px;
+      letter-spacing: .04em;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    }
+    .print-btn:hover { background: #255a8a; }
+
+    /* ─── Document header ─── */
+    .doc-header {
+      text-align: center;
+      margin-bottom: 10mm;
+      padding-bottom: 6mm;
+      border-bottom: 2px solid var(--color-accent);
+    }
+    .doc-header h1 {
+      font-size: 16pt;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: var(--color-accent);
+      margin-bottom: 3px;
+    }
+    .doc-header h2 {
+      font-size: 11pt;
+      font-weight: 500;
+      letter-spacing: .08em;
+      color: var(--color-muted);
+      margin-bottom: 8px;
+    }
+    .doc-meta {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      color: var(--color-muted);
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    /* ─── Parties section ─── */
+    .parties {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6mm;
+      margin-bottom: 8mm;
+      page-break-inside: avoid;
+    }
+    .party-block {
+      border: 1px solid var(--color-border);
+      padding: 5mm 6mm;
+    }
+    .party-block h3 {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      font-weight: 700;
+      color: var(--color-accent);
+      border-bottom: 1px solid var(--color-border-light);
+      padding-bottom: 3px;
+      margin-bottom: 5px;
+      letter-spacing: .06em;
+    }
+    .party-block dl {
+      display: grid;
+      grid-template-columns: minmax(120px, 34%) minmax(0, 1fr);
+      gap: 1px 8px;
+      font-size: var(--size-sm);
+    }
+    .party-block dt {
+      color: var(--color-muted);
+      white-space: normal;
+      word-break: break-word;
+      min-width: 0;
+    }
+    .party-block dd {
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      min-width: 0;
+    }
+
+    .parties-intro {
+      margin-bottom: 6mm;
+      font-size: var(--size-sm);
+      color: var(--color-muted);
+      font-family: var(--font-sans);
+      text-align: center;
+    }
+
+    /* ─── Divider ─── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--color-border-light);
+      margin: 6mm 0;
+    }
+
+    /* ─── Appendix table ─── */
+    .appendix-section {
+      margin-bottom: 8mm;
+      page-break-inside: avoid;
+    }
+    .appendix-section h2 {
+      font-family: var(--font-sans);
+      font-size: 9.5pt;
+      font-weight: 700;
+      letter-spacing: .08em;
+      color: var(--color-accent);
+      margin-bottom: 3mm;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 2px;
+    }
+
+    /* ─── Articles ─── */
+    .article {
+      margin-bottom: 7mm;
+    }
+    .article h2 {
+      font-family: var(--font-sans);
+      font-size: 10pt;
+      font-weight: 700;
+      color: var(--color-accent);
+      letter-spacing: .1em;
+      border-left: 3px solid var(--color-accent);
+      padding-left: 6px;
+      margin-bottom: 4mm;
+      page-break-after: avoid;
+    }
+    .article p {
+      font-size: var(--size-base);
+      line-height: 1.85;
+      text-indent: 2em;
+      margin-bottom: 2.5mm;
+    }
+    .clause {
+      margin-bottom: 2.5mm;
+    }
+    .clause-num {
+      font-weight: 500;
+      color: var(--color-accent);
+      margin-right: 4px;
+    }
+
+    /* ─── Bullet lists ─── */
+    ul.clause-list {
+      list-style: none;
+      padding-left: 2em;
+      margin: 1.5mm 0 3mm;
+    }
+    ul.clause-list li {
+      font-size: var(--size-sm);
+      line-height: 1.75;
+      padding-left: 1em;
+      position: relative;
+      color: var(--color-muted);
+    }
+    ul.clause-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--color-border);
+    }
+
+    /* ─── Tables ─── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      margin: 2mm 0 4mm;
+    }
+    table th {
+      background: var(--color-accent);
+      color: #fff;
+      font-weight: 600;
+      padding: 4px 8px;
+      text-align: left;
+      letter-spacing: .04em;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    table td {
+      padding: 4px 8px;
+      border-bottom: 1px solid var(--color-border-light);
+      vertical-align: top;
+      line-height: 1.6;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    table tr:nth-child(even) td { background: #f7f8fa; }
+
+    /* sub-table inside payment section */
+    .payment-scenario {
+      margin-bottom: 4mm;
+      page-break-inside: avoid;
+    }
+    .payment-scenario h4 {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      font-weight: 700;
+      background: #f0f4f8;
+      padding: 3px 8px;
+      border-left: 3px solid var(--color-accent);
+      margin-bottom: 1mm;
+      color: var(--color-text);
+    }
+
+    .payment-scenario table th:nth-child(1),
+    .payment-scenario table td:nth-child(1) {
+      width: 34%;
+    }
+    .payment-scenario table th:nth-child(2),
+    .payment-scenario table td:nth-child(2) {
+      width: 36%;
+    }
+    .payment-scenario table th:nth-child(3),
+    .payment-scenario table td:nth-child(3) {
+      width: 30%;
+      text-align: right;
+    }
+
+    /* ─── Code block (formula) ─── */
+    .formula {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: var(--size-sm);
+      background: #f4f4f4;
+      border: 1px solid var(--color-border-light);
+      border-left: 3px solid var(--color-accent);
+      padding: 4mm 6mm;
+      margin: 2mm 0 3mm 2em;
+      line-height: 1.7;
+      page-break-inside: avoid;
+      white-space: pre-wrap;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      max-width: 100%;
+    }
+
+    /* ─── Signature block ─── */
+    .signature-section {
+      margin-top: 10mm;
+      page-break-inside: avoid;
+    }
+    .signature-section > p {
+      font-size: var(--size-sm);
+      margin-bottom: 8mm;
+      color: var(--color-muted);
+    }
+    .sig-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10mm;
+    }
+    .sig-block {
+      border-top: 1.5px solid var(--color-accent);
+      padding-top: 4mm;
+    }
+    .sig-block h4 {
+      font-family: var(--font-sans);
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 4mm;
+    }
+    .sig-field {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+      margin-bottom: 5mm;
+      color: var(--color-muted);
+    }
+    .sig-field span { white-space: normal; }
+    .sig-field span:first-child {
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .sig-line {
+      flex: 1;
+      border-bottom: 1px solid var(--color-border);
+      min-width: 40px;
+      height: 20px;
+    }
+
+    /* ─── Footer note ─── */
+    .doc-footer {
+      margin-top: 8mm;
+      padding-top: 4mm;
+      border-top: 1px solid var(--color-border-light);
+      font-family: var(--font-sans);
+      font-size: var(--size-xs);
+      color: var(--color-muted);
+      text-align: center;
+    }
+
+    /* ═══════════════════════════════════════
+       PRINT STYLES
+    ═══════════════════════════════════════ */
+    @media print {
+      @page {
+        size: A4;
+        margin: 25mm 20mm 25mm 25mm;
+      }
+      @page :first {
+        margin-top: 20mm;
+      }
+
+      body {
+        background: #fff;
+        font-size: 10pt;
+        color: #000;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page-wrapper {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      .print-btn { display: none !important; }
+
+      /* ── Page break rules ── */
+
+      /* Force new page before major articles */
+      .pb-before { page-break-before: always; }
+
+      /* Keep headings with following content */
+      .article h2 { page-break-after: avoid; }
+
+      /* Avoid breaking inside compact blocks */
+      .party-block,
+      .appendix-section,
+      .payment-scenario,
+      .sig-grid,
+      .formula,
+      .signature-section { page-break-inside: avoid; }
+
+      /* Tables: keep header repeated across pages */
+      thead { display: table-header-group; }
+      tfoot { display: table-footer-group; }
+      tr { page-break-inside: avoid; }
+
+      /* Widows & orphans */
+      p { orphans: 3; widows: 3; }
+
+      /* Links: no underline in print */
+      a { text-decoration: none; color: inherit; }
+
+      /* Parties grid to 2-col on print */
+      .parties { display: grid; }
+    }
+  </style>
+</head>
+<body>
+
+
+<button class="print-btn" onclick="window.print()">Print / Export PDF</button>
+
+<div class="page-wrapper">
+
+  <!-- ── Document Header ── -->
+  <header class="doc-header">
+    <h1>SOFTWARE DEVELOPMENT SERVICES AGREEMENT</h1>
+    <div class="doc-meta" style="margin-top: 10px;">
+      <span>Agreement No.: MTS-2026-001</span>
+      <span>Date: June 09, 2026</span>
+    </div>
+  </header>
+
+  <!-- ── Parties ── -->
+  <section class="appendix-section">
+    <h2>PARTIES</h2>
+    <div class="parties">
+      <div class="party-block">
+        <h3>Client (hereinafter referred to as the "Client")</h3>
+        <dl>
+          <dt>Company Name</dt><dd>Motise Inc</dd>
+          <dt>Company Type</dt><dd>C Corporation (Registered in Delaware, USA)</dd>
+          <dt>Registered Address</dt><dd>8 The Green STE R, Dover, Kent, Delaware 19901, USA</dd>
+          <dt>Signatory</dt><dd>Ding Ding (Head of Operations)</dd>
+          <dt>Company Email</dt><dd>hello@motise.net</dd>
+          <dt style="white-space: normal;">Authorized Project Communication Representative</dt><dd>Chiang Ching-Hsuan (cchiang1124@gmail.com)</dd>
+        </dl>
+      </div>
+      <div class="party-block">
+        <h3>Developer (hereinafter referred to as the "Developer")</h3>
+        <dl>
+          <dt>Name</dt><dd>HUANG CONG REN</dd>
+          <dt>Nationality</dt><dd>Republic of China (Taiwan)</dd>
+          <dt>Contact Email</dt><dd>tzuchihuang0214@gmail.com</dd>
+        </dl>
+      </div>
+    </div>
+    <blockquote style="margin:3mm 0 4mm;padding:3mm 6mm;border-left:3px solid var(--color-border);background:#f9f9f9;font-family:var(--font-sans);font-size:var(--size-xs);color:var(--color-muted);line-height:1.7;page-break-inside:avoid;">
+      The Client designates Chiang Ching-Hsuan as the authorized communication representative for this project, representing the Client in daily project communications, requirement confirmations, and submitting written objections. Written confirmations from the aforementioned representative shall have equal binding force on the Client. Any change of representative must be notified to the Developer in writing by the Client via the company email (@motise.net).
+    </blockquote>
+    <p class="parties-intro">Both parties agree to cooperate on the software development services specified in this Agreement subject to the terms and conditions herein.</p>
+  </section>
+
+  <hr />
+
+  <!-- ── Appendix Table ── -->
+  <section class="appendix-section">
+    <h2>AGREEMENT APPENDICES</h2>
+    <p style="font-size:9pt;color:var(--color-muted);margin-bottom:2mm;">This Agreement includes the following appendices, each of which has the same legal effect as the main text of this Agreement:</p>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:15%">Appendix</th>
+          <th style="width:35%">Name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Appendix A</td><td>Project Scope and Technical Specification</td><td>List of functional modules, technical architecture, exclusions from v1.0, and resources to be provided by the Client</td></tr>
+        <tr><td>Appendix B</td><td>Development Schedule</td><td>Key milestones, Gantt chart, prerequisites, and explanation of delay clauses</td></tr>
+        <tr><td>Appendix C</td><td>Acceptance Criteria</td><td>Three-track acceptance standards, acceptance checklist, and sign-off sections</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <hr />
+
+  <!-- ── Article 1 ── -->
+  <section class="article">
+    <h2>ARTICLE 1 | PROJECT SCOPE</h2>
+    <div class="clause">
+      <span class="clause-num">1.1</span>The Developer agrees to develop version 1.0 of the course booking mobile application (hereinafter referred to as the "System") for the Client, according to the scope specified in Appendix A "Project Scope and Technical Specification."
+    </div>
+    <div class="clause">
+      <span class="clause-num">1.2</span>The primary modules, detailed functions, and technical specifications included in version 1.0 shall be subject to the provisions in Appendix A.
+    </div>
+    <div class="clause">
+      <span class="clause-num">1.3</span>Items listed in Section A-4 of Appendix A are explicitly excluded from the development scope of v1.0. Any changes to the scope must be confirmed in writing by both parties before taking effect and will require a separate evaluation of their impact on the schedule and fees.
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ── Article 2 ── -->
+  <section class="article">
+    <h2>ARTICLE 2 | SCHEDULE AND MILESTONES</h2>
+    <div class="clause">
+      <span class="clause-num">2.1</span>The development schedule of the System shall be executed according to Appendix B "Development Schedule," with a target delivery date of <strong>August 04, 2026</strong>.
+    </div>
+    <div class="clause">
+      <span class="clause-num">2.2</span>All timelines in Appendix B are contingent upon the Client providing all necessary resources listed in Section A-6 of Appendix A by <strong>June 13, 2026</strong>. For every week of delay in providing the resources, the milestones and delivery dates shall be proportionally postponed.
+    </div>
+    <div class="clause">
+      <span class="clause-num">2.3</span>The following circumstances shall not be counted towards the Developer's delay liability:
+    </div>
+    <ul class="clause-list">
+      <li>App Store / Google Play review periods and waiting times for platform rejections</li>
+      <li>Delays caused by the Client's failure to provide necessary resources, accounts, or access permissions on time</li>
+      <li>Delays in payment functions caused by the failure to complete Stripe KYC verification on time</li>
+      <li>Force majeure events (natural disasters, sudden changes in platform policies, etc.)</li>
+    </ul>
+    <div class="clause">
+      <span class="clause-num">2.4</span><strong>Stripe Account Prerequisite:</strong> The Client must initiate the Stripe account KYC application <strong>within 3 working days after the signing of this Agreement and receipt of the first installment payment</strong>. KYC must be completed by the Client personally (due to legal requirements, the Developer cannot act on their behalf). If not initiated before the deadline, the development of Stripe-related functions will be postponed, which will not be considered a delay by the Developer, nor will it trigger the delay compensation clause in Article 6.
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ── Article 3 ── -->
+  <section class="article">
+    <h2>ARTICLE 3 | ACCEPTANCE MECHANISM</h2>
+    <div class="clause">
+      <span class="clause-num">3.1</span>The acceptance of the System will be conducted in three tracks according to Appendix C "Acceptance Criteria," and the acceptance standards for each track shall be subject to the provisions in Appendix C.
+    </div>
+    <div class="clause">
+      <span class="clause-num">3.2</span>If the Client fails to submit written acceptance results within the acceptance period for each track, all items in that track shall be deemed accepted upon the expiration of the deadline.
+    </div>
+    <div class="clause">
+      <span class="clause-num">3.3</span>If the Client does not raise written objections within 24 hours after the weekly sync meeting, it shall be deemed a confirmation of the progress at that stage, and objections cannot be raised again during subsequent acceptances.
+    </div>
+    <div class="clause">
+      <span class="clause-num">3.4</span>Once a track is accepted, the items in that track are locked and cannot be objected to again during subsequent tracks or at the time of formal delivery.
+    </div>
+    <div class="clause">
+      <span class="clause-num">3.5</span>New requirements raised during the acceptance period will not be included in the current acceptance scope and will enter the development of the next version after a separate quotation assessment.
+    </div>
+    <div class="clause">
+      <span class="clause-num">3.6</span><strong>Invalidity of Subjective Rejection:</strong> Any rejection or non-acceptance feedback raised by the Client must be accompanied by a clear explanation of functional issues or specific evidence of non-conformity with the mutually confirmed design specifications. Rejections based on subjective descriptions (such as "it feels wrong" or "the experience is not smooth") shall be deemed invalid, and the items will still be considered accepted.
+    </div>
+    <div class="clause">
+      <span class="clause-num">3.7</span><strong>Re-inspection Limits and Timeframes:</strong> Regarding the list of written modification requests submitted by the Client during the acceptance period, after the Developer completes the modifications, the Client may only perform a re-inspection on the results of the modifications for the items originally listed. The Client may not raise new modification requests outside the original list or repeatedly find fault during the re-inspection. The re-inspection period is limited to 3 working days; failure to submit re-inspection results within the timeframe will result in all items being deemed accepted.
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ── Article 4 ── -->
+  <section class="article pb-before">
+    <h2>ARTICLE 4 | FEES AND PAYMENT</h2>
+    <div class="clause" style="margin-bottom:3mm;">
+      <span class="clause-num">4.1</span>The fees for this Agreement are calculated based on the cooperation scenario confirmed by both parties and shall be paid in three installments:
+    </div>
+
+    <div class="payment-scenario">
+      <h4>Scenario 1: Full Acceptance + Confirmation of Long-Term Cooperation (Total Fee $1,800 USD)</h4>
+      <table>
+        <thead><tr><th>Installment</th><th>Timing</th><th>Amount</th></tr></thead>
+        <tbody>
+          <tr><td>First Installment (30%)</td><td>Upon signing</td><td>$540 USD</td></tr>
+          <tr><td>Second Installment (30%)</td><td>Within 3 working days after full acceptance of Track B</td><td>$540 USD</td></tr>
+          <tr><td>Third Installment (40%)</td><td>Within 3 working days after full acceptance of Track C and formal delivery</td><td>$720 USD</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="payment-scenario">
+      <h4>Scenario 2: Full Acceptance + Clear Decision Not to Continue Cooperation (Total Fee $2,499 USD)</h4>
+      <table>
+        <thead><tr><th>Installment</th><th>Timing</th><th>Amount</th></tr></thead>
+        <tbody>
+          <tr><td>First Installment (30%)</td><td>Upon signing</td><td>$540 USD</td></tr>
+          <tr><td>Second Installment (30%)</td><td>Within 3 working days after full acceptance of Track B</td><td>$540 USD</td></tr>
+          <tr><td>Third Installment</td><td>Within 3 working days after full acceptance of Track C and formal delivery</td><td>Make up the difference to $2,499 ($1,419 USD)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="payment-scenario">
+      <h4>Scenario 3: Delayed Development Schedule and Failure to Pass Full Acceptance</h4>
+      <p style="font-size:9pt;padding:3px 0px;color:var(--color-muted);">The fee is calculated based on $2,499 USD, with deductions made according to the delay compensation clause in Article 6.</p>
+    </div>
+
+    <div class="clause">
+      <span class="clause-num">4.2</span><strong>Deadline for Scenario Confirmation:</strong> The Client must confirm the intention for long-term cooperation (Scenario 1) or notify the decision not to continue cooperation (Scenario 2) in writing <strong>within 3 working days after full acceptance of Track C</strong>. If no written reply is received by the deadline, it will automatically be calculated as Scenario 2, and the final payment will make up the difference to $2,499.
+    </div>
+    <div class="clause">
+      <span class="clause-num">4.3</span><strong>Definition of Long-Term Cooperation:</strong> "Confirmation of long-term cooperation" means that both parties sign a follow-up cooperation agreement for subsequent monthly maintenance, new feature development, or the next project before the scenario confirmation deadline.
+    </div>
+    <div class="clause">
+      <span class="clause-num">4.4</span><strong>Tax Clause:</strong> All amounts are net of taxes (USD). The Developer will provide a W-8BEN form. Upon receipt, the Client shall not deduct US Withholding Tax from the payments under this Agreement.
+    </div>
+    <div class="clause">
+      <span class="clause-num">4.5</span><strong>Remittance Clause:</strong> Payments shall be made in US Dollars (USD) to the Wise account designated by the Developer. All remittance fees shall be borne by the Client, and the actual amount received by the Developer shall not be less than the agreed amount for each installment.
+    </div>
+    <div class="clause">
+      <span class="clause-num">4.6</span><strong>Publishing Fees:</strong> App Store publishing fees (Apple Developer Program annual fee $99 USD, Google Play one-time fee $25 USD) shall be borne by the Client and are not included in the development fees of this Agreement.
+    </div>
+    <div class="clause">
+      <span class="clause-num">4.7</span><strong>Start of Acceptance from Delivery Testing:</strong> For Track C acceptance, the acceptance period begins when the Developer submits the App to TestFlight/Firebase Distribution for delivery testing, or when it passes platform (App Store / Google Play) review. If the App cannot be officially released due to non-developer reasons, such as the Client failing to provide accounts, platform policy changes, or the Client's subjective decision to suspend the launch, it will not affect the progress of Track C acceptance, which will still be calculated as 7 working days from the date of delivery testing or passing the review.
+    </div>
+    <div class="clause">
+      <span class="clause-num">4.8</span><strong>Overdue Payment and Service Suspension:</strong> If the Client fails to pay the full amount for more than 7 calendar days after the payment timing for each installment has arrived, the Developer has the right to suspend all subsequent development, review submission, launch, maintenance, consultation, or ownership transfer services. Starting from the 8th day of delay, the Client shall pay the Developer a late fee (overdue interest) of zero point one percent (0.1%) of the unpaid amount per day.
+    </div>
+    <div class="clause">
+      <span class="clause-num">4.9</span><strong>Withdrawal of Control and Termination:</strong> If the Client's payment is overdue for 14 calendar days, the Developer has the right to unilaterally terminate this Agreement and may revoke the Client's access and Collaborator permissions to the codebase (GitHub Repository) and server (AWS Production) at any time. The Developer is under no obligation to refund any fees already received.
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- ── Article 5 ── -->
+  <section class="article">
+    <h2>ARTICLE 5 | INTELLECTUAL PROPERTY AND CODE HANDOVER</h2>
+    <div class="clause"><span class="clause-num">5.1</span>During development, the copyright of all source code for the System shall be temporarily held by the Developer.</div>
+    <div class="clause"><span class="clause-num">5.2</span>Upon full settlement of the third installment specified in Article 4, all economic rights of the copyright relating to the System's source code shall be fully transferred to the Client, and the Developer shall no longer claim any intellectual property rights.</div>
+    <div class="clause"><span class="clause-num">5.3</span>The GitHub Repository will be created under the Developer's account (or an independent organization fully controlled by the Developer), and the Client will join as a Collaborator. The Developer will have full control over the Repository during development. The complete handover of Repository ownership and control will be executed within 3 working days after the settlement of the third installment.</div>
+    <div class="clause"><span class="clause-num">5.4</span>The transfer of access and ownership to the AWS Production environment will be handed over to the Client within 3 working days after the settlement of the third installment, and the Developer has an obligation to assist in completing the transfer settings.</div>
+    <div class="clause"><span class="clause-num">5.5</span>Third-party service accounts (Stripe, Firebase, Apple Developer, Google Play) used during development are inherently registered under the Client's name, and their ownership will not be affected by this Article.</div>
+    <div class="clause"><span class="clause-num">5.6</span>Technical documentation (API documentation, database Schema descriptions, third-party service setup instructions, system handover instructions) will be submitted concurrently with the acceptance of each track and completely handed over upon formal delivery.</div>
+  </section>
+
+  <hr />
+
+  <!-- ── Article 6 ── -->
+  <section class="article">
+    <h2>ARTICLE 6 | DELAY COMPENSATION</h2>
+    <div class="clause">
+      <span class="clause-num">6.1</span>If the completion of features is delayed by more than <strong>14 calendar days</strong> beyond the milestone timeline due to <strong>reasons attributable to the Developer</strong>, the Client may claim compensation according to the following formula:
+    </div>
+    <div class="formula">Compensation Amount = Amount Paid × (Number of Uncompleted Acceptance Items ÷ Total Number of Acceptance Items) × 50%
+Compensation Cap = 20% of the Amount Paid</div>
+    <div class="clause"><span class="clause-num">6.2</span>Compensation is calculated solely at the time of formal delivery acceptance for Track C and does not accumulate track by track.</div>
+    <div class="clause">
+      <span class="clause-num">6.3</span>The following circumstances shall not be included in the Developer's delay calculation and will not trigger compensation under this Article:
+    </div>
+    <ul class="clause-list">
+      <li>App Store / Google Play review waiting periods or platform rejection periods</li>
+      <li>Delays caused by the Client's failure to provide necessary resources, accounts, or access permissions on time</li>
+      <li>Delays in payment functions caused by the failure to complete Stripe KYC verification on time</li>
+      <li>Force majeure events</li>
+    </ul>
+  </section>
+
+  <hr />
+
+  <!-- ── Article 7 ── -->
+  <section class="article">
+    <h2>ARTICLE 7 | CONFIDENTIALITY OBLIGATIONS</h2>
+    <div class="clause"><span class="clause-num">7.1</span>Both parties bear confidentiality obligations regarding the business logic, user data structure, system architecture, financial information, and other project-related confidential information learned during the cooperation period.</div>
+    <div class="clause"><span class="clause-num">7.2</span>The confidentiality obligation remains fully effective after the termination or expiration of this Agreement, with no time limit.</div>
+    <div class="clause">
+      <span class="clause-num">7.3</span>The following information is not bound by the confidentiality obligations in this Article:
+    </div>
+    <ul class="clause-list">
+      <li>Information that was already public before exposure</li>
+      <li>Information legally provided by a third party without confidentiality obligations</li>
+      <li>Information required to be disclosed by law or orders from competent authorities</li>
+    </ul>
+  </section>
+
+  <hr />
+
+  <!-- ── Article 8 ── -->
+  <section class="article">
+    <h2>ARTICLE 8 | GENERAL PROVISIONS</h2>
+    <div class="clause"><span class="clause-num">8.1</span><strong>Governing Law:</strong> This Agreement is governed by the laws of the Republic of China (Taiwan).</div>
+    <div class="clause"><span class="clause-num">8.2</span><strong>Dispute Resolution:</strong> Any disputes arising between the parties regarding this Agreement shall primarily be resolved through amicable negotiation. If negotiations fail, both parties agree to submit to the jurisdiction of the courts of Taiwan, Republic of China, as the court of first instance.</div>
+    <div class="clause"><span class="clause-num">8.3</span><strong>Document Validity and Order of Precedence:</strong> The main text of this Agreement and Appendix A, Appendix B, and Appendix C jointly constitute the complete basis for cooperation between both parties and have equal legal effect. If there is a conflict between the documents, the provisions in the main text of this Agreement shall prevail.</div>
+    <div class="clause"><span class="clause-num">8.4</span><strong>Amendment Clause:</strong> Any amendment to this Agreement must be agreed upon in writing by both parties before taking effect; oral agreements are invalid.</div>
+    <div class="clause"><span class="clause-num">8.5</span><strong>Severability:</strong> If any provision of this Agreement is determined to be invalid or unenforceable, it shall not affect the validity of the remaining provisions.</div>
+    <div class="clause"><span class="clause-num">8.6</span><strong>Entire Agreement:</strong> This Agreement supersedes all prior oral or written communications and agreements between both parties regarding this project.</div>
+  </section>
+
+  <hr />
+
+  <!-- ── Article 9 / Signatures ── -->
+  <section class="signature-section pb-before">
+    <h2 style="font-family:var(--font-sans);font-size:10pt;font-weight:700;color:var(--color-accent);letter-spacing:.1em;border-left:3px solid var(--color-accent);padding-left:6px;margin-bottom:5mm;">ARTICLE 9 | SIGNATURE</h2>
+    <p style="font-size:9pt;color:var(--color-muted);margin-bottom:5mm;">Both parties have read and understood all the terms of this Agreement and the contents of all appendices and agree to be bound by them.</p>
+
+    <div class="clause" style="margin-bottom:3mm;">
+      <span class="clause-num">9.1</span><strong>Method of Signing:</strong> This Agreement is signed electronically via the Dropbox Sign platform. The signing invitation for the Client is sent to the company email (hello@motise.net) and must be completed by the signatory Ding Ding personally. An electronic signature received and completed via the company email has the same legal effect as a handwritten signature.
+    </div>
+    <div class="clause" style="margin-bottom:6mm;">
+      <span class="clause-num">9.2</span><strong>Time of Signing Completion:</strong> After both parties have completed the electronic signatures, the timestamps and signing records automatically generated by the Dropbox Sign system shall serve as evidence of the entry into force of this Agreement.
+    </div>
+
+    <div class="sig-grid">
+      <div class="sig-block">
+        <h4>Client</h4>
+        <div class="sig-field"><span>Company Name:</span><span>Motise Inc</span></div>
+        <div class="sig-field"><span>Signatory:</span><span>Ding Ding (Head of Operations)</span></div>
+        <div class="sig-field"><span>Signing Email:</span><span>hello@motise.net</span></div>
+        <div class="sig-field" style="align-items:flex-start;flex-direction:column;gap:2px;">
+          <span>Electronic Signature Timestamp:</span>
+          <span style="font-size:var(--size-xs);color:#aaa;font-style:italic;">(Automatically recorded by the Dropbox Sign system)</span>
+        </div>
+      </div>
+      <div class="sig-block">
+        <h4>Developer</h4>
+        <div class="sig-field"><span>Name:</span><span>HUANG CONG REN</span></div>
+        <div class="sig-field"><span>Contact Email:</span><span>tzuchihuang0214@gmail.com</span></div>
+        <div class="sig-field" style="align-items:flex-start;flex-direction:column;gap:2px;">
+          <span>Electronic Signature Timestamp:</span>
+          <span style="font-size:var(--size-xs);color:#aaa;font-style:italic;">(Automatically recorded by the Dropbox Sign system)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="doc-footer">
+    This Agreement, together with Appendix A, Appendix B, and Appendix C, consists of four documents. Both parties shall each hold one electronic copy, which shall have equal validity.
+  </footer>
+
+</div><!-- /page-wrapper -->
+
+</body>
+</html>
+
