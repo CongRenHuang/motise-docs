@@ -12,9 +12,9 @@ Date: June 09, 2026
 Company Name: Motise Inc
 Company Type: C Corporation (Registered in Delaware, USA)
 Registered Address: 8 The Green STE R, Dover, Kent, Delaware 19901, USA
-Signatory: Ding Ding (Head of Operations)
-Company Email: <hello@motise.net>
-Authorized Project Communication Representative: Chiang Ching-Hsuan (<cchiang1124@gmail.com>)
+Signatory: Chiang Ching-Hsuan (Founder / Director)
+Company Email: hello@motise.net
+Authorized Project Communication Representative: Chiang Ching-Hsuan (cchiang1124@gmail.com)
 
 > The Client designates Chiang Ching-Hsuan as the authorized communication representative for this project, representing the Client in daily project communications, requirement confirmations, and submitting written objections. Written confirmations from the aforementioned representative shall have equal binding force on the Client. Any change of representative must be notified to the Developer in writing by the Client via the company email (@motise.net).
 
@@ -22,7 +22,7 @@ Authorized Project Communication Representative: Chiang Ching-Hsuan (<cchiang112
 
 Name: HUANG CONG REN
 Nationality: Republic of China (Taiwan)
-Contact Email: <tzuchihuang0214@gmail.com>
+Contact Email: tzuchihuang0214@gmail.com
 
 Both parties agree to cooperate on the software development services specified in this Agreement subject to the terms and conditions herein.
 
@@ -62,7 +62,7 @@ This Agreement includes the following appendices, each of which has the same leg
 - Delays in payment functions caused by the failure to complete Stripe KYC verification on time
 - Force majeure events (natural disasters, sudden changes in platform policies, etc.)
 
-2.4 **Stripe Account Prerequisite:** The Client must initiate the Stripe account KYC application **within 3 working days after the signing of this Agreement and receipt of the first installment payment**. KYC must be completed by the Client personally (due to legal requirements, the Developer cannot act on their behalf). If not initiated before the deadline, the development of Stripe-related functions will be postponed, which will not be considered a delay by the Developer, nor will it trigger the delay compensation clause in Article 7.
+2.4 **Stripe Account Prerequisite:** The Client must initiate the Stripe account KYC application **within 3 working days after the signing of this Agreement and receipt of the first installment payment**. KYC must be completed by the Client personally (due to legal requirements, the Developer cannot act on their behalf). If not initiated before the deadline, the development of Stripe-related functions will be postponed, which will not be considered a delay by the Developer, nor will it trigger the delay compensation clause in Article 6.
 
 -----
 
@@ -88,7 +88,7 @@ This Agreement includes the following appendices, each of which has the same leg
 
 4.1 The fees for this Agreement are calculated based on the cooperation scenario confirmed by both parties and shall be paid in three installments:
 
-**Scenario 1: Full Acceptance + Confirmation of Long-Term Cooperation (Total Fee $1,800 USD)**
+**Scenario 1: Full Acceptance + Confirmation of Long-Term Cooperation (Total Fee $1,800 USD) (Service Period: 12 months, from June 09, 2026 to June 09, 2027)**
 
 | Installment | Timing | Amount |
 |---|---|---|
@@ -105,18 +105,12 @@ This Agreement includes the following appendices, each of which has the same leg
 | Third Installment | Within 3 working days after full acceptance of Track C and formal delivery | Make up the difference to $2,499 ($1,419 USD) |
 
 **Scenario 3: Delayed Development Schedule and Failure to Pass Full Acceptance**
-The fee is calculated based on $1,800 USD, with deductions made according to the delay compensation clause in Article 7.
 
-4.2 **Scenario Confirmation Deadline:** The Client shall confirm, in writing, its intention to continue long-term collaboration (Scenario 1) or its decision not to continue (Scenario 2) no later than **July 25, 2026**. If no written response is received by the deadline, Scenario 2 shall automatically apply and the outstanding balance shall be adjusted accordingly to reach a total of USD $2,499.
+The fee is calculated based on $2,499 USD, with deductions made according to the delay compensation clause in Article 6.
 
-    A written request for extension must be submitted before **July 25, 2026**. Upon mutual written agreement, the deadline may be extended once, to no later than **August 4, 2026**.
+4.2 **Deadline for Scenario Confirmation:** The Client must confirm the intention for long-term cooperation (Scenario 1) or notify the decision not to continue cooperation (Scenario 2) in writing **within 3 working days after full acceptance of Track C**. If no written reply is received by the deadline, it will automatically be calculated as Scenario 2, and the final payment will make up the difference to $2,499.
 
-4.3 **Scope of Long-Term Collaboration:** The pricing discount under Scenario 1 (USD $1,800) reflects the parties' mutual intention to continue working together after delivery of this Project. The specific scope, deliverables, timeline, and compensation structure of any subsequent engagement shall be defined in a separate agreement to be negotiated in good faith following the Project delivery date of **August 4, 2026**.
-
-    This Agreement does not constitute a commitment by either party to any specific long-term arrangement, nor does it lock in any pricing, scope, or duration for work beyond the Project defined herein.
-
-> **Note for the Client:**
-> "The Scenario 1 discount is real and reflects my good faith toward a long-term relationship. However, the terms of that ongoing engagement — including compensation — need to be negotiated separately after delivery. Locking a 12-month scope and rate into this contract without defining what that work actually is wouldn't be fair to either side."
+4.3 **Definition of Long-Term Cooperation:** "Confirmation of long-term cooperation" means that both parties sign a follow-up cooperation agreement for subsequent monthly maintenance, new feature development, or the next project before the scenario confirmation deadline.
 
 4.4 **Tax Clause:** All amounts are net of taxes (USD). The Developer will provide a W-8BEN form. Upon receipt, the Client shall not deduct US Withholding Tax from the payments under this Agreement.
 
@@ -132,54 +126,36 @@ The fee is calculated based on $1,800 USD, with deductions made according to the
 
 -----
 
-## ARTICLE 5 | INTELLECTUAL PROPERTY AND CODE HANDOVER
+## ARTICLE 5 | INTELLECTUAL PROPERTY, CODE HANDOVER AND TERMINATION
 
-5.1 During the development period, all copyright and intellectual property rights in the work product shall remain with the Developer until full payment has been received.
+5.1 All codes, intellectual property rights, and deliverables generated under this project shall be deemed as "work made for hire" (or equivalent) under applicable copyright laws, and the ownership and copyright thereof shall automatically and unconditionally vest in the Client (Motise Inc.) upon creation.
 
-5.2 Upon receipt of the full amount due under the applicable Scenario (as defined in Article 4), the Developer agrees to assign, in writing, all copyright and intellectual property rights in the deliverables and source code to the Client (Motise Inc.), free and clear of any encumbrance. Until such assignment is completed, the Client is granted an exclusive, non-transferable license to use the deliverables solely for internal business purposes.
+5.2 While the ownership and copyright of the intellectual property are vested in the Client upon creation under Section 5.1, the complete transfer of control, repository ownership, and environment access specified in Sections 5.3 and 5.4 is subject to the Client's full payment of the fees specified in Article 4. The Developer may withhold such physical delivery and transfer of repository ownership if any payments are overdue.
 
-5.3 For the avoidance of doubt, this Agreement is governed by the laws of the Republic of China (Taiwan). The concept of "work made for hire" under U.S. copyright law does not apply. Transfer of intellectual property rights shall be effected solely by written assignment upon full payment, in accordance with the Copyright Act of the Republic of China.
+5.3 The GitHub Repository will be created under the Developer's account (or an independent organization fully controlled by the Developer), and the Client will join as a Collaborator. The Developer will have full control over the Repository during development. The complete handover of Repository ownership and control will be executed within 3 working days after the settlement of the third installment.
 
-> **Note for the Client:**
-> "The practical outcome is identical — Motise Inc. receives full ownership of all code and deliverables. The only difference is the timing: ownership transfers upon full payment rather than upon creation. This structure protects both parties: you are guaranteed ownership once payment is complete; I retain leverage to ensure payment is actually made."
+5.4 The transfer of access and ownership to the AWS Production environment will be handed over to the Client within 3 working days after the settlement of the third installment, and the Developer has an obligation to assist in completing the transfer settings.
 
-5.4 The GitHub Repository will be created under the Developer's account (or an independent organization fully controlled by the Developer), and the Client will join as a Collaborator. The Developer will have full control over the Repository during development. The complete handover of Repository ownership and control will be executed within 3 working days after the settlement of the third installment.
+5.5 Third-party service accounts (Stripe, Firebase, Apple Developer, Google Play) used during development are inherently registered under the Client's name, and their ownership will not be affected by this Article.
 
-5.5 The transfer of access and ownership to the AWS Production environment will be handed over to the Client within 3 working days after the settlement of the third installment, and the Developer has an obligation to assist in completing the transfer settings.
+5.6 Technical documentation (API documentation, database Schema descriptions, third-party service setup instructions, system handover instructions) will be submitted concurrently with the acceptance of each track and completely handed over upon formal delivery.
 
-5.6 Third-party service accounts (Stripe, Firebase, Apple Developer, Google Play) used during development are inherently registered under the Client's name, and their ownership will not be affected by this Article.
-
-5.7 Technical documentation (API documentation, database Schema descriptions, third-party service setup instructions, system handover instructions) will be submitted concurrently with the acceptance of each track and completely handed over upon formal delivery.
+5.7 **Termination for Convenience:** Either party may terminate this Agreement at any time, for any reason or no reason, upon 14 days’ prior written notice to the other party. Upon termination, the Client shall pay the Developer for all work completed and services rendered proportionally up to the effective date of termination, and the Developer shall deliver the corresponding completed work products to the Client.
 
 -----
 
-## ARTICLE 6 | TERMINATION
+## ARTICLE 6 | DELAY COMPENSATION
 
-6.1 Either party may terminate this Agreement at any time, for any reason or no reason, upon 14 calendar days' prior written notice to the other party.
-
-6.2 Upon termination, the Client shall pay for all work completed and accepted as of the termination date, calculated on a pro-rata basis according to the proportion of accepted acceptance items (as defined in Appendix C) relative to the total acceptance items, applied against the applicable Scenario total fee.
-
-6.3 Upon receipt of all outstanding payments due under Article 6.2, the Developer shall deliver all completed work product to the Client. No intellectual property rights shall transfer prior to full settlement of outstanding amounts.
-
-6.4 During the 14-day notice period, the Developer is not obligated to commence development of new features or functionalities beyond work already in progress.
-
-> **Note for the Client:**
-> "I'm happy to include the termination clause — early-stage flexibility makes sense. I've added the standard reciprocal protections: completed work gets paid for, and code transfers after payment is settled. The 14-day notice period also shouldn't require me to start new work."
-
------
-
-## ARTICLE 7 | DELAY COMPENSATION
-
-7.1 If the completion of features is delayed by more than **14 calendar days** beyond the milestone timeline due to **reasons attributable to the Developer**, the Client may claim compensation according to the following formula:
+6.1 If the completion of features is delayed by more than **14 calendar days** beyond the milestone timeline due to **reasons attributable to the Developer**, the Client may claim compensation according to the following formula:
 
 ```
 Compensation Amount = Amount Paid × (Number of Uncompleted Acceptance Items ÷ Total Number of Acceptance Items) × 50%
 Compensation Cap = 20% of the Amount Paid
 ```
 
-7.2 Compensation is calculated solely at the time of formal delivery acceptance for Track C and does not accumulate track by track.
+6.2 Compensation is calculated solely at the time of formal delivery acceptance for Track C and does not accumulate track by track.
 
-7.3 The following circumstances shall not be included in the Developer's delay calculation and will not trigger compensation under this Article:
+6.3 The following circumstances shall not be included in the Developer's delay calculation and will not trigger compensation under this Article:
 - App Store / Google Play review waiting periods or platform rejection periods
 - Delays caused by the Client's failure to provide necessary resources, accounts, or access permissions on time
 - Delays in payment functions caused by the failure to complete Stripe KYC verification on time
@@ -187,42 +163,42 @@ Compensation Cap = 20% of the Amount Paid
 
 -----
 
-## ARTICLE 8 | CONFIDENTIALITY OBLIGATIONS
+## ARTICLE 7 | CONFIDENTIALITY OBLIGATIONS
 
-8.1 Both parties bear confidentiality obligations regarding the business logic, user data structure, system architecture, financial information, and other project-related confidential information learned during the cooperation period.
+7.1 Both parties bear confidentiality obligations regarding the business logic, user data structure, system architecture, financial information, and other project-related confidential information learned during the cooperation period.
 
-8.2 The confidentiality obligation remains fully effective after the termination or expiration of this Agreement, with no time limit.
+7.2 The confidentiality obligation remains fully effective after the termination or expiration of this Agreement, with no time limit.
 
-8.3 The following information is not bound by the confidentiality obligations in this Article:
+7.3 The following information is not bound by the confidentiality obligations in this Article:
 - Information that was already public before exposure
 - Information legally provided by a third party without confidentiality obligations
 - Information required to be disclosed by law or orders from competent authorities
 
 -----
 
-## ARTICLE 9 | GENERAL PROVISIONS
+## ARTICLE 8 | GENERAL PROVISIONS
 
-9.1 **Governing Law:** This Agreement is governed by the laws of the Republic of China (Taiwan).
+8.1 **Governing Law:** This Agreement is governed by the laws of the Republic of China (Taiwan).
 
-9.2 **Dispute Resolution:** Any disputes arising between the parties regarding this Agreement shall primarily be resolved through amicable negotiation. If negotiations fail, both parties agree to submit to the jurisdiction of the courts of Taiwan, Republic of China, as the court of first instance.
+8.2 **Dispute Resolution:** Any disputes arising between the parties regarding this Agreement shall primarily be resolved through amicable negotiation. If negotiations fail, both parties agree to submit to the jurisdiction of the courts of Taiwan, Republic of China, as the court of first instance.
 
-9.3 **Document Validity and Order of Precedence:** The main text of this Agreement and Appendix A, Appendix B, and Appendix C jointly constitute the complete basis for cooperation between both parties and have equal legal effect. If there is a conflict between the documents, the provisions in the main text of this Agreement shall prevail.
+8.3 **Document Validity and Order of Precedence:** The main text of this Agreement and Appendix A, Appendix B, and Appendix C jointly constitute the complete basis for cooperation between both parties and have equal legal effect. If there is a conflict between the documents, the provisions in the main text of this Agreement shall prevail.
 
-9.4 **Amendment Clause:** Any amendment to this Agreement must be agreed upon in writing by both parties before taking effect; oral agreements are invalid.
+8.4 **Amendment Clause:** Any amendment to this Agreement must be agreed upon in writing by both parties before taking effect; oral agreements are invalid.
 
-9.5 **Severability:** If any provision of this Agreement is determined to be invalid or unenforceable, it shall not affect the validity of the remaining provisions.
+8.5 **Severability:** If any provision of this Agreement is determined to be invalid or unenforceable, it shall not affect the validity of the remaining provisions.
 
-9.6 **Entire Agreement:** This Agreement supersedes all prior oral or written communications and agreements between both parties regarding this project.
+8.6 **Entire Agreement:** This Agreement supersedes all prior oral or written communications and agreements between both parties regarding this project.
 
 -----
 
-## ARTICLE 10 | SIGNATURE
+## ARTICLE 9 | SIGNATURE
 
 Both parties have read and understood all the terms of this Agreement and the contents of all appendices and agree to be bound by them.
 
-10.1 **Method of Signing:** This Agreement is signed electronically via the Dropbox Sign platform. The signing invitation for the Client is sent to the company email (<hello@motise.net>) and must be completed by the signatory Ding Ding personally. An electronic signature received and completed via the company email has the same legal effect as a handwritten signature.
+9.1 **Method of Signing:** This Agreement is signed electronically via the Dropbox Sign platform. The signing invitation for the Client is sent to the company email (hello@motise.net) and must be completed by the signatory Chiang Ching-Hsuan personally. An electronic signature received and completed via the company email has the same legal effect as a handwritten signature.
 
-10.2 **Time of Signing Completion:** After both parties have completed the electronic signatures, the timestamps and signing records automatically generated by the Dropbox Sign system shall serve as evidence of the entry into force of this Agreement.
+9.2 **Time of Signing Completion:** After both parties have completed the electronic signatures, the timestamps and signing records automatically generated by the Dropbox Sign system shall serve as evidence of the entry into force of this Agreement.
 
 &nbsp;
 
@@ -230,9 +206,9 @@ Both parties have read and understood all the terms of this Agreement and the co
 
 Company Name: Motise Inc
 
-Signatory: Ding Ding (Head of Operations)
+Signatory: Chiang Ching-Hsuan (Founder / Director)
 
-Signing Email: <hello@motise.net>
+Signing Email: hello@motise.net
 
 Electronic Signature Timestamp: (Automatically recorded by the Dropbox Sign system)
 
@@ -242,7 +218,7 @@ Electronic Signature Timestamp: (Automatically recorded by the Dropbox Sign syst
 
 Name: HUANG CONG REN
 
-Contact Email: <tzuchihuang0214@gmail.com>
+Contact Email: tzuchihuang0214@gmail.com
 
 Electronic Signature Timestamp: (Automatically recorded by the Dropbox Sign system)
 
