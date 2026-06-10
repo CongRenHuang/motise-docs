@@ -1,0 +1,2084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOFTWARE DEVELOPMENT SERVICES AGREEMENT MTS-2026-001 (Merged Version)</title>
+  <style>
+    /* ─── Fonts ─── */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500&display=swap');
+
+    /* ─── CSS Variables ─── */
+    :root {
+      --page-width: 210mm;
+      --page-height: 297mm;
+      --margin-top: 25mm;
+      --margin-right: 20mm;
+      --margin-bottom: 25mm;
+      --margin-left: 25mm;
+      --color-text: #1a1a1a;
+      --color-muted: #555;
+      --color-border: #bbb;
+      --color-border-light: #ddd;
+      --color-accent: #1a3a5c;
+      --font-serif: 'Noto Serif TC', 'STSong', '宋體', Georgia, serif;
+      --font-sans: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+      --size-base: 10.5pt;
+      --size-sm: 9pt;
+      --size-xs: 8pt;
+    }
+
+    /* ─── Reset ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ─── Screen wrapper ─── */
+    body {
+      background: #e8e8e8;
+      font-family: var(--font-serif);
+      font-size: var(--size-base);
+      color: var(--color-text);
+      line-height: 1.8;
+    }
+
+    .page-wrapper {
+      max-width: var(--page-width);
+      margin: 32px auto;
+      background: #fff;
+      box-shadow: 0 4px 32px rgba(0,0,0,.18);
+      padding: var(--margin-top) var(--margin-right) var(--margin-bottom) var(--margin-left);
+    }
+
+    /* ─── Print button (screen only) ─── */
+    .print-btn {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      background: var(--color-accent);
+      color: #fff;
+      border: none;
+      padding: 8px 20px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 4px;
+      letter-spacing: .04em;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    }
+    .print-btn:hover { background: #255a8a; }
+
+    /* ─── Document header ─── */
+    .doc-header {
+      text-align: center;
+      margin-bottom: 10mm;
+      padding-bottom: 6mm;
+      border-bottom: 2px solid var(--color-accent);
+    }
+    .doc-header h1 {
+      font-size: 16pt;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: var(--color-accent);
+      margin-bottom: 3px;
+    }
+    .doc-header h2 {
+      font-size: 11pt;
+      font-weight: 500;
+      letter-spacing: .08em;
+      color: var(--color-muted);
+      margin-bottom: 8px;
+    }
+    .doc-meta {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      color: var(--color-muted);
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    /* ─── Parties section ─── */
+    .parties {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6mm;
+      margin-bottom: 8mm;
+      page-break-inside: avoid;
+    }
+    .party-block {
+      border: 1px solid var(--color-border);
+      padding: 5mm 6mm;
+    }
+    .party-block h3 {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      font-weight: 700;
+      color: var(--color-accent);
+      border-bottom: 1px solid var(--color-border-light);
+      padding-bottom: 3px;
+      margin-bottom: 5px;
+      letter-spacing: .06em;
+    }
+    .party-block dl {
+      display: grid;
+      grid-template-columns: minmax(120px, 34%) minmax(0, 1fr);
+      gap: 1px 8px;
+      font-size: var(--size-sm);
+    }
+    .party-block dt {
+      color: var(--color-muted);
+      white-space: normal;
+      word-break: break-word;
+      min-width: 0;
+    }
+    .party-block dd {
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      min-width: 0;
+    }
+
+    .parties-intro {
+      margin-bottom: 6mm;
+      font-size: var(--size-sm);
+      color: var(--color-muted);
+      font-family: var(--font-sans);
+      text-align: center;
+    }
+
+    /* ─── Divider ─── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--color-border-light);
+      margin: 6mm 0;
+    }
+
+    /* ─── Appendix table ─── */
+    .appendix-section {
+      margin-bottom: 8mm;
+      page-break-inside: avoid;
+    }
+    .appendix-section h2 {
+      font-family: var(--font-sans);
+      font-size: 9.5pt;
+      font-weight: 700;
+      letter-spacing: .08em;
+      color: var(--color-accent);
+      margin-bottom: 3mm;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 2px;
+    }
+
+    /* ─── Articles ─── */
+    .article {
+      margin-bottom: 7mm;
+    }
+    .pb-before {
+      margin-top: 15mm;
+    }
+    .article h2 {
+      font-family: var(--font-sans);
+      font-size: 10pt;
+      font-weight: 700;
+      color: var(--color-accent);
+      letter-spacing: .1em;
+      border-left: 3px solid var(--color-accent);
+      padding-left: 6px;
+      margin-bottom: 4mm;
+      page-break-after: avoid;
+    }
+    .article p {
+      font-size: var(--size-base);
+      line-height: 1.85;
+      text-indent: 2em;
+      margin-bottom: 2.5mm;
+    }
+    .clause {
+      margin-bottom: 2.5mm;
+    }
+    .clause-num {
+      font-weight: 500;
+      color: var(--color-accent);
+      margin-right: 4px;
+    }
+
+    /* ─── Bullet lists ─── */
+    ul.clause-list {
+      list-style: none;
+      padding-left: 2em;
+      margin: 1.5mm 0 3mm;
+    }
+    ul.clause-list li {
+      font-size: var(--size-sm);
+      line-height: 1.75;
+      padding-left: 1em;
+      position: relative;
+      color: var(--color-muted);
+    }
+    ul.clause-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--color-border);
+    }
+
+    /* ─── Tables ─── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      margin: 2mm 0 4mm;
+    }
+    table th {
+      background: var(--color-accent);
+      color: #fff;
+      font-weight: 600;
+      padding: 4px 8px;
+      text-align: left;
+      letter-spacing: .04em;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    table td {
+      padding: 4px 8px;
+      border-bottom: 1px solid var(--color-border-light);
+      vertical-align: top;
+      line-height: 1.6;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    table tr:nth-child(even) td { background: #f7f8fa; }
+
+    /* sub-table inside payment section */
+    .payment-scenario {
+      margin-bottom: 4mm;
+      page-break-inside: avoid;
+    }
+    .payment-scenario h4 {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      font-weight: 700;
+      background: #f0f4f8;
+      padding: 3px 8px;
+      border-left: 3px solid var(--color-accent);
+      margin-bottom: 1mm;
+      color: var(--color-text);
+    }
+
+    .payment-scenario table th:nth-child(1),
+    .payment-scenario table td:nth-child(1) {
+      width: 34%;
+    }
+    .payment-scenario table th:nth-child(2),
+    .payment-scenario table td:nth-child(2) {
+      width: 36%;
+    }
+    .payment-scenario table th:nth-child(3),
+    .payment-scenario table td:nth-child(3) {
+      width: 30%;
+      text-align: right;
+    }
+
+    /* ─── Code block (formula) ─── */
+    .formula {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: var(--size-sm);
+      background: #f4f4f4;
+      border: 1px solid var(--color-border-light);
+      border-left: 3px solid var(--color-accent);
+      padding: 4mm 6mm;
+      margin: 2mm 0 3mm 2em;
+      line-height: 1.7;
+      page-break-inside: avoid;
+      white-space: pre-wrap;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      max-width: 100%;
+    }
+
+    /* ─── Signature block ─── */
+    .signature-section {
+      margin-top: 10mm;
+      page-break-inside: avoid;
+    }
+    .signature-section > p {
+      font-size: var(--size-sm);
+      margin-bottom: 8mm;
+      color: var(--color-muted);
+    }
+    .sig-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10mm;
+    }
+    .sig-block {
+      border-top: 1.5px solid var(--color-accent);
+      padding-top: 4mm;
+    }
+    .sig-block h4 {
+      font-family: var(--font-sans);
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 4mm;
+    }
+    .sig-field {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+      margin-bottom: 5mm;
+      color: var(--color-muted);
+    }
+    .sig-field span { white-space: normal; }
+    .sig-field span:first-child {
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .sig-line {
+      flex: 1;
+      border-bottom: 1px solid var(--color-border);
+      min-width: 40px;
+      height: 20px;
+    }
+
+    /* ─── Footer note ─── */
+    .doc-footer {
+      margin-top: 1mm;
+      padding-top: 1mm;
+      border-top: 1px solid var(--color-border-light);
+      font-family: var(--font-sans);
+      font-size: var(--size-xs);
+      color: var(--color-muted);
+      text-align: center;
+    }
+
+    /* ─── Markdown Styles (Appendix formatting) ─── */
+    .article h1 {
+      text-align: center;
+      font-size: 16pt;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: var(--color-accent);
+      margin-bottom: 10mm;
+      padding-bottom: 6mm;
+      border-bottom: 2px solid var(--color-accent);
+    }
+    .article h3 {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-top: 6mm;
+      margin-bottom: 2mm;
+    }
+    .article p {
+      text-indent: 0;
+      margin-bottom: 4mm;
+    }
+    .article ul, .article ol {
+      margin-left: 2em;
+      margin-bottom: 4mm;
+      font-size: var(--size-sm);
+      color: var(--color-muted);
+      line-height: 1.75;
+    }
+    .article blockquote {
+      margin: 3mm 0 4mm;
+      padding: 3mm 6mm;
+      border-left: 3px solid var(--color-border);
+      background: #f9f9f9;
+      font-family: var(--font-sans);
+      font-size: var(--size-xs);
+      color: var(--color-muted);
+      line-height: 1.7;
+    }
+    .article pre {
+      background: #f4f4f4;
+      border: 1px solid var(--color-border-light);
+      border-left: 3px solid var(--color-accent);
+      padding: 4mm 6mm;
+      margin: 2mm 0 4mm 0;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: var(--size-sm);
+      overflow-x: auto;
+    }
+
+    /* Fix table column wrapping in criteria table */
+    .criteria-table {
+      table-layout: fixed !important;
+      width: 100% !important;
+    }
+    .criteria-table th:nth-child(1),
+    .criteria-table td:nth-child(1) {
+      width: 10% !important;
+      white-space: nowrap !important;
+    }
+    .criteria-table th:nth-child(2),
+    .criteria-table td:nth-child(2) {
+      width: 30% !important;
+    }
+    .criteria-table th:nth-child(3),
+    .criteria-table td:nth-child(3) {
+      width: 60% !important;
+    }
+
+    /* A-2 Module Table CSS */
+    .module-table {
+      table-layout: fixed !important;
+      width: 100% !important;
+    }
+    .module-table th:nth-child(1),
+    .module-table td:nth-child(1) {
+      width: 10% !important;
+      white-space: nowrap !important;
+    }
+    .module-table th:nth-child(2),
+    .module-table td:nth-child(2) {
+      width: 25% !important;
+    }
+    .module-table th:nth-child(3),
+    .module-table td:nth-child(3) {
+      width: 45% !important;
+    }
+    .module-table th:nth-child(4),
+    .module-table td:nth-child(4) {
+      width: 20% !important;
+      white-space: nowrap !important;
+    }
+
+    /* A-5-2 Tech Table CSS */
+    .tech-table {
+      table-layout: fixed !important;
+      width: 100% !important;
+    }
+    .tech-table th:nth-child(1),
+    .tech-table td:nth-child(1) {
+      width: 20% !important;
+      white-space: nowrap !important;
+    }
+    .tech-table th:nth-child(2),
+    .tech-table td:nth-child(2) {
+      width: 25% !important;
+    }
+    .tech-table th:nth-child(3),
+    .tech-table td:nth-child(3) {
+      width: 55% !important;
+    }
+
+    /* A-6 Resource Table CSS */
+    .resource-table {
+      table-layout: fixed !important;
+      width: 100% !important;
+    }
+    .resource-table th:nth-child(1),
+    .resource-table td:nth-child(1) {
+      width: 45% !important;
+    }
+    .resource-table th:nth-child(2),
+    .resource-table td:nth-child(2) {
+      width: 55% !important;
+    }
+
+    .appendix-disclaimer {
+      font-size: 6pt!important;
+      color: var(--color-muted);
+      margin-top: 1mm;
+      font-family: var(--font-sans);
+      text-indent: 0 !important;
+    }
+
+    /* ═══════════════════════════════════════
+       PRINT STYLES
+    ═══════════════════════════════════════ */
+    @media print {
+      @page {
+        size: A4;
+        margin: 25mm 20mm 25mm 25mm;
+      }
+      @page :first {
+        margin-top: 20mm;
+      }
+
+      body {
+        background: #fff;
+        font-size: 10pt;
+        color: #000;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page-wrapper {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        /* Force page break before each document section during print */
+        page-break-before: always;
+        break-before: page;
+      }
+      .page-wrapper:first-of-type {
+        page-break-before: avoid;
+        break-before: avoid;
+      }
+
+      .print-btn { display: none !important; }
+
+      /* ── Page break rules ── */
+      .pb-before { page-break-before: always; break-before: page; margin-top: 0; }
+      .article h2 { page-break-after: avoid; break-after: avoid; }
+      .party-block,
+      .appendix-section,
+      .payment-scenario,
+      .sig-grid,
+      .formula,
+      .signature-section { page-break-inside: avoid; break-inside: avoid; }
+
+      thead { display: table-header-group; }
+      tfoot { display: table-footer-group; }
+      tr { page-break-inside: avoid; break-inside: avoid; }
+
+      p { orphans: 3; widows: 3; }
+      a { text-decoration: none; color: inherit; }
+      .parties { display: grid; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Print Button (Screen only) -->
+  <button class="print-btn" onclick="window.print()">Print / Export PDF</button>
+
+  <!-- ==========================================
+       SECTION 1: MAIN AGREEMENT (主合約)
+       ========================================== -->
+  <div class="page-wrapper">
+    <!-- ── Document Header ── -->
+    <header class="doc-header">
+      <h1>SOFTWARE DEVELOPMENT SERVICES AGREEMENT</h1>
+      <div class="doc-meta" style="margin-top: 10px;">
+        <span>Agreement No.: MTS-2026-001</span>
+        <span>Date: June 09, 2026</span>
+      </div>
+    </header>
+
+    <!-- ── Parties ── -->
+    <section class="appendix-section">
+      <h2>PARTIES</h2>
+      <div class="parties">
+        <div class="party-block">
+          <h3>Client (hereinafter referred to as the "Client")</h3>
+          <dl>
+            <dt>Company Name</dt><dd>Motise Inc</dd>
+            <dt>Company Type</dt><dd>C Corporation (Registered in Delaware, USA)</dd>
+            <dt>Registered Address</dt><dd>8 The Green STE R, Dover, Kent, Delaware 19901, USA</dd>
+            <dt>Signatory</dt><dd>Ding Ding (Head of Operations)</dd>
+            <dt>Company Email</dt><dd>hello@motise.net</dd>
+            <dt style="white-space: normal;">Authorized Project Communication Representative</dt><dd>Chiang Ching-Hsuan (cchiang1124@gmail.com)</dd>
+          </dl>
+        </div>
+        <div class="party-block">
+          <h3>Developer (hereinafter referred to as the "Developer")</h3>
+          <dl>
+            <dt>Name</dt><dd>HUANG CONG REN</dd>
+            <dt>Nationality</dt><dd>Republic of China (Taiwan)</dd>
+            <dt>Contact Email</dt><dd>tzuchihuang0214@gmail.com</dd>
+          </dl>
+        </div>
+      </div>
+      <blockquote style="margin:3mm 0 4mm;padding:3mm 6mm;border-left:3px solid var(--color-border);background:#f9f9f9;font-family:var(--font-sans);font-size:var(--size-xs);color:var(--color-muted);line-height:1.7;page-break-inside:avoid;">
+        The Client designates Chiang Ching-Hsuan as the authorized communication representative for this project, representing the Client in daily project communications, requirement confirmations, and submitting written objections. Written confirmations from the aforementioned representative shall have equal binding force on the Client. Any change of representative must be notified to the Developer in writing by the Client via the company email (@motise.net).
+      </blockquote>
+      <p class="parties-intro">Both parties agree to cooperate on the software development services specified in this Agreement subject to the terms and conditions herein.</p>
+    </section>
+
+    <hr />
+
+    <!-- ── Appendix Table ── -->
+    <section class="appendix-section">
+      <h2>AGREEMENT APPENDICES</h2>
+      <p style="font-size:9pt;color:var(--color-muted);margin-bottom:2mm;">This Agreement includes the following appendices, each of which has the same legal effect as the main text of this Agreement:</p>
+      <table>
+        <thead>
+          <tr>
+            <th style="width:15%">Appendix</th>
+            <th style="width:35%">Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Appendix A</td><td>Project Scope and Technical Specification</td><td>List of functional modules, technical architecture, exclusions from v1.0, and resources to be provided by the Client</td></tr>
+          <tr><td>Appendix B</td><td>Development Schedule</td><td>Key milestones, Gantt chart, prerequisites, and explanation of delay clauses</td></tr>
+          <tr><td>Appendix C</td><td>Acceptance Criteria</td><td>Three-track acceptance standards, acceptance checklist, and sign-off sections</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr />
+
+    <!-- ── Article 1 ── -->
+    <section class="article">
+      <h2>ARTICLE 1 | PROJECT SCOPE</h2>
+      <div class="clause">
+        <span class="clause-num">1.1</span>The Developer agrees to develop version 1.0 of the course booking mobile application (hereinafter referred to as the "System") for the Client, according to the scope specified in Appendix A "Project Scope and Technical Specification."
+      </div>
+      <div class="clause">
+        <span class="clause-num">1.2</span>The primary modules, detailed functions, and technical specifications included in version 1.0 shall be subject to the provisions in Appendix A.
+      </div>
+      <div class="clause">
+        <span class="clause-num">1.3</span>Items listed in Section A-4 of Appendix A are explicitly excluded from the development scope of v1.0. Any changes to the scope must be confirmed in writing by both parties before taking effect and will require a separate evaluation of their impact on the schedule and fees.
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- ── Article 2 ── -->
+    <section class="article">
+      <h2>ARTICLE 2 | SCHEDULE AND MILESTONES</h2>
+      <div class="clause">
+        <span class="clause-num">2.1</span>The development schedule of the System shall be executed according to Appendix B "Development Schedule," with a target delivery date of <strong>August 04, 2026</strong>.
+      </div>
+      <div class="clause">
+        <span class="clause-num">2.2</span>All timelines in Appendix B are contingent upon the Client providing all necessary resources listed in Section A-6 of Appendix A by <strong>June 13, 2026</strong>. For every week of delay in providing the resources, the milestones and delivery dates shall be proportionally postponed.
+      </div>
+      <div class="clause">
+        <span class="clause-num">2.3</span>The following circumstances shall not be counted towards the Developer's delay liability:
+      </div>
+      <ul class="clause-list">
+        <li>App Store / Google Play review periods and waiting times for platform rejections</li>
+        <li>Delays caused by the Client's failure to provide necessary resources, accounts, or access permissions on time</li>
+        <li>Delays in payment functions caused by the failure to complete Stripe KYC verification on time</li>
+        <li>Force majeure events (natural disasters, sudden changes in platform policies, etc.)</li>
+      </ul>
+      <div class="clause">
+        <span class="clause-num">2.4</span><strong>Stripe Account Prerequisite:</strong> The Client must initiate the Stripe account KYC application <strong>within 3 working days after the signing of this Agreement and receipt of the first installment payment</strong>. KYC must be completed by the Client personally (due to legal requirements, the Developer cannot act on their behalf). If not initiated before the deadline, the development of Stripe-related functions will be postponed, which will not be considered a delay by the Developer, nor will it trigger the delay compensation clause in Article 6.
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- ── Article 3 ── -->
+    <section class="article">
+      <h2>ARTICLE 3 | ACCEPTANCE MECHANISM</h2>
+      <div class="clause">
+        <span class="clause-num">3.1</span>The acceptance of the System will be conducted in three tracks according to Appendix C "Acceptance Criteria," and the acceptance standards for each track shall be subject to the provisions in Appendix C.
+      </div>
+      <div class="clause">
+        <span class="clause-num">3.2</span>If the Client fails to submit written acceptance results within the acceptance period for each track, all items in that track shall be deemed accepted upon the expiration of the deadline.
+      </div>
+      <div class="clause">
+        <span class="clause-num">3.3</span>If the Client does not raise written objections within 24 hours after the weekly sync meeting, it shall be deemed a confirmation of the progress at that stage, and objections cannot be raised again during subsequent acceptances.
+      </div>
+      <div class="clause">
+        <span class="clause-num">3.4</span>Once a track is accepted, the items in that track are locked and cannot be objected to again during subsequent tracks or at the time of formal delivery.
+      </div>
+      <div class="clause">
+        <span class="clause-num">3.5</span>New requirements raised during the acceptance period will not be included in the current acceptance scope and will enter the development of the next version after a separate quotation assessment.
+      </div>
+      <div class="clause">
+        <span class="clause-num">3.6</span><strong>Invalidity of Subjective Rejection:</strong> Any rejection or non-acceptance feedback raised by the Client must be accompanied by a clear explanation of functional issues or specific evidence of non-conformity with the mutually confirmed design specifications. Rejections based on subjective descriptions (such as "it feels wrong" or "the experience is not smooth") shall be deemed invalid, and the items will still be considered accepted.
+      </div>
+      <div class="clause">
+        <span class="clause-num">3.7</span><strong>Re-inspection Limits and Timeframes:</strong> Regarding the list of written modification requests submitted by the Client during the acceptance period, after the Developer completes the modifications, the Client may only perform a re-inspection on the results of the modifications for the items originally listed. The Client may not raise new modification requests outside the original list or repeatedly find fault during the re-inspection. The re-inspection period is limited to 3 working days; failure to submit re-inspection results within the timeframe will result in all items being deemed accepted.
+      </div>
+    </section>
+
+
+
+    <!-- ── Article 4 ── -->
+    <section class="article pb-before">
+      <h2>ARTICLE 4 | FEES AND PAYMENT</h2>
+      <div class="clause" style="margin-bottom:3mm;">
+        <span class="clause-num">4.1</span>The fees for this Agreement are calculated based on the cooperation scenario confirmed by both parties and shall be paid in three installments:
+      </div>
+
+      <div class="payment-scenario">
+        <h4>Scenario 1: Full Acceptance + Confirmation of Long-Term Cooperation (Total Fee $1,800 USD)</h4>
+        <table>
+          <thead><tr><th>Installment</th><th>Timing</th><th>Amount</th></tr></thead>
+          <tbody>
+            <tr><td>First Installment (30%)</td><td>Upon signing</td><td>$540 USD</td></tr>
+            <tr><td>Second Installment (30%)</td><td>Within 3 working days after full acceptance of Track B</td><td>$540 USD</td></tr>
+            <tr><td>Third Installment (40%)</td><td>Within 3 working days after full acceptance of Track C and formal delivery</td><td>$720 USD</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="payment-scenario">
+        <h4>Scenario 2: Full Acceptance + Clear Decision Not to Continue Cooperation (Total Fee $2,499 USD)</h4>
+        <table>
+          <thead><tr><th>Installment</th><th>Timing</th><th>Amount</th></tr></thead>
+          <tbody>
+            <tr><td>First Installment (30%)</td><td>Upon signing</td><td>$540 USD</td></tr>
+            <tr><td>Second Installment (30%)</td><td>Within 3 working days after full acceptance of Track B</td><td>$540 USD</td></tr>
+            <tr><td>Third Installment</td><td>Within 3 working days after full acceptance of Track C and formal delivery</td><td>Make up the difference to $2,499 ($1,419 USD)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="payment-scenario">
+        <h4>Scenario 3: Delayed Development Schedule and Failure to Pass Full Acceptance</h4>
+        <p style="font-size:9pt;padding:3px 0px;color:var(--color-muted);">The fee is calculated based on $2,499 USD, with deductions made according to the delay compensation clause in Article 6.</p>
+      </div>
+
+      <div class="clause">
+        <span class="clause-num">4.2</span><strong>Deadline for Scenario Confirmation:</strong> The Client must confirm the intention for long-term cooperation (Scenario 1) or notify the decision not to continue cooperation (Scenario 2) in writing <strong>within 3 working days after full acceptance of Track C</strong>. If no written reply is received by the deadline, it will automatically be calculated as Scenario 2, and the final payment will make up the difference to $2,499.
+      </div>
+      <div class="clause">
+        <span class="clause-num">4.3</span><strong>Definition of Long-Term Cooperation:</strong> "Confirmation of long-term cooperation" means that both parties sign a follow-up cooperation agreement for subsequent monthly maintenance, new feature development, or the next project before the scenario confirmation deadline.
+      </div>
+      <div class="clause">
+        <span class="clause-num">4.4</span><strong>Tax Clause:</strong> All amounts are net of taxes (USD). The Developer will provide a W-8BEN form. Upon receipt, the Client shall not deduct US Withholding Tax from the payments under this Agreement.
+      </div>
+      <div class="clause">
+        <span class="clause-num">4.5</span><strong>Remittance Clause:</strong> Payments shall be made in US Dollars (USD) to the Wise account designated by the Developer. All remittance fees shall be borne by the Client, and the actual amount received by the Developer shall not be less than the agreed amount for each installment.
+      </div>
+      <div class="clause">
+        <span class="clause-num">4.6</span><strong>Publishing Fees:</strong> App Store publishing fees (Apple Developer Program annual fee $99 USD, Google Play one-time fee $25 USD) shall be borne by the Client and are not included in the development fees of this Agreement.
+      </div>
+      <div class="clause">
+        <span class="clause-num">4.7</span><strong>Start of Acceptance from Delivery Testing:</strong> For Track C acceptance, the acceptance period begins when the Developer submits the App to TestFlight/Firebase Distribution for delivery testing, or when it passes platform (App Store / Google Play) review. If the App cannot be officially released due to non-developer reasons, such as the Client failing to provide accounts, platform policy changes, or the Client's subjective decision to suspend the launch, it will not affect the progress of Track C acceptance, which will still be calculated as 7 working days from the date of delivery testing or passing the review.
+      </div>
+      <div class="clause">
+        <span class="clause-num">4.8</span><strong>Overdue Payment and Service Suspension:</strong> If the Client fails to pay the full amount for more than 7 calendar days after the payment timing for each installment has arrived, the Developer has the right to suspend all subsequent development, review submission, launch, maintenance, consultation, or ownership transfer services. Starting from the 8th day of delay, the Client shall pay the Developer a late fee (overdue interest) of zero point one percent (0.1%) of the unpaid amount per day.
+      </div>
+      <div class="clause">
+        <span class="clause-num">4.9</span><strong>Withdrawal of Control and Termination:</strong> If the Client's payment is overdue for 14 calendar days, the Developer has the right to unilaterally terminate this Agreement and may revoke the Client's access and Collaborator permissions to the codebase (GitHub Repository) and server (AWS Production) at any time. The Developer is under no obligation to refund any fees already received.
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- ── Article 5 ── -->
+    <section class="article">
+      <h2>ARTICLE 5 | INTELLECTUAL PROPERTY AND CODE HANDOVER</h2>
+      <div class="clause"><span class="clause-num">5.1</span>During development, the copyright of all source code for the System shall be temporarily held by the Developer.</div>
+      <div class="clause"><span class="clause-num">5.2</span>Upon full settlement of the third installment specified in Article 4, all economic rights of the copyright relating to the System's source code shall be fully transferred to the Client, and the Developer shall no longer claim any intellectual property rights.</div>
+      <div class="clause"><span class="clause-num">5.3</span>The GitHub Repository will be created under the Developer's account (or an independent organization fully controlled by the Developer), and the Client will join as a Collaborator. The Developer will have full control over the Repository during development. The complete handover of Repository ownership and control will be executed within 3 working days after the settlement of the third installment.</div>
+      <div class="clause"><span class="clause-num">5.4</span>The transfer of access and ownership to the AWS Production environment will be handed over to the Client within 3 working days after the settlement of the third installment, and the Developer has an obligation to assist in completing the transfer settings.</div>
+      <div class="clause"><span class="clause-num">5.5</span>Third-party service accounts (Stripe, Firebase, Apple Developer, Google Play) used during development are inherently registered under the Client's name, and their ownership will not be affected by this Article.</div>
+      <div class="clause"><span class="clause-num">5.6</span>Technical documentation (API documentation, database Schema descriptions, third-party service setup instructions, system handover instructions) will be submitted concurrently with the acceptance of each track and completely handed over upon formal delivery.</div>
+    </section>
+
+    <hr />
+
+    <!-- ── Article 6 ── -->
+    <section class="article">
+      <h2>ARTICLE 6 | DELAY COMPENSATION</h2>
+      <div class="clause">
+        <span class="clause-num">6.1</span>If the completion of features is delayed by more than <strong>14 calendar days</strong> beyond the milestone timeline due to <strong>reasons attributable to the Developer</strong>, the Client may claim compensation according to the following formula:
+      </div>
+      <div class="formula">Compensation Amount = Amount Paid × (Number of Uncompleted Acceptance Items ÷ Total Number of Acceptance Items) × 50%
+Compensation Cap = 20% of the Amount Paid</div>
+      <div class="clause"><span class="clause-num">6.2</span>Compensation is calculated solely at the time of formal delivery acceptance for Track C and does not accumulate track by track.</div>
+      <div class="clause">
+        <span class="clause-num">6.3</span>The following circumstances shall not be included in the Developer's delay calculation and will not trigger compensation under this Article:
+      </div>
+      <ul class="clause-list">
+        <li>App Store / Google Play review waiting periods or platform rejection periods</li>
+        <li>Delays caused by the Client's failure to provide necessary resources, accounts, or access permissions on time</li>
+        <li>Delays in payment functions caused by the failure to complete Stripe KYC verification on time</li>
+        <li>Force majeure events</li>
+      </ul>
+    </section>
+
+    <hr />
+
+    <!-- ── Article 7 ── -->
+    <section class="article pb-before">
+      <h2>ARTICLE 7 | CONFIDENTIALITY OBLIGATIONS</h2>
+      <div class="clause"><span class="clause-num">7.1</span>Both parties bear confidentiality obligations regarding the business logic, user data structure, system architecture, financial information, and other project-related confidential information learned during the cooperation period.</div>
+      <div class="clause"><span class="clause-num">7.2</span>The confidentiality obligation remains fully effective after the termination or expiration of this Agreement, with no time limit.</div>
+      <div class="clause">
+        <span class="clause-num">7.3</span>The following information is not bound by the confidentiality obligations in this Article:
+      </div>
+      <ul class="clause-list">
+        <li>Information that was already public before exposure</li>
+        <li>Information legally provided by a third party without confidentiality obligations</li>
+        <li>Information required to be disclosed by law or orders from competent authorities</li>
+      </ul>
+    </section>
+
+    <hr />
+
+    <!-- ── Article 8 ── -->
+    <section class="article">
+      <h2>ARTICLE 8 | GENERAL PROVISIONS</h2>
+      <div class="clause"><span class="clause-num">8.1</span><strong>Governing Law:</strong> This Agreement is governed by the laws of the Republic of China (Taiwan).</div>
+      <div class="clause"><span class="clause-num">8.2</span><strong>Dispute Resolution:</strong> Any disputes arising between the parties regarding this Agreement shall primarily be resolved through amicable negotiation. If negotiations fail, both parties agree to submit to the jurisdiction of the courts of Taiwan, Republic of China, as the court of first instance.</div>
+      <div class="clause"><span class="clause-num">8.3</span><strong>Document Validity and Order of Precedence:</strong> The main text of this Agreement and Appendix A, Appendix B, and Appendix C jointly constitute the complete basis for cooperation between both parties and have equal legal effect. If there is a conflict between the documents, the provisions in the main text of this Agreement shall prevail.</div>
+      <div class="clause"><span class="clause-num">8.4</span><strong>Amendment Clause:</strong> Any amendment to this Agreement must be agreed upon in writing by both parties before taking effect; oral agreements are invalid.</div>
+      <div class="clause"><span class="clause-num">8.5</span><strong>Severability:</strong> If any provision of this Agreement is determined to be invalid or unenforceable, it shall not affect the validity of the remaining provisions.</div>
+      <div class="clause"><span class="clause-num">8.6</span><strong>Entire Agreement:</strong> This Agreement supersedes all prior oral or written communications and agreements between both parties regarding this project.</div>
+    </section>
+
+    <hr />
+
+    <!-- ── Article 9 / Signatures ── -->
+    <section class="signature-section pb-before">
+      <h2 style="font-family:var(--font-sans);font-size:10pt;font-weight:700;color:var(--color-accent);letter-spacing:.1em;border-left:3px solid var(--color-accent);padding-left:6px;margin-bottom:5mm;">ARTICLE 9 | SIGNATURE</h2>
+      <p style="font-size:9pt;color:var(--color-muted);margin-bottom:5mm;">Both parties have read and understood all the terms of this Agreement and the contents of all appendices and agree to be bound by them.</p>
+
+      <div class="clause" style="margin-bottom:3mm;">
+        <span class="clause-num">9.1</span><strong>Method of Signing:</strong> This Agreement is signed electronically via the Dropbox Sign platform. The signing invitation for the Client is sent to the company email (hello@motise.net) and must be completed by the signatory Ding Ding personally. An electronic signature received and completed via the company email has the same legal effect as a handwritten signature.
+      </div>
+      <div class="clause" style="margin-bottom:6mm;">
+        <span class="clause-num">9.2</span><strong>Time of Signing Completion:</strong> After both parties have completed the electronic signatures, the timestamps and signing records automatically generated by the Dropbox Sign system shall serve as evidence of the entry into force of this Agreement.
+      </div>
+
+      <div class="sig-grid">
+        <div class="sig-block">
+          <h4>Client</h4>
+          <div class="sig-field"><span>Company Name:</span><span>Motise Inc</span></div>
+          <div class="sig-field"><span>Signatory:</span><span>Ding Ding (Head of Operations)</span></div>
+          <div class="sig-field"><span>Signing Email:</span><span class="sig-line" style="width: 200px; display: inline-block;"></span></div>
+          <div class="sig-field" style="align-items:flex-start;flex-direction:column;gap:2px;">
+            <span>Electronic Signature Timestamp:</span>
+            <!-- <span style="font-size:var(--size-xs);color:#aaa;font-style:italic;">(Automatically recorded by the Dropbox Sign system)</span> -->
+          </div>
+        </div>
+        <div class="sig-block">
+          <h4>Developer</h4>
+          <div class="sig-field"><span>Name:</span><span>HUANG CONG REN</span></div>
+          <div class="sig-field"><span>Contact Email:</span><span class="sig-line" style="width: 200px; display: inline-block;"></span></div>
+          <div class="sig-field" style="align-items:flex-start;flex-direction:column;gap:2px;">
+            <span>Electronic Signature Timestamp:</span>
+            <!-- <span style="font-size:var(--size-xs);color:#aaa;font-style:italic;">(Automatically recorded by the Dropbox Sign system)</span> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Footer ── -->
+    <footer class="doc-footer">
+      This Agreement, together with Appendix A, Appendix B, and Appendix C, consists of four documents. Both parties shall each hold one electronic copy, which shall have equal validity.
+    </footer>
+  </div>
+
+  <!-- ==========================================
+       SECTION 2: APPENDIX A (附錄 A)
+       ========================================== -->
+  <div class="page-wrapper">
+    <div class="article">
+      <h1>Appendix A | Project Scope and Technical Specification</h1>
+      <p>Agreement No.: MTS-2026-001
+      <br>Version: v1.0
+      <br>Date: June 09, 2026</p>
+      <p>Parties: Motise Inc (Client) / HUANG CONG REN (Developer)</p>
+      <hr>
+      <h2>A-1 Project Overview</h2>
+      <p>This document defines the development scope, functional modules, and technical specifications for version 1.0 of the &quot;Course Booking Mobile Application&quot; (hereinafter referred to as the &quot;System&quot;), serving as the technical basis for cooperation between both parties.</p>
+      <hr>
+      <h2>A-2 System Module List</h2>
+      <p>The following modules are entirely included in the development scope for v1.0.</p>
+      <table class="module-table">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Module Name</th>
+            <th>Description</th>
+            <th>Platform</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>M-01</td>
+            <td>Student App Interface</td>
+            <td>Course browsing, booking, online payment, QR Code check-in, push notification reception</td>
+            <td>iOS · Android</td>
+          </tr>
+          <tr>
+            <td>M-02</td>
+            <td>Teacher App Interface</td>
+            <td>Assigned course viewing, student list management, QR Code scanning for attendance verification</td>
+            <td>iOS · Android</td>
+          </tr>
+          <tr>
+            <td>M-03</td>
+            <td>Web-based Admin Panel</td>
+            <td>Course management, member management, order inquiry, attendance record inquiry</td>
+            <td>Web</td>
+          </tr>
+          <tr>
+            <td>M-04</td>
+            <td>Account Authentication</td>
+            <td>Email registration/login, Google OAuth, Apple Sign-In, mobile number binding</td>
+            <td>All Platforms</td>
+          </tr>
+          <tr>
+            <td>M-05</td>
+            <td>Online Payment Integration</td>
+            <td>Stripe Payment Intent, Webhook order status sync, payment failure handling, duplicate payment prevention</td>
+            <td>App · Web</td>
+          </tr>
+          <tr>
+            <td>M-06</td>
+            <td>Push Notifications</td>
+            <td>Firebase FCM course reminders (24 hours and 1 hour before start), rush booking alerts</td>
+            <td>App</td>
+          </tr>
+          <tr>
+            <td>M-07</td>
+            <td>Infrastructure</td>
+            <td>AWS Lightsail Node.js Instance, PostgreSQL Managed Database, Object Storage</td>
+            <td>Cloud</td>
+          </tr>
+          <tr>
+            <td>M-08</td>
+            <td>Company Website Landing Page</td>
+            <td>Single-page Motise Inc website, deployed at motise.net, serving as a prerequisite for Apple Developer organization account approval</td>
+            <td>Web</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <h2>A-3 v1.0 Detailed Functions</h2>
+      <h3>A-3-1 Accounts and Roles</h3>
+      <ul>
+        <li>Supports three login methods: Email / Password, Google OAuth, Apple Sign-In (including Face ID / Touch ID).</li>
+        <li>Supports independent mobile number binding (not a login method, functions as additional account info).</li>
+        <li>System roles are divided into three levels: Student, Teacher, and Admin.</li>
+        <li>API access permissions for each role are independent; cross-role access returns a 403 error.</li>
+      </ul>
+      <h3>A-3-2 Course Features</h3>
+      <ul>
+        <li>Course list display: Name, time, price, remaining slots; unlisted courses are not displayed.</li>
+        <li>Course detail page: Full description, location, quota, instructor name, and personal introduction.</li>
+        <li>Slot locking: Concurrent bookings will not exceed capacity; booking button disabled when full.</li>
+        <li>Booking deadline: Booking button automatically disabled after the deadline has passed.</li>
+        <li>My Courses page: Three categories: Booked, Purchased, and History.</li>
+      </ul>
+      <h3>A-3-3 Payment Process</h3>
+      <ul>
+        <li>Create payment requests via Stripe Payment Intent.</li>
+        <li>Webhook automatically updates order status upon successful payment.</li>
+        <li>Display clear error messages upon payment failure; course will not be unlocked.</li>
+        <li>Purchased courses will not show the purchase button to prevent duplicate payments.</li>
+        <li>Display cancellation policy terms before purchase; users must check to agree before making payment.</li>
+      </ul>
+      <h3>A-3-4 QR Code Check-in</h3>
+      <ul>
+        <li>Students who have booked can view and present their unique QR Code from the course card.</li>
+        <li>QR Code is bound to the student&#39;s account and the course; it automatically expires 15 minutes after the course starts.</li>
+        <li>The teacher interface provides a camera scanning entrance; scanning displays student name, course info, and attendance status.</li>
+        <li>Scanning an already verified QR Code will display &quot;Already Checked-in&quot; and will not double-count.</li>
+        <li>Scanning an invalid or expired QR Code displays a clear error message.</li>
+      </ul>
+      <h3>A-3-5 Admin Panel (Web-based)</h3>
+      <ul>
+        <li>Course management: Add, modify, list, unlist; listed courses appear instantly on the front end.</li>
+        <li>Member management: Query members, assign or remove teacher roles, deactivate accounts.</li>
+        <li>Order inquiry: Student name, course name, payment status, amount.</li>
+        <li>Attendance records: Attendance lists and check-in statuses for each course.</li>
+      </ul>
+      <h3>A-3-6 Push Notifications</h3>
+      <ul>
+        <li>Course reminders: Sent 24 hours and 1 hour before the start of a booked course.</li>
+        <li>Rush booking alerts: Users can set rush alerts for specific courses and receive a push notification before booking opens.</li>
+        <li>Users can customize whether to turn on various types of push notifications.</li>
+      </ul>
+      <h3>A-3-7 Company Website Landing Page (M-08)</h3>
+      <ul>
+        <li>Deployed on the Client&#39;s existing domain, motise.net.</li>
+        <li>Content includes: Company name, brief introduction, service description, contact information.</li>
+        <li>Layout design and presentation are determined by the Developer, aiming to meet Apple Developer organization account review requirements.</li>
+        <li>The Client may provide brand assets (Logo, brand colors, copy) for the Developer&#39;s reference; final presentation is at the Developer&#39;s discretion.</li>
+        <li>Once completed, it is the final version; subsequent layout or content modifications are excluded from the scope of this Agreement.</li>
+      </ul>
+      <hr>
+      <h2>A-4 Exclusions from v1.0</h2>
+      <p>The following items are explicitly excluded from the development scope of this Agreement and will be separately quoted and planned for subsequent versions:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Refund UI</td>
+            <td>Refund-related functional pages; course purchase term configuration is already included in v1.0.</td>
+          </tr>
+          <tr>
+            <td>Advanced Search/Filtering</td>
+            <td>Advanced course filtering and sorting features.</td>
+          </tr>
+          <tr>
+            <td>Custom Admin App</td>
+            <td>Custom requirements beyond the standard admin panel scope.</td>
+          </tr>
+          <tr>
+            <td>Landing Page Modifications</td>
+            <td>Any layout design or content adjustments after delivery are excluded from this Agreement.</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <h2>A-5 Technical Architecture</h2>
+      <h3>A-5-1 System Layers</h3>
+      <pre><code>┌─────────────────────────────────────────┐
+│         React Native App                │
+│      iOS + Android Mobile Application   │
+└──────────────────┬──────────────────────┘
+                   ↕ HTTPS / REST API
+┌─────────────────────────────────────────┐
+│      Node.js — AWS Lightsail Instance   │
+│      Backend API and Business Logic     │
+└──────────────────┬──────────────────────┘
+                   ↕
+┌─────────────────────────────────────────┐
+│      PostgreSQL                         │
+│      AWS Lightsail Managed Database     │
+│      + Lightsail Object Storage         │
+└─────────────────────────────────────────┘
+
+Third-party Integrations
+├── Stripe          Online Payments
+├── Firebase FCM    Push Notifications
+├── Apple OAuth     Apple Sign-In
+└── Google OAuth    Google Sign-In
+</code></pre>
+      <h3>A-5-2 Technology Stack</h3>
+      <table class="tech-table">
+        <thead>
+          <tr>
+            <th>Technology</th>
+            <th>Purpose</th>
+            <th>Rationale</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>React Native</td>
+            <td>iOS / Android App</td>
+            <td>Single codebase supports both platforms, lowering long-term maintenance costs.</td>
+          </tr>
+          <tr>
+            <td>Node.js</td>
+            <td>Backend API and Logic</td>
+            <td>Unified JavaScript across frontend and backend, lowering hiring barriers for maintenance.</td>
+          </tr>
+          <tr>
+            <td>PostgreSQL</td>
+            <td>Relational Database</td>
+            <td>Mature and stable; Lightsail provides managed services avoiding manual operations.</td>
+          </tr>
+          <tr>
+            <td>AWS Lightsail</td>
+            <td>Cloud Infrastructure</td>
+            <td>Fixed monthly fee (approx. $25 USD/mo), predictable costs.</td>
+          </tr>
+          <tr>
+            <td>Stripe</td>
+            <td>Online Payments</td>
+            <td>Industry standard, high compliance, mature API.</td>
+          </tr>
+          <tr>
+            <td>Firebase FCM</td>
+            <td>Push Notifications</td>
+            <td>Supports both iOS / Android, generous free tier.</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>A-5-3 Core Database Tables</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Table</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>users</td>
+            <td>User accounts, roles, mobile numbers</td>
+          </tr>
+          <tr>
+            <td>courses</td>
+            <td>Course data, capacity, deadlines, listing status</td>
+          </tr>
+          <tr>
+            <td>bookings</td>
+            <td>Booking records, statuses</td>
+          </tr>
+          <tr>
+            <td>orders</td>
+            <td>Order data, Stripe Payment Intent IDs, payment statuses</td>
+          </tr>
+          <tr>
+            <td>attendance</td>
+            <td>QR Code tokens, verification statuses, check-in times</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <h2>A-6 Resources Provided by Client</h2>
+      <h3>Before Kickoff (By June 13, 2026)</h3>
+      <table class="resource-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Delivery Method</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GitHub Repository Setup</td>
+            <td>Created and hosted under Developer&#39;s account, inviting Client as Viewer (ownership transferred upon final payment).</td>
+          </tr>
+          <tr>
+            <td>AWS Lightsail Access</td>
+            <td>Provide IAM user account or invite as Lightsail Administrator.</td>
+          </tr>
+          <tr>
+            <td>Google Play Console Access</td>
+            <td>Add as Release Manager.</td>
+          </tr>
+          <tr>
+            <td>Stripe Account API Keys</td>
+            <td>Client creates and provides them (KYC is a legal requirement).</td>
+          </tr>
+          <tr>
+            <td>motise.net Domain Access</td>
+            <td>Provide DNS management access or assist with DNS configuration.</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>Before Track B Kickoff (By June 23, 2026)</h3>
+      <table class="resource-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Delivery Method</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Firebase Project Access</td>
+            <td>Add Developer as Editor in Firebase Console.</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>Landing Page Assets (Provide as soon as possible after first payment)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Brand Assets</td>
+            <td>Logo, brand color codes (if any); if not provided, Developer will decide.</td>
+          </tr>
+          <tr>
+            <td>Company Copy</td>
+            <td>Company profile, service description, contact info; if not provided, Developer will draft based on review needs.</td>
+          </tr>
+        </tbody>
+      </table>
+      <blockquote>
+        <p>⚠️ Failure to provide Landing Page assets will not affect the development schedule. The Developer will independently determine content and layout based on review requirements; once completed, it will be the final version.</p>
+      </blockquote>
+      <h3>Before Launch and Submission (Before Track C Kickoff, Target July 07, 2026)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Apple Developer Team Access</td>
+            <td>Add as App Manager in App Store Connect (Requires organization account to be activated first).</td>
+          </tr>
+          <tr>
+            <td>App Icon</td>
+            <td>1024 × 1024 PNG format.</td>
+          </tr>
+          <tr>
+            <td>Privacy Policy URL</td>
+            <td>Notion page or any public URL.</td>
+          </tr>
+          <tr>
+            <td>Sample Course Data</td>
+            <td>Used for testing and demonstration.</td>
+          </tr>
+          <tr>
+            <td>Test Accounts (5 Sets)</td>
+            <td>3 Students, 1 Teacher, 1 Admin.</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <p class="appendix-disclaimer"><em>Appendix A has the same legal effect as the Main Agreement (MTS-2026-001). The signing of the Main Agreement by both parties is deemed as confirmation of the contents of this Appendix.</em></p>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       SECTION 3: APPENDIX B (附錄 B)
+       ========================================== -->
+  <div class="page-wrapper">
+    <div class="article">
+      <h1>Appendix B | Development Schedule</h1>
+      <p>Agreement No.: MTS-2026-001
+      <br>Version: v1.0
+      <br>Date: June 09, 2026</p>
+      <p>Parties: Motise Inc (Client) / HUANG CONG REN (Developer)</p>
+      <hr>
+      <h2>B-1 Schedule Prerequisites</h2>
+      <p>All timelines in this appendix are contingent upon the full completion of the following conditions by the specified dates:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Prerequisite</th>
+            <th>Deadline</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Client provides all necessary access permissions</td>
+            <td>2026/06/13</td>
+            <td>See Appendix A, Section A-6 (Excluding Apple org access)</td>
+          </tr>
+          <tr>
+            <td>motise.net domain access provision</td>
+            <td>2026/06/13</td>
+            <td>DNS management access or assistance with DNS config, prerequisite for Landing Page deployment</td>
+          </tr>
+          <tr>
+            <td>Stripe Account KYC application initiation</td>
+            <td>Within 3 working days after receipt of first payment</td>
+            <td>KYC takes 3–5 working days, must be completed by the Client personally, Developer cannot act as a proxy</td>
+          </tr>
+          <tr>
+            <td>Apple Developer Organization Account Activation (including D-U-N-S Number issuance)</td>
+            <td>2026/07/07</td>
+            <td>Prerequisite for Track C review submission. D-U-N-S issuance takes 5–30 working days, and Apple account review time is outside Developer&#39;s control. Submission delays due to issuance delays are not considered Developer&#39;s liability.</td>
+          </tr>
+          <tr>
+            <td>Google Play Console Organization Account Activation</td>
+            <td>2026/06/13</td>
+            <td>Review times for newly established companies vary. Submission delays due to Google review delays are not considered Developer&#39;s liability.</td>
+          </tr>
+        </tbody>
+      </table>
+      <blockquote>
+        <p>⚠️ For any delays in prerequisites, milestones and delivery dates will be proportionally postponed, and such delays are not considered the Developer&#39;s liability.</p>
+      </blockquote>
+      <hr>
+      <h2>B-1-1 Preliminary Work | Landing Page</h2>
+      <p><strong>Nature:</strong> Preliminary required work before main development, not attached to any acceptance track.
+      <br><strong>Purpose:</strong> Ensure motise.net has a complete company information page, acting as a prerequisite for Apple Developer organization account approval.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Timing</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Start Time</td>
+            <td>After the first installment ($540 USD) is fully received</td>
+          </tr>
+          <tr>
+            <td>Completion Deadline</td>
+            <td>Within <strong>3 working days</strong> after receipt of payment</td>
+          </tr>
+          <tr>
+            <td>Acceptance Method</td>
+            <td>motise.net is browsable, content meets Apple review requirements (See Appendix C P-01)</td>
+          </tr>
+        </tbody>
+      </table>
+      <blockquote>
+        <p>After the Landing Page is completed, the Client should immediately initiate the Apple Developer organization account application process to minimize overall schedule delays caused by D-U-N-S issuance wait times.</p>
+      </blockquote>
+      <hr>
+      <h2>B-2 Key Milestones</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Milestone</th>
+            <th>Target Date</th>
+            <th>Acceptance Track</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>M1</td>
+            <td>Project Kickoff (All access granted)</td>
+            <td>2026/06/13</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>M2</td>
+            <td>DB Schema + API Skeleton Complete</td>
+            <td>2026/06/18</td>
+            <td>Track A</td>
+          </tr>
+          <tr>
+            <td>M3</td>
+            <td>Auth System Complete</td>
+            <td>2026/06/20</td>
+            <td>Track A</td>
+          </tr>
+          <tr>
+            <td>M4</td>
+            <td>Course Features + Stripe Integration Complete</td>
+            <td>2026/06/27</td>
+            <td>Track A</td>
+          </tr>
+          <tr>
+            <td>M5</td>
+            <td>QR Code + Push + Admin Panel Complete</td>
+            <td>2026/07/04</td>
+            <td>Track B</td>
+          </tr>
+          <tr>
+            <td>M6</td>
+            <td>TestFlight Testing + Bug Fixes Complete</td>
+            <td>2026/07/10</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>M7</td>
+            <td>iOS + Android Simultaneous Submission</td>
+            <td>2026/07/11</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>M8</td>
+            <td>iOS / Android Official Launch (Target)</td>
+            <td>2026/07/22</td>
+            <td>Track C Opens</td>
+          </tr>
+          <tr>
+            <td>M9</td>
+            <td>Formal Project Delivery</td>
+            <td>2026/08/04</td>
+            <td>Track C Complete</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <h2>B-3 Development Track Description</h2>
+      <h3>Track A | Backend and Infrastructure (6/13 – 6/27)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Architecture + Env Setup</td>
+            <td>AWS Lightsail Node.js Instance, PostgreSQL Setup</td>
+          </tr>
+          <tr>
+            <td>DB Schema</td>
+            <td>5 core tables: users, courses, bookings, orders, attendance</td>
+          </tr>
+          <tr>
+            <td>Auth System</td>
+            <td>Email / Google / Apple Sign-In, JWT, Role Permissions (Student / Teacher / Admin)</td>
+          </tr>
+          <tr>
+            <td>Course CRUD API</td>
+            <td>Create, read, update, unlist, capacity, and deadline management</td>
+          </tr>
+          <tr>
+            <td>Booking Logic API</td>
+            <td>Concurrent capacity locking, booking deadline controls</td>
+          </tr>
+          <tr>
+            <td>Stripe Integration</td>
+            <td>Payment Intent creation, Webhook order status updates</td>
+          </tr>
+          <tr>
+            <td>QR Code API</td>
+            <td>Token generation &amp; binding, 15-min expiration, verification API</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>Track B | Frontend App and Web-based Admin (6/23 – 7/4)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Course List + Detail Page</td>
+            <td>Listed course display, remaining slots, instructor info</td>
+          </tr>
+          <tr>
+            <td>Booking + Purchase Flow</td>
+            <td>Stripe UI integration, payment failure handling, terms checkbox</td>
+          </tr>
+          <tr>
+            <td>QR Code Display + Scan</td>
+            <td>Student presentation, teacher scanning/verification, expiration alerts</td>
+          </tr>
+          <tr>
+            <td>Push Notifications</td>
+            <td>Firebase FCM course reminders, rush booking alert setup</td>
+          </tr>
+          <tr>
+            <td>Web-based Admin</td>
+            <td>Course listing/unlisting, member management, order inquiry, attendance records</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>Track C | Testing, Submission, and Launch (7/7 – 8/4)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>TestFlight + Firebase Dist</td>
+            <td>iOS / Android E2E testing</td>
+          </tr>
+          <tr>
+            <td>Bug Fixes</td>
+            <td>Fix issues discovered during testing</td>
+          </tr>
+          <tr>
+            <td>App Store Asset Prep</td>
+            <td>Screenshots, descriptions, Privacy Policy</td>
+          </tr>
+          <tr>
+            <td>iOS + Android Submission</td>
+            <td>Simultaneous submission on 7/11</td>
+          </tr>
+          <tr>
+            <td>Review Rejection Handling</td>
+            <td>Metadata rejections: fixed within 2 working days; Functional rejections: fixed within 5 working days</td>
+          </tr>
+          <tr>
+            <td>Official Launch</td>
+            <td>Target 7/22, includes 11-day Apple review buffer (7/11–7/22)</td>
+          </tr>
+          <tr>
+            <td>Post-launch Maintenance + Bug Fixes</td>
+            <td>7/22 – 8/4</td>
+          </tr>
+          <tr>
+            <td>Tech Docs + Complete Code Handover</td>
+            <td>8/4</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <!-- <h2>B-4 Schedule Overview (Gantt Chart)</h2>
+      <pre><code>              W1       W2       W3       W4       W5       W6       W7       W8
+              6/9      6/16     6/23     6/30     7/7      7/14     7/21     7/28
+              ────────────────────────────────────────────────────────────────────
+
+Track A · Backend &amp; Infrastructure
+Arch Design + Env Setup      [=]
+DB Schema + API Skeleton     [=]
+Auth System                           [=]
+Backend API (Courses+Bookings+Orders) [========]
+Stripe Payment + Webhook              [========]
+QR Code Gen + Verification API                [========]
+
+Track B · Frontend App &amp; Admin
+Course List + Detail Page                     [=]
+Booking + Purchase + Stripe UI                [========]
+QR Code Display + Scan + Push                         [=]
+Admin Panel (Courses/Members/Orders)                  [=]
+
+Track C · Testing · Submission · Launch
+TestFlight + E2E + Bug Fix                            [=]
+🍎🤖 iOS + Android Submission                         [7/11]
+Apple / Google Review Pending                                 [////]
+Rejection Handling Buffer                                     [////]
+✅ iOS / Android Official Launch                                      [✓7/22]
+Post-launch Maintenance + Bug Fixes                                   [=======]
+📦 Formal Project Delivery                                                    [✓8/4]
+</code></pre>
+      <hr> -->
+      <h2>B-5 Delay Clause Explanation</h2>
+      <p><strong>Circumstances Not Constituting Developer&#39;s Liability:</strong></p>
+      <ul>
+        <li>App Store / Google Play review waiting times or platform rejection periods.</li>
+        <li>Delays caused by the Client&#39;s failure to provide necessary resources, accounts, or access permissions on time.</li>
+        <li>Delays in payment functions caused by failure to complete Stripe KYC verification on time.</li>
+        <li>Force majeure events (natural disasters, sudden changes in platform policies, etc.).</li>
+      </ul>
+      <p><strong>Conditions for Delay Compensation:</strong></p>
+      <p>If key milestones are delayed by more than 14 calendar days due to reasons attributable to the Developer, starting from the 15th day, 0.5% of the current installment amount will be deducted daily as compensation, capped at 20% of the current installment.</p>
+      <hr>
+      <p class="appendix-disclaimer"><em>Appendix B has the same legal effect as the Main Agreement (MTS-2026-001). The signing of the Main Agreement by both parties is deemed as confirmation of the contents of this Appendix.</em></p>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       SECTION 4: APPENDIX C (附錄 C)
+       ========================================== -->
+  <div class="page-wrapper">
+    <div class="article">
+      <h1>Appendix C | Acceptance Criteria</h1>
+      <p>Agreement No.: MTS-2026-001
+      <br>Version: v1.0
+      <br>Date: June 09, 2026</p>
+      <p>Parties: Motise Inc (Client) / HUANG CONG REN (Developer)</p>
+      <hr>
+      <h2>C-1 Acceptance Principles</h2>
+      <h3>C-1-1 Acceptance Structure</h3>
+      <p>Acceptance is conducted in three tracks, each with an independent time window. Once a track passes acceptance, its items are locked and cannot be challenged in subsequent tracks.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Track</th>
+            <th>Scope</th>
+            <th>Development Period</th>
+            <th>Acceptance Period</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Track A</td>
+            <td>Backend and Infrastructure</td>
+            <td>6/13 – 6/27</td>
+            <td>5 working days after completion</td>
+          </tr>
+          <tr>
+            <td>Track B</td>
+            <td>Frontend App and Web-based Admin</td>
+            <td>6/23 – 7/4</td>
+            <td>5 working days after completion</td>
+          </tr>
+          <tr>
+            <td>Track C</td>
+            <td>Launch and Production Environment</td>
+            <td>7/7 – 8/4</td>
+            <td>7 working days after launch</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>C-1-2 Acceptance Protection Clauses</h3>
+      <ol>
+        <li><strong>Acceptance standards rely on functional behavior.</strong> Interface design must meet the minimum standards of written confirmed design drafts. Rejections based on subjective descriptions (e.g., &quot;feels wrong&quot;) must be accompanied by specific functional issues; otherwise, they are deemed accepted.</li>
+        <li><strong>Failure to reply in writing implies acceptance.</strong> If the Client does not submit written acceptance results within the acceptance period, the track is fully accepted.</li>
+        <li><strong>Weekly meeting confirmation mechanism.</strong> If the Client does not raise written objections within 24 hours after a weekly sync, the stage progress is considered confirmed and cannot be challenged later.</li>
+        <li><strong>Track locking.</strong> Once a track passes acceptance, it is locked and cannot be objected to during subsequent tracks or at formal delivery.</li>
+        <li><strong>New requests quoted separately.</strong> New requirements raised during acceptance are excluded from the current scope and will be quoted separately for the next version.</li>
+        <li><strong>App Store / Google Play Rejection Handling:</strong> Metadata rejections will receive a fixed version within 2 working days; functional rejections will receive a fixed version within 5 working days.</li>
+      </ol>
+      <hr>
+      <h2>C-2 Preliminary Work Acceptance | Landing Page</h2>
+      <p><strong>Nature:</strong> Independent preliminary work, unattached to any track. Locked upon passing, unaffected by subsequent tracks.
+      <br><strong>Deadline:</strong> Within 3 working days after receipt of the first payment.
+      <br><strong>Acceptance Method:</strong> The Client browses motise.net via browser to verify it operates normally.</p>
+      <table class="criteria-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Item</th>
+            <th>Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>P-01</td>
+            <td>Landing Page Launch</td>
+            <td>motise.net is browsable; page contains company name (Motise Inc), service overview, contact info; layout meets Apple Developer org review standards</td>
+          </tr>
+        </tbody>
+      </table>
+      <blockquote>
+        <p><strong>Layout Notes:</strong> Final layout is determined by the Developer based on review needs. The Client may provide brand assets for reference, but it is not mandatory. Post-delivery layout or content modifications are not covered by this Agreement.</p>
+      </blockquote>
+      <p><strong>Preliminary Work Acceptance Result</strong></p>
+      <table>
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Payment Receipt Date</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Deadline</td>
+            <td>3rd working day after payment</td>
+          </tr>
+          <tr>
+            <td>Acceptance Date</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Client Signature</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Notes</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <h2>C-3 Track A Acceptance | Backend and Infrastructure</h2>
+      <p><strong>Development Period: 2026/06/13 – 2026/06/27</strong>
+      <br><strong>Method:</strong> API Documentation + Postman Test Report. The Client does not operate an interface; Developer provides test results for confirmation.</p>
+      <table class="criteria-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Item</th>
+            <th>Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>A-01</td>
+            <td>DB Schema</td>
+            <td>5 core tables (courses, users, bookings, orders, attendance) created matching Appendix A. Method: ER Diagram or screenshot</td>
+          </tr>
+          <tr>
+            <td>A-02</td>
+            <td>AWS Lightsail Env</td>
+            <td>Node.js Instance + PostgreSQL built. Method: Client logs into AWS Console to verify resources</td>
+          </tr>
+          <tr>
+            <td>A-03</td>
+            <td>Auth API</td>
+            <td>Email reg/login, Google OAuth, Apple Sign-In (JWT), phone binding callable. Method: Postman report (200 OK)</td>
+          </tr>
+          <tr>
+            <td>A-04</td>
+            <td>Role Permissions</td>
+            <td>Teacher/Student/Admin have correct access; cross-role returns 403. Method: Postman report</td>
+          </tr>
+          <tr>
+            <td>A-05</td>
+            <td>Course CRUD API</td>
+            <td>Create, read, update, unlist APIs work. Capacity and deadlines stored correctly</td>
+          </tr>
+          <tr>
+            <td>A-06</td>
+            <td>Booking Logic API</td>
+            <td>Concurrent capacity locking works; booking past deadline returns correct error</td>
+          </tr>
+          <tr>
+            <td>A-07</td>
+            <td>Stripe Payment Intent</td>
+            <td>Backend API generates Payment Intent and returns client_secret. Method: Stripe Test Mode / Postman</td>
+          </tr>
+          <tr>
+            <td>A-08</td>
+            <td>Stripe Webhook</td>
+            <td>Successful payment event updates order status. Method: Stripe CLI webhook trigger</td>
+          </tr>
+          <tr>
+            <td>A-09</td>
+            <td>QR Code Gen API</td>
+            <td>Purchased users get a unique token bound to course/account; expires 15 mins after start</td>
+          </tr>
+          <tr>
+            <td>A-10</td>
+            <td>QR Code Verify API</td>
+            <td>Teacher calling verification marks attendance; duplicates show &quot;Already Checked-in&quot;; invalid tokens error</td>
+          </tr>
+        </tbody>
+      </table>
+      <blockquote>
+        <p>⚠️ <strong>Stripe Prerequisite:</strong> Client must start Stripe KYC within 3 working days of the first payment. Delays here will postpone A-07/A-08 acceptance without triggering Developer delay penalties.</p>
+      </blockquote>
+      <p><strong>Track A Acceptance Result</strong></p>
+      <table>
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Acceptance Date</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Client Signature</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Notes</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <h2>C-4 Track B Acceptance | Frontend App and Web Admin</h2>
+      <p><strong>Development Period: 2026/06/23 – 2026/07/04</strong>
+      <br><strong>Method:</strong> Real-device testing via TestFlight (iOS) + Firebase Distribution (Android). The Client operates the full flow.</p>
+      <h3>Authentication</h3>
+      <table class="criteria-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Item</th>
+            <th>Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>B-01</td>
+            <td>Email Login</td>
+            <td>Reg, login, logout work; wrong password shows error</td>
+          </tr>
+          <tr>
+            <td>B-02</td>
+            <td>Google/Apple Login</td>
+            <td>Auth page pops up, successful entry; Apple supports Face ID / Touch ID</td>
+          </tr>
+          <tr>
+            <td>B-03</td>
+            <td>Phone Binding</td>
+            <td>Settings page allows phone binding, shows success status</td>
+          </tr>
+          <tr>
+            <td>B-04</td>
+            <td>Role Interface</td>
+            <td>Student sees Student UI; Teacher sees Teacher UI</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>Course Features</h3>
+      <table class="criteria-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Item</th>
+            <th>Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>B-05</td>
+            <td>Course List</td>
+            <td>Shows listed courses (name, time, price, slots). Test: List 3 courses via admin</td>
+          </tr>
+          <tr>
+            <td>B-06</td>
+            <td>Course Detail</td>
+            <td>Full descriptions, time, location, slots, instructor profile</td>
+          </tr>
+          <tr>
+            <td>B-07</td>
+            <td>Capacity Limits</td>
+            <td>Booking button disabled when full. Test: Set slot=1, verify 2nd user fails</td>
+          </tr>
+          <tr>
+            <td>B-08</td>
+            <td>Booking Deadline</td>
+            <td>Button disables after deadline</td>
+          </tr>
+          <tr>
+            <td>B-09</td>
+            <td>My Courses</td>
+            <td>Booked, Purchased, History display correctly; QR Code viewable</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>Stripe Payments</h3>
+      <table class="criteria-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Item</th>
+            <th>Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>B-10</td>
+            <td>Payment Flow</td>
+            <td>Credit card payment marks course &quot;Purchased&quot;. Test: Stripe 4242 4242 4242 4242</td>
+          </tr>
+          <tr>
+            <td>B-11</td>
+            <td>Payment Failure</td>
+            <td>Failed cards show error, course unlocked. Test: Stripe 4000 0000 0000 0002</td>
+          </tr>
+          <tr>
+            <td>B-12</td>
+            <td>Duplicate Prevention</td>
+            <td>Buy button disappears for purchased courses</td>
+          </tr>
+          <tr>
+            <td>B-13</td>
+            <td>Order Sync</td>
+            <td>Admin panel shows updated order and payment status immediately</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>QR Code Check-in</h3>
+      <table class="criteria-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Item</th>
+            <th>Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>B-14</td>
+            <td>QR Code Display</td>
+            <td>Valid QR Code shown with expiration warning and &quot;Personal use only&quot; notice</td>
+          </tr>
+          <tr>
+            <td>B-15</td>
+            <td>QR Code Expiration</td>
+            <td>Invalidates 15 mins after course start. Test: Set start to +16 mins, verify failure</td>
+          </tr>
+          <tr>
+            <td>B-16</td>
+            <td>Teacher Scan</td>
+            <td>Camera scan shows info, confirms attendance</td>
+          </tr>
+          <tr>
+            <td>B-17</td>
+            <td>Duplicate Scan Guard</td>
+            <td>Scanning an used QR Code shows &quot;Already Checked-in&quot;</td>
+          </tr>
+          <tr>
+            <td>B-18</td>
+            <td>Invalid QR Handling</td>
+            <td>Invalid tokens show clear error messages</td>
+          </tr>
+        </tbody>
+      </table>
+      <h3>Admin Panel (Web-based)</h3>
+      <table class="criteria-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Item</th>
+            <th>Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>B-19</td>
+            <td>Course Management</td>
+            <td>Add, modify, list, unlist courses; reflects on frontend instantly</td>
+          </tr>
+          <tr>
+            <td>B-20</td>
+            <td>Member Management</td>
+            <td>Query members, assign/remove Teacher roles, deactivate</td>
+          </tr>
+          <tr>
+            <td>B-21</td>
+            <td>Order Inquiry</td>
+            <td>Search orders by student, course, status, amount</td>
+          </tr>
+          <tr>
+            <td>B-22</td>
+            <td>Attendance Records</td>
+            <td>View attendance lists and check-in statuses</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>Track B Acceptance Result</strong></p>
+      <table>
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Acceptance Date</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Client Signature</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Notes</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <h2>C-5 Track C Acceptance | Launch and Production</h2>
+      <p><strong>Development Period: 2026/07/07 – 2026/08/04</strong>
+      <br><strong>Method:</strong> Final validation using the official release App (Target acceptance start: 7/22).</p>
+      <table class="criteria-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Item</th>
+            <th>Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>C-01</td>
+            <td>App Store Launch</td>
+            <td>Passed Apple review, downloadable on App Store</td>
+          </tr>
+          <tr>
+            <td>C-02</td>
+            <td>Google Play Launch</td>
+            <td>Passed Google review, downloadable on Google Play</td>
+          </tr>
+          <tr>
+            <td>C-03</td>
+            <td>Course Reminders</td>
+            <td>Push notifications received 24h &amp; 1h prior; toggles work. Test: Send test push</td>
+          </tr>
+          <tr>
+            <td>C-04</td>
+            <td>Rush Alerts</td>
+            <td>&quot;Set Alert&quot; triggers push before booking opens. Test: Limited-time course alert</td>
+          </tr>
+          <tr>
+            <td>C-05</td>
+            <td>AWS Production</td>
+            <td>Node.js + DB deployed fully on AWS. Method: Console access validation</td>
+          </tr>
+          <tr>
+            <td>C-06</td>
+            <td>Privacy &amp; Consent</td>
+            <td>First launch demands privacy policy consent; link works</td>
+          </tr>
+          <tr>
+            <td>C-07</td>
+            <td>Purchase Terms</td>
+            <td>Cancellation policy shown; must check box to pay. Refund UI not in v1.0</td>
+          </tr>
+          <tr>
+            <td>C-08</td>
+            <td>Stability Check</td>
+            <td>Browse → Book → Pay → Check-in runs 3 times without crash (Stripe Live Mode)</td>
+          </tr>
+          <tr>
+            <td>C-09</td>
+            <td>Docs Handover</td>
+            <td>API docs, DB Schema, 3rd-party configs, handover docs complete</td>
+          </tr>
+          <tr>
+            <td>C-10</td>
+            <td>Code Handover</td>
+            <td>GitHub Repo transferred, README complete. Collaborator roles updated</td>
+          </tr>
+        </tbody>
+      </table>
+      <blockquote>
+        <p>⚠️ <strong>App Store and Google Play review times are outside Developer&#39;s control.</strong> Delays non-attributable to code issues will not count as Developer failure. Functional rejections will be fixed until approved.</p>
+      </blockquote>
+      <p><strong>Track C Acceptance Result</strong></p>
+      <table>
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Acceptance Date</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Client Signature</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Notes</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <h2>C-6 Overall Acceptance Summary</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Track</th>
+            <th>Total Criteria</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Preliminary (Landing)</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>Track A</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>Track B</td>
+            <td>22</td>
+          </tr>
+          <tr>
+            <td>Track C</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td><strong>Total</strong></td>
+            <td><strong>43</strong></td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>Final Delivery Confirmation</strong></p>
+      <table>
+        <thead>
+          <tr>
+            <th>Field</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Delivery Date</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Cooperation Scenario</td>
+            <td>☐ Scenario 1 (Long-term, $1,800)　☐ Scenario 2 (One-off, $2,499)</td>
+          </tr>
+          <tr>
+            <td>Client Signature</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Developer Signature</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="appendix-disclaimer"><em>Appendix C has the same legal effect as the Main Agreement (MTS-2026-001). The signing of the Main Agreement by both parties is deemed as confirmation of the contents of this Appendix.</em></p>
+    </div>
+  </div>
+
+</body>
+</html>

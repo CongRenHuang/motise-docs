@@ -81,6 +81,60 @@ css_inject = """
     .criteria-table td:nth-child(3) {
       width: 60% !important;
     }
+    /* A-2 Module Table CSS */
+    .module-table {
+      table-layout: fixed !important;
+      width: 100% !important;
+    }
+    .module-table th:nth-child(1),
+    .module-table td:nth-child(1) {
+      width: 10% !important;
+      white-space: nowrap !important;
+    }
+    .module-table th:nth-child(2),
+    .module-table td:nth-child(2) {
+      width: 25% !important;
+    }
+    .module-table th:nth-child(3),
+    .module-table td:nth-child(3) {
+      width: 45% !important; /* Limit Description column width */
+    }
+    .module-table th:nth-child(4),
+    .module-table td:nth-child(4) {
+      width: 20% !important;
+      white-space: nowrap !important; /* Avoid wrapping iOS · Android */
+    }
+    /* A-5-2 Tech Table CSS */
+    .tech-table {
+      table-layout: fixed !important;
+      width: 100% !important;
+    }
+    .tech-table th:nth-child(1),
+    .tech-table td:nth-child(1) {
+      width: 20% !important;
+      white-space: nowrap !important;
+    }
+    .tech-table th:nth-child(2),
+    .tech-table td:nth-child(2) {
+      width: 25% !important;
+    }
+    .tech-table th:nth-child(3),
+    .tech-table td:nth-child(3) {
+      width: 55% !important; /* Limit Rationale column width */
+    }
+    /* A-6 Resource Table CSS */
+    .resource-table {
+      table-layout: fixed !important;
+      width: 100% !important;
+    }
+    .resource-table th:nth-child(1),
+    .resource-table td:nth-child(1) {
+      width: 45% !important; /* Increase Item column width to prevent wrapping */
+    }
+    .resource-table th:nth-child(2),
+    .resource-table td:nth-child(2) {
+      width: 55% !important; /* Decrease Delivery Method column width */
+    }
 """
 
 prefix = prefix.replace('</style>', css_inject + '</style>')
@@ -106,6 +160,24 @@ for in_file, out_file in files:
     html_body = re.sub(
         r'<table>(\s*<thead>\s*<tr>\s*<th>#</th>)',
         r'<table class="criteria-table">\1',
+        html_body
+    )
+    # Auto-add class="module-table" to tables that start with "No." and "Module Name" headers
+    html_body = re.sub(
+        r'<table>(\s*<thead>\s*<tr>\s*<th>No\.</th>\s*<th>Module Name</th>)',
+        r'<table class="module-table">\1',
+        html_body
+    )
+    # Auto-add class="tech-table" to tables that start with "Technology" header
+    html_body = re.sub(
+        r'<table>(\s*<thead>\s*<tr>\s*<th>Technology</th>)',
+        r'<table class="tech-table">\1',
+        html_body
+    )
+    # Auto-add class="resource-table" to tables that start with "Item" and "Delivery Method" headers
+    html_body = re.sub(
+        r'<table>(\s*<thead>\s*<tr>\s*<th>Item</th>\s*<th>Delivery Method</th>)',
+        r'<table class="resource-table">\1',
         html_body
     )
     

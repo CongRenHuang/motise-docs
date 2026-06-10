@@ -481,6 +481,60 @@
     .criteria-table td:nth-child(3) {
       width: 60% !important;
     }
+    /* A-2 Module Table CSS */
+    .module-table {
+      table-layout: fixed !important;
+      width: 100% !important;
+    }
+    .module-table th:nth-child(1),
+    .module-table td:nth-child(1) {
+      width: 10% !important;
+      white-space: nowrap !important;
+    }
+    .module-table th:nth-child(2),
+    .module-table td:nth-child(2) {
+      width: 25% !important;
+    }
+    .module-table th:nth-child(3),
+    .module-table td:nth-child(3) {
+      width: 45% !important; /* Limit Description column width */
+    }
+    .module-table th:nth-child(4),
+    .module-table td:nth-child(4) {
+      width: 20% !important;
+      white-space: nowrap !important; /* Avoid wrapping iOS · Android */
+    }
+    /* A-5-2 Tech Table CSS */
+    .tech-table {
+      table-layout: fixed !important;
+      width: 100% !important;
+    }
+    .tech-table th:nth-child(1),
+    .tech-table td:nth-child(1) {
+      width: 20% !important;
+      white-space: nowrap !important;
+    }
+    .tech-table th:nth-child(2),
+    .tech-table td:nth-child(2) {
+      width: 25% !important;
+    }
+    .tech-table th:nth-child(3),
+    .tech-table td:nth-child(3) {
+      width: 55% !important; /* Limit Rationale column width */
+    }
+    /* A-6 Resource Table CSS */
+    .resource-table {
+      table-layout: fixed !important;
+      width: 100% !important;
+    }
+    .resource-table th:nth-child(1),
+    .resource-table td:nth-child(1) {
+      width: 45% !important; /* Increase Item column width to prevent wrapping */
+    }
+    .resource-table th:nth-child(2),
+    .resource-table td:nth-child(2) {
+      width: 55% !important; /* Decrease Delivery Method column width */
+    }
 </style>
 </head>
 <body>
@@ -501,7 +555,7 @@ Date: June 09, 2026</p>
 <hr>
 <h2>A-2 System Module List</h2>
 <p>The following modules are entirely included in the development scope for v1.0.</p>
-<table>
+<table class="module-table">
 <thead>
 <tr>
 <th>No.</th>
@@ -666,7 +720,7 @@ Third-party Integrations
 └── Google OAuth    Google Sign-In
 </code></pre>
 <h3>A-5-2 Technology Stack</h3>
-<table>
+<table class="tech-table">
 <thead>
 <tr>
 <th>Technology</th>
@@ -737,7 +791,7 @@ Third-party Integrations
 <hr>
 <h2>A-6 Resources Provided by Client</h2>
 <h3>Before Kickoff (By June 13, 2026)</h3>
-<table>
+<table class="resource-table">
 <thead>
 <tr>
 <th>Item</th>
@@ -766,7 +820,7 @@ Third-party Integrations
 </tr>
 </tbody></table>
 <h3>Before Track B Kickoff (By June 23, 2026)</h3>
-<table>
+<table class="resource-table">
 <thead>
 <tr>
 <th>Item</th>
