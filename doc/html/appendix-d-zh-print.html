@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agreement Document</title>
+  <style>
+    
+    /* ─── Fonts ─── */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500&display=swap');
+
+    :root {
+      --page-width: 210mm;
+      --page-height: 297mm;
+      --margin-top: 25mm;
+      --margin-right: 20mm;
+      --margin-bottom: 25mm;
+      --margin-left: 25mm;
+      --color-text: #1a1a1a;
+      --color-muted: #555;
+      --color-border: #bbb;
+      --color-border-light: #ddd;
+      --color-accent: #1a3a5c;
+      --font-serif: 'Noto Serif TC', 'STSong', '宋體', Georgia, serif;
+      --font-sans: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+      --size-base: 10.5pt;
+      --size-sm: 9pt;
+      --size-xs: 8pt;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #e8e8e8;
+      font-family: var(--font-serif);
+      font-size: var(--size-base);
+      color: var(--color-text);
+      line-height: 1.8;
+    }
+
+    .page-wrapper {
+      max-width: var(--page-width);
+      margin: 32px auto;
+      background: #fff;
+      box-shadow: 0 4px 32px rgba(0,0,0,.18);
+      padding: var(--margin-top) var(--margin-right) var(--margin-bottom) var(--margin-left);
+    }
+
+    .print-btn {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      background: var(--color-accent);
+      color: #fff;
+      border: none;
+      padding: 8px 20px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 4px;
+      letter-spacing: .04em;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    }
+    .print-btn:hover { background: #255a8a; }
+
+    .doc-header {
+      text-align: center;
+      margin-bottom: 10mm;
+      padding-bottom: 6mm;
+      border-bottom: 2px solid var(--color-accent);
+    }
+    .doc-header h1 {
+      font-size: 16pt;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: var(--color-accent);
+      margin-bottom: 3px;
+    }
+    .doc-meta {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      color: var(--color-muted);
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--color-border-light);
+      margin: 6mm 0;
+    }
+
+    .article {
+      margin-bottom: 7mm;
+    }
+    .article h1 {
+      text-align: center;
+      font-size: 16pt;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: var(--color-accent);
+      margin-bottom: 10mm;
+      padding-bottom: 6mm;
+      border-bottom: 2px solid var(--color-accent);
+    }
+    .article h2 {
+      font-family: var(--font-sans);
+      font-size: 10pt;
+      font-weight: 700;
+      color: var(--color-accent);
+      letter-spacing: .1em;
+      border-left: 3px solid var(--color-accent);
+      padding-left: 6px;
+      margin-bottom: 4mm;
+      page-break-after: avoid;
+    }
+    .article h3 {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-top: 6mm;
+      margin-bottom: 2mm;
+    }
+    .article p {
+      font-size: var(--size-base);
+      line-height: 1.85;
+      margin-bottom: 4mm;
+    }
+    .clause {
+      margin-bottom: 2.5mm;
+    }
+    .clause-num {
+      font-weight: 500;
+      color: var(--color-accent);
+      margin-right: 4px;
+    }
+
+    ul, ol {
+      margin-left: 2em;
+      margin-bottom: 4mm;
+      font-size: var(--size-sm);
+      color: var(--color-muted);
+      line-height: 1.75;
+    }
+
+    blockquote {
+      margin: 3mm 0 4mm;
+      padding: 3mm 6mm;
+      border-left: 3px solid var(--color-border);
+      background: #f9f9f9;
+      font-family: var(--font-sans);
+      font-size: var(--size-xs);
+      color: var(--color-muted);
+      line-height: 1.7;
+    }
+
+    pre {
+      background: #f4f4f4;
+      border: 1px solid var(--color-border-light);
+      border-left: 3px solid var(--color-accent);
+      padding: 4mm 6mm;
+      margin: 2mm 0 4mm 0;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: var(--size-sm);
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      margin: 2mm 0 4mm;
+    }
+    table th {
+      background: var(--color-accent);
+      color: #fff;
+      font-weight: 600;
+      padding: 4px 8px;
+      text-align: left;
+      letter-spacing: .04em;
+    }
+    table td {
+      padding: 4px 8px;
+      border-bottom: 1px solid var(--color-border-light);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    table tr:nth-child(even) td { background: #f7f8fa; }
+
+    .formula {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: var(--size-sm);
+      background: #f4f4f4;
+      border: 1px solid var(--color-border-light);
+      border-left: 3px solid var(--color-accent);
+      padding: 4mm 6mm;
+      margin: 2mm 0 3mm 2em;
+      line-height: 1.7;
+      page-break-inside: avoid;
+      white-space: pre-wrap;
+    }
+
+    .sig-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10mm;
+      margin-top: 6mm;
+    }
+    .sig-block {
+      border-top: 1.5px solid var(--color-accent);
+      padding-top: 4mm;
+    }
+    .sig-block h4 {
+      font-family: var(--font-sans);
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 4mm;
+    }
+    .sig-field {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+      margin-bottom: 5mm;
+      color: var(--color-muted);
+    }
+    .sig-field span { white-space: normal; }
+    .sig-field span:first-child {
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .sig-line {
+      flex: 1;
+      border-bottom: 1px solid var(--color-border);
+      min-width: 40px;
+      height: 20px;
+    }
+
+    .appendix-disclaimer {
+      font-size: var(--size-xs);
+      color: var(--color-muted);
+      margin-top: 5mm;
+      font-family: var(--font-sans);
+      text-indent: 0 !important;
+    }
+
+    /* Fix table column wrapping */
+    .criteria-table { table-layout: fixed !important; width: 100% !important; }
+    .criteria-table th:nth-child(1), .criteria-table td:nth-child(1) { width: 10% !important; white-space: nowrap !important; }
+    .criteria-table th:nth-child(2), .criteria-table td:nth-child(2) { width: 30% !important; }
+    .criteria-table th:nth-child(3), .criteria-table td:nth-child(3) { width: 60% !important; }
+
+    .module-table { table-layout: fixed !important; width: 100% !important; }
+    .module-table th:nth-child(1), .module-table td:nth-child(1) { width: 10% !important; white-space: nowrap !important; }
+    .module-table th:nth-child(2), .module-table td:nth-child(2) { width: 25% !important; }
+    .module-table th:nth-child(3), .module-table td:nth-child(3) { width: 45% !important; }
+    .module-table th:nth-child(4), .module-table td:nth-child(4) { width: 20% !important; white-space: nowrap !important; }
+
+    .tech-table { table-layout: fixed !important; width: 100% !important; }
+    .tech-table th:nth-child(1), .tech-table td:nth-child(1) { width: 20% !important; white-space: nowrap !important; }
+    .tech-table th:nth-child(2), .tech-table td:nth-child(2) { width: 25% !important; }
+    .tech-table th:nth-child(3), .tech-table td:nth-child(3) { width: 55% !important; }
+
+    .resource-table { table-layout: fixed !important; width: 100% !important; }
+    .resource-table th:nth-child(1), .resource-table td:nth-child(1) { width: 45% !important; }
+    .resource-table th:nth-child(2), .resource-table td:nth-child(2) { width: 55% !important; }
+
+    @media print {
+      @page { size: A4; margin: 25mm 20mm 25mm 25mm; }
+      @page :first { margin-top: 20mm; }
+      body { background: #fff; font-size: 10pt; color: #000; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page-wrapper { max-width: none; margin: 0; padding: 0; box-shadow: none; }
+      .print-btn { display: none !important; }
+      .pb-before { page-break-before: always; break-before: page; margin-top: 0; }
+      .article h2 { page-break-after: avoid; break-after: avoid; }
+      .party-block, .appendix-section, .payment-scenario, .sig-grid, .formula, .signature-section { page-break-inside: avoid; break-inside: avoid; }
+      thead { display: table-header-group; }
+      tfoot { display: table-footer-group; }
+      tr { page-break-inside: avoid; break-inside: avoid; }
+      p { orphans: 3; widows: 3; }
+      a { text-decoration: none; color: inherit; }
+      .parties { display: grid; }
+    }
+    
+  </style>
+</head>
+<body>
+  <button class="print-btn" onclick="window.print()">Print / Export PDF</button>
+  <div class="page-wrapper">
+    <div class="article">
+<h1>附件 D｜長期合作框架協議</h1>
+<p><strong>Long-Term Collaboration Framework Agreement</strong></p>
+<p>合約編號：MTS-2026-001-LT
+生效日期：2026 年 08 月 04 日
+到期日期：2027 年 08 月 04 日（12 個月）
+日期：2026 年 06 月 09 日</p>
+<p>當事人：Motise Inc.（客戶）／ HUANG CONG REN（開發方）</p>
+<hr>
+<h2>D-1 合作形式與目的</h2>
+<p>雙方同意以「專案制續約」方式進行長期合作。</p>
+<p>本附件不構成任何固定工時、固定月費或持續服務之承諾。
+每個後續專案均須另行定義範疇、時程與報酬，並以獨立之
+工作說明書（Statement of Work，以下簡稱「SOW」）書面確認。</p>
+<p>本附件之簽署，作為主合約情境一（$1,800 USD）折扣條件
+成立之書面依據。</p>
+<hr>
+<h2>D-2 合作期間與週期</h2>
+<p><strong>合作期間：</strong> 2026 年 08 月 04 日 至 2027 年 08 月 04 日，共 12 個月。</p>
+<p>合作期間均分為四個發案週期，各週期如下：</p>
+<table>
+<thead>
+<tr>
+<th>週期</th>
+<th>起始日</th>
+<th>截止日</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>第一週期</td>
+<td>2026/08/04</td>
+<td>2026/11/04</td>
+</tr>
+<tr>
+<td>第二週期</td>
+<td>2026/11/04</td>
+<td>2027/02/04</td>
+</tr>
+<tr>
+<td>第三週期</td>
+<td>2027/02/04</td>
+<td>2027/05/04</td>
+</tr>
+<tr>
+<td>第四週期</td>
+<td>2027/05/04</td>
+<td>2027/08/04</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>D-3 最低發案義務與差額補足機制</h2>
+<div class="clause"><span class="clause-num">3.1</span>客戶於每個發案週期內，須至少完成一份 SOW 之雙方書面
+    簽署（簽署即視為達成，不以開發方實際開始工作為前提）。</div>
+<div class="clause"><span class="clause-num">3.2</span>若客戶於某一發案週期截止日前，未完成任何 SOW 之書面
+    簽署，該週期視為「未達成」，客戶須於該週期截止日後
+    10 個工作天內，支付當期差額補足款項：</div>
+<pre><code>每週期差額補足金額 = $699 USD ÷ 4 = $174.75 USD
+（四捨五入計為 $175 USD）
+</code></pre>
+<div class="clause"><span class="clause-num">3.3</span>差額補足款項支付方式與主合約相同，匯入開發方指定
+    Wise 帳號，匯款手續費由客戶方承擔。</div>
+<div class="clause"><span class="clause-num">3.4</span>差額補足不影響雙方於後續週期繼續合作之權利與義務。
+    每個週期獨立計算，互不累計。</div>
+<div class="clause"><span class="clause-num">3.5</span>若四個週期均達成最低發案義務，差額補足機制全程不觸發，
+    主合約情境一折扣完整有效。</div>
+<hr>
+<h2>D-4 專案啟動流程</h2>
+<p>每個後續專案依以下流程啟動，未完成全部步驟前，
+開發方無義務開始任何工作：</p>
+<p><strong>Step 1｜需求提出</strong>
+客戶以書面提出新專案需求，包含功能描述與預期時程。</p>
+<p><strong>Step 2｜評估與報價</strong>
+開發方於收到需求後 5 個工作天內，提供範疇說明、
+時程估算與報酬報價。</p>
+<p><strong>Step 3｜SOW 確認</strong>
+雙方就 Step 2 報價內容達成共識後，簽署正式 SOW。
+SOW 須包含：專案範疇、交付物清單、時程、報酬金額
+及付款結構。</p>
+<p><strong>Step 4｜啟動</strong>
+SOW 雙方簽署完成後，開發方正式開始工作。</p>
+<hr>
+<h2>D-5 報酬原則</h2>
+<div class="clause"><span class="clause-num">5.1</span>每個專案報酬依實際範疇於 SOW 中獨立議定，
+    不受主合約費用結構影響，亦不受本附件任何條款限制。</div>
+<div class="clause"><span class="clause-num">5.2</span>每份 SOW 之付款結構，參照主合約三期模式（30/30/40）
+    或雙方另行協議之方式執行。</div>
+<div class="clause"><span class="clause-num">5.3</span>每份 SOW 之程式碼所有權移轉條件，
+    參照主合約第五條分階段移轉之邏輯執行。</div>
+<div class="clause"><span class="clause-num">5.4</span>本附件不鎖定任何具體費率、折扣或報價上限，
+    開發方保留對每份 SOW 獨立報價之權利。</div>
+<hr>
+<h2>D-6 非排他聲明</h2>
+<div class="clause"><span class="clause-num">6.1</span>開發方於合作期間保留接受其他客戶專案之權利，
+    不受本附件任何條款限制。</div>
+<div class="clause"><span class="clause-num">6.2</span>客戶於合作期間保留評估其他開發資源之權利，
+    但最低發案義務（D-3）仍須履行。</div>
+<hr>
+<h2>D-7 終止</h2>
+<div class="clause"><span class="clause-num">7.1</span>任一方得於合作期間內，提前 30 個日曆天書面通知
+    終止本附件。</div>
+<div class="clause"><span class="clause-num">7.2</span>終止通知發出時，若有進行中之 SOW，該 SOW 依其
+    自身條款繼續執行至完成，不受終止通知影響。</div>
+<div class="clause"><span class="clause-num">7.3</span>若客戶提前終止本附件，且終止日前已有一個或多個
+    週期被認定為「未達成」，對應之差額補足款項仍須
+    於終止日後 10 個工作天內結清。</div>
+<div class="clause"><span class="clause-num">7.4</span>若客戶提前終止本附件，終止日後之剩餘週期不再
+    計算最低發案義務，亦不觸發剩餘週期之差額補足。</div>
+<hr>
+<h2>D-8 與主合約之關係</h2>
+<div class="clause"><span class="clause-num">8.1</span>本附件與主合約（MTS-2026-001）具同等法律效力，
+    主合約各條款於本附件合作範疇內適用。</div>
+<div class="clause"><span class="clause-num">8.2</span>若本附件未於 2026 年 07 月 25 日前完成雙方書面
+    簽署，主合約自動適用情境二（總費用 $2,499 USD），
+    本附件視為未生效。</div>
+<div class="clause"><span class="clause-num">8.3</span>本附件適用中華民國（台灣）法律。</div>
+<hr>
+<h2>D-9 雙方確認簽署</h2>
+<p>雙方均已閱讀並理解本附件全部條款，同意受其約束。</p>
+<p>&nbsp;</p>
+<p><strong>客戶方</strong></p>
+<p>公司名稱：Motise Inc.</p>
+<p>簽署人：Chiang Ching-Hsuan（Founder / Director）</p>
+<p>簽署信箱：<a href="mailto:hello@motise.net">hello@motise.net</a></p>
+<p>電子簽名時間戳記：<span style="font-size:var(--size-xs);color:#aaa;font-style:italic;"><span style="font-size:var(--size-xs);color:#aaa;font-style:italic;">(由 Dropbox Sign 系統自動記錄)</span></span></p>
+<p>&nbsp;</p>
+<p><strong>開發方</strong></p>
+<p>姓名：HUANG CONG REN</p>
+<p>聯絡信箱：___________________________</p>
+<p>電子簽名時間戳記：<span style="font-size:var(--size-xs);color:#aaa;font-style:italic;"><span style="font-size:var(--size-xs);color:#aaa;font-style:italic;">(由 Dropbox Sign 系統自動記錄)</span></span></p>
+<hr>
+<p class="appendix-disclaimer"><em>本附件連同主合約（MTS-2026-001）及附件 A、B、C，
+共五份文件，雙方各執電子版一份，具同等效力。</em></p>
+
+
+    </div>
+  </div>
+</body>
+</html>
