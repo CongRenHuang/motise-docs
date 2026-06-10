@@ -134,11 +134,17 @@ Post-launch Maintenance + Bug Fixes                                   [=======]
 - App Store / Google Play review waiting times or platform rejection periods.
 - Delays caused by the Client's failure to provide necessary resources, accounts, or access permissions on time.
 - Delays in payment functions caused by failure to complete Stripe KYC verification on time.
+- Delays in submission dates caused by Apple Developer Organization Account D-U-N-S Number issuance delays.
 - Force majeure events (natural disasters, sudden changes in platform policies, etc.).
 
 **Conditions for Delay Compensation:**
 
-If key milestones are delayed by more than 14 calendar days due to reasons attributable to the Developer, starting from the 15th day, 0.5% of the current installment amount will be deducted daily as compensation, capped at 20% of the current installment.
+If functions remain incomplete due to reasons attributable to the Developer, and the milestone time is exceeded by more than 14 calendar days, the Client may calculate compensation according to the following formula. The compensation will only be calculated once during the formal delivery and acceptance of Track C, and will not accumulate across tracks:
+
+```
+Compensation Amount = Paid Amount × (Number of Incomplete Acceptance Items ÷ Total Acceptance Items in Appendix C) × 50%
+Compensation Cap = 20% of the Paid Amount
+```
 
 -----
 

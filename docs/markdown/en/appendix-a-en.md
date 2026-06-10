@@ -82,8 +82,15 @@ The following modules are entirely included in the development scope for v1.0.
 - Deployed on the Client's existing domain, motise.net.
 - Content includes: Company name, brief introduction, service description, contact information.
 - Layout design and presentation are determined by the Developer, aiming to meet Apple Developer organization account review requirements.
-- The Client may provide brand assets (Logo, brand colors, copy) for the Developer's reference; final presentation is at the Developer's discretion.
+- The Client may provide brand assets (Logo, brand color codes (if any); if not provided, the Developer will decide) for the Developer's reference; final presentation is at the Developer's discretion.
 - Once completed, it is the final version; subsequent layout or content modifications are excluded from the scope of this Agreement.
+
+### A-3-8 Privacy Policy & Terms of Service Templates
+
+- The Developer will provide basic English templates (Basic Templates) of the Privacy Policy and Terms of Service that comply with general US regulatory compliance frameworks (GDPR, CCPA basic frameworks) before the end of Track A.
+- The Client shall confirm or provide modifications within 3 working days after receiving the templates; failure to reply within the time limit will be deemed as confirmation of the original templates, and the Developer may directly use them for embedding and deployment.
+- The Developer is responsible for completely embedding, deploying, and linking the confirmed content in the corresponding sections of the Landing Page and the App.
+- The aforementioned templates serve as a reference basis for technical integration purposes, and the Client is solely responsible for confirming final legal compliance. The Client's confirmation of the content is deemed as having conducted its own review and assuming compliance responsibility.
 
 -----
 

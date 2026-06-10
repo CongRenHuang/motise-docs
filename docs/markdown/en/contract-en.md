@@ -37,6 +37,7 @@ This Agreement includes the following appendices, each of which has the same leg
 | Appendix A | Project Scope and Technical Specification | List of functional modules, technical architecture, exclusions from v1.0, and resources to be provided by the Client |
 | Appendix B | Development Schedule | Key milestones, Gantt chart, prerequisites, and explanation of delay clauses |
 | Appendix C | Acceptance Criteria | Three-track acceptance standards, acceptance checklist, and sign-off sections |
+| Appendix D | Long-Term Cooperation Framework Agreement | Project-based renewal, four-cycle outsourcing obligation, and difference make-up mechanism |
 
 -----
 
@@ -47,6 +48,10 @@ This Agreement includes the following appendices, each of which has the same leg
 1.2 The primary modules, detailed functions, and technical specifications included in version 1.0 shall be subject to the provisions in Appendix A.
 
 1.3 Items listed in Section A-4 of Appendix A are explicitly excluded from the development scope of v1.0. Any changes to the scope must be confirmed in writing by both parties before taking effect and will require a separate evaluation of their impact on the schedule and fees.
+
+1.4 **Responsibility for Providing Legal Text:** The Developer agrees to provide a basic English template (Basic Template) of the Privacy Policy and Terms of Service that complies with general US regulatory compliance frameworks (such as GDPR, CCPA basic frameworks) before the end of Track A for the Client's confirmation. The Client shall confirm or provide modifications within 3 working days; failure to reply within the time limit will be deemed as confirmation of the template content, and the Developer may directly use the original template for embedding and deployment. After confirmation by the Client, the Developer is responsible for completely embedding, deploying, and linking it in the corresponding sections of the Landing Page and the App.
+
+1.5 **Legal Compliance Disclaimer:** The Privacy Policy and Terms of Service provided in the preceding section are basic reference templates for technical integration purposes. The Client is solely responsible for confirming their final legal compliance, applicability, and completeness, and should consult qualified legal professionals if necessary. The Developer shall not bear any legal compliance responsibility arising from the content of these texts. The Client's confirmation of the content is deemed as having conducted its own review and assuming compliance responsibility.
 
 -----
 
@@ -108,9 +113,9 @@ This Agreement includes the following appendices, each of which has the same leg
 
 The fee is calculated based on $2,499 USD, with deductions made according to the delay compensation clause in Article 6.
 
-4.2 **Deadline for Scenario Confirmation:** The Client must confirm the intention for long-term cooperation (Scenario 1) or notify the decision not to continue cooperation (Scenario 2) in writing **within 3 working days after full acceptance of Track C**. If no written reply is received by the deadline, it will automatically be calculated as Scenario 2, and the final payment will make up the difference to $2,499.
+4.2 **Deadline for Scenario Confirmation:** The method for the Client to confirm the intention for long-term cooperation (Scenario 1) is to complete the written signing of Appendix D "Long-Term Cooperation Framework Agreement" by both parties **before July 25, 2026**. The completion of signing Appendix D shall be deemed as the establishment of Scenario 1, and the third installment payment shall be calculated according to the Scenario 1 amount ($720 USD). If Appendix D is not signed before July 25, 2026, it will automatically be calculated as Scenario 2, and the final payment will make up the difference to $2,499 USD. A written application for extension must be submitted before July 25, and upon mutual agreement, it may be extended to August 04, 2026 at the latest, with no further extensions.
 
-4.3 **Definition of Long-Term Cooperation:** "Confirmation of long-term cooperation" means that both parties sign a follow-up cooperation agreement for subsequent monthly maintenance, new feature development, or the next project before the scenario confirmation deadline.
+4.3 **Definition of Long-Term Cooperation:** "Confirmation of long-term cooperation" refers to the project-based renewal method agreed upon by both parties under Appendix D "Long-Term Cooperation Framework Agreement," where the written signing of Appendix D is completed before the deadline for scenario confirmation. The specific scope, compensation, and terms of long-term cooperation shall be subject to Appendix D and subsequent individual Statements of Work (SOW).
 
 4.4 **Tax Clause:** All amounts are net of taxes (USD). The Developer will provide a W-8BEN form. Upon receipt, the Client shall not deduct US Withholding Tax from the payments under this Agreement.
 
@@ -118,29 +123,55 @@ The fee is calculated based on $2,499 USD, with deductions made according to the
 
 4.6 **Publishing Fees:** App Store publishing fees (Apple Developer Program annual fee $99 USD, Google Play one-time fee $25 USD) shall be borne by the Client and are not included in the development fees of this Agreement.
 
-4.7 **Start of Acceptance from Delivery Testing:** For Track C acceptance, the acceptance period begins when the Developer submits the App to TestFlight/Firebase Distribution for delivery testing, or when it passes platform (App Store / Google Play) review. If the App cannot be officially released due to non-developer reasons, such as the Client failing to provide accounts, platform policy changes, or the Client's subjective decision to suspend the launch, it will not affect the progress of Track C acceptance, which will still be calculated as 7 working days from the date of delivery testing or passing the review.
+4.7 **Start of Acceptance from Delivery Testing:** For Track C acceptance, the acceptance period begins when the Developer submits the App to TestFlight/Firebase Distribution for delivery testing, or when it passes platform (App Store / Google Play) review. If the App cannot be officially released due to non-developer reasons, such as the Client failing to provide accounts, platform policy changes, or the Client's subjective decision to suspend the launch, it will not affect the progress of Track C acceptance, which will still be calculated as 14 working days from the date of delivery testing or passing the review.
 
-4.8 **Overdue Payment and Service Suspension:** If the Client fails to pay the full amount for more than 7 calendar days after the payment timing for each installment has arrived, the Developer has the right to suspend all subsequent development, review submission, launch, maintenance, consultation, or ownership transfer services. Starting from the 8th day of delay, the Client shall pay the Developer a late fee (overdue interest) of zero point one percent (0.1%) of the unpaid amount per day.
+4.7.1 **Platform Review Buffer:** If the App cannot be officially published on the App Store or Google Play due to reasons not attributable to the Developer (limited to: Client failing to provide a valid Apple / Google Developer account in a timely manner, Client explicitly requesting to postpone launch, or platform rejection not caused by defects in the App code), a buffer period of 14 working days for review and platform communication will be given starting from the date the Developer delivers the complete TestFlight (or equivalent testing environment) and submits it for review to both platforms.
 
-4.9 **Withdrawal of Control and Termination:** If the Client's payment is overdue for 14 calendar days, the Developer has the right to unilaterally terminate this Agreement and may revoke the Client's access and Collaborator permissions to the codebase (GitHub Repository) and server (AWS Production) at any time. The Developer is under no obligation to refund any fees already received.
+4.7.2 **Staged On-Device Acceptance:** If after the aforementioned 14 working days the App still cannot be launched due to the aforementioned Client reasons or platform administrative procedures, both parties shall conduct staged on-device functional acceptance. If the functions meet the test standards in Appendix C, the Client shall pay the third installment (final payment).
+
+4.7.3 **Code Defect Warranty:** If the Client has paid the final installment, and the App's subsequent official launch process is functionally rejected (Functional Rejection) by the platforms due to defects in the "original source code" delivered this time, the Developer is still obligated to fix the code free of charge until review approval. This warranty obligation is valid within 60 calendar days after the final payment is made.
+
+4.7.4 **Platform Policy Changes:** If a functional rejection occurs due to a sudden and major change in platform policies, and such change affects the code logic of the core functions of this project, the Developer agrees to evaluate the feasibility of modifications and actively cooperate. For modifications taking less than 8 hours, the Developer will assist free of charge; for the portion exceeding 8 hours, both parties shall negotiate reasonable compensation and extended development and acceptance schedules separately.
+
+4.8 **Overdue Payment and Service Suspension:** If the Client fails to pay the full amount for more than 7 calendar days after the payment timing for each installment has arrived, the Developer has the right to suspend all subsequent development, review submission, launch, maintenance, consultation, or ownership transfer services. The Client shall pay a late fee on the unpaid amount at a monthly interest rate of one percent (1%, annual rate of 12%) starting from the date of overdue, with portions of a month calculated proportionally on a daily basis.
+
+4.9 **Withdrawal of Control and Termination:** If the Client's payment is overdue for 14 calendar days, the Developer has the right to unilaterally terminate this Agreement and may revoke the Client's access and Collaborator permissions to the codebase (GitHub Repository) and server (AWS Production) at any time, and the Developer is under no obligation to refund any fees already received. However, for the parts of the intellectual property rights that have already been transferred under Section 5.1 of Article 5 due to the receipt of previous installment payments, their ownership status shall not be affected; the Developer may only suspend access permissions but shall not revoke the transferred intellectual property rights.
 
 -----
 
 ## ARTICLE 5 | INTELLECTUAL PROPERTY, CODE HANDOVER AND TERMINATION
 
-5.1 All codes, intellectual property rights, and deliverables generated under this project shall be deemed as "work made for hire" (or equivalent) under applicable copyright laws, and the ownership and copyright thereof shall automatically and unconditionally vest in the Client (Motise Inc.) upon creation.
+5.1 The intellectual property rights of this project shall be transferred in stages according to the development milestones and payment progress, and the transfer conditions for each stage are as follows:
+- Upon full receipt of the first installment payment ($540 USD), the intellectual property rights of all deliverables and codes corresponding to Track A shall be automatically transferred to the Client (Motise Inc.).
+- Upon full receipt of the second installment payment ($540 USD), the intellectual property rights of all deliverables and codes corresponding to Track B shall be automatically transferred to the Client (Motise Inc.).
+- Upon full receipt of the third installment payment, the intellectual property rights of all deliverables and codes corresponding to Track C shall be automatically transferred to the Client (Motise Inc.).
 
-5.2 While the ownership and copyright of the intellectual property are vested in the Client upon creation under Section 5.1, the complete transfer of control, repository ownership, and environment access specified in Sections 5.3 and 5.4 is subject to the Client's full payment of the fees specified in Article 4. The Developer may withhold such physical delivery and transfer of repository ownership if any payments are overdue.
+5.2 Prior to the receipt of the payment for each stage, the intellectual property rights of the deliverables and codes corresponding to that track shall remain with the Developer. The Client shall obtain an exclusive, non-transferable license to use such deliverables during that stage solely for internal business operations, but shall not claim ownership, sub-license, or transfer them to a third party.
 
-5.3 The GitHub Repository will be created under the Developer's account (or an independent organization fully controlled by the Developer), and the Client will join as a Collaborator. The Developer will have full control over the Repository during development. The complete handover of Repository ownership and control will be executed within 3 working days after the settlement of the third installment.
+5.3 **Governing Law Note:** This Agreement is governed by the laws of the Republic of China (Taiwan). The concept of "Work Made for Hire" under US copyright law does not apply to this Agreement. The transfer of intellectual property rights shall automatically take effect by way of assignment upon receipt of each installment payment under Section 5.1 of this Article, in compliance with the Copyright Act of the Republic of China.
 
-5.4 The transfer of access and ownership to the AWS Production environment will be handed over to the Client within 3 working days after the settlement of the third installment, and the Developer has an obligation to assist in completing the transfer settings.
+5.4 The GitHub Repository will be created under the Developer's account (or an independent organization fully controlled by the Developer), and the Client will join as a Collaborator. The Developer will have full control over the Repository during development. The complete handover of Repository ownership and control will be executed within 3 working days after the settlement of the third installment.
 
-5.5 Third-party service accounts (Stripe, Firebase, Apple Developer, Google Play) used during development are inherently registered under the Client's name, and their ownership will not be affected by this Article.
+5.5 The transfer of access and ownership to the AWS Production environment will be handed over to the Client within 3 working days after the settlement of the third installment, and the Developer has an obligation to assist in completing the transfer settings.
 
-5.6 Technical documentation (API documentation, database Schema descriptions, third-party service setup instructions, system handover instructions) will be submitted concurrently with the acceptance of each track and completely handed over upon formal delivery.
+5.6 Third-party service accounts (Stripe, Firebase, Apple Developer, Google Play) used during development are inherently registered under the Client's name, and their ownership will not be affected by this Article.
 
-5.7 **Termination for Convenience:** Either party may terminate this Agreement at any time, for any reason or no reason, upon 14 days’ prior written notice to the other party. Upon termination, the Client shall pay the Developer for all work completed and services rendered proportionally up to the effective date of termination, and the Developer shall deliver the corresponding completed work products to the Client.
+5.7 Technical documentation (API documentation, database Schema descriptions, third-party service setup instructions, system handover instructions) will be submitted concurrently with the acceptance of each track and completely handed over upon formal delivery.
+
+5.8 **Remedies for Breach:** If the Client commits a material breach by failing to make payments as agreed and fails to cure such breach within seven (7) calendar days after written notice from the Developer, the Developer shall have the right to: (1) suspend development work for the current and subsequent stages; (2) suspend delivery of the latest development progress; and (3) seek damages from the Client in accordance with the law. The exercise of the aforementioned rights shall not affect the validity of the transfer of intellectual property rights corresponding to the payments already received.
+
+5.9 **Termination for Convenience:** Either party may terminate this Agreement at any time, for any reason or no reason, upon 14 calendar days’ prior written notice to the other party. Upon termination, the Client shall pay the "Amount Due on Termination Date," calculated as follows:
+
+```
+Amount Due on Termination Date
+= Total Fee of Applicable Scenario
+  × (Number of Acceptance Items Passed as of Termination Date ÷ Total Number of Acceptance Items in Appendix C)
+− Amount Paid
+```
+
+Upon receipt of the aforementioned Amount Due on Termination Date, the Developer shall, within 1 working day, deliver the work results completed as of the termination date to the Client by transferring Repository ownership or granting full access rights. If the calculation of the Amount Due on Termination Date results in zero or a negative number, the Developer is not required to refund any fees received and shall complete the delivery within 1 working day after confirmation. During the notice period, the Developer is under no obligation to develop new features. Before the Amount Due on Termination Date is settled, the intellectual property rights of the corresponding code shall not be transferred.
+
+5.10 **Originality Warranty:** The Developer warrants that the delivered code is original, does not infringe upon any third-party intellectual property rights, and is free of any liens or encumbrances.
 
 -----
 
@@ -224,4 +255,4 @@ Electronic Signature Timestamp: (Automatically recorded by the Dropbox Sign syst
 
 -----
 
-*This Agreement, together with Appendix A, Appendix B, and Appendix C, consists of four documents. Both parties shall each hold one electronic copy, which shall have equal validity.*
+*This Agreement, together with Appendix A, Appendix B, Appendix C, and Appendix D, consists of five documents. Both parties shall each hold one electronic copy, which shall have equal validity.*
