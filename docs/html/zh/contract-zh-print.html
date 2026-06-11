@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agreement Document</title>
+  <style>
+    
+    /* ─── Fonts ─── */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500&display=swap');
+
+    :root {
+      --page-width: 210mm;
+      --page-height: 297mm;
+      --margin-top: 25mm;
+      --margin-right: 20mm;
+      --margin-bottom: 25mm;
+      --margin-left: 25mm;
+      --color-text: #1a1a1a;
+      --color-muted: #555;
+      --color-border: #bbb;
+      --color-border-light: #ddd;
+      --color-accent: #1a3a5c;
+      --font-serif: 'Noto Serif TC', 'STSong', '宋體', Georgia, serif;
+      --font-sans: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+      --size-base: 10.5pt;
+      --size-sm: 9pt;
+      --size-xs: 8pt;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #e8e8e8;
+      font-family: var(--font-serif);
+      font-size: var(--size-base);
+      color: var(--color-text);
+      line-height: 1.8;
+    }
+
+    .page-wrapper {
+      max-width: var(--page-width);
+      margin: 32px auto;
+      background: #fff;
+      box-shadow: 0 4px 32px rgba(0,0,0,.18);
+      padding: var(--margin-top) var(--margin-right) var(--margin-bottom) var(--margin-left);
+    }
+
+    .print-btn {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      background: var(--color-accent);
+      color: #fff;
+      border: none;
+      padding: 8px 20px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 4px;
+      letter-spacing: .04em;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    }
+    .print-btn:hover { background: #255a8a; }
+
+    .doc-header {
+      text-align: center;
+      margin-bottom: 10mm;
+      padding-bottom: 6mm;
+      border-bottom: 2px solid var(--color-accent);
+    }
+    .doc-header h1 {
+      font-size: 16pt;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: var(--color-accent);
+      margin-bottom: 3px;
+    }
+    .doc-meta {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      color: var(--color-muted);
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--color-border-light);
+      margin: 6mm 0;
+    }
+
+    .article {
+      margin-bottom: 7mm;
+    }
+    .article h1 {
+      text-align: center;
+      font-size: 16pt;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: var(--color-accent);
+      margin-bottom: 10mm;
+      padding-bottom: 6mm;
+      border-bottom: 2px solid var(--color-accent);
+    }
+    .article h2 {
+      font-family: var(--font-sans);
+      font-size: 10pt;
+      font-weight: 700;
+      color: var(--color-accent);
+      letter-spacing: .1em;
+      border-left: 3px solid var(--color-accent);
+      padding-left: 6px;
+      margin-bottom: 4mm;
+      page-break-after: avoid;
+    }
+    .article h3 {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-top: 6mm;
+      margin-bottom: 2mm;
+    }
+    .article p {
+      font-size: var(--size-base);
+      line-height: 1.85;
+      margin-bottom: 4mm;
+    }
+    .clause {
+      margin-bottom: 2.5mm;
+    }
+    .clause-num {
+      font-weight: 500;
+      color: var(--color-accent);
+      margin-right: 4px;
+    }
+
+    ul, ol {
+      margin-left: 2em;
+      margin-bottom: 4mm;
+      font-size: var(--size-sm);
+      color: var(--color-muted);
+      line-height: 1.75;
+    }
+
+    blockquote {
+      margin: 3mm 0 4mm;
+      padding: 3mm 6mm;
+      border-left: 3px solid var(--color-border);
+      background: #f9f9f9;
+      font-family: var(--font-sans);
+      font-size: var(--size-xs);
+      color: var(--color-muted);
+      line-height: 1.7;
+    }
+
+    pre {
+      background: #f4f4f4;
+      border: 1px solid var(--color-border-light);
+      border-left: 3px solid var(--color-accent);
+      padding: 4mm 6mm;
+      margin: 2mm 0 4mm 0;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: var(--size-sm);
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      margin: 2mm 0 4mm;
+    }
+    table th {
+      background: var(--color-accent);
+      color: #fff;
+      font-weight: 600;
+      padding: 4px 8px;
+      text-align: left;
+      letter-spacing: .04em;
+    }
+    table td {
+      padding: 4px 8px;
+      border-bottom: 1px solid var(--color-border-light);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    table tr:nth-child(even) td { background: #f7f8fa; }
+
+    .formula {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: var(--size-sm);
+      background: #f4f4f4;
+      border: 1px solid var(--color-border-light);
+      border-left: 3px solid var(--color-accent);
+      padding: 4mm 6mm;
+      margin: 2mm 0 3mm 2em;
+      line-height: 1.7;
+      page-break-inside: avoid;
+      white-space: pre-wrap;
+    }
+
+    .sig-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10mm;
+      margin-top: 6mm;
+    }
+    .sig-block {
+      border-top: 1.5px solid var(--color-accent);
+      padding-top: 4mm;
+    }
+    .sig-block h4 {
+      font-family: var(--font-sans);
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 4mm;
+    }
+    .sig-field {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+      margin-bottom: 5mm;
+      color: var(--color-muted);
+    }
+    .sig-field span { white-space: normal; }
+    .sig-field span:first-child {
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .sig-line {
+      flex: 1;
+      border-bottom: 1px solid var(--color-border);
+      min-width: 40px;
+      height: 20px;
+    }
+
+    .appendix-disclaimer {
+      font-size: var(--size-xs);
+      color: var(--color-muted);
+      margin-top: 5mm;
+      font-family: var(--font-sans);
+      text-indent: 0 !important;
+    }
+
+    /* Fix table column wrapping */
+    .criteria-table { table-layout: fixed !important; width: 100% !important; }
+    .criteria-table th:nth-child(1), .criteria-table td:nth-child(1) { width: 10% !important; white-space: nowrap !important; }
+    .criteria-table th:nth-child(2), .criteria-table td:nth-child(2) { width: 30% !important; }
+    .criteria-table th:nth-child(3), .criteria-table td:nth-child(3) { width: 60% !important; }
+
+    .module-table { table-layout: fixed !important; width: 100% !important; }
+    .module-table th:nth-child(1), .module-table td:nth-child(1) { width: 10% !important; white-space: nowrap !important; }
+    .module-table th:nth-child(2), .module-table td:nth-child(2) { width: 25% !important; }
+    .module-table th:nth-child(3), .module-table td:nth-child(3) { width: 45% !important; }
+    .module-table th:nth-child(4), .module-table td:nth-child(4) { width: 20% !important; white-space: nowrap !important; }
+
+    .tech-table { table-layout: fixed !important; width: 100% !important; }
+    .tech-table th:nth-child(1), .tech-table td:nth-child(1) { width: 20% !important; white-space: nowrap !important; }
+    .tech-table th:nth-child(2), .tech-table td:nth-child(2) { width: 25% !important; }
+    .tech-table th:nth-child(3), .tech-table td:nth-child(3) { width: 55% !important; }
+
+    .resource-table { table-layout: fixed !important; width: 100% !important; }
+    .resource-table th:nth-child(1), .resource-table td:nth-child(1) { width: 45% !important; }
+    .resource-table th:nth-child(2), .resource-table td:nth-child(2) { width: 55% !important; }
+
+    @media print {
+      @page { size: A4; margin: 25mm 20mm 25mm 25mm; }
+      @page :first { margin-top: 20mm; }
+      body { background: #fff; font-size: 10pt; color: #000; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page-wrapper { max-width: none; margin: 0; padding: 0; box-shadow: none; }
+      .print-btn { display: none !important; }
+      .pb-before { page-break-before: always; break-before: page; margin-top: 0; }
+      .article h2 { page-break-after: avoid; break-after: avoid; }
+      .party-block, .appendix-section, .payment-scenario, .sig-grid, .formula, .signature-section { page-break-inside: avoid; break-inside: avoid; }
+      thead { display: table-header-group; }
+      tfoot { display: table-footer-group; }
+      tr { page-break-inside: avoid; break-inside: avoid; }
+      p { orphans: 3; widows: 3; }
+      a { text-decoration: none; color: inherit; }
+      .parties { display: grid; }
+    }
+    
+  </style>
+</head>
+<body>
+  <button class="print-btn" onclick="window.print()">Print / Export PDF</button>
+  <div class="page-wrapper">
+    <div class="article">
+<h1>軟體開發服務合約</h1>
+<p><strong>SOFTWARE DEVELOPMENT SERVICES AGREEMENT</strong></p>
+<p>合約編號：MTS-2026-001
+合約日期：2026 年 06 月 10 日</p>
+<hr>
+<h2>當事人</h2>
+<p><strong>客戶方（以下簡稱「客戶」）</strong></p>
+<p>公司名稱：Motise Inc
+公司類型：C Corporation（登記於美國德拉瓦州）
+登記地址：8 The Green STE R, Dover, Kent, Delaware 19901, USA
+簽約負責人：江青璇 (Founder / Director)
+公司信箱：<a href="mailto:hello@motise.net">hello@motise.net</a>
+授權專案溝通代理人：江青璇 (<a href="mailto:cchiang1124@gmail.com">cchiang1124@gmail.com</a>)</p>
+<blockquote>
+<p>客戶方指定江青璇為本專案授權溝通代理人，代表客戶方進行日常專案溝通、確認需求及提出書面異議。上述代理人之書面確認，對客戶方具有同等約束力。代理人變更須由客戶方以公司信箱（@motise.net）書面通知開發方。</p>
+</blockquote>
+<p><strong>開發方（以下簡稱「開發方」）</strong></p>
+<p>姓名：HUANG CONG REN
+國籍：中華民國（台灣）
+聯絡信箱：<a href="mailto:tzuchihuang0214@gmail.com">tzuchihuang0214@gmail.com</a></p>
+<p>雙方同意依本合約條款，就本合約所載軟體開發服務進行合作。</p>
+<hr>
+<h2>合約附件</h2>
+<p>本合約包含以下附件，各附件與本合約正文具同等法律效力：</p>
+<table>
+<thead>
+<tr>
+<th>附件</th>
+<th>名稱</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>附件 A</td>
+<td>專案範疇與技術規格書</td>
+<td>功能模組清單、技術架構、v1.0 不含項目、客戶須提供資源</td>
+</tr>
+<tr>
+<td>附件 B</td>
+<td>開發時程規劃書</td>
+<td>關鍵里程碑、甘特圖、前置條件、延遲條款說明</td>
+</tr>
+<tr>
+<td>附件 C</td>
+<td>驗收項目文件</td>
+<td>三軌道驗收標準、驗收清單、簽核欄位</td>
+</tr>
+<tr>
+<td>附件 D</td>
+<td>長期合作框架協議</td>
+<td>專案制續約、四週期發案義務、差額補足機制</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>第一條｜專案範疇</h2>
+<div class="clause"><span class="clause-num">1.1</span>開發方同意依附件 A《專案範疇與技術規格書》所載範疇，為客戶開發課程預約行動應用程式（以下簡稱「本系統」）v1.0 版本。</div>
+<div class="clause"><span class="clause-num">1.2</span>v1.0 版本包含之主要模組、功能細項及技術規格，悉依附件 A 之記載為準。</div>
+<div class="clause"><span class="clause-num">1.3</span>附件 A 第 A-4 節所列項目明確不列入 v1.0 開發範疇。任何範疇變更，須雙方以書面確認後方可生效，並另行評估對時程與費用之影響。</div>
+<div class="clause"><span class="clause-num">1.4</span><strong>法律條款文本提供責任：</strong> 開發方同意於軌道 A 結束前，提供符合美國一般合規參考框架（如 GDPR、CCPA 基本架構）之隱私政策（Privacy Policy）與服務條款（Terms of Service）英文基礎範本（Basic Template）供客戶確認。客戶應於 3 個工作天內確認或提供修改內容；逾期未回覆視同確認範本內容，開發方得直接使用原始範本進行嵌入與部署。客戶確認後，開發方負責將其完整嵌入、部署並連動於 Landing Page 及 App 對應區塊。</div>
+<div class="clause"><span class="clause-num">1.5</span><strong>法律合規免責：</strong> 前條所提供之隱私政策與服務條款，係供客戶作為技術整合之參考基礎範本。其最終法律合規性、適用性及完整性，由客戶自行負責確認，必要時應自行諮詢合格法律專業人士。開發方不承擔任何因該等文本內容所生之法律合規責任。客戶確認內容後，視為已自行審查並承擔合規責任。</div>
+<hr>
+<h2>第二條｜時程與里程碑</h2>
+<div class="clause"><span class="clause-num">2.1</span>本系統開發時程依附件 B《開發時程規劃書》執行，目標交付日期為 <strong>2026 年 08 月 04 日</strong>。</div>
+<div class="clause"><span class="clause-num">2.2</span>附件 B 所有時程，以客戶於 <strong>2026 年 06 月 13 日前</strong>提供附件 A 第 A-6 節所列全部必要資源為前提。每延遲提供一週，里程碑與交付日期等比例順延。</div>
+<div class="clause"><span class="clause-num">2.3</span>以下情況不計入開發方延遲責任：</div>
+<ul>
+<li>App Store / Google Play 審核期間及平台退件等待時間</li>
+<li>客戶未如期提供必要資源、帳號或存取權限所造成之延誤</li>
+<li>Stripe KYC 驗證未如期完成所造成之付款功能延遲</li>
+<li>不可抗力事件（天災、平台政策突變等）</li>
+</ul>
+<div class="clause"><span class="clause-num">2.4</span><strong>Stripe 帳號前置條件：</strong> 客戶方須於<strong>本合約簽署完成並收到第一期款後 3 個工作日內</strong>啟動 Stripe 帳號 KYC 申請。KYC 須由客戶本人完成（法律要求，開發方無法代辦）。若未於期限前啟動，Stripe 相關功能開發順延，不視為開發方延遲，亦不觸發第六條延遲賠償條款。</div>
+<hr>
+<h2>第三條｜驗收機制</h2>
+<div class="clause"><span class="clause-num">3.1</span>本系統驗收依附件 C《驗收項目文件》分三個軌道進行，各軌道驗收標準以附件 C 之記載為準。</div>
+<div class="clause"><span class="clause-num">3.2</span>各軌道驗收期內，客戶方未提交書面驗收結果，逾期視同該軌道全數通過。</div>
+<div class="clause"><span class="clause-num">3.3</span>每週同步會議後 24 小時內，客戶方未提出書面異議，視同確認該階段進度，不得於後續驗收時重新提出。</div>
+<div class="clause"><span class="clause-num">3.4</span>各軌道一旦驗收通過，該軌道項目即鎖定，不得於後續軌道或正式交付時重新提出異議。</div>
+<div class="clause"><span class="clause-num">3.5</span>驗收期間提出之新需求，不列入本次驗收範疇，另行評估報價後進入下一版本開發。</div>
+<div class="clause"><span class="clause-num">3.6</span><strong>主觀退件無效：</strong> 客戶方提出之驗收不通過或退件意見，須具備明確之功能性問題說明或與雙方確認之設計規格不符之具體事證。以主觀性描述（如「感覺不對」、「體驗不順暢」等）作為退件理由者，不生退件之效力，仍視同通過。</div>
+<div class="clause"><span class="clause-num">3.7</span><strong>複驗限制與時限：</strong> 針對客戶方於驗收期內提出之書面修改意見清單，開發方完成修正後，客戶方僅能就該清單內原列項目之修正結果進行複驗。客戶方不得於複驗時提出原清單外之新修改意見或重複挑剔，複驗時間以 3 個工作天為限，逾期未提交複驗結果視同全數通過。</div>
+<div class="clause"><span class="clause-num">3.8</span><strong>每週同步會議：</strong> 雙方原則上於每週五 23:00 至翌日（週六）01:00（台灣時間，UTC+8；對應美國太平洋時間週五上午 08:00–10:00）進行線上同步會議，同步專案進度。如遇雙方無法於該時段進行會議，應提前告知並協調改期，但仍應於該週內完成一次同步會議。</div>
+<hr>
+<h2>第四條｜費用與付款</h2>
+<div class="clause"><span class="clause-num">4.1</span>本合約費用依雙方確認之合作情境計算，分三期支付：</div>
+<p><strong>情境一：全數通過驗收 + 確認長期合作（總費用 $1,800 USD）（服務期間：12 個月，自 2026 年 06 月 09 日至 2027 年 06 月 09 日）</strong></p>
+<table>
+<thead>
+<tr>
+<th>期別</th>
+<th>時機</th>
+<th>金額</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>第一期（30%）</td>
+<td>簽約時</td>
+<td>$540 USD</td>
+</tr>
+<tr>
+<td>第二期（30%）</td>
+<td>軌道 B 全數驗收通過後 3 個工作日內</td>
+<td>$540 USD</td>
+</tr>
+<tr>
+<td>第三期（40%）</td>
+<td>軌道 C 全數驗收通過、正式交付完成後 3 個工作日內</td>
+<td>$720 USD</td>
+</tr>
+</tbody></table>
+<p><strong>情境二：全數通過驗收 + 明確不繼續合作（總費用 $2,499 USD）</strong></p>
+<table>
+<thead>
+<tr>
+<th>期別</th>
+<th>時機</th>
+<th>金額</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>第一期（30%）</td>
+<td>簽約時</td>
+<td>$540 USD</td>
+</tr>
+<tr>
+<td>第二期（30%）</td>
+<td>軌道 B 全數驗收通過後 3 個工作日內</td>
+<td>$540 USD</td>
+</tr>
+<tr>
+<td>第三期</td>
+<td>軌道 C 全數驗收通過、正式交付完成後 3 個工作日內</td>
+<td>補足至 $2,499 差額（$1,419 USD）</td>
+</tr>
+</tbody></table>
+<p><strong>情境三：開發時程逾期且未能全數通過驗收</strong></p>
+<p>費用以 $2,499 USD 計算，並依第六條延遲賠償條款扣減。</p>
+<div class="clause"><span class="clause-num">4.2</span><strong>情境確認期限：</strong> 客戶方確認長期合作意願（情境一）之方式，為於 <strong>2026 年 07 月 25 日前</strong>完成附件 D《長期合作框架協議》之雙方書面簽署。完成附件 D 簽署即視為情境一成立，第三期款項依情境一金額（$720 USD）計算。若附件 D 未於 2026 年 07 月 25 日前完成簽署，自動以情境二計算，最終付款補足至 $2,499 美元之差額。書面延期申請須於 7 月 25 日前提出，經雙方同意後最多得延至 2026 年 08 月 04 日，不再另行延長。</div>
+<div class="clause"><span class="clause-num">4.3</span><strong>長期合作定義：</strong> 「確認長期合作」指雙方依附件 D《長期合作框架協議》所定之專案制續約方式，於情境確認期限前完成附件 D 之書面簽署。長期合作之具體範疇、報酬與條款，悉依附件 D 及後續各別工作說明書（SOW）之約定。</div>
+<div class="clause"><span class="clause-num">4.4</span><strong>稅務條款：</strong> 所有金額均為未稅淨額（USD）。開發方將提供 W-8BEN 表格，客戶收到後不得對本合約款項進行美國預扣稅（Withholding Tax）扣減。</div>
+<div class="clause"><span class="clause-num">4.5</span><strong>匯款條款：</strong> 款項以美元（USD）支付至開發方指定 Wise 帳號。所有匯款手續費由客戶方承擔，開發方實收金額不得低於各期合約約定金額。</div>
+<div class="clause"><span class="clause-num">4.6</span><strong>上架費用：</strong> App Store 上架費用（Apple Developer Program 年費 $99 USD、Google Play 一次性 $25 USD）由客戶自行負擔，不列入本合約開發費用。</div>
+<div class="clause"><span class="clause-num">4.7</span><strong>交付測試起算驗收：</strong> 針對軌道 C 驗收，開發方將 App 提交至 TestFlight/Firebase Distribution 進行交付測試，或通過平台（App Store / Google Play）審核後，即視為驗收期起算日。若因客戶方未提供帳號、平台政策變更、或客戶方主觀決定暫緩上線等非開發方原因導致 App 無法對外正式發布，不影響軌道 C 驗收之進行，仍以交付測試或審核通過之日起算 14 個工作天。</div>
+<div class="clause"><span class="clause-num">4.7</span>.1 <strong>平台審核緩衝：</strong> 因不可歸責於開發方之事由（僅限於：客戶未及時提供有效之 Apple / Google 開發者帳號、客戶明示暫緩上架、或非因 App 程式碼缺陷所致之平台拒絕），導致 App 無法於 App Store 或 Google Play 正式公開上架時，自開發方交付完整 TestFlight（或同等測試環境）並提交雙平台審查之日起算，給予 14 個工作天之審查與平台溝通緩衝期。</div>
+<div class="clause"><span class="clause-num">4.7</span>.2 <strong>階段性實機驗收：</strong> 若超過前款 14 個工作天，仍因前述客戶原因或平台行政程序未能上架，雙方應進行階段性實機功能驗收。若功能符合附件 C 之測試標準，客戶應支付第三期尾款。</div>
+<div class="clause"><span class="clause-num">4.7</span>.3 <strong>程式碼缺陷保固：</strong> 若客戶已支付尾款，App 後續正式重啟上架流程時，如因本次交付之「原始程式碼缺陷」遭平台功能性拒絕（Functional Rejection），開發方仍有義務免費修正程式碼至審查通過為止。此保固義務自尾款支付後 60 個日曆天內有效。</div>
+<div class="clause"><span class="clause-num">4.7</span>.4 <strong>平台政策變更：</strong> 若因平台政策突發性重大變更導致功能性退件，且該變更涉及本專案核心功能之程式碼邏輯，開發方同意評估修改可行性並積極配合。修改工時在 8 小時以內者，開發方免費協助；超過 8 小時之部分，雙方另行協議合理報酬及延長之開發與驗收時程。</div>
+<div class="clause"><span class="clause-num">4.8</span><strong>逾期付款與暫停服務：</strong> 各期款項支付時機屆至後，若客戶方逾期超過 7 個日曆天未付清，開發方有權暫停一切後續開發、送審、上線、維護、諮詢或所有權轉移服務。客戶方應自逾期之日起，就未付款項按月息百分之一（1%，年息 12%）計付滯納金，不足一個月者按日比例計算。</div>
+<div class="clause"><span class="clause-num">4.9</span><strong>控制權撤回與終止：</strong> 若客戶方逾期付款達 14 個日曆天，開發方有權單方面終止本合約，並得撤銷客戶方對程式碼庫（GitHub Repository）與伺服器（AWS Production）之存取與 Collaborator 權限，且開發方不負退還已收費用之義務。惟依第五條第 5.1 款已因前期款項到帳而完成著作財產權移轉之部分，其所有權歸屬不受影響，開發方僅得暫停存取權限，不得撤銷已移轉之著作財產權。</div>
+<hr>
+<h2>第五條｜智慧財產權、程式碼移交與終止</h2>
+<div class="clause"><span class="clause-num">5.1</span>本專案著作財產權依開發里程碑與付款進度分階段移轉，各階段移轉條件如下：</div>
+<ul>
+<li>第一期款項（$540 USD）全數到帳後，軌道 A 對應之全部交付物及程式碼之著作財產權，自動移轉予客戶（Motise Inc.）。</li>
+<li>第二期款項（$540 USD）全數到帳後，軌道 B 對應之全部交付物及程式碼之著作財產權，自動移轉予客戶（Motise Inc.）。</li>
+<li>第三期款項全數到帳後，軌道 C 對應之全部交付物及程式碼之著作財產權，自動移轉予客戶（Motise Inc.）。</li>
+</ul>
+<div class="clause"><span class="clause-num">5.2</span>各階段款項到帳前，對應軌道之交付物及程式碼著作財產權仍歸開發方持有。客戶於該階段取得獨家、不可轉讓之使用授權，僅得用於內部營運目的，但不得主張所有權、進行再授權或移轉予第三方。</div>
+<div class="clause"><span class="clause-num">5.3</span><strong>適用法律說明：</strong> 本合約適用中華民國（台灣）法律。美國著作權法之「受雇特定工作著作」（Work Made for Hire）概念於本合約不適用。著作財產權之移轉，依本條第 5.1 款於各期款項到帳時，以讓與方式自動生效，符合中華民國著作權法之規定。</div>
+<div class="clause"><span class="clause-num">5.4</span>GitHub Repository 於客戶帳號（或客戶指定之組織）下建立，開發方以 Collaborator 身分加入並取得 Admin 權限，以利分支保護規則、CI/CD 流程設定及第三方服務（如 Stripe、Firebase）金鑰與權限管理等開發所需操作。</div>
+<div class="clause"><span class="clause-num">5.4</span>.1 於本專案驗收通過並結清尾款前，非經本合約第 5.9 條或其他正式終止程序：</div>
+<ul>
+<li>客戶不得限制或移除開發方之 Admin 權限；開發方亦不得利用 Admin 權限限制客戶之存取權限，或進行刪除、轉移 Repository 等影響專案進行之行為。</li>
+<li>若客戶違反前款規定，視為客戶依第 5.9 條提前終止本合約，客戶仍應依第 5.9 條終止結算公式計算之金額給付開發方，並於違反行為發生日起 10 個工作天內結清。</li>
+<li>若開發方違反前款規定，視為開發方依第 5.9 條提前終止本合作，開發方就終止日後尚未完成之驗收項目無權請求對應之報酬，雙方款項仍依第 5.9 條終止結算公式計算。</li>
+</ul>
+<div class="clause"><span class="clause-num">5.5</span>AWS Production 環境存取權與所有權的移交，將於第三期款結清後 3 個工作日內移交予客戶，開發方有義務協助完成轉移設定。</div>
+<div class="clause"><span class="clause-num">5.6</span>開發期間使用之第三方服務帳號（Stripe、Firebase、Apple Developer、Google Play）本身即登記於客戶名下，其所有權不受本條影響。</div>
+<div class="clause"><span class="clause-num">5.7</span>技術文件（API 文件、資料庫 Schema 說明、第三方服務設定說明、系統交接說明）將於各軌道驗收時同步提交，並於正式交付時完整移交。</div>
+<div class="clause"><span class="clause-num">5.8</span><strong>違約救濟：</strong> 若客戶發生未依約付款之實質違約，經開發方書面催告後七（7）個日曆天內仍未改善，開發方有權：（一）暫停該期及後續階段之開發工作；（二）暫停交付最新開發進度；（三）依法向客戶追討損害賠償。上述權利之行使，不影響已到帳款項所對應之著作財產權移轉效力。</div>
+<div class="clause"><span class="clause-num">5.9</span><strong>任意終止：</strong> 任一方均得於 14 個日曆天前以書面通知另一方，隨時以任何理由或無理由終止本合約。終止時，客戶須支付「終止日應付金額」，計算方式如下：</div>
+<pre><code>終止日應付金額
+= 適用情境總費用
+  × (截至終止日已通過驗收之項目數 ÷ 附件 C 總驗收項目數)
+− 已支付款項
+</code></pre>
+<p>開發方於收到上述終止日應付金額後，於 1 個工作天內，將截至終止日已完成之工作成果，以移轉 Repository 所有權或開放完整存取權之方式交付予客戶。若終止日應付金額計算結果為零或負數，開發方無需退還已收款項，並於確認後 1 個工作天內完成交付。通知期間內，開發方無義務開發新功能。未結清終止日應付金額前，對應之程式碼著作財產權不予移轉。</p>
+<div class="clause"><span class="clause-num">5.10</span><strong>原創性保證：</strong> 開發方保證，交付之程式碼為原創，未侵害任何第三方智慧財產權，且未受任何留置權或權利負擔。</div>
+<hr>
+<h2>第六條｜延遲賠償</h2>
+<div class="clause"><span class="clause-num">6.1</span>若因<strong>開發方原因</strong>導致功能未完成，且里程碑時間超過 <strong>14 個日曆天</strong>，客戶方得依下列公式請求賠償：</div>
+<pre><code>賠償金額 = 已支付款項 × (未完成驗收項目數 ÷ 總驗收項目數) × 50%
+賠償上限 = 已支付款項之 20%
+</code></pre>
+<div class="clause"><span class="clause-num">6.2</span>賠償僅於軌道 C 正式交付驗收時一次計算，不逐軌道累計。</div>
+<div class="clause"><span class="clause-num">6.3</span>下列情況不列入開發方延遲計算，亦不觸發本條賠償：</div>
+<ul>
+<li>App Store / Google Play 審核等待或平台退件期間</li>
+<li>客戶方未如期提供必要資源、帳號或存取權限所造成之延誤</li>
+<li>Stripe KYC 驗證未如期完成所造成之付款功能延遲</li>
+<li>不可抗力事件</li>
+</ul>
+<hr>
+<h2>第七條｜保密義務</h2>
+<div class="clause"><span class="clause-num">7.1</span>雙方對於合作期間所知悉之商業邏輯、使用者資料結構、系統架構、財務資訊及其他專案相關機密資訊，負有保密義務。</div>
+<div class="clause"><span class="clause-num">7.2</span>保密義務於本合約終止或期滿後仍持續有效，無時間限制。</div>
+<div class="clause"><span class="clause-num">7.3</span>下列資訊不受本條保密義務約束：</div>
+<ul>
+<li>於接觸前已屬公開之資訊</li>
+<li>由第三方合法提供且不負保密義務之資訊</li>
+<li>依法令或主管機關命令須揭露之資訊</li>
+</ul>
+<hr>
+<h2>第八條｜一般條款</h2>
+<div class="clause"><span class="clause-num">8.1</span><strong>適用法律：</strong> 本合約適用中華民國（台灣）法律。</div>
+<div class="clause"><span class="clause-num">8.2</span><strong>爭議解決：</strong> 雙方因本合約發生任何爭議，優先以友好協商方式解決。協商不成時，同意以中華民國台灣法院為第一審管轄法院。</div>
+<div class="clause"><span class="clause-num">8.3</span><strong>文件效力與優先順序：</strong> 本合約正文與附件 A、附件 B、附件 C、附件 D 共同構成雙方完整合作依據，具同等法律效力。若各文件間有衝突，以本合約正文條款為準。</div>
+<div class="clause"><span class="clause-num">8.4</span><strong>變更條款：</strong> 本合約任何變更，須雙方以書面方式同意後方可生效，口頭協議不具效力。</div>
+<div class="clause"><span class="clause-num">8.5</span><strong>可分割性：</strong> 本合約任一條款若經認定無效或不可執行，不影響其餘條款之效力。</div>
+<div class="clause"><span class="clause-num">8.6</span><strong>完整合意：</strong> 本合約取代雙方就本專案先前所有口頭或書面之溝通與協議。</div>
+<hr>
+<h2>第九條｜簽署</h2>
+<p>雙方均已閱讀並理解本合約全部條款及所有附件內容，同意受其約束。</p>
+<div class="clause"><span class="clause-num">9.1</span><strong>簽署方式：</strong> 本合約採電子簽名方式完成，透過 Dropbox Sign 平台進行。客戶方簽署邀請發送至公司信箱 (<a href="mailto:hello@motise.net">hello@motise.net</a>)，須由簽約負責人江青璇本人完成簽署。以公司信箱收取並完成之電子簽名，與親筆簽名具同等法律效力。</div>
+<div class="clause"><span class="clause-num">9.2</span><strong>簽署完成時點：</strong> 雙方均完成電子簽署後，Dropbox Sign 系統自動產生之時間戳記與簽署紀錄，作為本合約生效之憑據。</div>
+<p>&nbsp;</p>
+<p><strong>客戶方</strong></p>
+<p>公司名稱：Motise Inc</p>
+<p>簽約負責人：江青璇 (Founder / Director)</p>
+<p>簽署信箱：<a href="mailto:hello@motise.net">hello@motise.net</a></p>
+<p>電子簽名時間戳記：<span style="font-size:var(--size-xs);color:#aaa;font-style:italic;"><span style="font-size:var(--size-xs);color:#aaa;font-style:italic;">(由 Dropbox Sign 系統自動記錄)</span></span></p>
+<p>&nbsp;</p>
+<p><strong>Developer</strong></p>
+<p>姓名：HUANG CONG REN</p>
+<p>聯絡信箱：<a href="mailto:tzuchihuang0214@gmail.com">tzuchihuang0214@gmail.com</a></p>
+<p>電子簽名時間戳記：<span style="font-size:var(--size-xs);color:#aaa;font-style:italic;"><span style="font-size:var(--size-xs);color:#aaa;font-style:italic;">(由 Dropbox Sign 系統自動記錄)</span></span></p>
+<hr>
+<p><em>本合約連同附件 A、附件 B、附件 C、附件 D，共五份文件，雙方各執電子版一份，具同等效力。</em></p>
+
+
+    </div>
+  </div>
+</body>
+</html>
