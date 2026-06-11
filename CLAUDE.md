@@ -36,6 +36,29 @@
 
 print 用 HTML 版本位於 `docs/html/`；五份文件的 print HTML（contract/appendix-a/b/c/d-zh-print.html）與合併版 `merged-zh-print.html` 均已對齊最新 md 內容。
 
+## 英文版文件（路徑：`docs/md/en/`）
+
+中文版（`docs/md/zh/`）為主版本，英文版為翻譯版本，供客戶（Motise Inc，美國公司）參考使用。五份文件：contract-en.md、appendix-a-en.md、appendix-b-en.md、appendix-c-en.md、appendix-d-en.md。print 用 HTML 位於 `docs/html/en/`（contract/appendix-a/b/c/d-en-print.html），合併版 `merged-en-print.html` 由 `scripts/merge_html_en.py` 產生（用法與 `merge_html_zh.py` 相同，合併五份 print HTML 為單一文件）。
+
+**已完成之逐節英中對齊稽核與修正（本次）：**
+
+- contract-en.md 8.3 漏列「Appendix D」於文件效力與優先順序條款 → 已補上（與文末五份文件清單一致）
+- appendix-c-en.md C-10 項目名稱誤譯為「Code Handover」→ 已修正為「AWS Environment Handover」（對應中文「AWS 環境移交」）
+- appendix-c-en.md C-6「Final Delivery Confirmation」表格殘留中文版已移除的「Cooperation Scenario」勾選列 → 已移除
+- appendix-c-en.md C-2~C-6 各驗收表格多出中文版沒有的「Result／☐」勾選欄位（含 C-6 的 Total/Passed/Failed/Final Result 結構）→ 已全數移除，C-6 還原為「Item / Number of Acceptance Criteria」簡表，與中文版結構一致
+- 附件 A、B、D 逐節核對後內容與中文版完全對齊，無發現差異
+
+**已完成之 print HTML / 合併版排版修正（本次）：**
+
+- 移除 contract-en.md / appendix-d-en.md 簽署欄位中「(Automatically recorded by the Dropbox Sign system)」說明文字（9.1/9.2 條文中對 Dropbox Sign 機制的實質說明則保留）
+- contract-en-print.html `<style>`（為 merged-en-print.html 共用的 CSS head）新增：
+  - `pre`/`code` 區塊 `white-space: pre-wrap` + `overflow-wrap: anywhere`，修正長公式（如終止結算公式）超出頁寬跑版問題
+  - `.criteria-table` / `.module-table` / `.tech-table` / `.resource-table` 欄寬規則（先前合併版完全缺漏）：編號欄（#／No./Technology）由約 10% 增至 14–24% 並 `nowrap`，避免編號換行；對應縮減 Description/Criteria/Rationale 等長文欄位寬度
+  - 一般 `<ul>/<ol><li>`（非 `.clause-list`）新增 `padding-left: 2.5em`，修正先前因全域 reset 導致清單無左側縮排的問題
+- 已重新執行 `merge_html_en.py` 產生最新 `merged-en-print.html` 並驗證上述修正均已生效
+
+**待辦：** 英文版目前僅有 md 與 print HTML，尚未產生 PDF；如需提供英文版合約給客戶，待最終確認內容後可比照中文版流程列印 `merged-en-print.html` 為 PDF。
+
 ## 2026-06-11 PDF 交付與發現的問題
 
 - **已將完整合約 PDF（`docs/pdf/Motise軟體開發服務合約 0611.pdf`，由 `merged-zh-print.html` 列印產生）交付給客戶。**

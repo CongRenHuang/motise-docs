@@ -133,7 +133,7 @@ Signatory: Chiang Ching-Hsuan (Founder / Director)
 
 Signing Email: <hello@motise.net>
 
-Electronic Signature Timestamp: (Automatically recorded by the Dropbox Sign system)
+Electronic Signature Timestamp: 
 
 &nbsp;
 
@@ -143,7 +143,7 @@ Name: HUANG CONG REN
 
 Contact Email: <tzuchihuang0214@gmail.com>
 
-Electronic Signature Timestamp: (Automatically recorded by the Dropbox Sign system)
+Electronic Signature Timestamp: 
 
 -----
 
