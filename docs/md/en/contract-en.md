@@ -1,7 +1,7 @@
 # SOFTWARE DEVELOPMENT SERVICES AGREEMENT
 
 Agreement No.: MTS-2026-001
-Date: June 10, 2026
+Date: June 11, 2026
 
 -----
 
@@ -13,8 +13,8 @@ Company Name: Motise Inc
 Company Type: C Corporation (Registered in Delaware, USA)
 Registered Address: 8 The Green STE R, Dover, Kent, Delaware 19901, USA
 Signatory: Chiang Ching-Hsuan (Founder / Director)
-Company Email: hello@motise.net
-Authorized Project Communication Representative: Chiang Ching-Hsuan (cchiang1124@gmail.com)
+Company Email: <hello@motise.net>
+Authorized Project Communication Representative: Chiang Ching-Hsuan (<cchiang1124@gmail.com>)
 
 > The Client designates Chiang Ching-Hsuan as the authorized communication representative for this project, representing the Client in daily project communications, requirement confirmations, and submitting written objections. Written confirmations from the aforementioned representative shall have equal binding force on the Client. Any change of representative must be notified to the Developer in writing by the Client via the company email (@motise.net).
 
@@ -22,7 +22,7 @@ Authorized Project Communication Representative: Chiang Ching-Hsuan (cchiang1124
 
 Name: HUANG CONG REN
 Nationality: Republic of China (Taiwan)
-Contact Email: tzuchihuang0214@gmail.com
+Contact Email: <tzuchihuang0214@gmail.com>
 
 Both parties agree to cooperate on the software development services specified in this Agreement subject to the terms and conditions herein.
 
@@ -57,14 +57,15 @@ This Agreement includes the following appendices, each of which has the same leg
 
 ## ARTICLE 2 | SCHEDULE AND MILESTONES
 
-2.1 The development schedule of the System shall be executed according to Appendix B "Development Schedule," with a target delivery date of **August 04, 2026**.
+2.1 The development schedule of the System shall be executed according to Appendix B "Development Schedule," which is expected to commence on **June 12, 2026**, with a target delivery date of **August 07, 2026**.
 
-2.2 All timelines in Appendix B are contingent upon the Client providing all necessary resources listed in Section A-6 of Appendix A by **June 13, 2026**. For every week of delay in providing the resources, the milestones and delivery dates shall be proportionally postponed.
+2.2 All timelines in Appendix B are contingent upon the Client providing all necessary resources listed in Section A-6 of Appendix A by **June 12, 2026**. For every week of delay in providing the resources, the milestones and delivery dates shall be proportionally postponed.
 
 2.3 The following circumstances shall not be counted towards the Developer's delay liability:
 - App Store / Google Play review periods and waiting times for platform rejections
 - Delays caused by the Client's failure to provide necessary resources, accounts, or access permissions on time
 - Delays in payment functions caused by the failure to complete Stripe KYC verification on time
+- Delays in submission dates caused by Apple Developer Organization Account D-U-N-S Number issuance delays
 - Force majeure events (natural disasters, sudden changes in platform policies, etc.)
 
 2.4 **Stripe Account Prerequisite:** The Client must initiate the Stripe account KYC application **within 3 working days after the signing of this Agreement and receipt of the first installment payment**. KYC must be completed by the Client personally (due to legal requirements, the Developer cannot act on their behalf). If not initiated before the deadline, the development of Stripe-related functions will be postponed, which will not be considered a delay by the Developer, nor will it trigger the delay compensation clause in Article 6.
@@ -87,13 +88,17 @@ This Agreement includes the following appendices, each of which has the same leg
 
 3.7 **Re-inspection Limits and Timeframes:** Regarding the list of written modification requests submitted by the Client during the acceptance period, after the Developer completes the modifications, the Client may only perform a re-inspection on the results of the modifications for the items originally listed. The Client may not raise new modification requests outside the original list or repeatedly find fault during the re-inspection. The re-inspection period is limited to 3 working days; failure to submit re-inspection results within the timeframe will result in all items being deemed accepted.
 
+3.7.1 **Regression Bug:** If the code changes made by the Developer to correct items in the current acceptance list directly cause new functional errors in other items within the same acceptance list or in existing functions of items that have previously passed acceptance (subject to the standards of Section 3.6, with a clear explanation of the functional issue), the Client may raise them during the re-inspection period together, free from the restriction of Section 3.7 "no new suggestions outside the original list" and without constituting a violation of Track Locking under Section 3.4. The Developer shall correct them together; for the additional correction time required, the re-inspection period for that specific item may be extended by 3 working days, and the re-inspection period for other items shall not be affected. The re-inspection of regression bugs is strictly limited to confirming that the defect has been corrected, and no other new suggestions may be derived and proposed.
+
+3.8 **Weekly Sync Meeting:** Both parties shall, in principle, hold an online sync meeting every Friday from 24:00 to 01:00 of the following day (Saturday) (Taiwan Time, UTC+8; corresponding to Friday 09:00–10:00 AM US Pacific Time) to synchronize project progress. If either party cannot attend the meeting at the specified time, they shall notify the other party in advance and coordinate a rescheduled time, but a sync meeting must still be completed within that week.
+
 -----
 
 ## ARTICLE 4 | FEES AND PAYMENT
 
 4.1 The fees for this Agreement are calculated based on the cooperation scenario confirmed by both parties and shall be paid in three installments:
 
-**Scenario 1: Full Acceptance + Confirmation of Long-Term Cooperation (Total Fee $1,800 USD) (Service Period: 12 months, from June 09, 2026 to June 09, 2027)**
+**Scenario 1: Full Acceptance + Confirmation of Long-Term Cooperation (Total Fee $1,800 USD) (Long-Term Cooperation Service Period: 12 months, from August 07, 2026 to August 07, 2027)**
 
 | Installment | Timing | Amount |
 |---|---|---|
@@ -113,7 +118,7 @@ This Agreement includes the following appendices, each of which has the same leg
 
 The fee is calculated based on $2,499 USD, with deductions made according to the delay compensation clause in Article 6.
 
-4.2 **Deadline for Scenario Confirmation:** The method for the Client to confirm the intention for long-term cooperation (Scenario 1) is to complete the written signing of Appendix D "Long-Term Cooperation Framework Agreement" by both parties **before July 25, 2026**. The completion of signing Appendix D shall be deemed as the establishment of Scenario 1, and the third installment payment shall be calculated according to the Scenario 1 amount ($720 USD). If Appendix D is not signed before July 25, 2026, it will automatically be calculated as Scenario 2, and the final payment will make up the difference to $2,499 USD. A written application for extension must be submitted before July 25, and upon mutual agreement, it may be extended to August 04, 2026 at the latest, with no further extensions.
+4.2 **Method of Scenario Determination:** Whether Scenario 1 is established shall be subject to the time when this Agreement is electronically signed by both parties: if Appendix D "Long-Term Cooperation Framework Agreement" has been signed in writing by both parties at that time, Scenario 1 shall be deemed established, and the third installment payment shall be calculated based on the Scenario 1 amount ($720 USD). If Appendix D has not been signed in writing by both parties when this Agreement is electronically signed, it will automatically be calculated as Scenario 2, and the third installment payment shall make up the difference to $2,499 USD, and Appendix D shall be deemed invalid.
 
 4.3 **Definition of Long-Term Cooperation:** "Confirmation of long-term cooperation" refers to the project-based renewal method agreed upon by both parties under Appendix D "Long-Term Cooperation Framework Agreement," where the written signing of Appendix D is completed before the deadline for scenario confirmation. The specific scope, compensation, and terms of long-term cooperation shall be subject to Appendix D and subsequent individual Statements of Work (SOW).
 
@@ -125,9 +130,12 @@ The fee is calculated based on $2,499 USD, with deductions made according to the
 
 4.7 **Start of Acceptance from Delivery Testing:** For Track C acceptance, the acceptance period begins when the Developer submits the App to TestFlight/Firebase Distribution for delivery testing, or when it passes platform (App Store / Google Play) review. If the App cannot be officially released due to non-developer reasons, such as the Client failing to provide accounts, platform policy changes, or the Client's subjective decision to suspend the launch, it will not affect the progress of Track C acceptance, which will still be calculated as 14 working days from the date of delivery testing or passing the review.
 
-4.7.1 **Platform Review Buffer:** If the App cannot be officially published on the App Store or Google Play due to reasons not attributable to the Developer (limited to: Client failing to provide a valid Apple / Google Developer account in a timely manner, Client explicitly requesting to postpone launch, or platform rejection not caused by defects in the App code), a buffer period of 14 working days for review and platform communication will be given starting from the date the Developer delivers the complete TestFlight (or equivalent testing environment) and submits it for review to both platforms.
+4.7.1 **Platform Review Buffer:** If the App cannot be officially published on the App Store or Google Play due to reasons not attributable to the Developer (limited to: Client failing to provide a valid Apple / Google Developer account in a timely manner, Client explicitly requesting to postpone launch, or platform rejection not caused by defects in the App code), a buffer period of 14 working days for review and platform communication will be given starting from the date the Developer delivers the complete TestFlight (or equivalent testing environment) and submits it for review to both platforms. During the buffer period, if the App is rejected by the platform due to App code defects or technical non-compliance with the specifications of Appendix A, the Developer shall correct it free of charge and resubmit it, and the buffer period shall not be recalculated.
 
-4.7.2 **Staged On-Device Acceptance:** If after the aforementioned 14 working days the App still cannot be launched due to the aforementioned Client reasons or platform administrative procedures, both parties shall conduct staged on-device functional acceptance. If the functions meet the test standards in Appendix C, the Client shall pay the third installment (final payment).
+4.7.2 **Criteria for Passing Acceptance and Triggering Payment:** Track C acceptance shall be established upon the earliest occurrence of any of the following circumstances, which shall serve as the starting date for the 3-working-day payment instruction for the third installment:
+- The App completes official launch on both iOS and Android platforms;
+- Both parties hold an online acceptance meeting, complete real-device functional testing for the Track C items in Appendix C, and confirm approval. The payment instruction shall be issued on the day of the meeting or within the next working day;
+- From the day following the expiration of the buffer period mentioned in the preceding section, the acceptance period calculated in accordance with Section 3.2 expires, and the Client does not raise written objections, which shall be deemed as passing acceptance.
 
 4.7.3 **Code Defect Warranty:** If the Client has paid the final installment, and the App's subsequent official launch process is functionally rejected (Functional Rejection) by the platforms due to defects in the "original source code" delivered this time, the Developer is still obligated to fix the code free of charge until review approval. This warranty obligation is valid within 60 calendar days after the final payment is made.
 
@@ -150,13 +158,18 @@ The fee is calculated based on $2,499 USD, with deductions made according to the
 
 5.3 **Governing Law Note:** This Agreement is governed by the laws of the Republic of China (Taiwan). The concept of "Work Made for Hire" under US copyright law does not apply to this Agreement. The transfer of intellectual property rights shall automatically take effect by way of assignment upon receipt of each installment payment under Section 5.1 of this Article, in compliance with the Copyright Act of the Republic of China.
 
-5.4 The GitHub Repository will be created under the Developer's account (or an independent organization fully controlled by the Developer), and the Client will join as a Collaborator. The Developer will have full control over the Repository during development. The complete handover of Repository ownership and control will be executed within 3 working days after the settlement of the third installment.
+5.4 The GitHub Repository shall be established under the Client's account (or an organization designated by the Client), and the Developer shall join as a Collaborator and obtain Admin permissions to facilitate development operations such as branch protection rules, CI/CD workflow settings, and key and permission management for third-party services (e.g., Stripe, Firebase).
+
+5.4.1 Prior to passing the acceptance of this project and settling the final payment, unless through the formal termination procedure under Section 5.9 of this Agreement or other formal termination procedures:
+- The Client shall not restrict or remove the Developer's Admin permissions; the Developer shall not use Admin permissions to restrict the Client's access permissions, or perform acts that affect the project progress such as deleting or transferring the Repository.
+- If the Client violates the preceding provision, it shall be deemed that the Client terminates this Agreement for convenience under Section 5.9, and the Client shall still pay the Developer the amount calculated according to the termination settlement formula under Section 5.9, which shall be settled within 10 working days from the date of the violation.
+- If the Developer violates the preceding provision, it shall be deemed that the Developer terminates this cooperation for convenience under Section 5.9, and the Developer shall have no right to claim corresponding compensation for acceptance items that have not been completed after the termination date. The settlement between both parties shall still be calculated according to the termination settlement formula under Section 5.9.
 
 5.5 The transfer of access and ownership to the AWS Production environment will be handed over to the Client within 3 working days after the settlement of the third installment, and the Developer has an obligation to assist in completing the transfer settings.
 
 5.6 Third-party service accounts (Stripe, Firebase, Apple Developer, Google Play) used during development are inherently registered under the Client's name, and their ownership will not be affected by this Article.
 
-5.7 Technical documentation (API documentation, database Schema descriptions, third-party service setup instructions, system handover instructions) will be submitted concurrently with the acceptance of each track and completely handed over upon formal delivery.
+5.7 Technical documentation (including but not limited to deployment guides and system architecture description documents, with detailed specifications subject to Section A-3-9 of Appendix A) shall be submitted concurrently with the acceptance of each track according to the corresponding acceptance items listed in Appendix C (A-11, B-23, C-09) and completely handed over upon formal delivery; its acceptance shall be handled in accordance with the mechanism specified in Article 3 (including Sections 3.4, 3.6, and 3.7).
 
 5.8 **Remedies for Breach:** If the Client commits a material breach by failing to make payments as agreed and fails to cure such breach within seven (7) calendar days after written notice from the Developer, the Developer shall have the right to: (1) suspend development work for the current and subsequent stages; (2) suspend delivery of the latest development progress; and (3) seek damages from the Client in accordance with the law. The exercise of the aforementioned rights shall not affect the validity of the transfer of intellectual property rights corresponding to the payments already received.
 
@@ -170,6 +183,10 @@ Amount Due on Termination Date
 ```
 
 Upon receipt of the aforementioned Amount Due on Termination Date, the Developer shall, within 1 working day, deliver the work results completed as of the termination date to the Client by transferring Repository ownership or granting full access rights. If the calculation of the Amount Due on Termination Date results in zero or a negative number, the Developer is not required to refund any fees received and shall complete the delivery within 1 working day after confirmation. During the notice period, the Developer is under no obligation to develop new features. Before the Amount Due on Termination Date is settled, the intellectual property rights of the corresponding code shall not be transferred.
+
+5.9.1 **Client's Accelerated Right of Termination (For Cause Attributable to Developer):** Upon the occurrence of any of the following objective circumstances, the Client may waive the prior notice period under the preceding section and immediately terminate this Agreement by written notice to the Developer, which shall terminate on the date of delivery of such notice; the termination settlement amount shall still be calculated according to the formula under Section 5.9:
+- Any acceptance item in Appendix C is not completed more than 7 working days after the completion deadline agreed upon in Appendix B, and the Developer fails to provide a written explanation for the delay; or
+- The Developer completely fails to respond to the Client's contact regarding project-related matters (including written communication channels such as Email, instant messaging, etc.) for 5 consecutive working days without a reasonable explanation or force majeure afterward.
 
 5.10 **Originality Warranty:** The Developer warrants that the delivered code is original, does not infringe upon any third-party intellectual property rights, and is free of any liens or encumbrances.
 
@@ -190,6 +207,7 @@ Compensation Cap = 20% of the Amount Paid
 - App Store / Google Play review waiting periods or platform rejection periods
 - Delays caused by the Client's failure to provide necessary resources, accounts, or access permissions on time
 - Delays in payment functions caused by the failure to complete Stripe KYC verification on time
+- Delays in submission dates caused by Apple Developer Organization Account D-U-N-S Number issuance delays
 - Force majeure events
 
 -----
@@ -213,7 +231,7 @@ Compensation Cap = 20% of the Amount Paid
 
 8.2 **Dispute Resolution:** Any disputes arising between the parties regarding this Agreement shall primarily be resolved through amicable negotiation. If negotiations fail, both parties agree to submit to the jurisdiction of the courts of Taiwan, Republic of China, as the court of first instance.
 
-8.3 **Document Validity and Order of Precedence:** The main text of this Agreement and Appendix A, Appendix B, and Appendix C jointly constitute the complete basis for cooperation between both parties and have equal legal effect. If there is a conflict between the documents, the provisions in the main text of this Agreement shall prevail.
+8.3 **Document Validity and Order of Precedence:** The main text of this Agreement and Appendix A, Appendix B, Appendix C, and Appendix D jointly constitute the complete basis for cooperation between both parties and have equal legal effect. If there is a conflict between the documents, the provisions in the main text of this Agreement shall prevail.
 
 8.4 **Amendment Clause:** Any amendment to this Agreement must be agreed upon in writing by both parties before taking effect; oral agreements are invalid.
 
@@ -239,7 +257,7 @@ Company Name: Motise Inc
 
 Signatory: Chiang Ching-Hsuan (Founder / Director)
 
-Signing Email: hello@motise.net
+Signing Email: <hello@motise.net>
 
 Electronic Signature Timestamp: (Automatically recorded by the Dropbox Sign system)
 
@@ -249,7 +267,7 @@ Electronic Signature Timestamp: (Automatically recorded by the Dropbox Sign syst
 
 Name: HUANG CONG REN
 
-Contact Email: tzuchihuang0214@gmail.com
+Contact Email: <tzuchihuang0214@gmail.com>
 
 Electronic Signature Timestamp: (Automatically recorded by the Dropbox Sign system)
 

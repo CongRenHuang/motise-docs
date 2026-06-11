@@ -12,13 +12,13 @@ def extract_article(file_path):
         raise ValueError(f"Could not find article content in {file_path}")
 
 def main():
-    base_dir = "/Users/tzuchi/Project/Motise/docs/html/zh"
+    base_dir = "/Users/tzuchi/Project/Motise/docs/html/en"
     
-    contract_path = os.path.join(base_dir, "contract-zh-print.html")
-    app_a_path = os.path.join(base_dir, "appendix-a-zh-print.html")
-    app_b_path = os.path.join(base_dir, "appendix-b-zh-print.html")
-    app_c_path = os.path.join(base_dir, "appendix-c-zh-print.html")
-    app_d_path = os.path.join(base_dir, "appendix-d-zh-print.html")
+    contract_path = os.path.join(base_dir, "contract-en-print.html")
+    app_a_path = os.path.join(base_dir, "appendix-a-en-print.html")
+    app_b_path = os.path.join(base_dir, "appendix-b-en-print.html")
+    app_c_path = os.path.join(base_dir, "appendix-c-en-print.html")
+    app_d_path = os.path.join(base_dir, "appendix-d-en-print.html")
     
     # 1. Read full contract to extract head and foot
     with open(contract_path, 'r', encoding='utf-8') as f:
@@ -30,17 +30,14 @@ def main():
         raise ValueError("Could not locate <div class='page-wrapper'> in contract HTML")
     html_head = head_match[0].strip() + "\n  <div class=\"page-wrapper\">"
     
-    # Split after the last </div> before scripts
-    foot_match = re.split(r'</div>\s*</div>\s*(?=<script)', contract_full, maxsplit=1)
-    if len(foot_match) < 2:
-        # Fallback split
-        foot_match = re.split(r'</div>\s*</div>\s*<script', contract_full, maxsplit=1)
-        
+    # Split after the last </div> before scripts using the comment as target
+    foot_match = re.split(r'<!--\s*/page-wrapper\s*-->', contract_full, maxsplit=1)
+    
     if len(foot_match) < 2:
         raise ValueError("Could not locate ending structures in contract HTML")
     
     # We want everything starting from the script tags to </html>
-    html_foot = "\n    </div>\n  </div>\n  <script" + foot_match[1].strip()
+    html_foot = "\n    </div>\n  </div>\n  " + foot_match[1].strip()
 
     # 2. Extract contents of each document
     contract_body = extract_article(contract_path)
@@ -82,7 +79,7 @@ def main():
 {html_foot}"""
 
     # 5. Write to destination file
-    output_path = os.path.join(base_dir, "merged-zh-print.html")
+    output_path = os.path.join(base_dir, "merged-en-print.html")
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(merged_html)
         

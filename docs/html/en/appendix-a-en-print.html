@@ -413,129 +413,27 @@
       .parties { display: grid; }
     }
   
-    /* Markdown Styles */
-    .article h1 {
-      text-align: center;
-      font-size: 16pt;
-      font-weight: 700;
-      letter-spacing: .12em;
-      color: var(--color-accent);
-      margin-bottom: 10mm;
-      padding-bottom: 6mm;
-      border-bottom: 2px solid var(--color-accent);
-    }
-    .article h3 {
-      font-family: var(--font-sans);
-      font-size: var(--size-sm);
-      font-weight: 700;
-      color: var(--color-accent);
-      margin-top: 6mm;
-      margin-bottom: 2mm;
-    }
-    .article p {
-      text-indent: 0;
-      margin-bottom: 4mm;
-    }
-    .article ul, .article ol {
-      margin-left: 2em;
-      margin-bottom: 4mm;
-      font-size: var(--size-sm);
-      color: var(--color-muted);
-      line-height: 1.75;
-    }
-    .article blockquote {
-      margin: 3mm 0 4mm;
-      padding: 3mm 6mm;
-      border-left: 3px solid var(--color-border);
-      background: #f9f9f9;
-      font-family: var(--font-sans);
+    .appendix-disclaimer {
       font-size: var(--size-xs);
       color: var(--color-muted);
-      line-height: 1.7;
+      margin-top: 5mm;
+      font-family: var(--font-sans);
+      text-indent: 0 !important;
     }
-    .article pre {
-      background: #f4f4f4;
-      border: 1px solid var(--color-border-light);
-      border-left: 3px solid var(--color-accent);
-      padding: 4mm 6mm;
+
+  
+    .mermaid {
+      text-align: center;
       margin: 2mm 0 4mm 0;
-      font-family: 'Courier New', Courier, monospace;
-      font-size: var(--size-sm);
-      overflow-x: auto;
+      page-break-inside: avoid;
+      break-inside: avoid;
     }
-    /* Fix table column wrapping */
-    .criteria-table {
-      table-layout: fixed !important;
-      width: 100% !important;
+    .mermaid svg {
+      max-width: 100% !important;
+      height: auto !important;
     }
-    .criteria-table th:nth-child(1),
-    .criteria-table td:nth-child(1) {
-      width: 10% !important;
-      white-space: nowrap !important;
-    }
-    .criteria-table th:nth-child(2),
-    .criteria-table td:nth-child(2) {
-      width: 30% !important;
-    }
-    .criteria-table th:nth-child(3),
-    .criteria-table td:nth-child(3) {
-      width: 60% !important;
-    }
-    /* A-2 Module Table CSS */
-    .module-table {
-      table-layout: fixed !important;
-      width: 100% !important;
-    }
-    .module-table th:nth-child(1),
-    .module-table td:nth-child(1) {
-      width: 10% !important;
-      white-space: nowrap !important;
-    }
-    .module-table th:nth-child(2),
-    .module-table td:nth-child(2) {
-      width: 25% !important;
-    }
-    .module-table th:nth-child(3),
-    .module-table td:nth-child(3) {
-      width: 45% !important; /* Limit Description column width */
-    }
-    .module-table th:nth-child(4),
-    .module-table td:nth-child(4) {
-      width: 20% !important;
-      white-space: nowrap !important; /* Avoid wrapping iOS · Android */
-    }
-    /* A-5-2 Tech Table CSS */
-    .tech-table {
-      table-layout: fixed !important;
-      width: 100% !important;
-    }
-    .tech-table th:nth-child(1),
-    .tech-table td:nth-child(1) {
-      width: 20% !important;
-      white-space: nowrap !important;
-    }
-    .tech-table th:nth-child(2),
-    .tech-table td:nth-child(2) {
-      width: 25% !important;
-    }
-    .tech-table th:nth-child(3),
-    .tech-table td:nth-child(3) {
-      width: 55% !important; /* Limit Rationale column width */
-    }
-    /* A-6 Resource Table CSS */
-    .resource-table {
-      table-layout: fixed !important;
-      width: 100% !important;
-    }
-    .resource-table th:nth-child(1),
-    .resource-table td:nth-child(1) {
-      width: 45% !important; /* Increase Item column width to prevent wrapping */
-    }
-    .resource-table th:nth-child(2),
-    .resource-table td:nth-child(2) {
-      width: 55% !important; /* Decrease Delivery Method column width */
-    }
-</style>
+
+  </style>
 </head>
 <body>
 
@@ -546,15 +444,14 @@
 <div class="article">
 <h1>Appendix A | Project Scope and Technical Specification</h1>
 <p>Agreement No.: MTS-2026-001
-Version: v1.0
-Date: June 09, 2026</p>
+Date: June 11, 2026</p>
 <p>Parties: Motise Inc (Client) / HUANG CONG REN (Developer)</p>
 <hr>
 <h2>A-1 Project Overview</h2>
 <p>This document defines the development scope, functional modules, and technical specifications for version 1.0 of the &quot;Course Booking Mobile Application&quot; (hereinafter referred to as the &quot;System&quot;), serving as the technical basis for cooperation between both parties.</p>
 <hr>
 <h2>A-2 System Module List</h2>
-<p>The following modules are entirely included in the development scope for v1.0.</p>
+<p>All the following modules are included in the development scope of v1.0.</p>
 <table class="module-table">
 <thead>
 <tr>
@@ -664,9 +561,24 @@ Date: June 09, 2026</p>
 <li>Deployed on the Client&#39;s existing domain, motise.net.</li>
 <li>Content includes: Company name, brief introduction, service description, contact information.</li>
 <li>Layout design and presentation are determined by the Developer, aiming to meet Apple Developer organization account review requirements.</li>
-<li>The Client may provide brand assets (Logo, brand colors, copy) for the Developer&#39;s reference; final presentation is at the Developer&#39;s discretion.</li>
+<li>The Client may provide brand assets (Logo, brand color codes (if any); if not provided, the Developer will decide) for the Developer&#39;s reference; final presentation is at the Developer&#39;s discretion.</li>
 <li>Once completed, it is the final version; subsequent layout or content modifications are excluded from the scope of this Agreement.</li>
 </ul>
+<h3>A-3-8 Privacy Policy &amp; Terms of Service Templates</h3>
+<ul>
+<li>The Developer will provide basic English templates (Basic Templates) of the Privacy Policy and Terms of Service that comply with general US regulatory compliance frameworks (GDPR, CCPA basic frameworks) before the end of Track A.</li>
+<li>The Client shall confirm or provide modifications within 3 working days after receiving the templates; failure to reply within the timeframe will be deemed as confirmation of the original templates, and the Developer may directly use them for embedding and deployment.</li>
+<li>The Client may still request modifications to the <strong>text content</strong> of the Privacy Policy and Terms of Service after the aforementioned confirmation and before embedding and deployment in Track C. The Developer shall assist in updating and deploying such modifications, provided that they do not affect the established schedule of Track C. If the requests involve adding new consent workflows, new types of clauses, or structural changes, they shall be handled as a change of scope in accordance with Section 1.3 of the Main Agreement.</li>
+<li>The Developer is responsible for completely embedding, deploying, and linking the confirmed content in the corresponding sections of the Landing Page and the App.</li>
+<li>The aforementioned templates serve as a reference basis for technical integration purposes, and the Client is solely responsible for confirming final legal compliance. The Client&#39;s confirmation of the content is deemed as having conducted its own review and assuming compliance responsibility.</li>
+</ul>
+<h3>A-3-9 Technical Documentation Delivery Specifications</h3>
+<p>The Developer shall provide technical documentation in accordance with the following specifications, which shall serve as the content basis for the corresponding acceptance items in Appendix C (A-11, B-23, C-09):</p>
+<ul>
+<li><strong>Deployment Guide:</strong> Build steps for the local development environment, deployment steps for the backend server (AWS Lightsail), list and explanation of environment variables, configuration methods for third-party services (Stripe, Firebase, etc.), and instructions for the App packaging and publishing process.</li>
+<li><strong>Architecture Documentation:</strong> Database schema description, API documentation (including key field definitions), and technical architecture and operational logic description for each module (M-01 to M-08) listed in Section A-2 of Appendix A.</li>
+</ul>
+<p>The document version shall be consistent with the source code delivered for the corresponding track. Documents updated along with the development progress shall be submitted in versions applicable to the current scope during the acceptance of each track; there is no need to provide the complete version during Tracks A and B. The complete version shall be handed over together during Track C (C-09).</p>
 <hr>
 <h2>A-4 Exclusions from v1.0</h2>
 <p>The following items are explicitly excluded from the development scope of this Agreement and will be separately quoted and planned for subsequent versions:</p>
@@ -790,7 +702,7 @@ Third-party Integrations
 </tbody></table>
 <hr>
 <h2>A-6 Resources Provided by Client</h2>
-<h3>Before Kickoff (By June 13, 2026)</h3>
+<h3>Before Kickoff (By June 12, 2026)</h3>
 <table class="resource-table">
 <thead>
 <tr>
@@ -800,7 +712,7 @@ Third-party Integrations
 </thead>
 <tbody><tr>
 <td>GitHub Repository Setup</td>
-<td>Created and hosted under Developer&#39;s account, inviting Client as Viewer (ownership transferred upon final payment).</td>
+<td>Created under the Client&#39;s account (or an organization designated by the Client), inviting the Developer as a Collaborator and granting Admin permissions (see Section 5.4 of the Main Agreement for details).</td>
 </tr>
 <tr>
 <td>AWS Lightsail Access</td>
@@ -811,15 +723,24 @@ Third-party Integrations
 <td>Add as Release Manager.</td>
 </tr>
 <tr>
-<td>Stripe Account API Keys</td>
-<td>Client creates and provides them (KYC is a legal requirement).</td>
-</tr>
-<tr>
 <td>motise.net Domain Access</td>
 <td>Provide DNS management access or assist with DNS configuration.</td>
 </tr>
 </tbody></table>
-<h3>Before Track B Kickoff (By June 23, 2026)</h3>
+<h3>Stripe Account Settings (KYC to be initiated within 3 working days after the first installment payment is received)</h3>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Stripe Account API Keys</td>
+<td>The Client shall apply for the Stripe account and provide the API keys after completing the KYC verification. The KYC must be completed by the Client personally (due to legal requirements, the Developer cannot act on their behalf), which takes about 3–5 working days for review. The application shall be initiated within 3 working days after the receipt of the first installment payment in accordance with Section 2.4 of the Main Agreement. If provided late, the acceptance items related to Stripe (A-07 / A-08 in Appendix C) shall be postponed, which will not be considered a delay by the Developer, nor will it trigger the delay compensation clause.</td>
+</tr>
+</tbody></table>
+<h3>Before Track B Kickoff (By June 22, 2026)</h3>
 <table class="resource-table">
 <thead>
 <tr>
@@ -852,7 +773,7 @@ Third-party Integrations
 <blockquote>
 <p>⚠️ Failure to provide Landing Page assets will not affect the development schedule. The Developer will independently determine content and layout based on review requirements; once completed, it will be the final version.</p>
 </blockquote>
-<h3>Before Launch and Submission (Before Track C Kickoff, Target July 07, 2026)</h3>
+<h3>Before Launch and Submission (Before Track C Kickoff, Target July 06, 2026)</h3>
 <table>
 <thead>
 <tr>
@@ -870,7 +791,7 @@ Third-party Integrations
 </tr>
 <tr>
 <td>Privacy Policy URL</td>
-<td>Notion page or any public URL.</td>
+<td>Any public URL on motise.net.</td>
 </tr>
 <tr>
 <td>Sample Course Data</td>
@@ -882,10 +803,24 @@ Third-party Integrations
 </tr>
 </tbody></table>
 <hr>
-<p><em>Appendix A has the same legal effect as the Main Agreement (MTS-2026-001). The signing of the Main Agreement by both parties is deemed as confirmation of the contents of this Appendix.</em></p>
+<p class="appendix-disclaimer"><em>Appendix A has the same legal effect as the Main Agreement (MTS-2026-001). The signing of the Main Agreement by both parties is deemed as confirmation of the contents of this Appendix.</em></p>
 
 
 </div>
 </div><!-- /page-wrapper -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        fontFamily: 'Noto Sans TC, Noto Sans, sans-serif',
+        primaryColor: '#eef3f8',
+        primaryBorderColor: '#1a3a5c',
+        primaryTextColor: '#1a1a1a',
+        lineColor: '#1a3a5c'
+      }
+    });
+  </script>
 </body>
 </html>

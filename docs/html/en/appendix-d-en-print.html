@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOFTWARE DEVELOPMENT SERVICES AGREEMENT MTS-2026-001</title>
+  <style>
+    /* ─── Fonts ─── */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500&display=swap');
+
+    /* ─── CSS Variables ─── */
+    :root {
+      --page-width: 210mm;
+      --page-height: 297mm;
+      --margin-top: 25mm;
+      --margin-right: 20mm;
+      --margin-bottom: 25mm;
+      --margin-left: 25mm;
+      --color-text: #1a1a1a;
+      --color-muted: #555;
+      --color-border: #bbb;
+      --color-border-light: #ddd;
+      --color-accent: #1a3a5c;
+      --font-serif: 'Noto Serif TC', 'STSong', '宋體', Georgia, serif;
+      --font-sans: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+      --size-base: 10.5pt;
+      --size-sm: 9pt;
+      --size-xs: 8pt;
+    }
+
+    /* ─── Reset ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ─── Screen wrapper ─── */
+    body {
+      background: #e8e8e8;
+      font-family: var(--font-serif);
+      font-size: var(--size-base);
+      color: var(--color-text);
+      line-height: 1.8;
+    }
+
+    .page-wrapper {
+      max-width: var(--page-width);
+      margin: 32px auto;
+      background: #fff;
+      box-shadow: 0 4px 32px rgba(0,0,0,.18);
+      padding: var(--margin-top) var(--margin-right) var(--margin-bottom) var(--margin-left);
+    }
+
+    /* ─── Print button (screen only) ─── */
+    .print-btn {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      background: var(--color-accent);
+      color: #fff;
+      border: none;
+      padding: 8px 20px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 4px;
+      letter-spacing: .04em;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    }
+    .print-btn:hover { background: #255a8a; }
+
+    /* ─── Document header ─── */
+    .doc-header {
+      text-align: center;
+      margin-bottom: 10mm;
+      padding-bottom: 6mm;
+      border-bottom: 2px solid var(--color-accent);
+    }
+    .doc-header h1 {
+      font-size: 16pt;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: var(--color-accent);
+      margin-bottom: 3px;
+    }
+    .doc-header h2 {
+      font-size: 11pt;
+      font-weight: 500;
+      letter-spacing: .08em;
+      color: var(--color-muted);
+      margin-bottom: 8px;
+    }
+    .doc-meta {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      color: var(--color-muted);
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    /* ─── Parties section ─── */
+    .parties {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 6mm;
+      margin-bottom: 8mm;
+      page-break-inside: avoid;
+    }
+    .party-block {
+      border: 1px solid var(--color-border);
+      padding: 5mm 6mm;
+    }
+    .party-block h3 {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      font-weight: 700;
+      color: var(--color-accent);
+      border-bottom: 1px solid var(--color-border-light);
+      padding-bottom: 3px;
+      margin-bottom: 5px;
+      letter-spacing: .06em;
+    }
+    .party-block dl {
+      display: grid;
+      grid-template-columns: minmax(120px, 34%) minmax(0, 1fr);
+      gap: 1px 8px;
+      font-size: var(--size-sm);
+    }
+    .party-block dt {
+      color: var(--color-muted);
+      white-space: normal;
+      word-break: break-word;
+      min-width: 0;
+    }
+    .party-block dd {
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      min-width: 0;
+    }
+
+    .parties-intro {
+      margin-bottom: 6mm;
+      font-size: var(--size-sm);
+      color: var(--color-muted);
+      font-family: var(--font-sans);
+      text-align: center;
+    }
+
+    /* ─── Divider ─── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--color-border-light);
+      margin: 6mm 0;
+    }
+
+    /* ─── Appendix table ─── */
+    .appendix-section {
+      margin-bottom: 8mm;
+      page-break-inside: avoid;
+    }
+    .appendix-section h2 {
+      font-family: var(--font-sans);
+      font-size: 9.5pt;
+      font-weight: 700;
+      letter-spacing: .08em;
+      color: var(--color-accent);
+      margin-bottom: 3mm;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 2px;
+    }
+
+    /* ─── Articles ─── */
+    .article {
+      margin-bottom: 7mm;
+    }
+    .article h2 {
+      font-family: var(--font-sans);
+      font-size: 10pt;
+      font-weight: 700;
+      color: var(--color-accent);
+      letter-spacing: .1em;
+      border-left: 3px solid var(--color-accent);
+      padding-left: 6px;
+      margin-bottom: 4mm;
+      page-break-after: avoid;
+    }
+    .article p {
+      font-size: var(--size-base);
+      line-height: 1.85;
+      text-indent: 2em;
+      margin-bottom: 2.5mm;
+    }
+    .clause {
+      margin-bottom: 2.5mm;
+    }
+    .clause-num {
+      font-weight: 500;
+      color: var(--color-accent);
+      margin-right: 4px;
+    }
+
+    /* ─── Bullet lists ─── */
+    ul.clause-list {
+      list-style: none;
+      padding-left: 2em;
+      margin: 1.5mm 0 3mm;
+    }
+    ul.clause-list li {
+      font-size: var(--size-sm);
+      line-height: 1.75;
+      padding-left: 1em;
+      position: relative;
+      color: var(--color-muted);
+    }
+    ul.clause-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--color-border);
+    }
+
+    /* ─── Tables ─── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      margin: 2mm 0 4mm;
+    }
+    table th {
+      background: var(--color-accent);
+      color: #fff;
+      font-weight: 600;
+      padding: 4px 8px;
+      text-align: left;
+      letter-spacing: .04em;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    table td {
+      padding: 4px 8px;
+      border-bottom: 1px solid var(--color-border-light);
+      vertical-align: top;
+      line-height: 1.6;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    table tr:nth-child(even) td { background: #f7f8fa; }
+
+    /* sub-table inside payment section */
+    .payment-scenario {
+      margin-bottom: 4mm;
+      page-break-inside: avoid;
+    }
+    .payment-scenario h4 {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      font-weight: 700;
+      background: #f0f4f8;
+      padding: 3px 8px;
+      border-left: 3px solid var(--color-accent);
+      margin-bottom: 1mm;
+      color: var(--color-text);
+    }
+
+    .payment-scenario table th:nth-child(1),
+    .payment-scenario table td:nth-child(1) {
+      width: 34%;
+    }
+    .payment-scenario table th:nth-child(2),
+    .payment-scenario table td:nth-child(2) {
+      width: 36%;
+    }
+    .payment-scenario table th:nth-child(3),
+    .payment-scenario table td:nth-child(3) {
+      width: 30%;
+      text-align: right;
+    }
+
+    /* ─── Code block (formula) ─── */
+    .formula {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: var(--size-sm);
+      background: #f4f4f4;
+      border: 1px solid var(--color-border-light);
+      border-left: 3px solid var(--color-accent);
+      padding: 4mm 6mm;
+      margin: 2mm 0 3mm 2em;
+      line-height: 1.7;
+      page-break-inside: avoid;
+      white-space: pre-wrap;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      max-width: 100%;
+    }
+
+    /* ─── Signature block ─── */
+    .signature-section {
+      margin-top: 10mm;
+      page-break-inside: avoid;
+    }
+    .signature-section > p {
+      font-size: var(--size-sm);
+      margin-bottom: 8mm;
+      color: var(--color-muted);
+    }
+    .sig-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10mm;
+    }
+    .sig-block {
+      border-top: 1.5px solid var(--color-accent);
+      padding-top: 4mm;
+    }
+    .sig-block h4 {
+      font-family: var(--font-sans);
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 4mm;
+    }
+    .sig-field {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+      margin-bottom: 5mm;
+      color: var(--color-muted);
+    }
+    .sig-field span { white-space: normal; }
+    .sig-field span:first-child {
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .sig-line {
+      flex: 1;
+      border-bottom: 1px solid var(--color-border);
+      min-width: 40px;
+      height: 20px;
+    }
+
+    /* ─── Footer note ─── */
+    .doc-footer {
+      margin-top: 8mm;
+      padding-top: 4mm;
+      border-top: 1px solid var(--color-border-light);
+      font-family: var(--font-sans);
+      font-size: var(--size-xs);
+      color: var(--color-muted);
+      text-align: center;
+    }
+
+    /* ═══════════════════════════════════════
+       PRINT STYLES
+    ═══════════════════════════════════════ */
+    @media print {
+      @page {
+        size: A4;
+        margin: 25mm 20mm 25mm 25mm;
+      }
+      @page :first {
+        margin-top: 20mm;
+      }
+
+      body {
+        background: #fff;
+        font-size: 10pt;
+        color: #000;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page-wrapper {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      .print-btn { display: none !important; }
+
+      /* ── Page break rules ── */
+
+      /* Force new page before major articles */
+      .pb-before { page-break-before: always; }
+
+      /* Keep headings with following content */
+      .article h2 { page-break-after: avoid; }
+
+      /* Avoid breaking inside compact blocks */
+      .party-block,
+      .appendix-section,
+      .payment-scenario,
+      .sig-grid,
+      .formula,
+      .signature-section { page-break-inside: avoid; }
+
+      /* Tables: keep header repeated across pages */
+      thead { display: table-header-group; }
+      tfoot { display: table-footer-group; }
+      tr { page-break-inside: avoid; }
+
+      /* Widows & orphans */
+      p { orphans: 3; widows: 3; }
+
+      /* Links: no underline in print */
+      a { text-decoration: none; color: inherit; }
+
+      /* Parties grid to 2-col on print */
+      .parties { display: grid; }
+    }
+  
+    .appendix-disclaimer {
+      font-size: var(--size-xs);
+      color: var(--color-muted);
+      margin-top: 5mm;
+      font-family: var(--font-sans);
+      text-indent: 0 !important;
+    }
+
+  
+    .mermaid {
+      text-align: center;
+      margin: 2mm 0 4mm 0;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .mermaid svg {
+      max-width: 100% !important;
+      height: auto !important;
+    }
+
+  </style>
+</head>
+<body>
+
+
+<button class="print-btn" onclick="window.print()">Print / Export PDF</button>
+
+<div class="page-wrapper">
+<div class="article">
+<h1>Appendix D | Long-Term Collaboration Framework Agreement</h1>
+<p>Agreement No.: MTS-2026-001-LT
+Effective Date: August 07, 2026
+Expiration Date: August 07, 2027 (12 months)
+Date: June 11, 2026</p>
+<p>Parties: Motise Inc. (Client) / HUANG CONG REN (Developer)</p>
+<hr>
+<h2>D-1 Form of Collaboration and Purpose</h2>
+<p>Both parties agree to conduct long-term collaboration on a &quot;project-based renewal&quot; basis.</p>
+<p>This Appendix does not constitute any commitment to fixed working hours, fixed monthly fees, or continuous services. Each subsequent project must have its scope, schedule, and compensation separately defined and confirmed in writing through an independent Statement of Work (hereinafter referred to as &quot;SOW&quot;).</p>
+<p>The signing of this Appendix serves as the written basis for the establishment of the discount conditions of Scenario 1 (Total Fee $1,800 USD) under the Main Agreement.</p>
+<hr>
+<h2>D-2 Period and Cycles of Collaboration</h2>
+<p><strong>Collaboration Period:</strong> August 07, 2026 to August 07, 2027, totaling 12 months.</p>
+<p>The Collaboration Period is equally divided into four outsourcing cycles, as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Cycle</th>
+<th>Start Date</th>
+<th>End Date</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Cycle 1</td>
+<td>2026/08/07</td>
+<td>2026/11/07</td>
+</tr>
+<tr>
+<td>Cycle 2</td>
+<td>2026/11/07</td>
+<td>2027/02/07</td>
+</tr>
+<tr>
+<td>Cycle 3</td>
+<td>2027/02/07</td>
+<td>2027/05/07</td>
+</tr>
+<tr>
+<td>Cycle 4</td>
+<td>2027/05/07</td>
+<td>2027/08/07</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>D-3 Minimum Outsourcing Obligation and Difference Make-Up Mechanism</h2>
+<div class="clause"><span class="clause-num">3.1</span>Within each outsourcing cycle, the Client must complete the written signing of at least one SOW by both parties (signing is deemed as fulfillment, and does not require the Developer to have actually commenced work).</div>
+<div class="clause"><span class="clause-num">3.2</span>If the Client fails to complete the written signing of any SOW before the deadline of a certain outsourcing cycle, such cycle shall be deemed &quot;unfulfilled,&quot; and the Client must pay the difference make-up amount for that cycle within 10 working days after the cycle&#39;s deadline:</div>
+<pre><code>Difference make-up amount per cycle = $699 USD ÷ 4 = $174.75 USD
+(rounded to $175 USD)
+
+If the failure to sign a SOW during a cycle is due to the Developer&#39;s reasons (such as explicit refusal to accept the project, failure to provide a quotation within the timeframe specified in Section D-4 Step 2, or the Developer&#39;s compensation quotation exceeding the rate cap specified in Section D-5.4 leading to a failure to reach a consensus), the Client is not required to pay the difference make-up amount for that cycle. However, if the Developer has proposed a quotation within the rate cap under Section D-5.4, and the parties still fail to sign a SOW due to a lack of consensus on compensation or schedule details, the aforementioned exemption shall not apply, and the cycle shall still be deemed unfulfilled in accordance with this Section.
+</code></pre>
+<div class="clause"><span class="clause-num">3.3</span>The payment method for the difference make-up amount shall be the same as in the Main Agreement, remitted to the Wise account designated by the Developer, and all remittance fees shall be borne by the Client.</div>
+<div class="clause"><span class="clause-num">3.4</span>The difference make-up payment does not affect the rights and obligations of both parties to continue cooperation in subsequent cycles. Each cycle is calculated independently and is not cumulative.</div>
+<div class="clause"><span class="clause-num">3.5</span>If the minimum outsourcing obligation is fulfilled in all four cycles, the difference make-up mechanism will not be triggered throughout the process, and the Scenario 1 discount under the Main Agreement shall remain fully valid.</div>
+<hr>
+<h2>D-4 Project Initiation Workflow</h2>
+<p>Each subsequent project shall be initiated in accordance with the following workflow. Prior to the completion of all steps, the Developer is under no obligation to commence any work:</p>
+<p><strong>Step 1 | Requirement Submission</strong>
+The Client submits the new project requirements in writing, including functional descriptions and expected timelines.</p>
+<p><strong>Step 2 | Evaluation and Quotation</strong>
+The Developer shall provide a scope statement, schedule estimation, and compensation quotation within 5 working days after receiving the requirements. If the Developer fails to provide a quotation within the aforementioned timeframe, the deadline of the outsourcing cycle shall be automatically extended by one day for each day overdue.</p>
+<p><strong>Step 3 | SOW Confirmation</strong>
+After both parties reach a consensus on the Step 2 quotation, a formal SOW shall be signed. The SOW must include: project scope, list of deliverables, schedule, compensation amount, and payment structure.</p>
+<p><strong>Step 4 | Kickoff</strong>
+Upon the completion of signing the SOW by both parties, the Developer shall formally commence work.</p>
+<hr>
+<h2>D-5 Compensation Principles</h2>
+<div class="clause"><span class="clause-num">5.1</span>The compensation for each project shall be independently negotiated in the SOW based on the actual scope, unaffected by the fee structure of the Main Agreement, and free from any restrictions under this Appendix.</div>
+<div class="clause"><span class="clause-num">5.2</span>The payment structure of each SOW shall be executed with reference to the three-installment model (30/30/40) of the Main Agreement or another method mutually agreed upon by both parties.</div>
+<div class="clause"><span class="clause-num">5.3</span>The conditions for transferring code ownership in each SOW shall be executed with reference to the staged transfer logic of Article 5 of the Main Agreement.</div>
+<div class="clause"><span class="clause-num">5.4</span>This Appendix does not lock in any specific rates, and the Developer reserves the right to quote independently for each SOW. However, both parties agree that the estimated developer Man-Day Rate or hourly rate for each subsequent SOW shall refer to the international remote outsourcing market conditions for equivalent technology stacks (React Native + Node.js full-stack development), with USD 50–60 / hour (equivalent to USD 400–480 / 8-hour working day) as the rate cap baseline (hereinafter referred to as the &quot;Rate Cap&quot;), or as otherwise negotiated by the parties when initiating the requirement. The quotation of Scenario 1 under the Main Agreement reflects a promotional discount for establishing a cooperative relationship, is not a market-rate fee, and shall not serve as the basis for calculating the aforementioned Rate Cap.</div>
+<div class="clause"><span class="clause-num">5.5</span>In principle, the compensation of each SOW shall be negotiated and paid on a fixed total price basis based on deliverables or project stages (milestones), and both parties do not need to break down or disclose the calculation process of working hours and rate details in the SOW. The Rate Cap in the preceding section serves solely as an internal reference for both parties when negotiating compensation.</div>
+<hr>
+<h2>D-6 Non-Exclusivity Statement</h2>
+<div class="clause"><span class="clause-num">6.1</span>The Developer reserves the right to accept projects from other clients during the collaboration period, free from any restrictions under this Appendix.</div>
+<div class="clause"><span class="clause-num">6.2</span>The Client reserves the right to evaluate other development resources during the collaboration period, but the minimum outsourcing obligation (Section D-3) must still be fulfilled.</div>
+<hr>
+<h2>D-7 Termination</h2>
+<div class="clause"><span class="clause-num">7.1</span>The Client may terminate this Appendix at any time during the collaboration period upon 30 calendar days’ prior written notice; the Developer may terminate this Appendix at any time during the collaboration period upon 45 calendar days’ prior written notice.</div>
+<div class="clause"><span class="clause-num">7.2</span>If there is an ongoing SOW when the termination notice is issued, such SOW shall continue to be executed until completion in accordance with its own terms, unaffected by the termination notice.</div>
+<div class="clause"><span class="clause-num">7.3</span>If the Client terminates this Appendix early, and one or more cycles have been deemed &quot;unfulfilled&quot; prior to the termination date, the corresponding difference make-up amounts must still be settled within 10 working days after the termination date.</div>
+<div class="clause"><span class="clause-num">7.4</span>If the Client terminates this Appendix early, the minimum outsourcing obligation shall no longer be calculated for the remaining cycles after the termination date, nor shall it trigger any difference make-up for the remaining cycles.</div>
+<div class="clause"><span class="clause-num">7.5</span>If the Developer terminates this Appendix early in accordance with Section 7.1, within 30 calendar days from the effective date of termination (handover warranty period), the Developer shall cooperate to provide handover of existing project documentation, knowledge transfer, and technical support to assist the Client in transitioning to subsequent development resources.</div>
+<div class="clause"><span class="clause-num">7.6</span>Regardless of the reason for the conclusion of this Appendix or individual SOWs (including but not limited to: expiration or termination of this Appendix, completion of individual SOWs without subsequent SOWs signed, or failure to establish a SOW due to lack of consensus on compensation), the Developer shall deliver the latest version of the source code, relevant database structure (Schema) descriptions, and technical documentation matching the specifications of Section A-3-9 of Appendix A under each paid and accepted SOW to the Client within 5 working days from the date the cooperation relationship ends, and provide up to 2 hours of online handover description free of charge; the scope of handover shall be limited to the aforementioned paid and accepted deliverables. For work in progress (WIP) that has not yet been paid or passed acceptance, the ownership and delivery of its intellectual property rights shall be handled in accordance with the terms of each SOW and the staged transfer logic of Article 5 of the Main Agreement.</div>
+<hr>
+<h2>D-8 Relationship with the Main Agreement</h2>
+<div class="clause"><span class="clause-num">8.1</span>This Appendix has the same legal effect as the Main Agreement (MTS-2026-001), and all terms of the Main Agreement shall apply within the scope of cooperation under this Appendix.</div>
+<div class="clause"><span class="clause-num">8.2</span>If this Appendix is not signed in writing by both parties concurrently with the electronic signing of the Main Agreement, the Main Agreement shall automatically apply Scenario 2 (Total Fee $2,499 USD), and this Appendix shall be deemed invalid.</div>
+<div class="clause"><span class="clause-num">8.3</span>This Appendix is governed by the laws of the Republic of China (Taiwan).</div>
+<hr>
+<h2>D-9 Signatures of Both Parties</h2>
+<p>Both parties have read and understood all terms of this Appendix and agree to be bound by them.</p>
+<p>&nbsp;</p>
+<p><strong>Client</strong></p>
+<p>Company Name: Motise Inc.</p>
+<p>Signatory: Chiang Ching-Hsuan (Founder / Director)</p>
+<p>Signing Email: <a href="mailto:hello@motise.net">hello@motise.net</a></p>
+<p>Electronic Signature Timestamp: (Automatically recorded by the Dropbox Sign system)</p>
+<p>&nbsp;</p>
+<p><strong>Developer</strong></p>
+<p>Name: HUANG CONG REN</p>
+<p>Contact Email: <a href="mailto:tzuchihuang0214@gmail.com">tzuchihuang0214@gmail.com</a></p>
+<p>Electronic Signature Timestamp: (Automatically recorded by the Dropbox Sign system)</p>
+<hr>
+<p><em>This Appendix, together with the Main Agreement (MTS-2026-001) and Appendices A, B, and C, consists of five documents. Both parties shall each hold one electronic copy, which shall have equal validity.</em></p>
+
+
+</div>
+</div><!-- /page-wrapper -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        fontFamily: 'Noto Sans TC, Noto Sans, sans-serif',
+        primaryColor: '#eef3f8',
+        primaryBorderColor: '#1a3a5c',
+        primaryTextColor: '#1a1a1a',
+        lineColor: '#1a3a5c'
+      }
+    });
+  </script>
+</body>
+</html>

@@ -34,7 +34,17 @@
 | 附件 C 驗收項目（共 46 項） | appendix-c.md |
 | 附件 D 長期合作框架 | appendix-d.md |
 
-print 用 HTML 版本位於 `docs/html/`；目前僅確認 `appendix-d-zh-print.html` 已同步最新內容，**主合約與其他附件的 HTML 版本是否存在/需同步尚待確認**。
+print 用 HTML 版本位於 `docs/html/`；五份文件的 print HTML（contract/appendix-a/b/c/d-zh-print.html）與合併版 `merged-zh-print.html` 均已對齊最新 md 內容。
+
+## 2026-06-11 PDF 交付與發現的問題
+
+- **已將完整合約 PDF（`docs/pdf/Motise軟體開發服務合約 0611.pdf`，由 `merged-zh-print.html` 列印產生）交付給客戶。**
+- 交付前最後一輪 md 修改（已全部反映在此 PDF 中）：
+  - contract-zh.md 2.3 / 6.3 補上「Apple Developer 組織帳號 D-U-N-S Number 核發延誤」排除項，與附件 B B-5 同步
+  - appendix-c.md C-5 同步 4.7.1（緩衝期內程式碼缺陷退件不重新起算）與 4.7.2（驗收合格基準與付款觸發三擇一）最新文字
+  - appendix-c.md C-6 移除「合作情境確認」勾選列（避免與 4.2 情境於簽約時點即底定的邏輯衝突）
+  - appendix-b.md B-1 移除「(排除Apple組織權限)」舊措辭殘留，改為「詳見附件A第A-6節「啟動前」表列項目」
+- **⚠️ 已修正但PDF交付時仍存在的瑕疵：** `scripts/merge_html_zh.py` 中有一段過時的硬編碼 patch，會在 C-6 驗收總表的「前置工作（Landing Page）｜1」列後**多插入一列「軌道 A｜10」**（這是舊版 44 項時代、appendix-c-zh-print.html 缺軌道A列時的暫時性修補，appendix-c.md 早已自帶正確的「軌道A｜11」列，此 patch 已變成重複/多餘）。**已交付的 PDF 第 C-6 節因此多了一列「軌道A｜10」**（合計仍正確顯示46，但分項列出現重複的軌道A）。已移除該 patch 並重新產生 `merged-zh-print.html`（已修正，無重複列）。**待辦：需重新列印產生新版 PDF 並視情況補發給客戶**（瑕疵不影響合約權利義務，僅為附件C驗收總表的呈現問題）。
 
 ## 專案時程（2026/06/11 確定版）
 

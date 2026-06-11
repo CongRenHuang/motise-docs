@@ -1,8 +1,7 @@
 # Appendix A | Project Scope and Technical Specification
 
 Agreement No.: MTS-2026-001
-Version: v1.0
-Date: June 09, 2026
+Date: June 11, 2026
 
 Parties: Motise Inc (Client) / HUANG CONG REN (Developer)
 
@@ -16,7 +15,7 @@ This document defines the development scope, functional modules, and technical s
 
 ## A-2 System Module List
 
-The following modules are entirely included in the development scope for v1.0.
+All the following modules are included in the development scope of v1.0.
 
 | No. | Module Name | Description | Platform |
 |---|---|---|---|
@@ -88,9 +87,19 @@ The following modules are entirely included in the development scope for v1.0.
 ### A-3-8 Privacy Policy & Terms of Service Templates
 
 - The Developer will provide basic English templates (Basic Templates) of the Privacy Policy and Terms of Service that comply with general US regulatory compliance frameworks (GDPR, CCPA basic frameworks) before the end of Track A.
-- The Client shall confirm or provide modifications within 3 working days after receiving the templates; failure to reply within the time limit will be deemed as confirmation of the original templates, and the Developer may directly use them for embedding and deployment.
+- The Client shall confirm or provide modifications within 3 working days after receiving the templates; failure to reply within the timeframe will be deemed as confirmation of the original templates, and the Developer may directly use them for embedding and deployment.
+- The Client may still request modifications to the **text content** of the Privacy Policy and Terms of Service after the aforementioned confirmation and before embedding and deployment in Track C. The Developer shall assist in updating and deploying such modifications, provided that they do not affect the established schedule of Track C. If the requests involve adding new consent workflows, new types of clauses, or structural changes, they shall be handled as a change of scope in accordance with Section 1.3 of the Main Agreement.
 - The Developer is responsible for completely embedding, deploying, and linking the confirmed content in the corresponding sections of the Landing Page and the App.
 - The aforementioned templates serve as a reference basis for technical integration purposes, and the Client is solely responsible for confirming final legal compliance. The Client's confirmation of the content is deemed as having conducted its own review and assuming compliance responsibility.
+
+### A-3-9 Technical Documentation Delivery Specifications
+
+The Developer shall provide technical documentation in accordance with the following specifications, which shall serve as the content basis for the corresponding acceptance items in Appendix C (A-11, B-23, C-09):
+
+- **Deployment Guide:** Build steps for the local development environment, deployment steps for the backend server (AWS Lightsail), list and explanation of environment variables, configuration methods for third-party services (Stripe, Firebase, etc.), and instructions for the App packaging and publishing process.
+- **Architecture Documentation:** Database schema description, API documentation (including key field definitions), and technical architecture and operational logic description for each module (M-01 to M-08) listed in Section A-2 of Appendix A.
+
+The document version shall be consistent with the source code delivered for the corresponding track. Documents updated along with the development progress shall be submitted in versions applicable to the current scope during the acceptance of each track; there is no need to provide the complete version during Tracks A and B. The complete version shall be handed over together during Track C (C-09).
 
 -----
 
@@ -160,17 +169,22 @@ Third-party Integrations
 
 ## A-6 Resources Provided by Client
 
-### Before Kickoff (By June 13, 2026)
+### Before Kickoff (By June 12, 2026)
 
 | Item | Delivery Method |
 |---|---|
-| GitHub Repository Setup | Created and hosted under Developer's account, inviting Client as Viewer (ownership transferred upon final payment). |
+| GitHub Repository Setup | Created under the Client's account (or an organization designated by the Client), inviting the Developer as a Collaborator and granting Admin permissions (see Section 5.4 of the Main Agreement for details). |
 | AWS Lightsail Access | Provide IAM user account or invite as Lightsail Administrator. |
 | Google Play Console Access | Add as Release Manager. |
-| Stripe Account API Keys | Client creates and provides them (KYC is a legal requirement). |
 | motise.net Domain Access | Provide DNS management access or assist with DNS configuration. |
 
-### Before Track B Kickoff (By June 23, 2026)
+### Stripe Account Settings (KYC to be initiated within 3 working days after the first installment payment is received)
+
+| Item | Description |
+|---|---|
+| Stripe Account API Keys | The Client shall apply for the Stripe account and provide the API keys after completing the KYC verification. The KYC must be completed by the Client personally (due to legal requirements, the Developer cannot act on their behalf), which takes about 3–5 working days for review. The application shall be initiated within 3 working days after the receipt of the first installment payment in accordance with Section 2.4 of the Main Agreement. If provided late, the acceptance items related to Stripe (A-07 / A-08 in Appendix C) shall be postponed, which will not be considered a delay by the Developer, nor will it trigger the delay compensation clause. |
+
+### Before Track B Kickoff (By June 22, 2026)
 
 | Item | Delivery Method |
 |---|---|
@@ -185,13 +199,13 @@ Third-party Integrations
 
 > ⚠️ Failure to provide Landing Page assets will not affect the development schedule. The Developer will independently determine content and layout based on review requirements; once completed, it will be the final version.
 
-### Before Launch and Submission (Before Track C Kickoff, Target July 07, 2026)
+### Before Launch and Submission (Before Track C Kickoff, Target July 06, 2026)
 
 | Item | Description |
 |---|---|
 | Apple Developer Team Access | Add as App Manager in App Store Connect (Requires organization account to be activated first). |
 | App Icon | 1024 × 1024 PNG format. |
-| Privacy Policy URL | Notion page or any public URL. |
+| Privacy Policy URL | Any public URL on motise.net. |
 | Sample Course Data | Used for testing and demonstration. |
 | Test Accounts (5 Sets) | 3 Students, 1 Teacher, 1 Admin. |
 

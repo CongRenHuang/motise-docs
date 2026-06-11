@@ -413,129 +413,27 @@
       .parties { display: grid; }
     }
   
-    /* Markdown Styles */
-    .article h1 {
-      text-align: center;
-      font-size: 16pt;
-      font-weight: 700;
-      letter-spacing: .12em;
-      color: var(--color-accent);
-      margin-bottom: 10mm;
-      padding-bottom: 6mm;
-      border-bottom: 2px solid var(--color-accent);
-    }
-    .article h3 {
-      font-family: var(--font-sans);
-      font-size: var(--size-sm);
-      font-weight: 700;
-      color: var(--color-accent);
-      margin-top: 6mm;
-      margin-bottom: 2mm;
-    }
-    .article p {
-      text-indent: 0;
-      margin-bottom: 4mm;
-    }
-    .article ul, .article ol {
-      margin-left: 2em;
-      margin-bottom: 4mm;
-      font-size: var(--size-sm);
-      color: var(--color-muted);
-      line-height: 1.75;
-    }
-    .article blockquote {
-      margin: 3mm 0 4mm;
-      padding: 3mm 6mm;
-      border-left: 3px solid var(--color-border);
-      background: #f9f9f9;
-      font-family: var(--font-sans);
+    .appendix-disclaimer {
       font-size: var(--size-xs);
       color: var(--color-muted);
-      line-height: 1.7;
+      margin-top: 5mm;
+      font-family: var(--font-sans);
+      text-indent: 0 !important;
     }
-    .article pre {
-      background: #f4f4f4;
-      border: 1px solid var(--color-border-light);
-      border-left: 3px solid var(--color-accent);
-      padding: 4mm 6mm;
+
+  
+    .mermaid {
+      text-align: center;
       margin: 2mm 0 4mm 0;
-      font-family: 'Courier New', Courier, monospace;
-      font-size: var(--size-sm);
-      overflow-x: auto;
+      page-break-inside: avoid;
+      break-inside: avoid;
     }
-    /* Fix table column wrapping */
-    .criteria-table {
-      table-layout: fixed !important;
-      width: 100% !important;
+    .mermaid svg {
+      max-width: 100% !important;
+      height: auto !important;
     }
-    .criteria-table th:nth-child(1),
-    .criteria-table td:nth-child(1) {
-      width: 10% !important;
-      white-space: nowrap !important;
-    }
-    .criteria-table th:nth-child(2),
-    .criteria-table td:nth-child(2) {
-      width: 30% !important;
-    }
-    .criteria-table th:nth-child(3),
-    .criteria-table td:nth-child(3) {
-      width: 60% !important;
-    }
-    /* A-2 Module Table CSS */
-    .module-table {
-      table-layout: fixed !important;
-      width: 100% !important;
-    }
-    .module-table th:nth-child(1),
-    .module-table td:nth-child(1) {
-      width: 10% !important;
-      white-space: nowrap !important;
-    }
-    .module-table th:nth-child(2),
-    .module-table td:nth-child(2) {
-      width: 25% !important;
-    }
-    .module-table th:nth-child(3),
-    .module-table td:nth-child(3) {
-      width: 45% !important; /* Limit Description column width */
-    }
-    .module-table th:nth-child(4),
-    .module-table td:nth-child(4) {
-      width: 20% !important;
-      white-space: nowrap !important; /* Avoid wrapping iOS · Android */
-    }
-    /* A-5-2 Tech Table CSS */
-    .tech-table {
-      table-layout: fixed !important;
-      width: 100% !important;
-    }
-    .tech-table th:nth-child(1),
-    .tech-table td:nth-child(1) {
-      width: 20% !important;
-      white-space: nowrap !important;
-    }
-    .tech-table th:nth-child(2),
-    .tech-table td:nth-child(2) {
-      width: 25% !important;
-    }
-    .tech-table th:nth-child(3),
-    .tech-table td:nth-child(3) {
-      width: 55% !important; /* Limit Rationale column width */
-    }
-    /* A-6 Resource Table CSS */
-    .resource-table {
-      table-layout: fixed !important;
-      width: 100% !important;
-    }
-    .resource-table th:nth-child(1),
-    .resource-table td:nth-child(1) {
-      width: 45% !important; /* Increase Item column width to prevent wrapping */
-    }
-    .resource-table th:nth-child(2),
-    .resource-table td:nth-child(2) {
-      width: 55% !important; /* Decrease Delivery Method column width */
-    }
-</style>
+
+  </style>
 </head>
 <body>
 
@@ -546,8 +444,7 @@
 <div class="article">
 <h1>Appendix C | Acceptance Criteria</h1>
 <p>Agreement No.: MTS-2026-001
-Version: v1.0
-Date: June 09, 2026</p>
+Date: June 11, 2026</p>
 <p>Parties: Motise Inc (Client) / HUANG CONG REN (Developer)</p>
 <hr>
 <h2>C-1 Acceptance Principles</h2>
@@ -565,20 +462,20 @@ Date: June 09, 2026</p>
 <tbody><tr>
 <td>Track A</td>
 <td>Backend and Infrastructure</td>
-<td>6/13 – 6/27</td>
+<td>6/12 – 6/26</td>
 <td>5 working days after completion</td>
 </tr>
 <tr>
 <td>Track B</td>
 <td>Frontend App and Web-based Admin</td>
-<td>6/23 – 7/4</td>
+<td>6/22 – 7/3</td>
 <td>5 working days after completion</td>
 </tr>
 <tr>
 <td>Track C</td>
 <td>Launch and Production Environment</td>
-<td>7/7 – 8/4</td>
-<td>7 working days after launch</td>
+<td>7/6 – 8/7</td>
+<td>14 working days after launch</td>
 </tr>
 </tbody></table>
 <h3>C-1-2 Acceptance Protection Clauses</h3>
@@ -589,6 +486,13 @@ Date: June 09, 2026</p>
 <li><strong>Track locking.</strong> Once a track passes acceptance, it is locked and cannot be objected to during subsequent tracks or at formal delivery.</li>
 <li><strong>New requests quoted separately.</strong> New requirements raised during acceptance are excluded from the current scope and will be quoted separately for the next version.</li>
 <li><strong>App Store / Google Play Rejection Handling:</strong> Metadata rejections will receive a fixed version within 2 working days; functional rejections will receive a fixed version within 5 working days.</li>
+<li><strong>Re-acceptance limits:</strong> For the list of written modification suggestions submitted by the Client during the acceptance period, after the Developer completes the modifications, the Client can only perform re-acceptance on the modification results of the items originally listed in the list, and shall not propose new modification suggestions outside the original list during re-acceptance. The re-acceptance period is limited to 3 working days, and failure to submit re-acceptance results within this period is deemed as full acceptance.</li>
+<li><strong>Regression Bug:</strong> If the code changes made by the Developer to correct items in the current list directly cause new functional errors in other items within the same acceptance list, or in existing functions of items that have previously passed acceptance (subject to the standards of Section 1, with a clear explanation of the functional issue), the Client may raise them during the re-acceptance period together, free from the restriction of Section 7 &quot;no new suggestions outside the original list&quot; and without constituting a violation of Track Locking under Section 4. The Developer shall correct them together; for the additional correction time required, the re-acceptance period for that specific item may be extended by 3 working days, and the re-acceptance period for other items shall not be affected. The re-acceptance of regression bugs is strictly limited to confirming that the defect has been corrected, and no other new suggestions may be derived and proposed.</li>
+</ol>
+<h3>C-1-3 Technical Criteria and Stability Standards</h3>
+<ol>
+<li><strong>Technical Criteria for Determination:</strong> Functional acceptance of each item shall be based on successful code compilation and operation, correct data return verified by API testing (e.g., Postman), or actual operational capability in a testing environment (e.g., Landing Page on a real browser, App on TestFlight), and &quot;complete compliance with the corresponding Criteria description for that item in Appendix C&quot; as the passing standard.</li>
+<li><strong>System Stability Requirements:</strong> The core functions and processes under acceptance must not contain blocker bugs or major defects that cause system crashes or freeze (Critical Bugs) during testing. Operational testing of the main flow must exhibit continuous running stability to be considered as passing the acceptance.</li>
 </ol>
 <hr>
 <h2>C-2 Preliminary Work Acceptance | Landing Page</h2>
@@ -610,7 +514,7 @@ Date: June 09, 2026</p>
 </tr>
 </tbody></table>
 <blockquote>
-<p><strong>Layout Notes:</strong> Final layout is determined by the Developer based on review needs. The Client may provide brand assets for reference, but it is not mandatory. Post-delivery layout or content modifications are not covered by this Agreement.</p>
+<p><strong>Layout Notes:</strong> Final layout is determined by the Developer based on review needs. The Client may provide brand assets (Logo, brand colors, copy) for reference, but it is not mandatory. Post-delivery layout or content modifications are not covered by this Agreement.</p>
 </blockquote>
 <p><strong>Preliminary Work Acceptance Result</strong></p>
 <table>
@@ -643,7 +547,7 @@ Date: June 09, 2026</p>
 </tbody></table>
 <hr>
 <h2>C-3 Track A Acceptance | Backend and Infrastructure</h2>
-<p><strong>Development Period: 2026/06/13 – 2026/06/27</strong>
+<p><strong>Development Period: 2026/06/12 – 2026/06/26</strong>
 <strong>Method:</strong> API Documentation + Postman Test Report. The Client does not operate an interface; Developer provides test results for confirmation.</p>
 <table class="criteria-table">
 <thead>
@@ -703,6 +607,11 @@ Date: June 09, 2026</p>
 <td>QR Code Verify API</td>
 <td>Teacher calling verification marks attendance; duplicates show &quot;Already Checked-in&quot;; invalid tokens error</td>
 </tr>
+<tr>
+<td>A-11</td>
+<td>Track A Technical Documentation</td>
+<td>Provide draft API documentation and database Schema description documents covering the completed modules of Track A, matching the specifications of Section A-3-9 of Appendix A</td>
+</tr>
 </tbody></table>
 <blockquote>
 <p>⚠️ <strong>Stripe Prerequisite:</strong> Client must start Stripe KYC within 3 working days of the first payment. Delays here will postpone A-07/A-08 acceptance without triggering Developer delay penalties.</p>
@@ -730,7 +639,7 @@ Date: June 09, 2026</p>
 </tbody></table>
 <hr>
 <h2>C-4 Track B Acceptance | Frontend App and Web Admin</h2>
-<p><strong>Development Period: 2026/06/23 – 2026/07/04</strong>
+<p><strong>Development Period: 2026/06/22 – 2026/07/03</strong>
 <strong>Method:</strong> Real-device testing via TestFlight (iOS) + Firebase Distribution (Android). The Client operates the full flow.</p>
 <h3>Authentication</h3>
 <table class="criteria-table">
@@ -891,6 +800,11 @@ Date: June 09, 2026</p>
 <td>Attendance Records</td>
 <td>View attendance lists and check-in statuses</td>
 </tr>
+<tr>
+<td>B-23</td>
+<td>Track B Technical Documentation</td>
+<td>Provide interface description documentation for the frontend App and Web-based backend, and draft setup instructions for third-party services (Firebase), matching the specifications of Section A-3-9 of Appendix A</td>
+</tr>
 </tbody></table>
 <p><strong>Track B Acceptance Result</strong></p>
 <table>
@@ -915,8 +829,27 @@ Date: June 09, 2026</p>
 </tbody></table>
 <hr>
 <h2>C-5 Track C Acceptance | Launch and Production</h2>
-<p><strong>Development Period: 2026/07/07 – 2026/08/04</strong>
-<strong>Method:</strong> Final validation using the official release App (Target acceptance start: 7/22).</p>
+<p><strong>Development Period: 2026/07/06 – 2026/08/07</strong>
+<strong>Method:</strong> Final validation using the official release App (Target acceptance start: July 21).
+<strong>Acceptance Period:</strong> 14 working days after official launch.</p>
+<p><strong>Platform Review Buffer and Acceptance Payment Trigger Instructions (in accordance with Sections 4.7.1 and 4.7.2 of the Main Agreement):</strong></p>
+<p>If the App cannot be officially published on the App Store or Google Play due to the following reasons not attributable to the Developer, the start date of the acceptance period shall be adjusted as follows:</p>
+<ul>
+<li>The Client fails to provide a valid Apple / Google Developer account in a timely manner.</li>
+<li>The Client explicitly requests to postpone launch.</li>
+<li>Platform rejection not caused by defects in the App code (administrative rejection, queue delays, etc.).</li>
+</ul>
+<p>Under the above circumstances, a buffer period of 14 working days starting from the date the Developer delivers the complete TestFlight (or equivalent testing environment) and submits it for review to both platforms shall be granted. During the buffer period, if the App is rejected by the platform due to App code defects or technical non-compliance with the specifications of Appendix A, the Developer shall correct it free of charge and resubmit it, and the buffer period shall not be recalculated.</p>
+<p>Track C acceptance shall be established upon the earliest occurrence of any of the following circumstances, which shall serve as the starting date for the payment instruction of the third installment (final payment):</p>
+<ul>
+<li>The App completes official launch on both iOS and Android platforms;</li>
+<li>Both parties hold an online acceptance meeting, complete real-device functional testing for the Track C items in this section, and confirm approval. The payment instruction shall be issued on the day of the meeting or within the next working day;</li>
+<li>From the day following the expiration of the buffer period mentioned in the preceding paragraph, the acceptance period calculated in accordance with Section 3.2 of the Main Agreement expires, and the Client does not raise written objections, which shall be deemed as passing acceptance.</li>
+</ul>
+<p><strong>Code Defect Warranty:</strong>
+After the Client pays the final installment, if the App&#39;s subsequent official launch process is functionally rejected (Functional Rejection) by the platforms due to defects in the original source code delivered this time, the Developer is obligated to fix the code free of charge until review approval within 60 calendar days after the final payment is made.</p>
+<p><strong>Major Platform Policy Changes:</strong>
+If a functional rejection occurs due to a sudden and major change in platform policies, the Developer will assist free of charge if the modification takes less than 8 hours; for the portion exceeding 8 hours, both parties shall negotiate compensation separately.</p>
 <table class="criteria-table">
 <thead>
 <tr>
@@ -968,12 +901,17 @@ Date: June 09, 2026</p>
 <tr>
 <td>C-09</td>
 <td>Docs Handover</td>
-<td>API docs, DB Schema, 3rd-party configs, handover docs complete</td>
+<td>Complete technical documentation including: Deployment Guide (comprising local environment build, AWS deployment steps, environment variables and third-party service settings, and packaging/publishing instructions), System Architecture Documentation (comprising database Schema, API documentation, and technical architecture description for each module), and System Handover Documentation, matching the specifications of Section A-3-9 of Appendix A</td>
 </tr>
 <tr>
 <td>C-10</td>
-<td>Code Handover</td>
-<td>GitHub Repo transferred, README complete. Collaborator roles updated</td>
+<td>AWS Environment Handover</td>
+<td>AWS Lightsail Production environment access and ownership transferred to the Client within 3 working days after the settlement of the third installment in accordance with Section 5.5 of the Main Agreement, with a README explaining the deployment process; the GitHub Repository is created under the Client&#39;s account from the beginning, and the survival of the Developer&#39;s Admin permissions shall be handled in accordance with Section 5.4.1 of the Main Agreement</td>
+</tr>
+<tr>
+<td>C-11</td>
+<td>Privacy Policy &amp; Terms of Service Embedding</td>
+<td>Privacy Policy and Terms of Service have been fully embedded and deployed in the corresponding sections of the Landing Page and the App according to the version confirmed in writing by both parties; links open normally, and the content matches the version confirmed by both parties.</td>
 </tr>
 </tbody></table>
 <blockquote>
@@ -1005,29 +943,29 @@ Date: June 09, 2026</p>
 <table>
 <thead>
 <tr>
-<th>Track</th>
-<th>Total Criteria</th>
+<th>Item</th>
+<th>Number of Acceptance Criteria</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>Preliminary (Landing)</td>
+<td>Preliminary (Landing Page)</td>
 <td>1</td>
 </tr>
 <tr>
 <td>Track A</td>
-<td>10</td>
+<td>11</td>
 </tr>
 <tr>
 <td>Track B</td>
-<td>22</td>
+<td>23</td>
 </tr>
 <tr>
 <td>Track C</td>
-<td>10</td>
+<td>11</td>
 </tr>
 <tr>
 <td><strong>Total</strong></td>
-<td><strong>43</strong></td>
+<td><strong>46</strong></td>
 </tr>
 </tbody></table>
 <p><strong>Final Delivery Confirmation</strong></p>
@@ -1043,10 +981,6 @@ Date: June 09, 2026</p>
 <td></td>
 </tr>
 <tr>
-<td>Cooperation Scenario</td>
-<td>☐ Scenario 1 (Long-term, $1,800)　☐ Scenario 2 (One-off, $2,499)</td>
-</tr>
-<tr>
 <td>Client Signature</td>
 <td></td>
 </tr>
@@ -1056,10 +990,24 @@ Date: June 09, 2026</p>
 </tr>
 </tbody></table>
 <hr>
-<p><em>Appendix C has the same legal effect as the Main Agreement (MTS-2026-001). The signing of the Main Agreement by both parties is deemed as confirmation of the contents of this Appendix.</em></p>
+<p class="appendix-disclaimer"><em>Appendix C has the same legal effect as the Main Agreement (MTS-2026-001). The signing of the Main Agreement by both parties is deemed as confirmation of the contents of this Appendix.</em></p>
 
 
 </div>
 </div><!-- /page-wrapper -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        fontFamily: 'Noto Sans TC, Noto Sans, sans-serif',
+        primaryColor: '#eef3f8',
+        primaryBorderColor: '#1a3a5c',
+        primaryTextColor: '#1a1a1a',
+        lineColor: '#1a3a5c'
+      }
+    });
+  </script>
 </body>
 </html>
