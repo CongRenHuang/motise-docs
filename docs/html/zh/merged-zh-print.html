@@ -388,7 +388,8 @@
 <div class="clause"><span class="clause-num">3.5</span>驗收期間提出之新需求，不列入本次驗收範疇，另行評估報價後進入下一版本開發。</div>
 <div class="clause"><span class="clause-num">3.6</span><strong>主觀退件無效：</strong> 客戶方提出之驗收不通過或退件意見，須具備明確之功能性問題說明或與雙方確認之設計規格不符之具體事證。以主觀性描述（如「感覺不對」、「體驗不順暢」等）作為退件理由者，不生退件之效力，仍視同通過。</div>
 <div class="clause"><span class="clause-num">3.7</span><strong>複驗限制與時限：</strong> 針對客戶方於驗收期內提出之書面修改意見清單，開發方完成修正後，客戶方僅能就該清單內原列項目之修正結果進行複驗。客戶方不得於複驗時提出原清單外之新修改意見或重複挑剔，複驗時間以 3 個工作天為限，逾期未提交複驗結果視同全數通過。</div>
-<div class="clause"><span class="clause-num">3.8</span><strong>每週同步會議：</strong> 雙方原則上於每週五 23:00 至翌日（週六）01:00（台灣時間，UTC+8；對應美國太平洋時間週五上午 08:00–10:00）進行線上同步會議，同步專案進度。如遇雙方無法於該時段進行會議，應提前告知並協調改期，但仍應於該週內完成一次同步會議。</div>
+<div class="clause"><span class="clause-num">3.7</span>.1 <strong>回歸缺陷（Regression Bug）：</strong> 若開發方為修正本次清單項目所為之程式碼變更，直接導致同一驗收清單內其他項目、或先前已通過驗收項目之既有功能產生新的功能性錯誤（須符合第 3.6 條標準，具備明確功能性問題說明），客戶方得於複驗期間一併提出，不受第 3.7 條「不得提出清單外新意見」之限制，亦不構成違反第 3.4 條軌道鎖定。開發方應一併修正；因此所需之額外修正時間，複驗期限得就該項目順延 3 個工作天，其餘項目複驗期限不受影響。回歸缺陷之複驗僅限確認該缺陷已修正，不得再衍生提出其他新意見。</div>
+<div class="clause"><span class="clause-num">3.8</span><strong>每週同步會議：</strong> 雙方原則上於每週五 24:00 至翌日（週六）01:00（台灣時間，UTC+8；對應美國太平洋時間週五上午 09:00–10:00）進行線上同步會議，同步專案進度。如遇雙方無法於該時段進行會議，應提前告知並協調改期，但仍應於該週內完成一次同步會議。</div>
 <hr>
 <h2>第四條｜費用與付款</h2>
 <div class="clause"><span class="clause-num">4.1</span>本合約費用依雙方確認之合作情境計算，分三期支付：</div>
@@ -450,8 +451,13 @@
 <div class="clause"><span class="clause-num">4.5</span><strong>匯款條款：</strong> 款項以美元（USD）支付至開發方指定 Wise 帳號。所有匯款手續費由客戶方承擔，開發方實收金額不得低於各期合約約定金額。</div>
 <div class="clause"><span class="clause-num">4.6</span><strong>上架費用：</strong> App Store 上架費用（Apple Developer Program 年費 $99 USD、Google Play 一次性 $25 USD）由客戶自行負擔，不列入本合約開發費用。</div>
 <div class="clause"><span class="clause-num">4.7</span><strong>交付測試起算驗收：</strong> 針對軌道 C 驗收，開發方將 App 提交至 TestFlight/Firebase Distribution 進行交付測試，或通過平台（App Store / Google Play）審核後，即視為驗收期起算日。若因客戶方未提供帳號、平台政策變更、或客戶方主觀決定暫緩上線等非開發方原因導致 App 無法對外正式發布，不影響軌道 C 驗收之進行，仍以交付測試或審核通過之日起算 14 個工作天。</div>
-<div class="clause"><span class="clause-num">4.7</span>.1 <strong>平台審核緩衝：</strong> 因不可歸責於開發方之事由（僅限於：客戶未及時提供有效之 Apple / Google 開發者帳號、客戶明示暫緩上架、或非因 App 程式碼缺陷所致之平台拒絕），導致 App 無法於 App Store 或 Google Play 正式公開上架時，自開發方交付完整 TestFlight（或同等測試環境）並提交雙平台審查之日起算，給予 14 個工作天之審查與平台溝通緩衝期。</div>
-<div class="clause"><span class="clause-num">4.7</span>.2 <strong>階段性實機驗收：</strong> 若超過前款 14 個工作天，仍因前述客戶原因或平台行政程序未能上架，雙方應進行階段性實機功能驗收。若功能符合附件 C 之測試標準，客戶應支付第三期尾款。</div>
+<div class="clause"><span class="clause-num">4.7</span>.1 <strong>平台審核緩衝：</strong> 因不可歸責於開發方之事由（僅限於：客戶未及時提供有效之 Apple / Google 開發者帳號、客戶明示暫緩上架、或非因 App 程式碼缺陷所致之平台拒絕），導致 App 無法於 App Store 或 Google Play 正式公開上架時，自開發方交付完整 TestFlight（或同等測試環境）並提交雙平台審查之日起算，給予 14 個工作天之審查與平台溝通緩衝期。緩衝期間內，若因 App 程式碼缺陷或技術未符合附件 A 規格遭平台退件，開發方應免費修正並重新提交，不重新起算緩衝期。</div>
+<div class="clause"><span class="clause-num">4.7</span>.2 <strong>驗收合格基準與付款觸發：</strong> 軌道 C 驗收，於下列任一情形最先發生者成立，並作為第三期尾款付款指示之起算日：</div>
+<ul>
+<li>App 於 iOS、Android 雙平台均完成正式上架；</li>
+<li>雙方召開線上驗收會議，就附件 C 軌道 C 項目完成實機功能測試並確認通過，付款指示應於會議當日或次一工作日內發出；</li>
+<li>自前款緩衝期屆滿之翌日起，依第 3.2 條計算之驗收期限屆至，客戶未提出書面異議者，視同驗收合格。</li>
+</ul>
 <div class="clause"><span class="clause-num">4.7</span>.3 <strong>程式碼缺陷保固：</strong> 若客戶已支付尾款，App 後續正式重啟上架流程時，如因本次交付之「原始程式碼缺陷」遭平台功能性拒絕（Functional Rejection），開發方仍有義務免費修正程式碼至審查通過為止。此保固義務自尾款支付後 60 個日曆天內有效。</div>
 <div class="clause"><span class="clause-num">4.7</span>.4 <strong>平台政策變更：</strong> 若因平台政策突發性重大變更導致功能性退件，且該變更涉及本專案核心功能之程式碼邏輯，開發方同意評估修改可行性並積極配合。修改工時在 8 小時以內者，開發方免費協助；超過 8 小時之部分，雙方另行協議合理報酬及延長之開發與驗收時程。</div>
 <div class="clause"><span class="clause-num">4.8</span><strong>逾期付款與暫停服務：</strong> 各期款項支付時機屆至後，若客戶方逾期超過 7 個日曆天未付清，開發方有權暫停一切後續開發、送審、上線、維護、諮詢或所有權轉移服務。客戶方應自逾期之日起，就未付款項按月息百分之一（1%，年息 12%）計付滯納金，不足一個月者按日比例計算。</div>
@@ -475,7 +481,7 @@
 </ul>
 <div class="clause"><span class="clause-num">5.5</span>AWS Production 環境存取權與所有權的移交，將於第三期款結清後 3 個工作日內移交予客戶，開發方有義務協助完成轉移設定。</div>
 <div class="clause"><span class="clause-num">5.6</span>開發期間使用之第三方服務帳號（Stripe、Firebase、Apple Developer、Google Play）本身即登記於客戶名下，其所有權不受本條影響。</div>
-<div class="clause"><span class="clause-num">5.7</span>技術文件（API 文件、資料庫 Schema 說明、第三方服務設定說明、系統交接說明）將於各軌道驗收時同步提交，並於正式交付時完整移交。</div>
+<div class="clause"><span class="clause-num">5.7</span>技術文件（包含但不限於部署指南與系統架構說明文件，詳細規格依附件A第 A-3-9 節）應依附件C所列對應驗收項目（A-11、B-23、C-09），於各軌道驗收時同步提交，並於正式交付時完整移交；其驗收依第三條（含第 3.4、3.6、3.7 條）所定機制辦理。</div>
 <div class="clause"><span class="clause-num">5.8</span><strong>違約救濟：</strong> 若客戶發生未依約付款之實質違約，經開發方書面催告後七（7）個日曆天內仍未改善，開發方有權：（一）暫停該期及後續階段之開發工作；（二）暫停交付最新開發進度；（三）依法向客戶追討損害賠償。上述權利之行使，不影響已到帳款項所對應之著作財產權移轉效力。</div>
 <div class="clause"><span class="clause-num">5.9</span><strong>任意終止：</strong> 任一方均得於 14 個日曆天前以書面通知另一方，隨時以任何理由或無理由終止本合約。終止時，客戶須支付「終止日應付金額」，計算方式如下：</div>
 <pre><code>終止日應付金額
@@ -484,6 +490,11 @@
 − 已支付款項
 </code></pre>
 <p>開發方於收到上述終止日應付金額後，於 1 個工作天內，將截至終止日已完成之工作成果，以移轉 Repository 所有權或開放完整存取權之方式交付予客戶。若終止日應付金額計算結果為零或負數，開發方無需退還已收款項，並於確認後 1 個工作天內完成交付。通知期間內，開發方無義務開發新功能。未結清終止日應付金額前，對應之程式碼著作財產權不予移轉。</p>
+<div class="clause"><span class="clause-num">5.9</span>.1 <strong>客戶方加速終止權（可歸責於開發方之事由）：</strong> 若有下列任一客觀情形，客戶方得免除前項事先通知期間，逕以書面通知開發方終止本合約，並自通知送達之日起終止；終止結算金額仍依第 5.9 條公式計算：</div>
+<ul>
+<li>附件 C 任一驗收項目，逾該項目所屬軌道依附件 B 時程約定之完成期限超過 7 個工作天仍未完成，且開發方未就遲延提出書面說明；或</li>
+<li>開發方就專案相關事務（含 Email、即時通訊等書面聯繫管道），連續 5 個工作天完全未回應客戶方之聯繫，且事後未能說明合理原因或不可抗力事由。</li>
+</ul>
 <div class="clause"><span class="clause-num">5.10</span><strong>原創性保證：</strong> 開發方保證，交付之程式碼為原創，未侵害任何第三方智慧財產權，且未受任何留置權或權利負擔。</div>
 <hr>
 <h2>第六條｜延遲賠償</h2>
@@ -667,9 +678,17 @@
 <ul>
 <li>開發方於軌道 A 結束前，提供符合美國一般合規參考框架（GDPR、CCPA 基本架構）之隱私政策（Privacy Policy）與服務條款（Terms of Service）英文基礎範本（Basic Template）</li>
 <li>客戶應於收到範本後 3 個工作天內確認或提供修改內容；逾期未回覆視同確認原始範本，開發方得直接使用進行嵌入與部署</li>
+<li>客戶於前項確認後至軌道 C 嵌入部署前，仍得對隱私政策與服務條款之<strong>文字內容</strong>提出修改，開發方應協助更新部署，惟不得因此影響軌道 C 既定時程；若涉及新增同意流程、新增條款類型或架構變更，依主合約第 1.3 條範疇變更處理</li>
 <li>開發方負責將確認後之內容完整嵌入、部署並連動於 Landing Page 及 App 對應區塊</li>
 <li>上述範本為技術整合用途之參考基礎，最終法律合規性由客戶自行負責確認；客戶確認內容後視為已自行審查並承擔合規責任</li>
 </ul>
+<h3>A-3-9 技術文件交付規格（Technical Documentation）</h3>
+<p>開發方應依下列規格提供技術文件，作為附件C對應驗收項目（A-11、B-23、C-09）之內容依據：</p>
+<ul>
+<li><strong>部署指南（Deployment Guide）：</strong> 本地端開發環境建置步驟、後端伺服器（AWS Lightsail）部署步驟、環境變數清單與說明、第三方服務（Stripe、Firebase 等）設定方式，及 App 打包上架流程說明</li>
+<li><strong>系統架構說明（Architecture Documentation）：</strong> 資料庫結構（Schema）說明、API 文件（含主要欄位定義）、附件A A-2 所列各模組（M-01–M-08）之技術架構與運作邏輯說明</li>
+</ul>
+<p>文件版本應與對應軌道交付之原始碼一致；隨開發進度更新之文件，於各軌道驗收時提交當下適用範圍之版本，無需於軌道 A、B 階段即提供完整版，完整版於軌道 C（C-09）一併移交。</p>
 <hr>
 <h2>A-4 v1.0 不列入範疇</h2>
 <p>下列項目明確排除於本合約開發範疇之外，於後續版本另行規劃報價：</p>
@@ -919,7 +938,7 @@
 <tbody><tr>
 <td>客戶提供所有必要存取權限</td>
 <td>2026/06/12</td>
-<td>詳見附件 A 第 A-6 節（排除 Apple 組織權限）</td>
+<td>詳見附件 A 第 A-6 節「啟動前」表列項目</td>
 </tr>
 <tr>
 <td>motise.net 網域存取權限提供</td>
@@ -1148,7 +1167,7 @@
 </tr>
 </tbody></table>
 <hr>
-<!-- <h2>B-4 時程總覽（甘特圖）</h2>
+<h2>B-4 時程總覽（甘特圖）</h2>
 <div class="mermaid">
 gantt
     dateFormat YYYY-MM-DD
@@ -1181,7 +1200,7 @@ gantt
     專案正式交付               :milestone, m3, 2026-08-07, 0d
 
 </div>
-<hr> -->
+<hr>
 <h2>B-5 延遲條款說明</h2>
 <p><strong>不列入開發方延遲責任之情況：</strong></p>
 <ul>
@@ -1249,6 +1268,7 @@ gantt
 <li><strong>新需求另行報價。</strong> 驗收期間提出之新需求不列入本次驗收範疇，另行評估報價後進入下一版本。</li>
 <li><strong>App Store / Google Play 審核退件應對：</strong> Metadata 類退件於收到通知後 2 個工作天內提交修正版；功能性退件於 5 個工作天內提交修正版。</li>
 <li><strong>複驗限制：</strong> 針對客戶方於驗收期內提出之書面修改意見清單，開發方完成修正後，客戶方僅能就該清單內原列項目之修正結果進行複驗，不得於複驗時提出原清單外之新修改意見。複驗時間以 3 個工作天為限，逾期未提交複驗結果視同全數通過。</li>
+<li><strong>回歸缺陷（Regression Bug）：</strong> 若開發方為修正本次清單項目所為之程式碼變更，直接導致同一驗收清單內其他項目、或先前已通過驗收項目之既有功能產生新的功能性錯誤（須符合第 1 點功能性問題說明標準），客戶得於複驗期間一併提出，不受第 7 點「不得提出清單外新意見」之限制，亦不構成違反第 4 點軌道鎖定。開發方應一併修正；因此所需之額外修正時間，複驗期限得就該項目順延 3 個工作天，其餘項目複驗期限不受影響。回歸缺陷之複驗僅限確認該缺陷已修正，不得再衍生提出其他新意見。</li>
 </ol>
 <h3>C-1-3 驗收技術判定與穩定度標準</h3>
 <ol>
@@ -1367,6 +1387,11 @@ gantt
 <td>A-10</td>
 <td>QR Code 核銷 API</td>
 <td>教師呼叫核銷 API 後標記出席；重複核銷返回「已簽到」；無效 token 返回錯誤碼</td>
+</tr>
+<tr>
+<td>A-11</td>
+<td>軌道 A 技術文件</td>
+<td>提供涵蓋軌道 A 已完成模組之 API 文件草稿與資料庫 Schema 說明文件，內容符合附件A A-3-9 規格</td>
 </tr>
 </tbody></table>
 <blockquote>
@@ -1556,6 +1581,11 @@ gantt
 <td>出席記錄</td>
 <td>可查詢各課程出席名單與簽到狀態</td>
 </tr>
+<tr>
+<td>B-23</td>
+<td>軌道 B 技術文件</td>
+<td>提供前端 App 與 Web-based 後台之串接說明文件、第三方服務（Firebase）設定說明草稿，內容符合附件A A-3-9 規格</td>
+</tr>
 </tbody></table>
 <p><strong>軌道 B 驗收結果</strong></p>
 <table>
@@ -1583,14 +1613,20 @@ gantt
 <p><strong>開發期間：2026/07/06 – 2026/08/07</strong>
 <strong>驗收時機：</strong> iOS / Android 正式上線後，以正式版 App 進行最終確認（目標 7/21 開啟驗收）。
 <strong>驗收期：</strong> 正式上線後 14 個工作天。</p>
-<p><strong>平台審核緩衝說明：</strong>
-若因下列不可歸責於開發方之事由，導致 App 無法於 App Store 或 Google Play 正式公開上架，驗收期起算點調整如下：</p>
+<p><strong>平台審核緩衝與驗收付款觸發說明（依主合約 4.7.1、4.7.2）：</strong></p>
+<p>若因下列不可歸責於開發方之事由，導致 App 無法於 App Store 或 Google Play 正式公開上架，驗收期起算點調整如下：</p>
 <ul>
 <li>客戶未及時提供有效之 Apple / Google 開發者帳號</li>
 <li>客戶明示暫緩上架</li>
 <li>非因 App 程式碼缺陷所致之平台拒絕（行政退件、排隊延遲等）</li>
 </ul>
-<p>上述情況下，自開發方交付完整 TestFlight（或同等測試環境）並提交雙平台審查之日起算 14 個工作天為緩衝期。超過 14 個工作天仍因前述客戶原因或平台行政程序未能上架，雙方進行階段性實機功能驗收；功能符合本附件測試標準者，客戶應支付第三期尾款。</p>
+<p>上述情況下，自開發方交付完整 TestFlight（或同等測試環境）並提交雙平台審查之日起算 14 個工作天為緩衝期。緩衝期間內，若因 App 程式碼缺陷或技術未符合附件 A 規格遭平台退件，開發方應免費修正並重新提交，不重新起算緩衝期。</p>
+<p>軌道 C 驗收，於下列任一情形最先發生者成立，並作為第三期尾款付款指示之起算日：</p>
+<ul>
+<li>App 於 iOS、Android 雙平台均完成正式上架；</li>
+<li>雙方召開線上驗收會議，就本節軌道 C 項目完成實機功能測試並確認通過，付款指示應於會議當日或次一工作日內發出；</li>
+<li>自前款緩衝期屆滿之翌日起，依主合約第 3.2 條計算之驗收期限屆至，客戶未提出書面異議者，視同驗收合格。</li>
+</ul>
 <p><strong>程式碼缺陷保固：</strong>
 客戶支付尾款後，App 後續正式重啟上架流程時，若因本次交付之原始程式碼缺陷遭平台功能性拒絕（Functional Rejection），開發方於尾款支付後 60 個日曆天內，有義務免費修正程式碼至審查通過為止。</p>
 <p><strong>平台政策重大變更：</strong>
@@ -1646,7 +1682,7 @@ gantt
 <tr>
 <td>C-09</td>
 <td>技術文件移交</td>
-<td>完整技術文件包含：API 文件、資料庫 Schema 說明、第三方服務設定說明（Firebase、Stripe、AWS）、系統交接說明文件</td>
+<td>完整技術文件包含：部署指南（Deployment Guide，含本地端環境建置、AWS 部署步驟、環境變數與第三方服務設定及打包上架說明）、系統架構說明文件（含資料庫 Schema、API 文件與各模組技術架構說明）、系統交接說明文件，內容符合附件A A-3-9 規格</td>
 </tr>
 <tr>
 <td>C-10</td>
@@ -1701,8 +1737,12 @@ gantt
 <td>10</td>
 </tr>
 <tr>
+<td>軌道 A</td>
+<td>11</td>
+</tr>
+<tr>
 <td>軌道 B</td>
-<td>22</td>
+<td>23</td>
 </tr>
 <tr>
 <td>軌道 C</td>
@@ -1710,7 +1750,7 @@ gantt
 </tr>
 <tr>
 <td><strong>合計</strong></td>
-<td><strong>44</strong></td>
+<td><strong>46</strong></td>
 </tr>
 </tbody></table>
 <p><strong>專案交付最終確認</strong></p>
@@ -1724,10 +1764,6 @@ gantt
 <tbody><tr>
 <td>交付日期</td>
 <td></td>
-</tr>
-<tr>
-<td>合作情境確認</td>
-<td>☐ 情境一（長期合作，$1,800 USD）　☐ 情境二（單次，$2,499 USD）</td>
 </tr>
 <tr>
 <td>客戶方簽核</td>
@@ -1881,6 +1917,18 @@ SOW 雙方簽署完成後，開發方正式開始工作。</p>
     30 個日曆天內（交接保固期），開發方應配合提供
     既有專案文件交接、知識轉移及技術問題支援，
     協助客戶銜接後續開發資源。</div>
+<div class="clause"><span class="clause-num">7.6</span>不論本附件或個別 SOW 因任何原因結束（包含但不限於：
+    本附件期滿或經終止、個別 SOW 已完成且雙方未簽署
+    後續 SOW、或因報酬未達成共識致 SOW 未能成立），
+    開發方應將各已付款且已通過驗收之 SOW 項下，最新
+    版本之原始碼、相關資料庫結構（Schema）說明，及
+    依附件 A 第 A-3-9 節規格之技術文件，於合作關係
+    結束之日起 5 個工作天內移交予客戶，並提供最多
+    2 小時之線上交接說明，不另收費；交接範圍以前述
+    已付款並已通過驗收之交付物為限。尚未付款或尚未
+    通過驗收之工作成果（Work in Progress），其著作
+    財產權歸屬與交付，依各該 SOW 條款及主合約第五條
+    分階段移轉邏輯辦理。</div>
 <hr>
 <h2>D-8 與主合約之關係</h2>
 <div class="clause"><span class="clause-num">8.1</span>本附件與主合約（MTS-2026-001）具同等法律效力，
@@ -1911,7 +1959,7 @@ SOW 雙方簽署完成後，開發方正式開始工作。</p>
 
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <script>
     mermaid.initialize({
       startOnLoad: true,
