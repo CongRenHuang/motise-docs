@@ -1,0 +1,1929 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agreement Document</title>
+  <style>
+    
+    /* ─── Fonts ─── */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500&display=swap');
+
+    :root {
+      --page-width: 210mm;
+      --page-height: 297mm;
+      --margin-top: 25mm;
+      --margin-right: 20mm;
+      --margin-bottom: 25mm;
+      --margin-left: 25mm;
+      --color-text: #1a1a1a;
+      --color-muted: #555;
+      --color-border: #bbb;
+      --color-border-light: #ddd;
+      --color-accent: #1a3a5c;
+      --font-serif: 'Noto Serif TC', 'STSong', '宋體', Georgia, serif;
+      --font-sans: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+      --size-base: 10.5pt;
+      --size-sm: 9pt;
+      --size-xs: 8pt;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #e8e8e8;
+      font-family: var(--font-serif);
+      font-size: var(--size-base);
+      color: var(--color-text);
+      line-height: 1.8;
+    }
+
+    .page-wrapper {
+      max-width: var(--page-width);
+      margin: 32px auto;
+      background: #fff;
+      box-shadow: 0 4px 32px rgba(0,0,0,.18);
+      padding: var(--margin-top) var(--margin-right) var(--margin-bottom) var(--margin-left);
+    }
+
+    .print-btn {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      background: var(--color-accent);
+      color: #fff;
+      border: none;
+      padding: 8px 20px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 4px;
+      letter-spacing: .04em;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    }
+    .print-btn:hover { background: #255a8a; }
+
+    .doc-header {
+      text-align: center;
+      margin-bottom: 10mm;
+      padding-bottom: 6mm;
+      border-bottom: 2px solid var(--color-accent);
+    }
+    .doc-header h1 {
+      font-size: 16pt;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: var(--color-accent);
+      margin-bottom: 3px;
+    }
+    .doc-meta {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      color: var(--color-muted);
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--color-border-light);
+      margin: 6mm 0;
+    }
+
+    .article {
+      margin-bottom: 7mm;
+    }
+    .article h1 {
+      text-align: center;
+      font-size: 16pt;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: var(--color-accent);
+      margin-bottom: 10mm;
+      padding-bottom: 6mm;
+      border-bottom: 2px solid var(--color-accent);
+    }
+    .article h2 {
+      font-family: var(--font-sans);
+      font-size: 10pt;
+      font-weight: 700;
+      color: var(--color-accent);
+      letter-spacing: .1em;
+      border-left: 3px solid var(--color-accent);
+      padding-left: 6px;
+      margin-bottom: 4mm;
+      page-break-after: avoid;
+    }
+    .article h3 {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-top: 6mm;
+      margin-bottom: 2mm;
+    }
+    .article p {
+      font-size: var(--size-base);
+      line-height: 1.85;
+      margin-bottom: 4mm;
+    }
+    .clause {
+      margin-bottom: 2.5mm;
+    }
+    .clause-num {
+      font-weight: 500;
+      color: var(--color-accent);
+      margin-right: 4px;
+    }
+
+    ul, ol {
+      margin-left: 2em;
+      margin-bottom: 4mm;
+      font-size: var(--size-sm);
+      color: var(--color-muted);
+      line-height: 1.75;
+    }
+
+    blockquote {
+      margin: 3mm 0 4mm;
+      padding: 3mm 6mm;
+      border-left: 3px solid var(--color-border);
+      background: #f9f9f9;
+      font-family: var(--font-sans);
+      font-size: var(--size-xs);
+      color: var(--color-muted);
+      line-height: 1.7;
+    }
+
+    pre {
+      background: #f4f4f4;
+      border: 1px solid var(--color-border-light);
+      border-left: 3px solid var(--color-accent);
+      padding: 4mm 6mm;
+      margin: 2mm 0 4mm 0;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: var(--size-sm);
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      margin: 2mm 0 4mm;
+    }
+    table th {
+      background: var(--color-accent);
+      color: #fff;
+      font-weight: 600;
+      padding: 4px 8px;
+      text-align: left;
+      letter-spacing: .04em;
+    }
+    table td {
+      padding: 4px 8px;
+      border-bottom: 1px solid var(--color-border-light);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    table tr:nth-child(even) td { background: #f7f8fa; }
+
+    .formula {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: var(--size-sm);
+      background: #f4f4f4;
+      border: 1px solid var(--color-border-light);
+      border-left: 3px solid var(--color-accent);
+      padding: 4mm 6mm;
+      margin: 2mm 0 3mm 2em;
+      line-height: 1.7;
+      page-break-inside: avoid;
+      white-space: pre-wrap;
+    }
+
+    .sig-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10mm;
+      margin-top: 6mm;
+    }
+    .sig-block {
+      border-top: 1.5px solid var(--color-accent);
+      padding-top: 4mm;
+    }
+    .sig-block h4 {
+      font-family: var(--font-sans);
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 4mm;
+    }
+    .sig-field {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+      margin-bottom: 5mm;
+      color: var(--color-muted);
+    }
+    .sig-field span { white-space: normal; }
+    .sig-field span:first-child {
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .sig-line {
+      flex: 1;
+      border-bottom: 1px solid var(--color-border);
+      min-width: 40px;
+      height: 20px;
+    }
+
+    .appendix-disclaimer {
+      font-size: var(--size-xs);
+      color: var(--color-muted);
+      margin-top: 5mm;
+      font-family: var(--font-sans);
+      text-indent: 0 !important;
+    }
+
+    /* Fix table column wrapping */
+    .criteria-table { table-layout: fixed !important; width: 100% !important; }
+    .criteria-table th:nth-child(1), .criteria-table td:nth-child(1) { width: 10% !important; white-space: nowrap !important; }
+    .criteria-table th:nth-child(2), .criteria-table td:nth-child(2) { width: 30% !important; }
+    .criteria-table th:nth-child(3), .criteria-table td:nth-child(3) { width: 60% !important; }
+
+    .module-table { table-layout: fixed !important; width: 100% !important; }
+    .module-table th:nth-child(1), .module-table td:nth-child(1) { width: 10% !important; white-space: nowrap !important; }
+    .module-table th:nth-child(2), .module-table td:nth-child(2) { width: 25% !important; }
+    .module-table th:nth-child(3), .module-table td:nth-child(3) { width: 45% !important; }
+    .module-table th:nth-child(4), .module-table td:nth-child(4) { width: 20% !important; white-space: nowrap !important; }
+
+    .tech-table { table-layout: fixed !important; width: 100% !important; }
+    .tech-table th:nth-child(1), .tech-table td:nth-child(1) { width: 20% !important; white-space: nowrap !important; }
+    .tech-table th:nth-child(2), .tech-table td:nth-child(2) { width: 25% !important; }
+    .tech-table th:nth-child(3), .tech-table td:nth-child(3) { width: 55% !important; }
+
+    .resource-table { table-layout: fixed !important; width: 100% !important; }
+    .resource-table th:nth-child(1), .resource-table td:nth-child(1) { width: 45% !important; }
+    .resource-table th:nth-child(2), .resource-table td:nth-child(2) { width: 55% !important; }
+
+    .mermaid {
+      text-align: center;
+      margin: 2mm 0 4mm 0;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .mermaid svg {
+      max-width: 100% !important;
+      height: auto !important;
+    }
+
+    @media print {
+      @page { size: A4; margin: 25mm 20mm 25mm 25mm; }
+      @page :first { margin-top: 20mm; }
+      body { background: #fff; font-size: 10pt; color: #000; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page-wrapper { max-width: none; margin: 0; padding: 0; box-shadow: none; }
+      .print-btn { display: none !important; }
+      .pb-before { page-break-before: always; break-before: page; margin-top: 0; }
+      .article h2 { page-break-after: avoid; break-after: avoid; }
+      .party-block, .appendix-section, .payment-scenario, .sig-grid, .formula, .signature-section { page-break-inside: avoid; break-inside: avoid; }
+      thead { display: table-header-group; }
+      tfoot { display: table-footer-group; }
+      tr { page-break-inside: avoid; break-inside: avoid; }
+      p { orphans: 3; widows: 3; }
+      a { text-decoration: none; color: inherit; }
+      .parties { display: grid; }
+    }
+    
+  </style>
+</head>
+<body>
+  <button class="print-btn" onclick="window.print()">Print / Export PDF</button>
+  <div class="page-wrapper">
+      <div class="article">
+<h1>軟體開發服務合約</h1>
+<p><strong>SOFTWARE DEVELOPMENT SERVICES AGREEMENT</strong></p>
+<p>合約編號：MTS-2026-001
+合約日期：2026 年 06 月 11 日</p>
+<hr>
+<h2>當事人</h2>
+<p><strong>客戶方（以下簡稱「客戶」）</strong></p>
+<p>公司名稱：Motise Inc
+公司類型：C Corporation（登記於美國德拉瓦州）
+登記地址：8 The Green STE R, Dover, Kent, Delaware 19901, USA
+簽約負責人：江青璇 (Founder / Director)
+公司信箱：<a href="mailto:hello@motise.net">hello@motise.net</a>
+授權專案溝通代理人：江青璇 (<a href="mailto:cchiang1124@gmail.com">cchiang1124@gmail.com</a>)</p>
+<blockquote>
+<p>客戶方指定江青璇為本專案授權溝通代理人，代表客戶方進行日常專案溝通、確認需求及提出書面異議。上述代理人之書面確認，對客戶方具有同等約束力。代理人變更須由客戶方以公司信箱（@motise.net）書面通知開發方。</p>
+</blockquote>
+<p><strong>開發方（以下簡稱「開發方」）</strong></p>
+<p>姓名：HUANG CONG REN
+國籍：中華民國（台灣）
+聯絡信箱：<a href="mailto:tzuchihuang0214@gmail.com">tzuchihuang0214@gmail.com</a></p>
+<p>雙方同意依本合約條款，就本合約所載軟體開發服務進行合作。</p>
+<hr>
+<h2>合約附件</h2>
+<p>本合約包含以下附件，各附件與本合約正文具同等法律效力：</p>
+<table>
+<thead>
+<tr>
+<th>附件</th>
+<th>名稱</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>附件 A</td>
+<td>專案範疇與技術規格書</td>
+<td>功能模組清單、技術架構、v1.0 不含項目、客戶須提供資源</td>
+</tr>
+<tr>
+<td>附件 B</td>
+<td>開發時程規劃書</td>
+<td>關鍵里程碑、甘特圖、前置條件、延遲條款說明</td>
+</tr>
+<tr>
+<td>附件 C</td>
+<td>驗收項目文件</td>
+<td>三軌道驗收標準、驗收清單、簽核欄位</td>
+</tr>
+<tr>
+<td>附件 D</td>
+<td>長期合作框架協議</td>
+<td>專案制續約、四週期發案義務、差額補足機制</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>第一條｜專案範疇</h2>
+<div class="clause"><span class="clause-num">1.1</span>開發方同意依附件 A《專案範疇與技術規格書》所載範疇，為客戶開發課程預約行動應用程式（以下簡稱「本系統」）v1.0 版本。</div>
+<div class="clause"><span class="clause-num">1.2</span>v1.0 版本包含之主要模組、功能細項及技術規格，悉依附件 A 之記載為準。</div>
+<div class="clause"><span class="clause-num">1.3</span>附件 A 第 A-4 節所列項目明確不列入 v1.0 開發範疇。任何範疇變更，須雙方以書面確認後方可生效，並另行評估對時程與費用之影響。</div>
+<div class="clause"><span class="clause-num">1.4</span><strong>法律條款文本提供責任：</strong> 開發方同意於軌道 A 結束前，提供符合美國一般合規參考框架（如 GDPR、CCPA 基本架構）之隱私政策（Privacy Policy）與服務條款（Terms of Service）英文基礎範本（Basic Template）供客戶確認。客戶應於 3 個工作天內確認或提供修改內容；逾期未回覆視同確認範本內容，開發方得直接使用原始範本進行嵌入與部署。客戶確認後，開發方負責將其完整嵌入、部署並連動於 Landing Page 及 App 對應區塊。</div>
+<div class="clause"><span class="clause-num">1.5</span><strong>法律合規免責：</strong> 前條所提供之隱私政策與服務條款，係供客戶作為技術整合之參考基礎範本。其最終法律合規性、適用性及完整性，由客戶自行負責確認，必要時應自行諮詢合格法律專業人士。開發方不承擔任何因該等文本內容所生之法律合規責任。客戶確認內容後，視為已自行審查並承擔合規責任。</div>
+<hr>
+<h2>第二條｜時程與里程碑</h2>
+<div class="clause"><span class="clause-num">2.1</span>本系統開發時程依附件 B《開發時程規劃書》執行，開發工作預計自 <strong>2026 年 06 月 12 日</strong>起始，目標交付日期為 <strong>2026 年 08 月 07 日</strong>。</div>
+<div class="clause"><span class="clause-num">2.2</span>附件 B 所有時程，以客戶於 <strong>2026 年 06 月 12 日前</strong>提供附件 A 第 A-6 節所列全部必要資源為前提。每延遲提供一週，里程碑與交付日期等比例順延。</div>
+<div class="clause"><span class="clause-num">2.3</span>以下情況不計入開發方延遲責任：</div>
+<ul>
+<li>App Store / Google Play 審核期間及平台退件等待時間</li>
+<li>客戶未如期提供必要資源、帳號或存取權限所造成之延誤</li>
+<li>Stripe KYC 驗證未如期完成所造成之付款功能延遲</li>
+<li>不可抗力事件（天災、平台政策突變等）</li>
+</ul>
+<div class="clause"><span class="clause-num">2.4</span><strong>Stripe 帳號前置條件：</strong> 客戶方須於<strong>本合約簽署完成並收到第一期款後 3 個工作日內</strong>啟動 Stripe 帳號 KYC 申請。KYC 須由客戶本人完成（法律要求，開發方無法代辦）。若未於期限前啟動，Stripe 相關功能開發順延，不視為開發方延遲，亦不觸發第六條延遲賠償條款。</div>
+<hr>
+<h2>第三條｜驗收機制</h2>
+<div class="clause"><span class="clause-num">3.1</span>本系統驗收依附件 C《驗收項目文件》分三個軌道進行，各軌道驗收標準以附件 C 之記載為準。</div>
+<div class="clause"><span class="clause-num">3.2</span>各軌道驗收期內，客戶方未提交書面驗收結果，逾期視同該軌道全數通過。</div>
+<div class="clause"><span class="clause-num">3.3</span>每週同步會議後 24 小時內，客戶方未提出書面異議，視同確認該階段進度，不得於後續驗收時重新提出。</div>
+<div class="clause"><span class="clause-num">3.4</span>各軌道一旦驗收通過，該軌道項目即鎖定，不得於後續軌道或正式交付時重新提出異議。</div>
+<div class="clause"><span class="clause-num">3.5</span>驗收期間提出之新需求，不列入本次驗收範疇，另行評估報價後進入下一版本開發。</div>
+<div class="clause"><span class="clause-num">3.6</span><strong>主觀退件無效：</strong> 客戶方提出之驗收不通過或退件意見，須具備明確之功能性問題說明或與雙方確認之設計規格不符之具體事證。以主觀性描述（如「感覺不對」、「體驗不順暢」等）作為退件理由者，不生退件之效力，仍視同通過。</div>
+<div class="clause"><span class="clause-num">3.7</span><strong>複驗限制與時限：</strong> 針對客戶方於驗收期內提出之書面修改意見清單，開發方完成修正後，客戶方僅能就該清單內原列項目之修正結果進行複驗。客戶方不得於複驗時提出原清單外之新修改意見或重複挑剔，複驗時間以 3 個工作天為限，逾期未提交複驗結果視同全數通過。</div>
+<div class="clause"><span class="clause-num">3.8</span><strong>每週同步會議：</strong> 雙方原則上於每週五 23:00 至翌日（週六）01:00（台灣時間，UTC+8；對應美國太平洋時間週五上午 08:00–10:00）進行線上同步會議，同步專案進度。如遇雙方無法於該時段進行會議，應提前告知並協調改期，但仍應於該週內完成一次同步會議。</div>
+<hr>
+<h2>第四條｜費用與付款</h2>
+<div class="clause"><span class="clause-num">4.1</span>本合約費用依雙方確認之合作情境計算，分三期支付：</div>
+<p><strong>情境一：全數通過驗收 + 確認長期合作（總費用 $1,800 USD）（長期合作服務期間：12 個月，自 2026 年 08 月 07 日至 2027 年 08 月 07 日）</strong></p>
+<table>
+<thead>
+<tr>
+<th>期別</th>
+<th>時機</th>
+<th>金額</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>第一期（30%）</td>
+<td>簽約時</td>
+<td>$540 USD</td>
+</tr>
+<tr>
+<td>第二期（30%）</td>
+<td>軌道 B 全數驗收通過後 3 個工作日內</td>
+<td>$540 USD</td>
+</tr>
+<tr>
+<td>第三期（40%）</td>
+<td>軌道 C 全數驗收通過、正式交付完成後 3 個工作日內</td>
+<td>$720 USD</td>
+</tr>
+</tbody></table>
+<p><strong>情境二：全數通過驗收 + 明確不繼續合作（總費用 $2,499 USD）</strong></p>
+<table>
+<thead>
+<tr>
+<th>期別</th>
+<th>時機</th>
+<th>金額</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>第一期（30%）</td>
+<td>簽約時</td>
+<td>$540 USD</td>
+</tr>
+<tr>
+<td>第二期（30%）</td>
+<td>軌道 B 全數驗收通過後 3 個工作日內</td>
+<td>$540 USD</td>
+</tr>
+<tr>
+<td>第三期</td>
+<td>軌道 C 全數驗收通過、正式交付完成後 3 個工作日內</td>
+<td>補足至 $2,499 差額（$1,419 USD）</td>
+</tr>
+</tbody></table>
+<p><strong>情境三：開發時程逾期且未能全數通過驗收</strong></p>
+<p>費用以 $2,499 USD 計算，並依第六條延遲賠償條款扣減。</p>
+<div class="clause"><span class="clause-num">4.2</span><strong>情境判定方式：</strong> 情境一是否成立，以本合約完成雙方電子簽署之時點為準：若該時點附件 D《長期合作框架協議》已同步完成雙方書面簽署，即視為情境一成立，第三期款項依情境一金額（$720 USD）計算。若本合約完成雙方電子簽署時，附件 D 尚未完成雙方書面簽署，自動以情境二計算，第三期款項補足至 $2,499 USD 之差額，附件 D 視為未生效。</div>
+<div class="clause"><span class="clause-num">4.3</span><strong>長期合作定義：</strong> 「確認長期合作」指雙方依附件 D《長期合作框架協議》所定之專案制續約方式，於情境確認期限前完成附件 D 之書面簽署。長期合作之具體範疇、報酬與條款，悉依附件 D 及後續各別工作說明書（SOW）之約定。</div>
+<div class="clause"><span class="clause-num">4.4</span><strong>稅務條款：</strong> 所有金額均為未稅淨額（USD）。開發方將提供 W-8BEN 表格，客戶收到後不得對本合約款項進行美國預扣稅（Withholding Tax）扣減。</div>
+<div class="clause"><span class="clause-num">4.5</span><strong>匯款條款：</strong> 款項以美元（USD）支付至開發方指定 Wise 帳號。所有匯款手續費由客戶方承擔，開發方實收金額不得低於各期合約約定金額。</div>
+<div class="clause"><span class="clause-num">4.6</span><strong>上架費用：</strong> App Store 上架費用（Apple Developer Program 年費 $99 USD、Google Play 一次性 $25 USD）由客戶自行負擔，不列入本合約開發費用。</div>
+<div class="clause"><span class="clause-num">4.7</span><strong>交付測試起算驗收：</strong> 針對軌道 C 驗收，開發方將 App 提交至 TestFlight/Firebase Distribution 進行交付測試，或通過平台（App Store / Google Play）審核後，即視為驗收期起算日。若因客戶方未提供帳號、平台政策變更、或客戶方主觀決定暫緩上線等非開發方原因導致 App 無法對外正式發布，不影響軌道 C 驗收之進行，仍以交付測試或審核通過之日起算 14 個工作天。</div>
+<div class="clause"><span class="clause-num">4.7</span>.1 <strong>平台審核緩衝：</strong> 因不可歸責於開發方之事由（僅限於：客戶未及時提供有效之 Apple / Google 開發者帳號、客戶明示暫緩上架、或非因 App 程式碼缺陷所致之平台拒絕），導致 App 無法於 App Store 或 Google Play 正式公開上架時，自開發方交付完整 TestFlight（或同等測試環境）並提交雙平台審查之日起算，給予 14 個工作天之審查與平台溝通緩衝期。</div>
+<div class="clause"><span class="clause-num">4.7</span>.2 <strong>階段性實機驗收：</strong> 若超過前款 14 個工作天，仍因前述客戶原因或平台行政程序未能上架，雙方應進行階段性實機功能驗收。若功能符合附件 C 之測試標準，客戶應支付第三期尾款。</div>
+<div class="clause"><span class="clause-num">4.7</span>.3 <strong>程式碼缺陷保固：</strong> 若客戶已支付尾款，App 後續正式重啟上架流程時，如因本次交付之「原始程式碼缺陷」遭平台功能性拒絕（Functional Rejection），開發方仍有義務免費修正程式碼至審查通過為止。此保固義務自尾款支付後 60 個日曆天內有效。</div>
+<div class="clause"><span class="clause-num">4.7</span>.4 <strong>平台政策變更：</strong> 若因平台政策突發性重大變更導致功能性退件，且該變更涉及本專案核心功能之程式碼邏輯，開發方同意評估修改可行性並積極配合。修改工時在 8 小時以內者，開發方免費協助；超過 8 小時之部分，雙方另行協議合理報酬及延長之開發與驗收時程。</div>
+<div class="clause"><span class="clause-num">4.8</span><strong>逾期付款與暫停服務：</strong> 各期款項支付時機屆至後，若客戶方逾期超過 7 個日曆天未付清，開發方有權暫停一切後續開發、送審、上線、維護、諮詢或所有權轉移服務。客戶方應自逾期之日起，就未付款項按月息百分之一（1%，年息 12%）計付滯納金，不足一個月者按日比例計算。</div>
+<div class="clause"><span class="clause-num">4.9</span><strong>控制權撤回與終止：</strong> 若客戶方逾期付款達 14 個日曆天，開發方有權單方面終止本合約，並得撤銷客戶方對程式碼庫（GitHub Repository）與伺服器（AWS Production）之存取與 Collaborator 權限，且開發方不負退還已收費用之義務。惟依第五條第 5.1 款已因前期款項到帳而完成著作財產權移轉之部分，其所有權歸屬不受影響，開發方僅得暫停存取權限，不得撤銷已移轉之著作財產權。</div>
+<hr>
+<h2>第五條｜智慧財產權、程式碼移交與終止</h2>
+<div class="clause"><span class="clause-num">5.1</span>本專案著作財產權依開發里程碑與付款進度分階段移轉，各階段移轉條件如下：</div>
+<ul>
+<li>第一期款項（$540 USD）全數到帳後，軌道 A 對應之全部交付物及程式碼之著作財產權，自動移轉予客戶（Motise Inc.）。</li>
+<li>第二期款項（$540 USD）全數到帳後，軌道 B 對應之全部交付物及程式碼之著作財產權，自動移轉予客戶（Motise Inc.）。</li>
+<li>第三期款項全數到帳後，軌道 C 對應之全部交付物及程式碼之著作財產權，自動移轉予客戶（Motise Inc.）。</li>
+</ul>
+<div class="clause"><span class="clause-num">5.2</span>各階段款項到帳前，對應軌道之交付物及程式碼著作財產權仍歸開發方持有。客戶於該階段取得獨家、不可轉讓之使用授權，僅得用於內部營運目的，但不得主張所有權、進行再授權或移轉予第三方。</div>
+<div class="clause"><span class="clause-num">5.3</span><strong>適用法律說明：</strong> 本合約適用中華民國（台灣）法律。美國著作權法之「受雇特定工作著作」（Work Made for Hire）概念於本合約不適用。著作財產權之移轉，依本條第 5.1 款於各期款項到帳時，以讓與方式自動生效，符合中華民國著作權法之規定。</div>
+<div class="clause"><span class="clause-num">5.4</span>GitHub Repository 於客戶帳號（或客戶指定之組織）下建立，開發方以 Collaborator 身分加入並取得 Admin 權限，以利分支保護規則、CI/CD 流程設定及第三方服務（如 Stripe、Firebase）金鑰與權限管理等開發所需操作。</div>
+<div class="clause"><span class="clause-num">5.4</span>.1 於本專案驗收通過並結清尾款前，非經本合約第 5.9 條或其他正式終止程序：</div>
+<ul>
+<li>客戶不得限制或移除開發方之 Admin 權限；開發方亦不得利用 Admin 權限限制客戶之存取權限，或進行刪除、轉移 Repository 等影響專案進行之行為。</li>
+<li>若客戶違反前款規定，視為客戶依第 5.9 條提前終止本合約，客戶仍應依第 5.9 條終止結算公式計算之金額給付開發方，並於違反行為發生日起 10 個工作天內結清。</li>
+<li>若開發方違反前款規定，視為開發方依第 5.9 條提前終止本合作，開發方就終止日後尚未完成之驗收項目無權請求對應之報酬，雙方款項仍依第 5.9 條終止結算公式計算。</li>
+</ul>
+<div class="clause"><span class="clause-num">5.5</span>AWS Production 環境存取權與所有權的移交，將於第三期款結清後 3 個工作日內移交予客戶，開發方有義務協助完成轉移設定。</div>
+<div class="clause"><span class="clause-num">5.6</span>開發期間使用之第三方服務帳號（Stripe、Firebase、Apple Developer、Google Play）本身即登記於客戶名下，其所有權不受本條影響。</div>
+<div class="clause"><span class="clause-num">5.7</span>技術文件（API 文件、資料庫 Schema 說明、第三方服務設定說明、系統交接說明）將於各軌道驗收時同步提交，並於正式交付時完整移交。</div>
+<div class="clause"><span class="clause-num">5.8</span><strong>違約救濟：</strong> 若客戶發生未依約付款之實質違約，經開發方書面催告後七（7）個日曆天內仍未改善，開發方有權：（一）暫停該期及後續階段之開發工作；（二）暫停交付最新開發進度；（三）依法向客戶追討損害賠償。上述權利之行使，不影響已到帳款項所對應之著作財產權移轉效力。</div>
+<div class="clause"><span class="clause-num">5.9</span><strong>任意終止：</strong> 任一方均得於 14 個日曆天前以書面通知另一方，隨時以任何理由或無理由終止本合約。終止時，客戶須支付「終止日應付金額」，計算方式如下：</div>
+<pre><code>終止日應付金額
+= 適用情境總費用
+  × (截至終止日已通過驗收之項目數 ÷ 附件 C 總驗收項目數)
+− 已支付款項
+</code></pre>
+<p>開發方於收到上述終止日應付金額後，於 1 個工作天內，將截至終止日已完成之工作成果，以移轉 Repository 所有權或開放完整存取權之方式交付予客戶。若終止日應付金額計算結果為零或負數，開發方無需退還已收款項，並於確認後 1 個工作天內完成交付。通知期間內，開發方無義務開發新功能。未結清終止日應付金額前，對應之程式碼著作財產權不予移轉。</p>
+<div class="clause"><span class="clause-num">5.10</span><strong>原創性保證：</strong> 開發方保證，交付之程式碼為原創，未侵害任何第三方智慧財產權，且未受任何留置權或權利負擔。</div>
+<hr>
+<h2>第六條｜延遲賠償</h2>
+<div class="clause"><span class="clause-num">6.1</span>若因<strong>開發方原因</strong>導致功能未完成，且里程碑時間超過 <strong>14 個日曆天</strong>，客戶方得依下列公式請求賠償：</div>
+<pre><code>賠償金額 = 已支付款項 × (未完成驗收項目數 ÷ 總驗收項目數) × 50%
+賠償上限 = 已支付款項之 20%
+</code></pre>
+<div class="clause"><span class="clause-num">6.2</span>賠償僅於軌道 C 正式交付驗收時一次計算，不逐軌道累計。</div>
+<div class="clause"><span class="clause-num">6.3</span>下列情況不列入開發方延遲計算，亦不觸發本條賠償：</div>
+<ul>
+<li>App Store / Google Play 審核等待或平台退件期間</li>
+<li>客戶方未如期提供必要資源、帳號或存取權限所造成之延誤</li>
+<li>Stripe KYC 驗證未如期完成所造成之付款功能延遲</li>
+<li>不可抗力事件</li>
+</ul>
+<hr>
+<h2>第七條｜保密義務</h2>
+<div class="clause"><span class="clause-num">7.1</span>雙方對於合作期間所知悉之商業邏輯、使用者資料結構、系統架構、財務資訊及其他專案相關機密資訊，負有保密義務。</div>
+<div class="clause"><span class="clause-num">7.2</span>保密義務於本合約終止或期滿後仍持續有效，無時間限制。</div>
+<div class="clause"><span class="clause-num">7.3</span>下列資訊不受本條保密義務約束：</div>
+<ul>
+<li>於接觸前已屬公開之資訊</li>
+<li>由第三方合法提供且不負保密義務之資訊</li>
+<li>依法令或主管機關命令須揭露之資訊</li>
+</ul>
+<hr>
+<h2>第八條｜一般條款</h2>
+<div class="clause"><span class="clause-num">8.1</span><strong>適用法律：</strong> 本合約適用中華民國（台灣）法律。</div>
+<div class="clause"><span class="clause-num">8.2</span><strong>爭議解決：</strong> 雙方因本合約發生任何爭議，優先以友好協商方式解決。協商不成時，同意以中華民國台灣法院為第一審管轄法院。</div>
+<div class="clause"><span class="clause-num">8.3</span><strong>文件效力與優先順序：</strong> 本合約正文與附件 A、附件 B、附件 C、附件 D 共同構成雙方完整合作依據，具同等法律效力。若各文件間有衝突，以本合約正文條款為準。</div>
+<div class="clause"><span class="clause-num">8.4</span><strong>變更條款：</strong> 本合約任何變更，須雙方以書面方式同意後方可生效，口頭協議不具效力。</div>
+<div class="clause"><span class="clause-num">8.5</span><strong>可分割性：</strong> 本合約任一條款若經認定無效或不可執行，不影響其餘條款之效力。</div>
+<div class="clause"><span class="clause-num">8.6</span><strong>完整合意：</strong> 本合約取代雙方就本專案先前所有口頭或書面之溝通與協議。</div>
+<hr>
+<h2>第九條｜簽署</h2>
+<p>雙方均已閱讀並理解本合約全部條款及所有附件內容，同意受其約束。</p>
+<div class="clause"><span class="clause-num">9.1</span><strong>簽署方式：</strong> 本合約採電子簽名方式完成，透過 Dropbox Sign 平台進行。客戶方簽署邀請發送至公司信箱 (<a href="mailto:hello@motise.net">hello@motise.net</a>)，須由簽約負責人江青璇本人完成簽署。以公司信箱收取並完成之電子簽名，與親筆簽名具同等法律效力。</div>
+<div class="clause"><span class="clause-num">9.2</span><strong>簽署完成時點：</strong> 雙方均完成電子簽署後，Dropbox Sign 系統自動產生之時間戳記與簽署紀錄，作為本合約生效之憑據。</div>
+<p>&nbsp;</p>
+<p><strong>客戶方</strong></p>
+<p>公司名稱：Motise Inc</p>
+<p>簽約負責人：江青璇 (Founder / Director)</p>
+<p>簽署信箱：<a href="mailto:hello@motise.net">hello@motise.net</a></p>
+<p>電子簽名時間戳記：<span style="font-size:var(--size-xs);color:#aaa;font-style:italic;"><span style="font-size:var(--size-xs);color:#aaa;font-style:italic;">(由 Dropbox Sign 系統自動記錄)</span></span></p>
+<p>&nbsp;</p>
+<p><strong>Developer</strong></p>
+<p>姓名：HUANG CONG REN</p>
+<p>聯絡信箱：<a href="mailto:tzuchihuang0214@gmail.com">tzuchihuang0214@gmail.com</a></p>
+<p>電子簽名時間戳記：<span style="font-size:var(--size-xs);color:#aaa;font-style:italic;"><span style="font-size:var(--size-xs);color:#aaa;font-style:italic;">(由 Dropbox Sign 系統自動記錄)</span></span></p>
+<hr>
+<p><em>本合約連同附件 A、附件 B、附件 C、附件 D，共五份文件，雙方各執電子版一份，具同等效力。</em></p>
+      </div>
+    </div>
+    
+    <div class="page-wrapper pb-before">
+      <div class="article">
+<h1>附件 A｜專案範疇與技術規格書</h1>
+<p><strong>Project Scope and Technical Specification</strong></p>
+<p>合約編號：MTS-2026-001
+日期：2026 年 06 月 11 日</p>
+<p>當事人：Motise Inc（客戶方）／ HUANG CONG REN（開發方）</p>
+<hr>
+<h2>A-1 專案概述</h2>
+<p>本文件定義「課程預約行動應用程式」（以下簡稱「本系統」）v1.0 版本之開發範疇、功能模組及技術規格，作為雙方合作之技術依據。</p>
+<hr>
+<h2>A-2 系統模組清單</h2>
+<p>以下模組全數列入 v1.0 開發範疇。</p>
+<table>
+<thead>
+<tr>
+<th>編號</th>
+<th>模組名稱</th>
+<th>功能說明</th>
+<th>平台</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>M-01</td>
+<td>學員 App 介面</td>
+<td>課程瀏覽、預約、線上付款、QR Code 簽到、推播通知接收</td>
+<td>iOS · Android</td>
+</tr>
+<tr>
+<td>M-02</td>
+<td>教師 App 介面</td>
+<td>指派課程查看、學員名單管理、QR Code 掃描核銷出席</td>
+<td>iOS · Android</td>
+</tr>
+<tr>
+<td>M-03</td>
+<td>Web-based 後台管理平台</td>
+<td>課程管理、會員管理、訂單查詢、出席記錄查詢</td>
+<td>Web</td>
+</tr>
+<tr>
+<td>M-04</td>
+<td>帳號認證系統</td>
+<td>Email 註冊登入、Google OAuth、Apple Sign-In、手機號碼綁定</td>
+<td>全平台</td>
+</tr>
+<tr>
+<td>M-05</td>
+<td>線上付款整合</td>
+<td>Stripe Payment Intent、Webhook 訂單狀態同步、付款失敗處理、重複付款防護</td>
+<td>App · Web</td>
+</tr>
+<tr>
+<td>M-06</td>
+<td>推播通知</td>
+<td>Firebase FCM 課程提醒（開始前 24 小時及 1 小時）、搶購提醒推播</td>
+<td>App</td>
+</tr>
+<tr>
+<td>M-07</td>
+<td>基礎設施</td>
+<td>AWS Lightsail Node.js Instance、PostgreSQL Managed Database、Object Storage</td>
+<td>Cloud</td>
+</tr>
+<tr>
+<td>M-08</td>
+<td>公司官網 Landing Page</td>
+<td>Motise Inc 官網單頁，部署於 motise.net，作為 Apple Developer 組織帳號申請之審核前提</td>
+<td>Web</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>A-3 v1.0 功能細項</h2>
+<h3>A-3-1 帳號與角色</h3>
+<ul>
+<li>支援三種登入方式：Email / 密碼、Google OAuth、Apple Sign-In（含 Face ID / Touch ID）</li>
+<li>支援手機號碼獨立綁定（非登入方式，為帳號附加資訊）</li>
+<li>系統角色分三級：Student（學員）、Teacher（教師）、Admin（管理員）</li>
+<li>各角色 API 存取權限獨立，跨角色存取返回 403</li>
+</ul>
+<h3>A-3-2 課程功能</h3>
+<ul>
+<li>課程列表顯示：名稱、時間、價格、剩餘名額；下架課程不顯示</li>
+<li>課程詳情頁：完整說明、地點、名額、講師姓名及個人介紹</li>
+<li>名額鎖定：並發預約不超額，滿額後預約按鈕關閉</li>
+<li>預約截止時限：超過截止時間後預約按鈕自動關閉</li>
+<li>我的課程頁：已預約、已購買、歷史紀錄三分類</li>
+</ul>
+<h3>A-3-3 付款流程</h3>
+<ul>
+<li>透過 Stripe Payment Intent 建立付款請求</li>
+<li>付款成功後 Webhook 自動更新訂單狀態</li>
+<li>付款失敗顯示明確錯誤訊息，課程不被開通</li>
+<li>已購買課程不顯示購買按鈕，防止重複付款</li>
+<li>購買前顯示取消政策條款文字，使用者須勾選同意後方可付款</li>
+</ul>
+<h3>A-3-4 QR Code 簽到</h3>
+<ul>
+<li>已預約學員可於課程卡片查看並出示專屬 QR Code</li>
+<li>QR Code 與學員帳號及課程綁定，課程開始後 15 分鐘自動失效</li>
+<li>教師介面提供相機掃描入口，掃描後顯示學員姓名、課程資訊及出席狀態</li>
+<li>已核銷 QR Code 再次掃描顯示「已簽到」，不重複計算</li>
+<li>掃描無效或已失效 QR Code 顯示明確錯誤訊息</li>
+</ul>
+<h3>A-3-5 後台管理（Web-based）</h3>
+<ul>
+<li>課程管理：新增、修改、上架、下架；上架後前台即時顯示</li>
+<li>會員管理：查詢會員、指派或移除教師角色、停用帳號</li>
+<li>訂單查詢：學員姓名、課程名稱、付款狀態、金額</li>
+<li>出席記錄：各課程出席名單與簽到狀態</li>
+</ul>
+<h3>A-3-6 推播通知</h3>
+<ul>
+<li>課程提醒：已預約課程於開始前 24 小時及 1 小時各發送一次</li>
+<li>搶購提醒：使用者可對指定課程設定開搶提醒，開搶前收到推播</li>
+<li>使用者可自行設定是否開啟各類推播通知</li>
+</ul>
+<h3>A-3-7 公司官網 Landing Page（M-08）</h3>
+<ul>
+<li>部署於客戶現有網域 motise.net</li>
+<li>內容包含：公司名稱、簡短介紹、服務說明、聯絡資訊</li>
+<li>版面設計與呈現方式由開發方決定，目標為符合 Apple Developer 組織帳號申請審核要求</li>
+<li>客戶可提供品牌素材（Logo、品牌色票（如有）；未提供者由開發方自行決定）供開發方參考，最終版面呈現以開發方判斷為準</li>
+<li>完成後即為最終版，後續版面或內容修改不列入本合約範疇</li>
+</ul>
+<h3>A-3-8 隱私政策與服務條款範本（Privacy Policy &amp; Terms of Service）</h3>
+<ul>
+<li>開發方於軌道 A 結束前，提供符合美國一般合規參考框架（GDPR、CCPA 基本架構）之隱私政策（Privacy Policy）與服務條款（Terms of Service）英文基礎範本（Basic Template）</li>
+<li>客戶應於收到範本後 3 個工作天內確認或提供修改內容；逾期未回覆視同確認原始範本，開發方得直接使用進行嵌入與部署</li>
+<li>開發方負責將確認後之內容完整嵌入、部署並連動於 Landing Page 及 App 對應區塊</li>
+<li>上述範本為技術整合用途之參考基礎，最終法律合規性由客戶自行負責確認；客戶確認內容後視為已自行審查並承擔合規責任</li>
+</ul>
+<hr>
+<h2>A-4 v1.0 不列入範疇</h2>
+<p>下列項目明確排除於本合約開發範疇之外，於後續版本另行規劃報價：</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>退款操作介面</td>
+<td>退款相關功能頁面，課程購買條款文字設定已包含於 v1.0</td>
+</tr>
+<tr>
+<td>進階搜尋篩選</td>
+<td>課程進階篩選、排序功能</td>
+</tr>
+<tr>
+<td>客製化後台應用程式</td>
+<td>超出標準後台管理範疇之客製化需求</td>
+</tr>
+<tr>
+<td>Landing Page 版面修改</td>
+<td>交付後之任何版面設計或內容調整，均不列入本次合約範疇</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>A-5 技術架構</h2>
+<h3>A-5-1 系統分層</h3>
+<pre><code>┌─────────────────────────────────────────┐
+│         React Native App                │
+│      iOS + Android 行動應用程式          │
+└──────────────────┬──────────────────────┘
+                   ↕ HTTPS / REST API
+┌─────────────────────────────────────────┐
+│      Node.js — AWS Lightsail Instance   │
+│      後端 API 與商業邏輯                 │
+└──────────────────┬──────────────────────┘
+                   ↕
+┌─────────────────────────────────────────┐
+│      PostgreSQL                         │
+│      AWS Lightsail Managed Database     │
+│      + Lightsail Object Storage         │
+└─────────────────────────────────────────┘
+
+第三方服務整合
+├── Stripe          線上付款
+├── Firebase FCM    推播通知
+├── Apple OAuth     Apple Sign-In
+└── Google OAuth    Google 登入
+</code></pre>
+<h3>A-5-2 技術選型</h3>
+<table>
+<thead>
+<tr>
+<th>技術</th>
+<th>用途</th>
+<th>選型理由</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>React Native</td>
+<td>iOS / Android App</td>
+<td>單一程式碼庫支援雙平台，降低長期維護成本</td>
+</tr>
+<tr>
+<td>Node.js</td>
+<td>後端 API 與商業邏輯</td>
+<td>前後端統一 JavaScript，維護人員招募門檻低</td>
+</tr>
+<tr>
+<td>PostgreSQL</td>
+<td>關聯式資料庫</td>
+<td>成熟穩定，Lightsail 提供託管服務免自行維運</td>
+</tr>
+<tr>
+<td>AWS Lightsail</td>
+<td>雲端基礎設施</td>
+<td>固定月費（約 $25 USD/月），成本可預測</td>
+</tr>
+<tr>
+<td>Stripe</td>
+<td>線上付款</td>
+<td>業界標準，合規性高，API 成熟</td>
+</tr>
+<tr>
+<td>Firebase FCM</td>
+<td>推播通知</td>
+<td>支援 iOS / Android 雙平台，免費額度充足</td>
+</tr>
+</tbody></table>
+<h3>A-5-3 核心資料表</h3>
+<table>
+<thead>
+<tr>
+<th>資料表</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>users</td>
+<td>使用者帳號、角色、手機號碼</td>
+</tr>
+<tr>
+<td>courses</td>
+<td>課程資料、名額、截止時間、上架狀態</td>
+</tr>
+<tr>
+<td>bookings</td>
+<td>預約紀錄、狀態</td>
+</tr>
+<tr>
+<td>orders</td>
+<td>訂單資料、Stripe Payment Intent ID、付款狀態</td>
+</tr>
+<tr>
+<td>attendance</td>
+<td>QR Code token、核銷狀態、簽到時間</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>A-6 客戶須提供之資源</h2>
+<h3>啟動前（2026 年 06 月 12 日前）</h3>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>提供方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>GitHub Repository 建立</td>
+<td>由客戶於其帳號（或客戶指定組織）下建立，並邀請開發方為 Collaborator，授予 Admin 權限（詳見主合約第 5.4 條）</td>
+</tr>
+<tr>
+<td>AWS Lightsail 存取</td>
+<td>提供 IAM 使用者帳號或邀請為 Lightsail 管理員</td>
+</tr>
+<tr>
+<td>Google Play Console 存取</td>
+<td>新增為 Release Manager</td>
+</tr>
+<tr>
+<td>motise.net 網域存取權限</td>
+<td>提供 DNS 管理權限或由客戶協助完成 DNS 設定</td>
+</tr>
+</tbody></table>
+<h3>Stripe 帳戶設定（第一期款項到帳後 3 個工作日內啟動 KYC）</h3>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Stripe 帳戶 API 金鑰</td>
+<td>客戶自行申請 Stripe 帳戶並完成 KYC 驗證後提供 API 金鑰。KYC 須由客戶本人完成（法律要求，開發方無法代辦），審核約需 3–5 個工作天，依主合約第 2.4 條於第一期款項到帳後 3 個工作日內啟動申請。若逾期提供，附件 C A-07 / A-08（Stripe 相關）驗收項目順延，不視為開發方延遲，亦不觸發延遲賠償條款</td>
+</tr>
+</tbody></table>
+<h3>軌道 B 啟動前（2026 年 06 月 22 日前）</h3>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>提供方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Firebase 專案存取</td>
+<td>於 Firebase Console 新增開發方為 Editor</td>
+</tr>
+</tbody></table>
+<h3>Landing Page 素材（第一期款項結清後盡速提供）</h3>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>品牌素材</td>
+<td>Logo、品牌色票（如有）；未提供者由開發方自行決定</td>
+</tr>
+<tr>
+<td>公司介紹文案</td>
+<td>公司簡介、服務說明、聯絡資訊；未提供者由開發方依審核需求撰寫</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>⚠️ Landing Page 素材未提供不影響開發時程，開發方將依審核需求自行決定內容與版面，完成後即為最終版。</p>
+</blockquote>
+<h3>上線與送審前（軌道 C 啟動前，目標 2026 年 07 月 06 日前）</h3>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Apple Developer Team 存取</td>
+<td>於 App Store Connect 新增為 App Manager（須先完成組織帳號啟用）</td>
+</tr>
+<tr>
+<td>App 圖示</td>
+<td>1024 × 1024 PNG 格式</td>
+</tr>
+<tr>
+<td>隱私政策 URL</td>
+<td>任何 motise.net 公開網址</td>
+</tr>
+<tr>
+<td>範例課程資料</td>
+<td>用於測試與展示</td>
+</tr>
+<tr>
+<td>測試帳號（5 組）</td>
+<td>3 位學員、1 位教師、1 位管理員</td>
+</tr>
+</tbody></table>
+<hr>
+<p><em>附件 A 與主合約（MTS-2026-001）具同等法律效力，雙方簽署主合約即視為確認本附件內容。</em></p>
+      </div>
+    </div>
+    
+    <div class="page-wrapper pb-before">
+      <div class="article">
+<h1>附件 B｜開發時程規劃書</h1>
+<p><strong>Development Schedule</strong></p>
+<p>合約編號：MTS-2026-001
+日期：2026 年 06 月 11 日</p>
+<p>當事人：Motise Inc（客戶方）／ HUANG CONG REN（開發方）</p>
+<hr>
+<h2>B-1 時程前提條件</h2>
+<p>本附件所有時程，以下列條件全數於指定日期前達成為前提：</p>
+<table>
+<thead>
+<tr>
+<th>前提條件</th>
+<th>期限</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>客戶提供所有必要存取權限</td>
+<td>2026/06/12</td>
+<td>詳見附件 A 第 A-6 節（排除 Apple 組織權限）</td>
+</tr>
+<tr>
+<td>motise.net 網域存取權限提供</td>
+<td>2026/06/12</td>
+<td>DNS 管理權限或協助完成 DNS 設定，為 Landing Page 部署前提</td>
+</tr>
+<tr>
+<td>Stripe 帳號 KYC 申請啟動</td>
+<td>收到第一期款後 3 工作日內</td>
+<td>KYC 需 3–5 個工作天，須由客戶本人完成，無法由開發方代辦</td>
+</tr>
+<tr>
+<td>Apple Developer 組織帳號啟用（含 D-U-N-S Number 核發）</td>
+<td>2026/07/06</td>
+<td>為軌道 C 送審之前提條件。D-U-N-S 核發需 5–30 個工作天，與 Apple 帳號審核時間均不在開發方控制範圍內。若因核發時間延誤所造成之送審日期順延，不視為開發方延遲責任</td>
+</tr>
+<tr>
+<td>Google Play Console 組織帳號啟用</td>
+<td>2026/06/12</td>
+<td>新成立公司之帳號審核時間不固定，若因 Google 審核延誤所造成之送審日期順延，不視為開發方延遲責任</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>⚠️ 任何前提條件延誤，里程碑與交付日期等比例順延，不視為開發方延遲責任。</p>
+</blockquote>
+<hr>
+<h2>B-1-1 前置工作｜Landing Page</h2>
+<p><strong>性質：</strong> 主線開發之前置必要工作，不附屬於任何驗收軌道
+<strong>目的：</strong> 使 motise.net 具備完整公司資訊頁面，作為 Apple Developer 組織帳號申請審核之前提條件</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>時機</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>開始時間</td>
+<td>第一期款項（$540 USD）全數到帳後</td>
+</tr>
+<tr>
+<td>完成期限</td>
+<td>款項到帳後 <strong>3 個工作天內</strong></td>
+</tr>
+<tr>
+<td>驗收方式</td>
+<td>motise.net 可正常瀏覽，內容符合 Apple 審核要求（詳見附件 C P-01）</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>Landing Page 完成後，客戶方應立即啟動 Apple Developer 組織帳號申請程序，以減少因 D-U-N-S 核發等待造成之整體時程延誤。</p>
+</blockquote>
+<hr>
+<h2>B-2 關鍵里程碑</h2>
+<table>
+<thead>
+<tr>
+<th>編號</th>
+<th>里程碑</th>
+<th>目標日期</th>
+<th>驗收軌道</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>M1</td>
+<td>專案正式啟動（存取權限全數到位）</td>
+<td>2026/06/12</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M2</td>
+<td>DB Schema + API 骨架完成</td>
+<td>2026/06/17</td>
+<td>軌道 A</td>
+</tr>
+<tr>
+<td>M3</td>
+<td>Auth 系統完成</td>
+<td>2026/06/19</td>
+<td>軌道 A</td>
+</tr>
+<tr>
+<td>M4</td>
+<td>課程功能 + Stripe 串接完成</td>
+<td>2026/06/26</td>
+<td>軌道 A</td>
+</tr>
+<tr>
+<td>M5</td>
+<td>QR Code + 推播 + 後台完成</td>
+<td>2026/07/03</td>
+<td>軌道 B</td>
+</tr>
+<tr>
+<td>M6</td>
+<td>TestFlight 測試 + Bug 修正完成</td>
+<td>2026/07/09</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M7</td>
+<td>iOS + Android 同步送審</td>
+<td>2026/07/10</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M8</td>
+<td>iOS / Android 正式上線（目標）</td>
+<td>2026/07/21</td>
+<td>軌道 C 開啟</td>
+</tr>
+<tr>
+<td>M9</td>
+<td>專案正式交付</td>
+<td>2026/08/07</td>
+<td>軌道 C 完成</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>B-3 開發軌道說明</h2>
+<h3>軌道 A｜後端與基礎建設（6/12 – 6/26）</h3>
+<table>
+<thead>
+<tr>
+<th>工作項目</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>架構設計 + 環境建置</td>
+<td>AWS Lightsail Node.js Instance、PostgreSQL 建置</td>
+</tr>
+<tr>
+<td>DB Schema</td>
+<td>users、courses、bookings、orders、attendance 五張核心資料表</td>
+</tr>
+<tr>
+<td>Auth 系統</td>
+<td>Email / Google / Apple Sign-In、JWT 驗證、角色權限（Student / Teacher / Admin）</td>
+</tr>
+<tr>
+<td>課程 CRUD API</td>
+<td>新增、查詢、修改、下架、名額與截止時間管理</td>
+</tr>
+<tr>
+<td>預約邏輯 API</td>
+<td>並發名額鎖定、預約時限控制</td>
+</tr>
+<tr>
+<td>Stripe 整合</td>
+<td>Payment Intent 建立、Webhook 訂單狀態更新</td>
+</tr>
+<tr>
+<td>QR Code API</td>
+<td>Token 產生與綁定、15 分鐘失效機制、核銷 API</td>
+</tr>
+</tbody></table>
+<h3>軌道 B｜前端 App 與 Web-based 後台（6/22 – 7/3）</h3>
+<table>
+<thead>
+<tr>
+<th>工作項目</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>課程列表 + 詳情頁</td>
+<td>上架課程顯示、名額剩餘、講師資訊</td>
+</tr>
+<tr>
+<td>預約 + 購買流程</td>
+<td>Stripe UI 整合、付款失敗處理、條款同意勾選</td>
+</tr>
+<tr>
+<td>QR Code 顯示 + 掃描</td>
+<td>學員出示、教師掃描核銷、失效提示</td>
+</tr>
+<tr>
+<td>推播通知</td>
+<td>Firebase FCM 課程提醒、搶購提醒設定</td>
+</tr>
+<tr>
+<td>Web-based 後台</td>
+<td>課程上下架、會員管理、訂單查詢、出席記錄</td>
+</tr>
+</tbody></table>
+<h3>軌道 C｜測試、送審與上線（7/6 – 8/7）</h3>
+<table>
+<thead>
+<tr>
+<th>工作項目</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TestFlight + Firebase Distribution</td>
+<td>iOS / Android E2E 測試</td>
+</tr>
+<tr>
+<td>Bug 修正</td>
+<td>測試期間發現問題修正</td>
+</tr>
+<tr>
+<td>App Store 素材準備</td>
+<td>截圖、描述、Privacy Policy</td>
+</tr>
+<tr>
+<td>iOS + Android 同步送審</td>
+<td>7/10 兩平台同日送審</td>
+</tr>
+<tr>
+<td>審核退件應對</td>
+<td>Metadata 類退件：2 個工作天內修正；功能性退件：5 個工作天內修正</td>
+</tr>
+<tr>
+<td>正式上線</td>
+<td>目標 7/21，Apple 審核緩衝 11 天（7/10–7/21）</td>
+</tr>
+<tr>
+<td>上線後維護 + Bug 修正</td>
+<td>7/21 – 8/7</td>
+</tr>
+<tr>
+<td>技術文件 + 程式碼完整移交</td>
+<td>8/7</td>
+</tr>
+</tbody></table>
+<hr>
+<!-- <h2>B-4 時程總覽（甘特圖）</h2>
+<div class="mermaid">
+gantt
+    dateFormat YYYY-MM-DD
+    axisFormat %m/%d
+    tickInterval 1week
+    weekday monday
+    excludes weekends
+    todayMarker off
+
+    section 軌道 A 後端與基礎建設
+    架構設計 + 環境建置        :a1, 2026-06-12, 2026-06-14
+    DB Schema + API 骨架       :a2, 2026-06-12, 2026-06-17
+    Auth 系統                  :a3, 2026-06-17, 2026-06-19
+    後端 API（課程+預約+訂單） :a4, 2026-06-19, 2026-06-26
+    Stripe Payment + Webhook   :a5, 2026-06-19, 2026-06-26
+    QR Code 產生 + 核銷 API    :a6, 2026-06-19, 2026-06-26
+
+    section 軌道 B 前端與後台
+    課程列表 + 詳情頁          :b1, 2026-06-22, 2026-06-26
+    預約 + 購買 + Stripe UI    :b2, 2026-06-24, 2026-07-03
+    QR Code 顯示 + 掃描 + 推播 :b3, 2026-06-26, 2026-07-03
+    後台管理（課程/會員/訂單） :b4, 2026-06-26, 2026-07-03
+
+    section 軌道 C 測試送審上線
+    TestFlight + E2E + Bug Fix :c1, 2026-07-06, 2026-07-09
+    iOS + Android 同步送審     :milestone, m1, 2026-07-10, 0d
+    審核與退件應對緩衝期       :c2, 2026-07-10, 2026-07-21
+    iOS / Android 正式上線     :milestone, m2, 2026-07-21, 0d
+    上線後維護 + Bug 修正      :c3, 2026-07-21, 2026-08-07
+    專案正式交付               :milestone, m3, 2026-08-07, 0d
+
+</div>
+<hr> -->
+<h2>B-5 延遲條款說明</h2>
+<p><strong>不列入開發方延遲責任之情況：</strong></p>
+<ul>
+<li>App Store / Google Play 審核等待或平台退件期間</li>
+<li>客戶未如期提供必要資源、帳號或存取權限所造成之延誤</li>
+<li>Stripe KYC 驗證未如期完成所造成之付款功能延遲</li>
+<li>Apple Developer 組織帳號 D-U-N-S Number 核發延誤所造成之送審日期順延</li>
+<li>不可抗力事件（天災、平台政策突變等）</li>
+</ul>
+<p><strong>延遲賠償條件：</strong></p>
+<p>若因開發方原因導致功能未完成，且里程碑時間超過 14 個日曆天，客戶方得依下列公式計算賠償。賠償僅於軌道 C 正式交付驗收時一次計算，不逐軌道累計：</p>
+<pre><code>賠償金額 = 已支付款項 × (未完成驗收項目數 ÷ 附件 C 總驗收項目數) × 50%
+賠償上限 = 已支付款項之 20%
+</code></pre>
+<hr>
+<p><em>附件 B 與主合約（MTS-2026-001）具同等法律效力，雙方簽署主合約即視為確認本附件內容。</em></p>
+      </div>
+    </div>
+    
+    <div class="page-wrapper pb-before">
+      <div class="article">
+<h1>附件 C｜驗收項目文件</h1>
+<p><strong>Acceptance Criteria</strong></p>
+<p>合約編號：MTS-2026-001
+日期：2026 年 06 月 11 日</p>
+<p>當事人：Motise Inc（客戶方）／ HUANG CONG REN（開發方）</p>
+<hr>
+<h2>C-1 驗收原則</h2>
+<h3>C-1-1 驗收架構</h3>
+<p>驗收分三個軌道進行，每個軌道設有獨立驗收時間窗口。各軌道驗收通過後，該軌道項目即鎖定，不得於後續軌道驗收時重新提出。</p>
+<table>
+<thead>
+<tr>
+<th>軌道</th>
+<th>範圍</th>
+<th>開發期間</th>
+<th>驗收期</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>軌道 A</td>
+<td>後端與基礎建設</td>
+<td>6/12 – 6/26</td>
+<td>完成後 5 個工作天</td>
+</tr>
+<tr>
+<td>軌道 B</td>
+<td>前端 App 與 Web-based 後台</td>
+<td>6/22 – 7/3</td>
+<td>完成後 5 個工作天</td>
+</tr>
+<tr>
+<td>軌道 C</td>
+<td>上架與正式環境</td>
+<td>7/6 – 8/7</td>
+<td>上線後 14 個工作天</td>
+</tr>
+</tbody></table>
+<h3>C-1-2 驗收保護條款</h3>
+<ol>
+<li><strong>驗收標準以功能行為為準。</strong> 介面設計須以雙方書面確認之設計稿為最低標準。以主觀描述（如「感覺不對」）作為退件理由者，須附具體功能性問題說明，否則視為通過。</li>
+<li><strong>逾期未書面回覆視同通過。</strong> 各軌道驗收期內客戶方未提交書面驗收結果，視同該軌道全數通過。</li>
+<li><strong>週會確認機制。</strong> 每週同步會議後 24 小時內，客戶方未提出書面異議，視同確認該階段進度，不得於後續驗收時重新提出。</li>
+<li><strong>軌道鎖定。</strong> 各軌道一旦驗收通過，該軌道項目即鎖定，不得於後續軌道或正式交付時重新提出異議。</li>
+<li><strong>新需求另行報價。</strong> 驗收期間提出之新需求不列入本次驗收範疇，另行評估報價後進入下一版本。</li>
+<li><strong>App Store / Google Play 審核退件應對：</strong> Metadata 類退件於收到通知後 2 個工作天內提交修正版；功能性退件於 5 個工作天內提交修正版。</li>
+<li><strong>複驗限制：</strong> 針對客戶方於驗收期內提出之書面修改意見清單，開發方完成修正後，客戶方僅能就該清單內原列項目之修正結果進行複驗，不得於複驗時提出原清單外之新修改意見。複驗時間以 3 個工作天為限，逾期未提交複驗結果視同全數通過。</li>
+</ol>
+<h3>C-1-3 驗收技術判定與穩定度標準</h3>
+<ol>
+<li><strong>判定技術標準：</strong> 各項目的功能驗收，應以程式碼可成功編譯運行、API 經測試（如 Postman）可正確回傳資料，或測試環境（如 Landing Page 網頁實機、App TestFlight）可實際操作，且「完全符合 Appendix C 中該項目所對應之 Criteria 描述」為通過標準。</li>
+<li><strong>系統穩定度要求：</strong> 驗收之核心功能與流程，於測試時不得含有阻礙性錯誤（Blocker Bug）或導致系統閃退、崩潰之重大缺陷（Critical Bug）；主流程之操作測試需具備連續運行之穩定度，方視為通過該項驗收。</li>
+</ol>
+<hr>
+<h2>C-2 前置工作驗收｜Landing Page</h2>
+<p><strong>性質：</strong> 獨立前置工作，不附屬於任何軌道，一旦通過即鎖定，不受後續軌道驗收影響
+<strong>完成期限：</strong> 第一期款項到帳後 3 個工作天內
+<strong>驗收方式：</strong> 客戶以瀏覽器開啟 motise.net 確認頁面可正常瀏覽</p>
+<table class="criteria-table">
+<thead>
+<tr>
+<th>#</th>
+<th>驗收項目</th>
+<th>驗收標準</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>P-01</td>
+<td>Landing Page 上線</td>
+<td>motise.net 可正常瀏覽；頁面包含公司名稱（Motise Inc）、服務簡介、聯絡資訊；版面設計以符合 Apple Developer 組織帳號申請審核要求為標準</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>版面設計說明：</strong> 最終版面呈現由開發方依審核需求決定。客戶可提供品牌素材（Logo、品牌色、文案）供參考，但不構成對版面設計之強制要求。Landing Page 交付後，任何版面或內容修改不列入本合約範疇。</p>
+</blockquote>
+<p><strong>前置工作驗收結果</strong></p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>款項到帳日期</td>
+<td></td>
+</tr>
+<tr>
+<td>完成期限</td>
+<td>款項到帳後第 3 個工作天</td>
+</tr>
+<tr>
+<td>驗收日期</td>
+<td></td>
+</tr>
+<tr>
+<td>客戶方簽核</td>
+<td></td>
+</tr>
+<tr>
+<td>備註</td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>C-3 軌道 A 驗收｜後端與基礎建設</h2>
+<p><strong>開發期間：2026/06/12 – 2026/06/26</strong>
+<strong>驗收方式：</strong> API 文件 + Postman 測試報告，客戶無需操作介面，由開發方提供測試結果供確認。</p>
+<table class="criteria-table">
+<thead>
+<tr>
+<th>#</th>
+<th>驗收項目</th>
+<th>驗收標準</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A-01</td>
+<td>DB Schema</td>
+<td>courses、users、bookings、orders、attendance 五張核心資料表建置完成，欄位與附件 A 規格一致。驗收方式：開發方提供 Schema 截圖或 ER Diagram</td>
+</tr>
+<tr>
+<td>A-02</td>
+<td>AWS Lightsail 環境</td>
+<td>Node.js Instance + PostgreSQL Managed Database 建置完成。驗收方式：客戶登入 AWS Console 確認資源存在</td>
+</tr>
+<tr>
+<td>A-03</td>
+<td>Auth API</td>
+<td>Email 註冊 / 登入、Google OAuth、Apple Sign-In（JWT 驗證）、手機號碼綁定 API 全數可正常呼叫。驗收方式：Postman 測試報告，每個 endpoint 顯示 200 回應</td>
+</tr>
+<tr>
+<td>A-04</td>
+<td>角色權限系統</td>
+<td>Teacher / Student / Admin 三種角色對應不同 API 存取權限；跨角色存取返回 403。驗收方式：Postman 測試報告</td>
+</tr>
+<tr>
+<td>A-05</td>
+<td>課程 CRUD API</td>
+<td>課程新增、查詢、修改、下架 API 可正常呼叫，名額與截止時間欄位正確儲存</td>
+</tr>
+<tr>
+<td>A-06</td>
+<td>預約邏輯 API</td>
+<td>名額鎖定機制正確（並發預約不超額）、預約時限超時後 API 返回對應錯誤碼</td>
+</tr>
+<tr>
+<td>A-07</td>
+<td>Stripe Payment Intent</td>
+<td>呼叫後端 API 可建立 Stripe Payment Intent，返回 client_secret。驗收方式：Stripe Test Mode，Postman 確認回應</td>
+</tr>
+<tr>
+<td>A-08</td>
+<td>Stripe Webhook</td>
+<td>付款成功事件（payment_intent.succeeded）觸發後，對應訂單狀態更新為已付款。驗收方式：Stripe CLI webhook trigger 測試</td>
+</tr>
+<tr>
+<td>A-09</td>
+<td>QR Code 產生 API</td>
+<td>已購買課程學員可取得唯一 QR Code token，token 與學員帳號及課程綁定；課程開始後 15 分鐘 token 自動失效，失效後核銷 API 返回對應錯誤碼</td>
+</tr>
+<tr>
+<td>A-10</td>
+<td>QR Code 核銷 API</td>
+<td>教師呼叫核銷 API 後標記出席；重複核銷返回「已簽到」；無效 token 返回錯誤碼</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>⚠️ <strong>Stripe 前置條件：</strong> 客戶方須於本合約簽署完成並收到第一期款後 3 個工作日內啟動 Stripe 帳號 KYC 申請。若未於期限前完成，A-07 / A-08 驗收項目將順延，不視為開發方延遲，亦不觸發延遲賠償條款。</p>
+</blockquote>
+<p><strong>軌道 A 驗收結果</strong></p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>驗收日期</td>
+<td></td>
+</tr>
+<tr>
+<td>客戶方簽核</td>
+<td></td>
+</tr>
+<tr>
+<td>備註</td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>C-4 軌道 B 驗收｜前端 App 與 Web-based 後台</h2>
+<p><strong>開發期間：2026/06/22 – 2026/07/03</strong>
+<strong>驗收方式：</strong> TestFlight（iOS）+ Firebase Distribution（Android）實機測試，客戶方實際操作完整流程。</p>
+<h3>帳號認證</h3>
+<table class="criteria-table">
+<thead>
+<tr>
+<th>#</th>
+<th>驗收項目</th>
+<th>驗收標準</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>B-01</td>
+<td>Email 登入</td>
+<td>可完成註冊、登入、登出；密碼錯誤顯示對應錯誤訊息</td>
+</tr>
+<tr>
+<td>B-02</td>
+<td>Google / Apple 登入</td>
+<td>授權頁正常跳出，授權後成功進入 App；Apple 登入自動支援 Face ID / Touch ID</td>
+</tr>
+<tr>
+<td>B-03</td>
+<td>手機號碼綁定</td>
+<td>設定頁可綁定手機號碼，綁定後顯示成功狀態</td>
+</tr>
+<tr>
+<td>B-04</td>
+<td>角色介面切換</td>
+<td>學員帳號登入看到學員介面；教師帳號登入看到教師介面</td>
+</tr>
+</tbody></table>
+<h3>課程功能</h3>
+<table class="criteria-table">
+<thead>
+<tr>
+<th>#</th>
+<th>驗收項目</th>
+<th>驗收標準</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>B-05</td>
+<td>課程列表</td>
+<td>顯示所有上架課程（名稱、時間、價格、剩餘名額），下架課程不顯示。測試：後台上架 3 門課程後前台確認顯示</td>
+</tr>
+<tr>
+<td>B-06</td>
+<td>課程詳情頁</td>
+<td>顯示完整課程說明、時間、地點、名額；講師欄位包含姓名及個人介紹</td>
+</tr>
+<tr>
+<td>B-07</td>
+<td>名額限制</td>
+<td>課程滿額後預約按鈕不可點擊。測試：名額設為 1，預約後確認第二人無法操作</td>
+</tr>
+<tr>
+<td>B-08</td>
+<td>預約時限</td>
+<td>超過截止時間後預約按鈕自動關閉</td>
+</tr>
+<tr>
+<td>B-09</td>
+<td>我的課程頁</td>
+<td>已預約、已購買、歷史紀錄三個分類資料正確；每筆已預約課程可於課程卡片直接查看與出示專屬 QR Code</td>
+</tr>
+</tbody></table>
+<h3>Stripe 付款</h3>
+<table class="criteria-table">
+<thead>
+<tr>
+<th>#</th>
+<th>驗收項目</th>
+<th>驗收標準</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>B-10</td>
+<td>付款流程</td>
+<td>輸入信用卡完成付款後，課程出現在「已購買」清單。測試：Stripe 測試卡 4242 4242 4242 4242</td>
+</tr>
+<tr>
+<td>B-11</td>
+<td>付款失敗處理</td>
+<td>失敗卡號顯示明確錯誤訊息，課程不被開通。測試：Stripe 測試卡 4000 0000 0000 0002</td>
+</tr>
+<tr>
+<td>B-12</td>
+<td>重複付款防護</td>
+<td>已購買課程的購買按鈕不再顯示，無法重複付款</td>
+</tr>
+<tr>
+<td>B-13</td>
+<td>訂單狀態同步</td>
+<td>付款完成後，後台訂單管理頁即時顯示對應訂單與付款狀態</td>
+</tr>
+</tbody></table>
+<h3>QR Code 簽到</h3>
+<table class="criteria-table">
+<thead>
+<tr>
+<th>#</th>
+<th>驗收項目</th>
+<th>驗收標準</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>B-14</td>
+<td>學員 QR Code 顯示</td>
+<td>已預約課程學員可於課程卡片查看並出示專屬 QR Code；QR Code 下方顯示失效時間說明（課程開始後 15 分鐘失效）及「僅限本人使用」聲明</td>
+</tr>
+<tr>
+<td>B-15</td>
+<td>QR Code 失效機制</td>
+<td>課程開始後 15 分鐘，QR Code 自動顯示為失效狀態，不可再用於簽到。測試：設定課程開始時間為當前時間 + 16 分鐘，確認 QR Code 失效</td>
+</tr>
+<tr>
+<td>B-16</td>
+<td>教師掃描核銷</td>
+<td>教師介面提供相機掃描入口；掃描後顯示學員姓名、課程資訊及出席狀態，確認後標記已出席</td>
+</tr>
+<tr>
+<td>B-17</td>
+<td>重複掃描防護</td>
+<td>已核銷 QR Code 再次掃描顯示「已簽到」提示，不重複計算出席</td>
+</tr>
+<tr>
+<td>B-18</td>
+<td>無效 QR Code 處理</td>
+<td>掃描失效或非本系統 QR Code 時，顯示明確錯誤訊息</td>
+</tr>
+</tbody></table>
+<h3>後台管理（Web-based）</h3>
+<table class="criteria-table">
+<thead>
+<tr>
+<th>#</th>
+<th>驗收項目</th>
+<th>驗收標準</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>B-19</td>
+<td>課程上架 / 下架</td>
+<td>管理員可新增課程（名稱、時間、價格、名額、截止時間），上架後前台即時顯示；下架後前台消失</td>
+</tr>
+<tr>
+<td>B-20</td>
+<td>會員管理</td>
+<td>可查詢會員、指派 / 移除教師角色、停用帳號</td>
+</tr>
+<tr>
+<td>B-21</td>
+<td>訂單查詢</td>
+<td>可查詢所有訂單（學員姓名、課程名稱、付款狀態、金額）</td>
+</tr>
+<tr>
+<td>B-22</td>
+<td>出席記錄</td>
+<td>可查詢各課程出席名單與簽到狀態</td>
+</tr>
+</tbody></table>
+<p><strong>軌道 B 驗收結果</strong></p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>驗收日期</td>
+<td></td>
+</tr>
+<tr>
+<td>客戶方簽核</td>
+<td></td>
+</tr>
+<tr>
+<td>備註</td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>C-5 軌道 C 驗收｜上架與正式環境</h2>
+<p><strong>開發期間：2026/07/06 – 2026/08/07</strong>
+<strong>驗收時機：</strong> iOS / Android 正式上線後，以正式版 App 進行最終確認（目標 7/21 開啟驗收）。
+<strong>驗收期：</strong> 正式上線後 14 個工作天。</p>
+<p><strong>平台審核緩衝說明：</strong>
+若因下列不可歸責於開發方之事由，導致 App 無法於 App Store 或 Google Play 正式公開上架，驗收期起算點調整如下：</p>
+<ul>
+<li>客戶未及時提供有效之 Apple / Google 開發者帳號</li>
+<li>客戶明示暫緩上架</li>
+<li>非因 App 程式碼缺陷所致之平台拒絕（行政退件、排隊延遲等）</li>
+</ul>
+<p>上述情況下，自開發方交付完整 TestFlight（或同等測試環境）並提交雙平台審查之日起算 14 個工作天為緩衝期。超過 14 個工作天仍因前述客戶原因或平台行政程序未能上架，雙方進行階段性實機功能驗收；功能符合本附件測試標準者，客戶應支付第三期尾款。</p>
+<p><strong>程式碼缺陷保固：</strong>
+客戶支付尾款後，App 後續正式重啟上架流程時，若因本次交付之原始程式碼缺陷遭平台功能性拒絕（Functional Rejection），開發方於尾款支付後 60 個日曆天內，有義務免費修正程式碼至審查通過為止。</p>
+<p><strong>平台政策重大變更：</strong>
+若因平台政策突發性重大變更導致功能性退件，修改工時 8 小時以內者開發方免費協助；超過 8 小時部分雙方另行協議報酬。</p>
+<table class="criteria-table">
+<thead>
+<tr>
+<th>#</th>
+<th>驗收項目</th>
+<th>驗收標準</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>C-01</td>
+<td>iOS App Store 上架</td>
+<td>App 通過 Apple 審核，可在 App Store 正式下載與安裝</td>
+</tr>
+<tr>
+<td>C-02</td>
+<td>Android Google Play 上架</td>
+<td>App 通過 Google 審核，可在 Google Play 正式下載與安裝</td>
+</tr>
+<tr>
+<td>C-03</td>
+<td>課程提醒推播</td>
+<td>已預約課程可於開始前 24 小時及 1 小時收到推播提醒（iOS + Android 均測試）；使用者可自行設定是否開啟各時間點提醒。測試：後台觸發測試推播，確認兩平台均收到；點擊通知跳轉至對應課程頁</td>
+</tr>
+<tr>
+<td>C-04</td>
+<td>搶購提醒推播</td>
+<td>課程旁顯示「設提醒」選項，點擊後於課程開搶前收到推播；提醒可由使用者自行取消。測試：設定一門限時開搶課程，點擊設提醒後確認推播收到</td>
+</tr>
+<tr>
+<td>C-05</td>
+<td>AWS 正式環境</td>
+<td>Node.js + PostgreSQL 完整部署於 AWS Lightsail Production 環境。驗收方式：提供 AWS Console 存取供客戶確認</td>
+</tr>
+<tr>
+<td>C-06</td>
+<td>隱私政策 &amp; 首次同意</td>
+<td>首次進入 App 時，使用者須同意隱私權政策及資料使用條款方可繼續使用；連結可正常開啟，內容為雙方確認版本</td>
+</tr>
+<tr>
+<td>C-07</td>
+<td>課程購買條款同意</td>
+<td>購買課程前顯示取消政策條款文字（內容由雙方書面確認），使用者須勾選同意後方可繼續付款。退款操作介面不列入 v1.0 範疇</td>
+</tr>
+<tr>
+<td>C-08</td>
+<td>完整流程穩定性</td>
+<td>瀏覽 → 預約 → 付款（含同意條款）→ QR Code 簽到 完整流程操作 3 次，無閃退或無回應。測試：使用正式版 App（非 TestFlight）以 Stripe Live Mode 完整操作</td>
+</tr>
+<tr>
+<td>C-09</td>
+<td>技術文件移交</td>
+<td>完整技術文件包含：API 文件、資料庫 Schema 說明、第三方服務設定說明（Firebase、Stripe、AWS）、系統交接說明文件</td>
+</tr>
+<tr>
+<td>C-10</td>
+<td>AWS 環境移交</td>
+<td>AWS Lightsail Production 環境存取權與所有權，依主合約第 5.5 條於第三期款項結清後 3 個工作日內移交予客戶，並提供 README 說明部署流程；GitHub Repository 自始建立於客戶帳號下，開發方 Admin 權限之存續依主合約第 5.4.1 條處理</td>
+</tr>
+<tr>
+<td>C-11</td>
+<td>隱私政策與服務條款嵌入</td>
+<td>隱私政策（Privacy Policy）與服務條款（Terms of Service）已依雙方書面確認之版本，完整嵌入並部署於 Landing Page 及 App 對應區塊；連結可正常開啟，內容為雙方確認版本</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>⚠️ <strong>App Store 與 Google Play 審核時間不在開發方控制範圍內。</strong> 若因 Apple / Google 審核延遲（非程式問題退件）導致上線日順延，不視為開發方未達交付標準。功能性退件由開發方負責修正直至通過。</p>
+</blockquote>
+<p><strong>軌道 C 驗收結果</strong></p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>驗收日期</td>
+<td></td>
+</tr>
+<tr>
+<td>客戶方簽核</td>
+<td></td>
+</tr>
+<tr>
+<td>備註</td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>C-6 驗收總表</h2>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>驗收項目數</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>前置工作（Landing Page）</td>
+<td>1</td>
+</tr>
+<tr>
+<td>軌道 A</td>
+<td>10</td>
+</tr>
+<tr>
+<td>軌道 B</td>
+<td>22</td>
+</tr>
+<tr>
+<td>軌道 C</td>
+<td>11</td>
+</tr>
+<tr>
+<td><strong>合計</strong></td>
+<td><strong>44</strong></td>
+</tr>
+</tbody></table>
+<p><strong>專案交付最終確認</strong></p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>交付日期</td>
+<td></td>
+</tr>
+<tr>
+<td>合作情境確認</td>
+<td>☐ 情境一（長期合作，$1,800 USD）　☐ 情境二（單次，$2,499 USD）</td>
+</tr>
+<tr>
+<td>客戶方簽核</td>
+<td></td>
+</tr>
+<tr>
+<td>開發方簽核</td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<p><em>附件 C 與主合約（MTS-2026-001）具同等法律效力，雙方簽署主合約即視為確認本附件內容。</em></p>
+      </div>
+    </div>
+    
+    <div class="page-wrapper pb-before">
+      <div class="article">
+<h1>附件 D｜長期合作框架協議</h1>
+<p><strong>Long-Term Collaboration Framework Agreement</strong></p>
+<p>合約編號：MTS-2026-001-LT
+生效日期：2026 年 08 月 07 日
+到期日期：2027 年 08 月 07 日（12 個月）
+日期：2026 年 06 月 11 日</p>
+<p>當事人：Motise Inc.（客戶）／ HUANG CONG REN（開發方）</p>
+<hr>
+<h2>D-1 合作形式與目的</h2>
+<p>雙方同意以「專案制續約」方式進行長期合作。</p>
+<p>本附件不構成任何固定工時、固定月費或持續服務之承諾。
+每個後續專案均須另行定義範疇、時程與報酬，並以獨立之
+工作說明書（Statement of Work，以下簡稱「SOW」）書面確認。</p>
+<p>本附件之簽署，作為主合約情境一（$1,800 USD）折扣條件
+成立之書面依據。</p>
+<hr>
+<h2>D-2 合作期間與週期</h2>
+<p><strong>合作期間：</strong> 2026 年 08 月 07 日 至 2027 年 08 月 07 日，共 12 個月。</p>
+<p>合作期間均分為四個發案週期，各週期如下：</p>
+<table>
+<thead>
+<tr>
+<th>週期</th>
+<th>起始日</th>
+<th>截止日</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>第一週期</td>
+<td>2026/08/07</td>
+<td>2026/11/07</td>
+</tr>
+<tr>
+<td>第二週期</td>
+<td>2026/11/07</td>
+<td>2027/02/07</td>
+</tr>
+<tr>
+<td>第三週期</td>
+<td>2027/02/07</td>
+<td>2027/05/07</td>
+</tr>
+<tr>
+<td>第四週期</td>
+<td>2027/05/07</td>
+<td>2027/08/07</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>D-3 最低發案義務與差額補足機制</h2>
+<div class="clause"><span class="clause-num">3.1</span>客戶於每個發案週期內，須至少完成一份 SOW 之雙方書面
+    簽署（簽署即視為達成，不以開發方實際開始工作為前提）。</div>
+<div class="clause"><span class="clause-num">3.2</span>若客戶於某一發案週期截止日前，未完成任何 SOW 之書面
+    簽署，該週期視為「未達成」，客戶須於該週期截止日後
+    10 個工作天內，支付當期差額補足款項：</div>
+<pre><code>每週期差額補足金額 = $699 USD ÷ 4 = $174.75 USD
+（四捨五入計為 $175 USD）
+
+若因開發方原因（如明確拒絕接案、未於 D-4 Step 2
+所定時限內提供報價，或開發方所提報酬報價超出
+D-5.4 所定費率上限而致無法達成共識）導致該週期
+未簽署 SOW，客戶無須支付該期之差額補足款項。
+但若開發方已依 D-5.4 費率上限範圍內提出報價，
+雙方仍因報酬或時程細節無法達成共識而未簽署
+SOW，不適用前述免責，該週期仍依本條認定為
+未達成。
+</code></pre>
+<div class="clause"><span class="clause-num">3.3</span>差額補足款項支付方式與主合約相同，匯入開發方指定
+    Wise 帳號，匯款手續費由客戶方承擔。</div>
+<div class="clause"><span class="clause-num">3.4</span>差額補足不影響雙方於後續週期繼續合作之權利與義務。
+    每個週期獨立計算，互不累計。</div>
+<div class="clause"><span class="clause-num">3.5</span>若四個週期均達成最低發案義務，差額補足機制全程不觸發，
+    主合約情境一折扣完整有效。</div>
+<hr>
+<h2>D-4 專案啟動流程</h2>
+<p>每個後續專案依以下流程啟動，未完成全部步驟前，
+開發方無義務開始任何工作：</p>
+<p><strong>Step 1｜需求提出</strong>
+客戶以書面提出新專案需求，包含功能描述與預期時程。</p>
+<p><strong>Step 2｜評估與報價</strong>
+開發方於收到需求後 5 個工作天內，提供範疇說明、
+時程估算與報酬報價。若開發方未於前述期限內提供
+報價，每逾期一日，該發案週期之截止日應自動順延
+一日。</p>
+<p><strong>Step 3｜SOW 確認</strong>
+雙方就 Step 2 報價內容達成共識後，簽署正式 SOW。
+SOW 須包含：專案範疇、交付物清單、時程、報酬金額
+及付款結構。</p>
+<p><strong>Step 4｜啟動</strong>
+SOW 雙方簽署完成後，開發方正式開始工作。</p>
+<hr>
+<h2>D-5 報酬原則</h2>
+<div class="clause"><span class="clause-num">5.1</span>每個專案報酬依實際範疇於 SOW 中獨立議定，
+    不受主合約費用結構影響，亦不受本附件任何條款限制。</div>
+<div class="clause"><span class="clause-num">5.2</span>每份 SOW 之付款結構，參照主合約三期模式（30/30/40）
+    或雙方另行協議之方式執行。</div>
+<div class="clause"><span class="clause-num">5.3</span>每份 SOW 之程式碼所有權移轉條件，
+    參照主合約第五條分階段移轉之邏輯執行。</div>
+<div class="clause"><span class="clause-num">5.4</span>本附件不鎖定任何具體費率，開發方保留對每份
+    SOW 獨立報價之權利。惟雙方同意，後續每份
+    SOW 之預估工程師人天費率（Man-Day Rate）或
+    時薪，應參照同等技術棧（React Native +
+    Node.js 全端開發）之國際遠端外包市場行情，
+    以 USD 50–60 / 小時（約合 USD 400–480 /
+    8 小時工作天）為費率上限基準（以下簡稱
+    「費率上限」），或雙方於啟動需求時另行議定。
+    主合約情境一之報價反映雙方建立合作關係之
+    優惠折扣，非市場行情費率，不作為前述費率
+    上限之計算依據。</div>
+<div class="clause"><span class="clause-num">5.5</span>每份 SOW 之報酬，原則上依交付物或專案階段
+    （里程碑）採固定總價方式議定與付款，雙方
+    無須於 SOW 中拆解或揭露工時與費率明細之
+    計算過程。前條費率上限僅作為雙方議定報酬
+    時之內部參考依據。</div>
+<hr>
+<h2>D-6 非排他聲明</h2>
+<div class="clause"><span class="clause-num">6.1</span>開發方於合作期間保留接受其他客戶專案之權利，
+    不受本附件任何條款限制。</div>
+<div class="clause"><span class="clause-num">6.2</span>客戶於合作期間保留評估其他開發資源之權利，
+    但最低發案義務（D-3）仍須履行。</div>
+<hr>
+<h2>D-7 終止</h2>
+<div class="clause"><span class="clause-num">7.1</span>客戶得於合作期間內，提前 30 個日曆天書面通知
+    終止本附件；開發方得於合作期間內，提前 45 個
+    日曆天書面通知終止本附件。</div>
+<div class="clause"><span class="clause-num">7.2</span>終止通知發出時，若有進行中之 SOW，該 SOW 依其
+    自身條款繼續執行至完成，不受終止通知影響。</div>
+<div class="clause"><span class="clause-num">7.3</span>若客戶提前終止本附件，且終止日前已有一個或多個
+    週期被認定為「未達成」，對應之差額補足款項仍須
+    於終止日後 10 個工作天內結清。</div>
+<div class="clause"><span class="clause-num">7.4</span>若客戶提前終止本附件，終止日後之剩餘週期不再
+    計算最低發案義務，亦不觸發剩餘週期之差額補足。</div>
+<div class="clause"><span class="clause-num">7.5</span>若開發方依 7.1 提前終止本附件，自終止生效日起
+    30 個日曆天內（交接保固期），開發方應配合提供
+    既有專案文件交接、知識轉移及技術問題支援，
+    協助客戶銜接後續開發資源。</div>
+<hr>
+<h2>D-8 與主合約之關係</h2>
+<div class="clause"><span class="clause-num">8.1</span>本附件與主合約（MTS-2026-001）具同等法律效力，
+    主合約各條款於本附件合作範疇內適用。</div>
+<div class="clause"><span class="clause-num">8.2</span>若本附件未於主合約完成雙方電子簽署之同時完成
+    雙方書面簽署，主合約自動適用情境二（總費用
+    $2,499 USD），本附件視為未生效。</div>
+<div class="clause"><span class="clause-num">8.3</span>本附件適用中華民國（台灣）法律。</div>
+<hr>
+<h2>D-9 雙方確認簽署</h2>
+<p>雙方均已閱讀並理解本附件全部條款，同意受其約束。</p>
+<p>&nbsp;</p>
+<p><strong>客戶方</strong></p>
+<p>公司名稱：Motise Inc.</p>
+<p>簽署人：Chiang Ching-Hsuan（Founder / Director）</p>
+<p>簽署信箱：<a href="mailto:hello@motise.net">hello@motise.net</a></p>
+<p>電子簽名時間戳記：<span style="font-size:var(--size-xs);color:#aaa;font-style:italic;"><span style="font-size:var(--size-xs);color:#aaa;font-style:italic;">(由 Dropbox Sign 系統自動記錄)</span></span></p>
+<p>&nbsp;</p>
+<p><strong>開發方</strong></p>
+<p>姓名：HUANG CONG REN</p>
+<p>聯絡信箱：<a href="mailto:tzuchihuang0214@gmail.com">tzuchihuang0214@gmail.com</a></p>
+<p>電子簽名時間戳記：<span style="font-size:var(--size-xs);color:#aaa;font-style:italic;"><span style="font-size:var(--size-xs);color:#aaa;font-style:italic;">(由 Dropbox Sign 系統自動記錄)</span></span></p>
+<hr>
+<p class="appendix-disclaimer"><em>本附件連同主合約（MTS-2026-001）及附件 A、B、C，
+共五份文件，雙方各執電子版一份，具同等效力。</em></p>
+      </div>
+    </div>
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        fontFamily: 'Noto Sans TC, Noto Sans, sans-serif',
+        primaryColor: '#eef3f8',
+        primaryBorderColor: '#1a3a5c',
+        primaryTextColor: '#1a1a1a',
+        lineColor: '#1a3a5c'
+      }
+    });
+  </script>
+</body>
+</html>
