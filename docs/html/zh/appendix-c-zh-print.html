@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Appendix C</title>
+  <style>
+    
+    /* ─── Fonts ─── */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500&display=swap');
+
+    :root {
+      --page-width: 210mm;
+      --page-height: 297mm;
+      --margin-top: 25mm;
+      --margin-right: 20mm;
+      --margin-bottom: 25mm;
+      --margin-left: 25mm;
+      --color-text: #1a1a1a;
+      --color-muted: #555;
+      --color-border: #bbb;
+      --color-border-light: #ddd;
+      --color-accent: #1a3a5c;
+      --font-serif: 'Noto Serif TC', 'STSong', '宋體', Georgia, serif;
+      --font-sans: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+      --size-base: 10.5pt;
+      --size-sm: 9pt;
+      --size-xs: 8pt;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #e8e8e8;
+      font-family: var(--font-serif);
+      font-size: var(--size-base);
+      color: var(--color-text);
+      line-height: 1.8;
+    }
+
+    .page-wrapper {
+      max-width: var(--page-width);
+      margin: 32px auto;
+      background: #fff;
+      box-shadow: 0 4px 32px rgba(0,0,0,.18);
+      padding: var(--margin-top) var(--margin-right) var(--margin-bottom) var(--margin-left);
+    }
+
+    .print-btn {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      background: var(--color-accent);
+      color: #fff;
+      border: none;
+      padding: 8px 20px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 4px;
+      letter-spacing: .04em;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    }
+    .print-btn:hover { background: #255a8a; }
+
+    .doc-header {
+      text-align: center;
+      margin-bottom: 10mm;
+      padding-bottom: 6mm;
+      border-bottom: 2px solid var(--color-accent);
+    }
+    .doc-header h1 {
+      font-size: 16pt;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: var(--color-accent);
+      margin-bottom: 3px;
+    }
+    .doc-meta {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      color: var(--color-muted);
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--color-border-light);
+      margin: 6mm 0;
+    }
+
+    .article {
+      margin-bottom: 7mm;
+    }
+    .article h1 {
+      text-align: center;
+      font-size: 16pt;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: var(--color-accent);
+      margin-bottom: 10mm;
+      padding-bottom: 6mm;
+      border-bottom: 2px solid var(--color-accent);
+    }
+    .article h2 {
+      font-family: var(--font-sans);
+      font-size: 10pt;
+      font-weight: 700;
+      color: var(--color-accent);
+      letter-spacing: .1em;
+      border-left: 3px solid var(--color-accent);
+      padding-left: 6px;
+      margin-bottom: 4mm;
+      page-break-after: avoid;
+    }
+    .article h3 {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-top: 6mm;
+      margin-bottom: 2mm;
+    }
+    .article p {
+      font-size: var(--size-base);
+      line-height: 1.85;
+      margin-bottom: 4mm;
+    }
+    .clause {
+      margin-bottom: 2.5mm;
+    }
+    .clause-num {
+      font-weight: 500;
+      color: var(--color-accent);
+      margin-right: 4px;
+    }
+
+    ul, ol {
+      margin-left: 2em;
+      margin-bottom: 4mm;
+      font-size: var(--size-sm);
+      color: var(--color-muted);
+      line-height: 1.75;
+    }
+
+    blockquote {
+      margin: 3mm 0 4mm;
+      padding: 3mm 6mm;
+      border-left: 3px solid var(--color-border);
+      background: #f9f9f9;
+      font-family: var(--font-sans);
+      font-size: var(--size-xs);
+      color: var(--color-muted);
+      line-height: 1.7;
+    }
+
+    pre {
+      background: #f4f4f4;
+      border: 1px solid var(--color-border-light);
+      border-left: 3px solid var(--color-accent);
+      padding: 4mm 6mm;
+      margin: 2mm 0 4mm 0;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: var(--size-sm);
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      margin: 2mm 0 4mm;
+    }
+    table th {
+      background: var(--color-accent);
+      color: #fff;
+      font-weight: 600;
+      padding: 4px 8px;
+      text-align: left;
+      letter-spacing: .04em;
+    }
+    table td {
+      padding: 4px 8px;
+      border-bottom: 1px solid var(--color-border-light);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    table tr:nth-child(even) td { background: #f7f8fa; }
+
+    .formula {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: var(--size-sm);
+      background: #f4f4f4;
+      border: 1px solid var(--color-border-light);
+      border-left: 3px solid var(--color-accent);
+      padding: 4mm 6mm;
+      margin: 2mm 0 3mm 2em;
+      line-height: 1.7;
+      page-break-inside: avoid;
+      white-space: pre-wrap;
+    }
+
+    .sig-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10mm;
+      margin-top: 6mm;
+    }
+    .sig-block {
+      border-top: 1.5px solid var(--color-accent);
+      padding-top: 4mm;
+    }
+    .sig-block h4 {
+      font-family: var(--font-sans);
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 4mm;
+    }
+    .sig-field {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+      margin-bottom: 5mm;
+      color: var(--color-muted);
+    }
+    .sig-field span { white-space: normal; }
+    .sig-field span:first-child {
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .sig-line {
+      flex: 1;
+      border-bottom: 1px solid var(--color-border);
+      min-width: 40px;
+      height: 20px;
+    }
+
+    .appendix-disclaimer {
+      font-size: var(--size-xs);
+      color: var(--color-muted);
+      margin-top: 5mm;
+      font-family: var(--font-sans);
+      text-indent: 0 !important;
+    }
+
+    /* Fix table column wrapping */
+    .criteria-table { table-layout: fixed !important; width: 100% !important; }
+    .criteria-table th:nth-child(1), .criteria-table td:nth-child(1) { width: 10% !important; white-space: nowrap !important; }
+    .criteria-table th:nth-child(2), .criteria-table td:nth-child(2) { width: 30% !important; }
+    .criteria-table th:nth-child(3), .criteria-table td:nth-child(3) { width: 60% !important; }
+
+    .module-table { table-layout: fixed !important; width: 100% !important; }
+    .module-table th:nth-child(1), .module-table td:nth-child(1) { width: 10% !important; white-space: nowrap !important; }
+    .module-table th:nth-child(2), .module-table td:nth-child(2) { width: 25% !important; }
+    .module-table th:nth-child(3), .module-table td:nth-child(3) { width: 45% !important; }
+    .module-table th:nth-child(4), .module-table td:nth-child(4) { width: 20% !important; white-space: nowrap !important; }
+
+    .tech-table { table-layout: fixed !important; width: 100% !important; }
+    .tech-table th:nth-child(1), .tech-table td:nth-child(1) { width: 20% !important; white-space: nowrap !important; }
+    .tech-table th:nth-child(2), .tech-table td:nth-child(2) { width: 25% !important; }
+    .tech-table th:nth-child(3), .tech-table td:nth-child(3) { width: 55% !important; }
+
+    .resource-table { table-layout: fixed !important; width: 100% !important; }
+    .resource-table th:nth-child(1), .resource-table td:nth-child(1) { width: 45% !important; }
+    .resource-table th:nth-child(2), .resource-table td:nth-child(2) { width: 55% !important; }
+
+    @media print {
+      @page { size: A4; margin: 25mm 20mm 25mm 25mm; }
+      @page :first { margin-top: 20mm; }
+      body { background: #fff; font-size: 10pt; color: #000; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page-wrapper { max-width: none; margin: 0; padding: 0; box-shadow: none; }
+      .print-btn { display: none !important; }
+      .pb-before { page-break-before: always; break-before: page; margin-top: 0; }
+      .article h2 { page-break-after: avoid; break-after: avoid; }
+      .party-block, .appendix-section, .payment-scenario, .sig-grid, .formula, .signature-section { page-break-inside: avoid; break-inside: avoid; }
+      thead { display: table-header-group; }
+      tfoot { display: table-footer-group; }
+      tr { page-break-inside: avoid; break-inside: avoid; }
+      p { orphans: 3; widows: 3; }
+      a { text-decoration: none; color: inherit; }
+      .parties { display: grid; }
+    }
+    
+  </style>
+</head>
+<body>
+  <button class="print-btn" onclick="window.print()">Print / Export PDF</button>
+  <div class="page-wrapper">
+    <div class="article">
+<h1>附件 C｜驗收項目文件</h1>
+<p><strong>Acceptance Criteria</strong></p>
+<p>合約編號：MTS-2026-001
+日期：2026 年 06 月 11 日</p>
+<p>當事人：Motise Inc（客戶方）／ HUANG CONG REN（開發方）</p>
+<hr>
+<h2>C-1 驗收原則</h2>
+<h3>C-1-1 驗收架構</h3>
+<p>驗收分三個軌道進行，每個軌道設有獨立驗收時間窗口。各軌道驗收通過後，該軌道項目即鎖定，不得於後續軌道驗收時重新提出。</p>
+<table>
+<thead>
+<tr>
+<th>軌道</th>
+<th>範圍</th>
+<th>開發期間</th>
+<th>驗收期</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>軌道 A</td>
+<td>後端與基礎建設</td>
+<td>6/12 – 6/26</td>
+<td>完成後 5 個工作天</td>
+</tr>
+<tr>
+<td>軌道 B</td>
+<td>前端 App 與 Web-based 後台</td>
+<td>6/22 – 7/3</td>
+<td>完成後 5 個工作天</td>
+</tr>
+<tr>
+<td>軌道 C</td>
+<td>上架與正式環境</td>
+<td>7/6 – 8/7</td>
+<td>上線後 14 個工作天</td>
+</tr>
+</tbody></table>
+<h3>C-1-2 驗收保護條款</h3>
+<ol>
+<li><strong>驗收標準以功能行為為準。</strong> 介面設計須以雙方書面確認之設計稿為最低標準。以主觀描述（如「感覺不對」）作為退件理由者，須附具體功能性問題說明，否則視為通過。</li>
+<li><strong>逾期未書面回覆視同通過。</strong> 各軌道驗收期內客戶方未提交書面驗收結果，視同該軌道全數通過。</li>
+<li><strong>週會確認機制。</strong> 每週同步會議後 24 小時內，客戶方未提出書面異議，視同確認該階段進度，不得於後續驗收時重新提出。</li>
+<li><strong>軌道鎖定。</strong> 各軌道一旦驗收通過，該軌道項目即鎖定，不得於後續軌道或正式交付時重新提出異議。</li>
+<li><strong>新需求另行報價。</strong> 驗收期間提出之新需求不列入本次驗收範疇，另行評估報價後進入下一版本。</li>
+<li><strong>App Store / Google Play 審核退件應對：</strong> Metadata 類退件於收到通知後 2 個工作天內提交修正版；功能性退件於 5 個工作天內提交修正版。</li>
+<li><strong>複驗限制：</strong> 針對客戶方於驗收期內提出之書面修改意見清單，開發方完成修正後，客戶方僅能就該清單內原列項目之修正結果進行複驗，不得於複驗時提出原清單外之新修改意見。複驗時間以 3 個工作天為限，逾期未提交複驗結果視同全數通過。</li>
+</ol>
+<h3>C-1-3 驗收技術判定與穩定度標準</h3>
+<ol>
+<li><strong>判定技術標準：</strong> 各項目的功能驗收，應以程式碼可成功編譯運行、API 經測試（如 Postman）可正確回傳資料，或測試環境（如 Landing Page 網頁實機、App TestFlight）可實際操作，且「完全符合 Appendix C 中該項目所對應之 Criteria 描述」為通過標準。</li>
+<li><strong>系統穩定度要求：</strong> 驗收之核心功能與流程，於測試時不得含有阻礙性錯誤（Blocker Bug）或導致系統閃退、崩潰之重大缺陷（Critical Bug）；主流程之操作測試需具備連續運行之穩定度，方視為通過該項驗收。</li>
+</ol>
+<hr>
+<h2>C-2 前置工作驗收｜Landing Page</h2>
+<p><strong>性質：</strong> 獨立前置工作，不附屬於任何軌道，一旦通過即鎖定，不受後續軌道驗收影響
+<strong>完成期限：</strong> 第一期款項到帳後 3 個工作天內
+<strong>驗收方式：</strong> 客戶以瀏覽器開啟 motise.net 確認頁面可正常瀏覽</p>
+<table class="criteria-table">
+<thead>
+<tr>
+<th>#</th>
+<th>驗收項目</th>
+<th>驗收標準</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>P-01</td>
+<td>Landing Page 上線</td>
+<td>motise.net 可正常瀏覽；頁面包含公司名稱（Motise Inc）、服務簡介、聯絡資訊；版面設計以符合 Apple Developer 組織帳號申請審核要求為標準</td>
+<td>☐</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>版面設計說明：</strong> 最終版面呈現由開發方依審核需求決定。客戶可提供品牌素材（Logo、品牌色、文案）供參考，但不構成對版面設計之強制要求。Landing Page 交付後，任何版面或內容修改不列入本合約範疇。</p>
+</blockquote>
+<p><strong>前置工作驗收結果</strong></p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>款項到帳日期</td>
+<td></td>
+</tr>
+<tr>
+<td>完成期限</td>
+<td>款項到帳後第 3 個工作天</td>
+</tr>
+<tr>
+<td>驗收日期</td>
+<td></td>
+</tr>
+<tr>
+<td>客戶方簽核</td>
+<td></td>
+</tr>
+<tr>
+<td>備註</td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>C-3 軌道 A 驗收｜後端與基礎建設</h2>
+<p><strong>開發期間：2026/06/12 – 2026/06/26</strong>
+<strong>驗收方式：</strong> API 文件 + Postman 測試報告，客戶無需操作介面，由開發方提供測試結果供確認。</p>
+<table class="criteria-table">
+<thead>
+<tr>
+<th>#</th>
+<th>驗收項目</th>
+<th>驗收標準</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A-01</td>
+<td>DB Schema</td>
+<td>courses、users、bookings、orders、attendance 五張核心資料表建置完成，欄位與附件 A 規格一致。驗收方式：開發方提供 Schema 截圖或 ER Diagram</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>A-02</td>
+<td>AWS Lightsail 環境</td>
+<td>Node.js Instance + PostgreSQL Managed Database 建置完成。驗收方式：客戶登入 AWS Console 確認資源存在</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>A-03</td>
+<td>Auth API</td>
+<td>Email 註冊 / 登入、Google OAuth、Apple Sign-In（JWT 驗證）、手機號碼綁定 API 全數可正常呼叫。驗收方式：Postman 測試報告，每個 endpoint 顯示 200 回應</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>A-04</td>
+<td>角色權限系統</td>
+<td>Teacher / Student / Admin 三種角色對應不同 API 存取權限；跨角色存取返回 403。驗收方式：Postman 測試報告</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>A-05</td>
+<td>課程 CRUD API</td>
+<td>課程新增、查詢、修改、下架 API 可正常呼叫，名額與截止時間欄位正確儲存</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>A-06</td>
+<td>預約邏輯 API</td>
+<td>名額鎖定機制正確（並發預約不超額）、預約時限超時後 API 返回對應錯誤碼</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>A-07</td>
+<td>Stripe Payment Intent</td>
+<td>呼叫後端 API 可建立 Stripe Payment Intent，返回 client_secret。驗收方式：Stripe Test Mode，Postman 確認回應</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>A-08</td>
+<td>Stripe Webhook</td>
+<td>付款成功事件（payment_intent.succeeded）觸發後，對應訂單狀態更新為已付款。驗收方式：Stripe CLI webhook trigger 測試</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>A-09</td>
+<td>QR Code 產生 API</td>
+<td>已購買課程學員可取得唯一 QR Code token，token 與學員帳號及課程綁定；課程開始後 15 分鐘 token 自動失效，失效後核銷 API 返回對應錯誤碼</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>A-10</td>
+<td>QR Code 核銷 API</td>
+<td>教師呼叫核銷 API 後標記出席；重複核銷返回「已簽到」；無效 token 返回錯誤碼</td>
+<td>☐</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>⚠️ <strong>Stripe 前置條件：</strong> 客戶方須於本合約簽署完成並收到第一期款後 3 個工作日內啟動 Stripe 帳號 KYC 申請。若未於期限前完成，A-07 / A-08 驗收項目將順延，不視為開發方延遲，亦不觸發延遲賠償條款。</p>
+</blockquote>
+<p><strong>軌道 A 驗收結果</strong></p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>驗收日期</td>
+<td></td>
+</tr>
+<tr>
+<td>客戶方簽核</td>
+<td></td>
+</tr>
+<tr>
+<td>備註</td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>C-4 軌道 B 驗收｜前端 App 與 Web-based 後台</h2>
+<p><strong>開發期間：2026/06/22 – 2026/07/03</strong>
+<strong>驗收方式：</strong> TestFlight（iOS）+ Firebase Distribution（Android）實機測試，客戶方實際操作完整流程。</p>
+<h3>帳號認證</h3>
+<table class="criteria-table">
+<thead>
+<tr>
+<th>#</th>
+<th>驗收項目</th>
+<th>驗收標準</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>B-01</td>
+<td>Email 登入</td>
+<td>可完成註冊、登入、登出；密碼錯誤顯示對應錯誤訊息</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>B-02</td>
+<td>Google / Apple 登入</td>
+<td>授權頁正常跳出，授權後成功進入 App；Apple 登入自動支援 Face ID / Touch ID</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>B-03</td>
+<td>手機號碼綁定</td>
+<td>設定頁可綁定手機號碼，綁定後顯示成功狀態</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>B-04</td>
+<td>角色介面切換</td>
+<td>學員帳號登入看到學員介面；教師帳號登入看到教師介面</td>
+<td>☐</td>
+</tr>
+</tbody></table>
+<h3>課程功能</h3>
+<table class="criteria-table">
+<thead>
+<tr>
+<th>#</th>
+<th>驗收項目</th>
+<th>驗收標準</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>B-05</td>
+<td>課程列表</td>
+<td>顯示所有上架課程（名稱、時間、價格、剩餘名額），下架課程不顯示。測試：後台上架 3 門課程後前台確認顯示</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>B-06</td>
+<td>課程詳情頁</td>
+<td>顯示完整課程說明、時間、地點、名額；講師欄位包含姓名及個人介紹</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>B-07</td>
+<td>名額限制</td>
+<td>課程滿額後預約按鈕不可點擊。測試：名額設為 1，預約後確認第二人無法操作</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>B-08</td>
+<td>預約時限</td>
+<td>超過截止時間後預約按鈕自動關閉</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>B-09</td>
+<td>我的課程頁</td>
+<td>已預約、已購買、歷史紀錄三個分類資料正確；每筆已預約課程可於課程卡片直接查看與出示專屬 QR Code</td>
+<td>☐</td>
+</tr>
+</tbody></table>
+<h3>Stripe 付款</h3>
+<table class="criteria-table">
+<thead>
+<tr>
+<th>#</th>
+<th>驗收項目</th>
+<th>驗收標準</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>B-10</td>
+<td>付款流程</td>
+<td>輸入信用卡完成付款後，課程出現在「已購買」清單。測試：Stripe 測試卡 4242 4242 4242 4242</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>B-11</td>
+<td>付款失敗處理</td>
+<td>失敗卡號顯示明確錯誤訊息，課程不被開通。測試：Stripe 測試卡 4000 0000 0000 0002</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>B-12</td>
+<td>重複付款防護</td>
+<td>已購買課程的購買按鈕不再顯示，無法重複付款</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>B-13</td>
+<td>訂單狀態同步</td>
+<td>付款完成後，後台訂單管理頁即時顯示對應訂單與付款狀態</td>
+<td>☐</td>
+</tr>
+</tbody></table>
+<h3>QR Code 簽到</h3>
+<table class="criteria-table">
+<thead>
+<tr>
+<th>#</th>
+<th>驗收項目</th>
+<th>驗收標準</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>B-14</td>
+<td>學員 QR Code 顯示</td>
+<td>已預約課程學員可於課程卡片查看並出示專屬 QR Code；QR Code 下方顯示失效時間說明（課程開始後 15 分鐘失效）及「僅限本人使用」聲明</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>B-15</td>
+<td>QR Code 失效機制</td>
+<td>課程開始後 15 分鐘，QR Code 自動顯示為失效狀態，不可再用於簽到。測試：設定課程開始時間為當前時間 + 16 分鐘，確認 QR Code 失效</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>B-16</td>
+<td>教師掃描核銷</td>
+<td>教師介面提供相機掃描入口；掃描後顯示學員姓名、課程資訊及出席狀態，確認後標記已出席</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>B-17</td>
+<td>重複掃描防護</td>
+<td>已核銷 QR Code 再次掃描顯示「已簽到」提示，不重複計算出席</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>B-18</td>
+<td>無效 QR Code 處理</td>
+<td>掃描失效或非本系統 QR Code 時，顯示明確錯誤訊息</td>
+<td>☐</td>
+</tr>
+</tbody></table>
+<h3>後台管理（Web-based）</h3>
+<table class="criteria-table">
+<thead>
+<tr>
+<th>#</th>
+<th>驗收項目</th>
+<th>驗收標準</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>B-19</td>
+<td>課程上架 / 下架</td>
+<td>管理員可新增課程（名稱、時間、價格、名額、截止時間），上架後前台即時顯示；下架後前台消失</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>B-20</td>
+<td>會員管理</td>
+<td>可查詢會員、指派 / 移除教師角色、停用帳號</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>B-21</td>
+<td>訂單查詢</td>
+<td>可查詢所有訂單（學員姓名、課程名稱、付款狀態、金額）</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>B-22</td>
+<td>出席記錄</td>
+<td>可查詢各課程出席名單與簽到狀態</td>
+<td>☐</td>
+</tr>
+</tbody></table>
+<p><strong>軌道 B 驗收結果</strong></p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>驗收日期</td>
+<td></td>
+</tr>
+<tr>
+<td>客戶方簽核</td>
+<td></td>
+</tr>
+<tr>
+<td>備註</td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>C-5 軌道 C 驗收｜上架與正式環境</h2>
+<p><strong>開發期間：2026/07/06 – 2026/08/07</strong>
+<strong>驗收時機：</strong> iOS / Android 正式上線後，以正式版 App 進行最終確認（目標 7/21 開啟驗收）。
+<strong>驗收期：</strong> 正式上線後 14 個工作天。</p>
+<p><strong>平台審核緩衝說明：</strong>
+若因下列不可歸責於開發方之事由，導致 App 無法於 App Store 或 Google Play 正式公開上架，驗收期起算點調整如下：</p>
+<ul>
+<li>客戶未及時提供有效之 Apple / Google 開發者帳號</li>
+<li>客戶明示暫緩上架</li>
+<li>非因 App 程式碼缺陷所致之平台拒絕（行政退件、排隊延遲等）</li>
+</ul>
+<p>上述情況下，自開發方交付完整 TestFlight（或同等測試環境）並提交雙平台審查之日起算 14 個工作天為緩衝期。超過 14 個工作天仍因前述客戶原因或平台行政程序未能上架，雙方進行階段性實機功能驗收；功能符合本附件測試標準者，客戶應支付第三期尾款。</p>
+<p><strong>程式碼缺陷保固：</strong>
+客戶支付尾款後，App 後續正式重啟上架流程時，若因本次交付之原始程式碼缺陷遭平台功能性拒絕（Functional Rejection），開發方於尾款支付後 60 個日曆天內，有義務免費修正程式碼至審查通過為止。</p>
+<p><strong>平台政策重大變更：</strong>
+若因平台政策突發性重大變更導致功能性退件，修改工時 8 小時以內者開發方免費協助；超過 8 小時部分雙方另行協議報酬。</p>
+<table class="criteria-table">
+<thead>
+<tr>
+<th>#</th>
+<th>驗收項目</th>
+<th>驗收標準</th>
+<th>結果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>C-01</td>
+<td>iOS App Store 上架</td>
+<td>App 通過 Apple 審核，可在 App Store 正式下載與安裝</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>C-02</td>
+<td>Android Google Play 上架</td>
+<td>App 通過 Google 審核，可在 Google Play 正式下載與安裝</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>C-03</td>
+<td>課程提醒推播</td>
+<td>已預約課程可於開始前 24 小時及 1 小時收到推播提醒（iOS + Android 均測試）；使用者可自行設定是否開啟各時間點提醒。測試：後台觸發測試推播，確認兩平台均收到；點擊通知跳轉至對應課程頁</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>C-04</td>
+<td>搶購提醒推播</td>
+<td>課程旁顯示「設提醒」選項，點擊後於課程開搶前收到推播；提醒可由使用者自行取消。測試：設定一門限時開搶課程，點擊設提醒後確認推播收到</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>C-05</td>
+<td>AWS 正式環境</td>
+<td>Node.js + PostgreSQL 完整部署於 AWS Lightsail Production 環境。驗收方式：提供 AWS Console 存取供客戶確認</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>C-06</td>
+<td>隱私政策 &amp; 首次同意</td>
+<td>首次進入 App 時，使用者須同意隱私權政策及資料使用條款方可繼續使用；連結可正常開啟，內容為雙方確認版本</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>C-07</td>
+<td>課程購買條款同意</td>
+<td>購買課程前顯示取消政策條款文字（內容由雙方書面確認），使用者須勾選同意後方可繼續付款。退款操作介面不列入 v1.0 範疇</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>C-08</td>
+<td>完整流程穩定性</td>
+<td>瀏覽 → 預約 → 付款（含同意條款）→ QR Code 簽到 完整流程操作 3 次，無閃退或無回應。測試：使用正式版 App（非 TestFlight）以 Stripe Live Mode 完整操作</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>C-09</td>
+<td>技術文件移交</td>
+<td>完整技術文件包含：API 文件、資料庫 Schema 說明、第三方服務設定說明（Firebase、Stripe、AWS）、系統交接說明文件</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>C-10</td>
+<td>AWS 環境移交</td>
+<td>AWS Lightsail Production 環境存取權與所有權，依主合約第 5.5 條於第三期款項結清後 3 個工作日內移交予客戶，並提供 README 說明部署流程；GitHub Repository 自始建立於客戶帳號下，開發方 Admin 權限之存續依主合約第 5.4.1 條處理</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>C-11</td>
+<td>隱私政策與服務條款嵌入</td>
+<td>隱私政策（Privacy Policy）與服務條款（Terms of Service）已依雙方書面確認之版本，完整嵌入並部署於 Landing Page 及 App 對應區塊；連結可正常開啟，內容為雙方確認版本</td>
+<td>☐</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>⚠️ <strong>App Store 與 Google Play 審核時間不在開發方控制範圍內。</strong> 若因 Apple / Google 審核延遲（非程式問題退件）導致上線日順延，不視為開發方未達交付標準。功能性退件由開發方負責修正直至通過。</p>
+</blockquote>
+<p><strong>軌道 C 驗收結果</strong></p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>驗收日期</td>
+<td></td>
+</tr>
+<tr>
+<td>客戶方簽核</td>
+<td></td>
+</tr>
+<tr>
+<td>備註</td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>C-6 驗收總表</h2>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>驗收項目數</th>
+<th>通過數</th>
+<th>未通過數</th>
+<th>最終結果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>前置工作（Landing Page）</td>
+<td>1</td>
+<td></td>
+<td></td>
+<td>☐ 通過 ☐ 未通過</td>
+</tr>
+<tr>
+<td>軌道 A</td>
+<td>10</td>
+<td></td>
+<td></td>
+<td>☐ 通過 ☐ 未通過</td>
+</tr>
+<tr>
+<td>軌道 B</td>
+<td>22</td>
+<td></td>
+<td></td>
+<td>☐ 通過 ☐ 未通過</td>
+</tr>
+<tr>
+<td>軌道 C</td>
+<td>11</td>
+<td></td>
+<td></td>
+<td>☐ 通過 ☐ 未通過</td>
+</tr>
+<tr>
+<td><strong>合計</strong></td>
+<td><strong>44</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><strong>專案交付最終確認</strong></p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>內容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>交付日期</td>
+<td></td>
+</tr>
+<tr>
+<td>合作情境確認</td>
+<td>☐ 情境一（長期合作，$1,800 USD）　☐ 情境二（單次，$2,499 USD）</td>
+</tr>
+<tr>
+<td>客戶方簽核</td>
+<td></td>
+</tr>
+<tr>
+<td>開發方簽核</td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<p><em>附件 C 與主合約（MTS-2026-001）具同等法律效力，雙方簽署主合約即視為確認本附件內容。</em></p>
+
+
+    </div>
+  </div>
+</body>
+</html>

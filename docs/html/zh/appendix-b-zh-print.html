@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Appendix D</title>
+  <title>Appendix B</title>
   <style>
     
     /* ─── Fonts ─── */
@@ -296,167 +296,299 @@
   <button class="print-btn" onclick="window.print()">Print / Export PDF</button>
   <div class="page-wrapper">
     <div class="article">
-<h1>附件 D｜長期合作框架協議</h1>
-<p><strong>Long-Term Collaboration Framework Agreement</strong></p>
-<p>合約編號：MTS-2026-001-LT
-生效日期：2026 年 08 月 07 日
-到期日期：2027 年 08 月 07 日（12 個月）
+<h1>附件 B｜開發時程規劃書</h1>
+<p><strong>Development Schedule</strong></p>
+<p>合約編號：MTS-2026-001
 日期：2026 年 06 月 11 日</p>
-<p>當事人：Motise Inc.（客戶）／ HUANG CONG REN（開發方）</p>
+<p>當事人：Motise Inc（客戶方）／ HUANG CONG REN（開發方）</p>
 <hr>
-<h2>D-1 合作形式與目的</h2>
-<p>雙方同意以「專案制續約」方式進行長期合作。</p>
-<p>本附件不構成任何固定工時、固定月費或持續服務之承諾。
-每個後續專案均須另行定義範疇、時程與報酬，並以獨立之
-工作說明書（Statement of Work，以下簡稱「SOW」）書面確認。</p>
-<p>本附件之簽署，作為主合約情境一（$1,800 USD）折扣條件
-成立之書面依據。</p>
-<hr>
-<h2>D-2 合作期間與週期</h2>
-<p><strong>合作期間：</strong> 2026 年 08 月 07 日 至 2027 年 08 月 07 日，共 12 個月。</p>
-<p>合作期間均分為四個發案週期，各週期如下：</p>
+<h2>B-1 時程前提條件</h2>
+<p>本附件所有時程，以下列條件全數於指定日期前達成為前提：</p>
 <table>
 <thead>
 <tr>
-<th>週期</th>
-<th>起始日</th>
-<th>截止日</th>
+<th>前提條件</th>
+<th>期限</th>
+<th>備註</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>第一週期</td>
+<td>客戶提供所有必要存取權限</td>
+<td>2026/06/12</td>
+<td>詳見附件 A 第 A-6 節（排除 Apple 組織權限）</td>
+</tr>
+<tr>
+<td>motise.net 網域存取權限提供</td>
+<td>2026/06/12</td>
+<td>DNS 管理權限或協助完成 DNS 設定，為 Landing Page 部署前提</td>
+</tr>
+<tr>
+<td>Stripe 帳號 KYC 申請啟動</td>
+<td>收到第一期款後 3 工作日內</td>
+<td>KYC 需 3–5 個工作天，須由客戶本人完成，無法由開發方代辦</td>
+</tr>
+<tr>
+<td>Apple Developer 組織帳號啟用（含 D-U-N-S Number 核發）</td>
+<td>2026/07/06</td>
+<td>為軌道 C 送審之前提條件。D-U-N-S 核發需 5–30 個工作天，與 Apple 帳號審核時間均不在開發方控制範圍內。若因核發時間延誤所造成之送審日期順延，不視為開發方延遲責任</td>
+</tr>
+<tr>
+<td>Google Play Console 組織帳號啟用</td>
+<td>2026/06/12</td>
+<td>新成立公司之帳號審核時間不固定，若因 Google 審核延誤所造成之送審日期順延，不視為開發方延遲責任</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>⚠️ 任何前提條件延誤，里程碑與交付日期等比例順延，不視為開發方延遲責任。</p>
+</blockquote>
+<hr>
+<h2>B-1-1 前置工作｜Landing Page</h2>
+<p><strong>性質：</strong> 主線開發之前置必要工作，不附屬於任何驗收軌道
+<strong>目的：</strong> 使 motise.net 具備完整公司資訊頁面，作為 Apple Developer 組織帳號申請審核之前提條件</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>時機</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>開始時間</td>
+<td>第一期款項（$540 USD）全數到帳後</td>
+</tr>
+<tr>
+<td>完成期限</td>
+<td>款項到帳後 <strong>3 個工作天內</strong></td>
+</tr>
+<tr>
+<td>驗收方式</td>
+<td>motise.net 可正常瀏覽，內容符合 Apple 審核要求（詳見附件 C P-01）</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>Landing Page 完成後，客戶方應立即啟動 Apple Developer 組織帳號申請程序，以減少因 D-U-N-S 核發等待造成之整體時程延誤。</p>
+</blockquote>
+<hr>
+<h2>B-2 關鍵里程碑</h2>
+<table>
+<thead>
+<tr>
+<th>編號</th>
+<th>里程碑</th>
+<th>目標日期</th>
+<th>驗收軌道</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>M1</td>
+<td>專案正式啟動（存取權限全數到位）</td>
+<td>2026/06/12</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M2</td>
+<td>DB Schema + API 骨架完成</td>
+<td>2026/06/17</td>
+<td>軌道 A</td>
+</tr>
+<tr>
+<td>M3</td>
+<td>Auth 系統完成</td>
+<td>2026/06/19</td>
+<td>軌道 A</td>
+</tr>
+<tr>
+<td>M4</td>
+<td>課程功能 + Stripe 串接完成</td>
+<td>2026/06/26</td>
+<td>軌道 A</td>
+</tr>
+<tr>
+<td>M5</td>
+<td>QR Code + 推播 + 後台完成</td>
+<td>2026/07/03</td>
+<td>軌道 B</td>
+</tr>
+<tr>
+<td>M6</td>
+<td>TestFlight 測試 + Bug 修正完成</td>
+<td>2026/07/09</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M7</td>
+<td>iOS + Android 同步送審</td>
+<td>2026/07/10</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M8</td>
+<td>iOS / Android 正式上線（目標）</td>
+<td>2026/07/21</td>
+<td>軌道 C 開啟</td>
+</tr>
+<tr>
+<td>M9</td>
+<td>專案正式交付</td>
 <td>2026/08/07</td>
-<td>2026/11/07</td>
-</tr>
-<tr>
-<td>第二週期</td>
-<td>2026/11/07</td>
-<td>2027/02/07</td>
-</tr>
-<tr>
-<td>第三週期</td>
-<td>2027/02/07</td>
-<td>2027/05/07</td>
-</tr>
-<tr>
-<td>第四週期</td>
-<td>2027/05/07</td>
-<td>2027/08/07</td>
+<td>軌道 C 完成</td>
 </tr>
 </tbody></table>
 <hr>
-<h2>D-3 最低發案義務與差額補足機制</h2>
-<div class="clause"><span class="clause-num">3.1</span>客戶於每個發案週期內，須至少完成一份 SOW 之雙方書面
-    簽署（簽署即視為達成，不以開發方實際開始工作為前提）。</div>
-<div class="clause"><span class="clause-num">3.2</span>若客戶於某一發案週期截止日前，未完成任何 SOW 之書面
-    簽署，該週期視為「未達成」，客戶須於該週期截止日後
-    10 個工作天內，支付當期差額補足款項：</div>
-<pre><code>每週期差額補足金額 = $699 USD ÷ 4 = $174.75 USD
-（四捨五入計為 $175 USD）
+<h2>B-3 開發軌道說明</h2>
+<h3>軌道 A｜後端與基礎建設（6/12 – 6/26）</h3>
+<table>
+<thead>
+<tr>
+<th>工作項目</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>架構設計 + 環境建置</td>
+<td>AWS Lightsail Node.js Instance、PostgreSQL 建置</td>
+</tr>
+<tr>
+<td>DB Schema</td>
+<td>users、courses、bookings、orders、attendance 五張核心資料表</td>
+</tr>
+<tr>
+<td>Auth 系統</td>
+<td>Email / Google / Apple Sign-In、JWT 驗證、角色權限（Student / Teacher / Admin）</td>
+</tr>
+<tr>
+<td>課程 CRUD API</td>
+<td>新增、查詢、修改、下架、名額與截止時間管理</td>
+</tr>
+<tr>
+<td>預約邏輯 API</td>
+<td>並發名額鎖定、預約時限控制</td>
+</tr>
+<tr>
+<td>Stripe 整合</td>
+<td>Payment Intent 建立、Webhook 訂單狀態更新</td>
+</tr>
+<tr>
+<td>QR Code API</td>
+<td>Token 產生與綁定、15 分鐘失效機制、核銷 API</td>
+</tr>
+</tbody></table>
+<h3>軌道 B｜前端 App 與 Web-based 後台（6/22 – 7/3）</h3>
+<table>
+<thead>
+<tr>
+<th>工作項目</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>課程列表 + 詳情頁</td>
+<td>上架課程顯示、名額剩餘、講師資訊</td>
+</tr>
+<tr>
+<td>預約 + 購買流程</td>
+<td>Stripe UI 整合、付款失敗處理、條款同意勾選</td>
+</tr>
+<tr>
+<td>QR Code 顯示 + 掃描</td>
+<td>學員出示、教師掃描核銷、失效提示</td>
+</tr>
+<tr>
+<td>推播通知</td>
+<td>Firebase FCM 課程提醒、搶購提醒設定</td>
+</tr>
+<tr>
+<td>Web-based 後台</td>
+<td>課程上下架、會員管理、訂單查詢、出席記錄</td>
+</tr>
+</tbody></table>
+<h3>軌道 C｜測試、送審與上線（7/6 – 8/7）</h3>
+<table>
+<thead>
+<tr>
+<th>工作項目</th>
+<th>說明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TestFlight + Firebase Distribution</td>
+<td>iOS / Android E2E 測試</td>
+</tr>
+<tr>
+<td>Bug 修正</td>
+<td>測試期間發現問題修正</td>
+</tr>
+<tr>
+<td>App Store 素材準備</td>
+<td>截圖、描述、Privacy Policy</td>
+</tr>
+<tr>
+<td>iOS + Android 同步送審</td>
+<td>7/10 兩平台同日送審</td>
+</tr>
+<tr>
+<td>審核退件應對</td>
+<td>Metadata 類退件：2 個工作天內修正；功能性退件：5 個工作天內修正</td>
+</tr>
+<tr>
+<td>正式上線</td>
+<td>目標 7/21，Apple 審核緩衝 11 天（7/10–7/21）</td>
+</tr>
+<tr>
+<td>上線後維護 + Bug 修正</td>
+<td>7/21 – 8/7</td>
+</tr>
+<tr>
+<td>技術文件 + 程式碼完整移交</td>
+<td>8/7</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>B-4 時程總覽（甘特圖）</h2>
+<pre><code>              W1       W2       W3       W4       W5       W6       W7       W8       W9
+              6/8      6/15     6/22     6/29     7/6      7/13     7/20     7/27     8/3
+              ──────────────────────────────────────────────────────────────────────────────
 
-若因開發方原因（如明確拒絕接案、未於 D-4 Step 2
-所定時限內提供報價，或開發方所提報酬報價超出
-D-5.4 所定費率上限而致無法達成共識）導致該週期
-未簽署 SOW，客戶無須支付該期之差額補足款項。
-但若開發方已依 D-5.4 費率上限範圍內提出報價，
-雙方仍因報酬或時程細節無法達成共識而未簽署
-SOW，不適用前述免責，該週期仍依本條認定為
-未達成。
+軌道 A · 後端 &amp; 基礎建設
+架構設計 + 環境建置  [=]
+DB Schema + API 骨架 [=]
+Auth 系統                     [=]
+後端 API（課程+預約+訂單）    [========]
+Stripe Payment + Webhook      [========]
+QR Code 產生 + 核銷 API               [========]
+
+軌道 B · 前端 App &amp; 後台
+課程列表 + 詳情頁                     [=]
+預約 + 購買 + Stripe UI               [========]
+QR Code 顯示 + 掃描 + 推播                    [=]
+後台管理（課程/會員/訂單）                    [=]
+
+軌道 C · 測試 · 送審 · 上線
+TestFlight + E2E + Bug Fix                            [=]
+🍎🤖 iOS + Android 同步送審                           [7/10]
+Apple / Google 審核中                                         [////]
+退件應對緩衝                                                  [////]
+✅ iOS / Android 正式上線                                             [✓7/21]
+上線後維護 + Bug 修正                                                 [==========]
+📦 專案正式交付                                                                         [✓8/7]
 </code></pre>
-<div class="clause"><span class="clause-num">3.3</span>差額補足款項支付方式與主合約相同，匯入開發方指定
-    Wise 帳號，匯款手續費由客戶方承擔。</div>
-<div class="clause"><span class="clause-num">3.4</span>差額補足不影響雙方於後續週期繼續合作之權利與義務。
-    每個週期獨立計算，互不累計。</div>
-<div class="clause"><span class="clause-num">3.5</span>若四個週期均達成最低發案義務，差額補足機制全程不觸發，
-    主合約情境一折扣完整有效。</div>
 <hr>
-<h2>D-4 專案啟動流程</h2>
-<p>每個後續專案依以下流程啟動，未完成全部步驟前，
-開發方無義務開始任何工作：</p>
-<p><strong>Step 1｜需求提出</strong>
-客戶以書面提出新專案需求，包含功能描述與預期時程。</p>
-<p><strong>Step 2｜評估與報價</strong>
-開發方於收到需求後 5 個工作天內，提供範疇說明、
-時程估算與報酬報價。若開發方未於前述期限內提供
-報價，每逾期一日，該發案週期之截止日應自動順延
-一日。</p>
-<p><strong>Step 3｜SOW 確認</strong>
-雙方就 Step 2 報價內容達成共識後，簽署正式 SOW。
-SOW 須包含：專案範疇、交付物清單、時程、報酬金額
-及付款結構。</p>
-<p><strong>Step 4｜啟動</strong>
-SOW 雙方簽署完成後，開發方正式開始工作。</p>
+<h2>B-5 延遲條款說明</h2>
+<p><strong>不列入開發方延遲責任之情況：</strong></p>
+<ul>
+<li>App Store / Google Play 審核等待或平台退件期間</li>
+<li>客戶未如期提供必要資源、帳號或存取權限所造成之延誤</li>
+<li>Stripe KYC 驗證未如期完成所造成之付款功能延遲</li>
+<li>Apple Developer 組織帳號 D-U-N-S Number 核發延誤所造成之送審日期順延</li>
+<li>不可抗力事件（天災、平台政策突變等）</li>
+</ul>
+<p><strong>延遲賠償條件：</strong></p>
+<p>若因開發方原因導致功能未完成，且里程碑時間超過 14 個日曆天，客戶方得依下列公式計算賠償。賠償僅於軌道 C 正式交付驗收時一次計算，不逐軌道累計：</p>
+<pre><code>賠償金額 = 已支付款項 × (未完成驗收項目數 ÷ 附件 C 總驗收項目數) × 50%
+賠償上限 = 已支付款項之 20%
+</code></pre>
 <hr>
-<h2>D-5 報酬原則</h2>
-<div class="clause"><span class="clause-num">5.1</span>每個專案報酬依實際範疇於 SOW 中獨立議定，
-    不受主合約費用結構影響，亦不受本附件任何條款限制。</div>
-<div class="clause"><span class="clause-num">5.2</span>每份 SOW 之付款結構，參照主合約三期模式（30/30/40）
-    或雙方另行協議之方式執行。</div>
-<div class="clause"><span class="clause-num">5.3</span>每份 SOW 之程式碼所有權移轉條件，
-    參照主合約第五條分階段移轉之邏輯執行。</div>
-<div class="clause"><span class="clause-num">5.4</span>本附件不鎖定任何具體費率，開發方保留對每份
-    SOW 獨立報價之權利。惟雙方同意，後續每份
-    SOW 之預估工程師人天費率（Man-Day Rate）或
-    時薪，應參照同等技術棧（React Native +
-    Node.js 全端開發）之國際遠端外包市場行情，
-    以 USD 50–60 / 小時（約合 USD 400–480 /
-    8 小時工作天）為費率上限基準（以下簡稱
-    「費率上限」），或雙方於啟動需求時另行議定。
-    主合約情境一之報價反映雙方建立合作關係之
-    優惠折扣，非市場行情費率，不作為前述費率
-    上限之計算依據。</div>
-<div class="clause"><span class="clause-num">5.5</span>每份 SOW 之報酬，原則上依交付物或專案階段
-    （里程碑）採固定總價方式議定與付款，雙方
-    無須於 SOW 中拆解或揭露工時與費率明細之
-    計算過程。前條費率上限僅作為雙方議定報酬
-    時之內部參考依據。</div>
-<hr>
-<h2>D-6 非排他聲明</h2>
-<div class="clause"><span class="clause-num">6.1</span>開發方於合作期間保留接受其他客戶專案之權利，
-    不受本附件任何條款限制。</div>
-<div class="clause"><span class="clause-num">6.2</span>客戶於合作期間保留評估其他開發資源之權利，
-    但最低發案義務（D-3）仍須履行。</div>
-<hr>
-<h2>D-7 終止</h2>
-<div class="clause"><span class="clause-num">7.1</span>客戶得於合作期間內，提前 30 個日曆天書面通知
-    終止本附件；開發方得於合作期間內，提前 45 個
-    日曆天書面通知終止本附件。</div>
-<div class="clause"><span class="clause-num">7.2</span>終止通知發出時，若有進行中之 SOW，該 SOW 依其
-    自身條款繼續執行至完成，不受終止通知影響。</div>
-<div class="clause"><span class="clause-num">7.3</span>若客戶提前終止本附件，且終止日前已有一個或多個
-    週期被認定為「未達成」，對應之差額補足款項仍須
-    於終止日後 10 個工作天內結清。</div>
-<div class="clause"><span class="clause-num">7.4</span>若客戶提前終止本附件，終止日後之剩餘週期不再
-    計算最低發案義務，亦不觸發剩餘週期之差額補足。</div>
-<div class="clause"><span class="clause-num">7.5</span>若開發方依 7.1 提前終止本附件，自終止生效日起
-    30 個日曆天內（交接保固期），開發方應配合提供
-    既有專案文件交接、知識轉移及技術問題支援，
-    協助客戶銜接後續開發資源。</div>
-<hr>
-<h2>D-8 與主合約之關係</h2>
-<div class="clause"><span class="clause-num">8.1</span>本附件與主合約（MTS-2026-001）具同等法律效力，
-    主合約各條款於本附件合作範疇內適用。</div>
-<div class="clause"><span class="clause-num">8.2</span>若本附件未於主合約完成雙方電子簽署之同時完成
-    雙方書面簽署，主合約自動適用情境二（總費用
-    $2,499 USD），本附件視為未生效。</div>
-<div class="clause"><span class="clause-num">8.3</span>本附件適用中華民國（台灣）法律。</div>
-<hr>
-<h2>D-9 雙方確認簽署</h2>
-<p>雙方均已閱讀並理解本附件全部條款，同意受其約束。</p>
-<p>&nbsp;</p>
-<p><strong>客戶方</strong></p>
-<p>公司名稱：Motise Inc.</p>
-<p>簽署人：Chiang Ching-Hsuan（Founder / Director）</p>
-<p>簽署信箱：<a href="mailto:hello@motise.net">hello@motise.net</a></p>
-<p>電子簽名時間戳記：<span style="font-size:var(--size-xs);color:#aaa;font-style:italic;"><span style="font-size:var(--size-xs);color:#aaa;font-style:italic;">(由 Dropbox Sign 系統自動記錄)</span></span></p>
-<p>&nbsp;</p>
-<p><strong>開發方</strong></p>
-<p>姓名：HUANG CONG REN</p>
-<p>聯絡信箱：___________________________</p>
-<p>電子簽名時間戳記：<span style="font-size:var(--size-xs);color:#aaa;font-style:italic;"><span style="font-size:var(--size-xs);color:#aaa;font-style:italic;">(由 Dropbox Sign 系統自動記錄)</span></span></p>
-<hr>
-<p class="appendix-disclaimer"><em>本附件連同主合約（MTS-2026-001）及附件 A、B、C，
-共五份文件，雙方各執電子版一份，具同等效力。</em></p>
+<p><em>附件 B 與主合約（MTS-2026-001）具同等法律效力，雙方簽署主合約即視為確認本附件內容。</em></p>
 
 
     </div>

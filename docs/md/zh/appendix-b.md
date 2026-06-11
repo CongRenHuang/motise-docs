@@ -3,7 +3,6 @@
 **Development Schedule**
 
 合約編號：MTS-2026-001
-版本：v1.0
 日期：2026 年 06 月 11 日
 
 當事人：Motise Inc（客戶方）／ HUANG CONG REN（開發方）

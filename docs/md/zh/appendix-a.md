@@ -3,7 +3,6 @@
 **Project Scope and Technical Specification**
 
 合約編號：MTS-2026-001
-版本：v1.0
 日期：2026 年 06 月 11 日
 
 當事人：Motise Inc（客戶方）／ HUANG CONG REN（開發方）
@@ -169,8 +168,13 @@
 | GitHub Repository 建立 | 由客戶於其帳號（或客戶指定組織）下建立，並邀請開發方為 Collaborator，授予 Admin 權限（詳見主合約第 5.4 條） |
 | AWS Lightsail 存取 | 提供 IAM 使用者帳號或邀請為 Lightsail 管理員 |
 | Google Play Console 存取 | 新增為 Release Manager |
-| Stripe 帳戶 API 金鑰 | 客戶自行建立並提供（KYC 為法律要求） |
 | motise.net 網域存取權限 | 提供 DNS 管理權限或由客戶協助完成 DNS 設定 |
+
+### Stripe 帳戶設定（第一期款項到帳後 3 個工作日內啟動 KYC）
+
+| 項目 | 說明 |
+|---|---|
+| Stripe 帳戶 API 金鑰 | 客戶自行申請 Stripe 帳戶並完成 KYC 驗證後提供 API 金鑰。KYC 須由客戶本人完成（法律要求，開發方無法代辦），審核約需 3–5 個工作天，依主合約第 2.4 條於第一期款項到帳後 3 個工作日內啟動申請。若逾期提供，附件 C A-07 / A-08（Stripe 相關）驗收項目順延，不視為開發方延遲，亦不觸發延遲賠償條款 |
 
 ### 軌道 B 啟動前（2026 年 06 月 22 日前）
 
@@ -193,7 +197,7 @@
 |---|---|
 | Apple Developer Team 存取 | 於 App Store Connect 新增為 App Manager（須先完成組織帳號啟用） |
 | App 圖示 | 1024 × 1024 PNG 格式 |
-| 隱私政策 URL | Notion 頁面或任何公開網址 |
+| 隱私政策 URL | 任何 motise.net 公開網址 |
 | 範例課程資料 | 用於測試與展示 |
 | 測試帳號（5 組） | 3 位學員、1 位教師、1 位管理員 |
 
