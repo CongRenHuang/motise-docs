@@ -184,7 +184,7 @@ SOW 雙方簽署完成後，開發方正式開始工作。
 
 簽署人：Chiang Ching-Hsuan（Founder / Director）
 
-簽署信箱：hello@motise.net
+簽署信箱：<hello@motise.net>
 
 電子簽名時間戳記：（由 Dropbox Sign 系統自動記錄）
 
@@ -194,7 +194,7 @@ SOW 雙方簽署完成後，開發方正式開始工作。
 
 姓名：HUANG CONG REN
 
-聯絡信箱：___________________________
+聯絡信箱：<tzuchihuang0214@gmail.com>
 
 電子簽名時間戳記：（由 Dropbox Sign 系統自動記錄）
 

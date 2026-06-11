@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contract Document</title>
+  <title>Agreement Document</title>
   <style>
     
     /* ─── Fonts ─── */
@@ -273,6 +273,17 @@
     .resource-table th:nth-child(1), .resource-table td:nth-child(1) { width: 45% !important; }
     .resource-table th:nth-child(2), .resource-table td:nth-child(2) { width: 55% !important; }
 
+    .mermaid {
+      text-align: center;
+      margin: 2mm 0 4mm 0;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .mermaid svg {
+      max-width: 100% !important;
+      height: auto !important;
+    }
+
     @media print {
       @page { size: A4; margin: 25mm 20mm 25mm 25mm; }
       @page :first { margin-top: 20mm; }
@@ -528,5 +539,19 @@
 
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        fontFamily: 'Noto Sans TC, Noto Sans, sans-serif',
+        primaryColor: '#eef3f8',
+        primaryBorderColor: '#1a3a5c',
+        primaryTextColor: '#1a1a1a',
+        lineColor: '#1a3a5c'
+      }
+    });
+  </script>
 </body>
 </html>

@@ -2,10 +2,41 @@
 import os
 import sys
 import re
+import html
 import subprocess
 
 # 預設範本 HTML 檔案
 DEFAULT_TEMPLATE = 'doc/html/contract-zh-v3-print.html'
+
+# Mermaid 圖表所需的樣式與渲染腳本（透過 CDN 載入 mermaid.js，將 ```mermaid 區塊渲染為 SVG）
+MERMAID_CSS = """
+    .mermaid {
+      text-align: center;
+      margin: 2mm 0 4mm 0;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .mermaid svg {
+      max-width: 100% !important;
+      height: auto !important;
+    }
+"""
+
+MERMAID_SCRIPT = """  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        fontFamily: 'Noto Sans TC, Noto Sans, sans-serif',
+        primaryColor: '#eef3f8',
+        primaryBorderColor: '#1a3a5c',
+        primaryTextColor: '#1a1a1a',
+        lineColor: '#1a3a5c'
+      }
+    });
+  </script>
+"""
 
 def get_html_skeleton(template_path=None):
     """
@@ -33,9 +64,13 @@ def get_html_skeleton(template_path=None):
     }
 """
                     head_part = head_part.replace('</style>', css_inject + '\n  </style>')
-                
+
+                # 確保 prefix 中包含 Mermaid 圖表所需的樣式
+                if '.mermaid' not in head_part:
+                    head_part = head_part.replace('</style>', MERMAID_CSS + '\n  </style>')
+
                 prefix = head_part + '<div class="page-wrapper">\n<div class="article">\n'
-                suffix = '\n</div>\n</div><!-- /page-wrapper -->\n</body>\n</html>'
+                suffix = '\n</div>\n</div><!-- /page-wrapper -->\n' + MERMAID_SCRIPT + '</body>\n</html>'
                 return prefix, suffix
         except Exception as e:
             print(f"Warning: Failed to parse template {template_path}: {e}. Falling back to default skeleton.")
@@ -308,7 +343,7 @@ def get_html_skeleton(template_path=None):
     .resource-table { table-layout: fixed !important; width: 100% !important; }
     .resource-table th:nth-child(1), .resource-table td:nth-child(1) { width: 45% !important; }
     .resource-table th:nth-child(2), .resource-table td:nth-child(2) { width: 55% !important; }
-
+""" + MERMAID_CSS + """
     @media print {
       @page { size: A4; margin: 25mm 20mm 25mm 25mm; }
       @page :first { margin-top: 20mm; }
@@ -345,7 +380,7 @@ def get_html_skeleton(template_path=None):
     suffix = """
     </div>
   </div>
-</body>
+""" + MERMAID_SCRIPT + """</body>
 </html>"""
     return prefix, suffix
 
@@ -380,7 +415,21 @@ def post_process_html(html_body):
     1. 表格欄寬類別注入。
     2. 自動套用 .clause 樣式於類似 3.1、5.2 的條款。
     3. 自動套用 .appendix-disclaimer 於底部的免責宣告。
+    4. 將 ```mermaid 區塊轉換為 <div class="mermaid"> 供 Mermaid.js 渲染為 SVG。
     """
+    # 0. 轉換 mermaid 程式碼區塊（marked / python-markdown 皆可能輸出 language-mermaid 或 mermaid class，
+    #    且內容會被 HTML escape，需先 unescape 還原原始語法）
+    def mermaid_replacer(match):
+        code = html.unescape(match.group(1))
+        return f'<div class="mermaid">\n{code}\n</div>'
+
+    html_body = re.sub(
+        r'<pre><code class="(?:language-|lang-)?mermaid">(.*?)</code></pre>',
+        mermaid_replacer,
+        html_body,
+        flags=re.DOTALL
+    )
+
     # 1. 注入表格類別
     html_body = re.sub(r'<table>(\s*<thead>\s*<tr>\s*<th>#</th>)', r'<table class="criteria-table">\1', html_body)
     html_body = re.sub(r'<table>(\s*<thead>\s*<tr>\s*<th>No\.</th>\s*<th>Module Name</th>)', r'<table class="module-table">\1', html_body)

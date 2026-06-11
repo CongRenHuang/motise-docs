@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Appendix B</title>
+  <title>Agreement Document</title>
   <style>
     
     /* ─── Fonts ─── */
@@ -272,6 +272,17 @@
     .resource-table { table-layout: fixed !important; width: 100% !important; }
     .resource-table th:nth-child(1), .resource-table td:nth-child(1) { width: 45% !important; }
     .resource-table th:nth-child(2), .resource-table td:nth-child(2) { width: 55% !important; }
+
+    .mermaid {
+      text-align: center;
+      margin: 2mm 0 4mm 0;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .mermaid svg {
+      max-width: 100% !important;
+      height: auto !important;
+    }
 
     @media print {
       @page { size: A4; margin: 25mm 20mm 25mm 25mm; }
@@ -545,33 +556,38 @@
 </tbody></table>
 <hr>
 <h2>B-4 時程總覽（甘特圖）</h2>
-<pre><code>              W1       W2       W3       W4       W5       W6       W7       W8       W9
-              6/8      6/15     6/22     6/29     7/6      7/13     7/20     7/27     8/3
-              ──────────────────────────────────────────────────────────────────────────────
+<div class="mermaid">
+gantt
+    dateFormat YYYY-MM-DD
+    axisFormat %m/%d
+    tickInterval 1week
+    weekday monday
+    excludes weekends
+    todayMarker off
 
-軌道 A · 後端 &amp; 基礎建設
-架構設計 + 環境建置  [=]
-DB Schema + API 骨架 [=]
-Auth 系統                     [=]
-後端 API（課程+預約+訂單）    [========]
-Stripe Payment + Webhook      [========]
-QR Code 產生 + 核銷 API               [========]
+    section 軌道 A 後端與基礎建設
+    架構設計 + 環境建置        :a1, 2026-06-12, 2026-06-14
+    DB Schema + API 骨架       :a2, 2026-06-12, 2026-06-17
+    Auth 系統                  :a3, 2026-06-17, 2026-06-19
+    後端 API（課程+預約+訂單） :a4, 2026-06-19, 2026-06-26
+    Stripe Payment + Webhook   :a5, 2026-06-19, 2026-06-26
+    QR Code 產生 + 核銷 API    :a6, 2026-06-19, 2026-06-26
 
-軌道 B · 前端 App &amp; 後台
-課程列表 + 詳情頁                     [=]
-預約 + 購買 + Stripe UI               [========]
-QR Code 顯示 + 掃描 + 推播                    [=]
-後台管理（課程/會員/訂單）                    [=]
+    section 軌道 B 前端與後台
+    課程列表 + 詳情頁          :b1, 2026-06-22, 2026-06-26
+    預約 + 購買 + Stripe UI    :b2, 2026-06-24, 2026-07-03
+    QR Code 顯示 + 掃描 + 推播 :b3, 2026-06-26, 2026-07-03
+    後台管理（課程/會員/訂單） :b4, 2026-06-26, 2026-07-03
 
-軌道 C · 測試 · 送審 · 上線
-TestFlight + E2E + Bug Fix                            [=]
-🍎🤖 iOS + Android 同步送審                           [7/10]
-Apple / Google 審核中                                         [////]
-退件應對緩衝                                                  [////]
-✅ iOS / Android 正式上線                                             [✓7/21]
-上線後維護 + Bug 修正                                                 [==========]
-📦 專案正式交付                                                                         [✓8/7]
-</code></pre>
+    section 軌道 C 測試送審上線
+    TestFlight + E2E + Bug Fix :c1, 2026-07-06, 2026-07-09
+    iOS + Android 同步送審     :milestone, m1, 2026-07-10, 0d
+    審核與退件應對緩衝期       :c2, 2026-07-10, 2026-07-21
+    iOS / Android 正式上線     :milestone, m2, 2026-07-21, 0d
+    上線後維護 + Bug 修正      :c3, 2026-07-21, 2026-08-07
+    專案正式交付               :milestone, m3, 2026-08-07, 0d
+
+</div>
 <hr>
 <h2>B-5 延遲條款說明</h2>
 <p><strong>不列入開發方延遲責任之情況：</strong></p>
@@ -593,5 +609,19 @@ Apple / Google 審核中                                         [////]
 
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        fontFamily: 'Noto Sans TC, Noto Sans, sans-serif',
+        primaryColor: '#eef3f8',
+        primaryBorderColor: '#1a3a5c',
+        primaryTextColor: '#1a1a1a',
+        lineColor: '#1a3a5c'
+      }
+    });
+  </script>
 </body>
 </html>

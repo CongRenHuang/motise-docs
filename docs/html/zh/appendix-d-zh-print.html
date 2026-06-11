@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Appendix D</title>
+  <title>Agreement Document</title>
   <style>
     
     /* ─── Fonts ─── */
@@ -273,6 +273,17 @@
     .resource-table th:nth-child(1), .resource-table td:nth-child(1) { width: 45% !important; }
     .resource-table th:nth-child(2), .resource-table td:nth-child(2) { width: 55% !important; }
 
+    .mermaid {
+      text-align: center;
+      margin: 2mm 0 4mm 0;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .mermaid svg {
+      max-width: 100% !important;
+      height: auto !important;
+    }
+
     @media print {
       @page { size: A4; margin: 25mm 20mm 25mm 25mm; }
       @page :first { margin-top: 20mm; }
@@ -452,7 +463,7 @@ SOW 雙方簽署完成後，開發方正式開始工作。</p>
 <p>&nbsp;</p>
 <p><strong>開發方</strong></p>
 <p>姓名：HUANG CONG REN</p>
-<p>聯絡信箱：___________________________</p>
+<p>聯絡信箱：<a href="mailto:tzuchihuang0214@gmail.com">tzuchihuang0214@gmail.com</a></p>
 <p>電子簽名時間戳記：<span style="font-size:var(--size-xs);color:#aaa;font-style:italic;"><span style="font-size:var(--size-xs);color:#aaa;font-style:italic;">(由 Dropbox Sign 系統自動記錄)</span></span></p>
 <hr>
 <p class="appendix-disclaimer"><em>本附件連同主合約（MTS-2026-001）及附件 A、B、C，
@@ -461,5 +472,19 @@ SOW 雙方簽署完成後，開發方正式開始工作。</p>
 
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        fontFamily: 'Noto Sans TC, Noto Sans, sans-serif',
+        primaryColor: '#eef3f8',
+        primaryBorderColor: '#1a3a5c',
+        primaryTextColor: '#1a1a1a',
+        lineColor: '#1a3a5c'
+      }
+    });
+  </script>
 </body>
 </html>

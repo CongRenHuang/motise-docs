@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Appendix C</title>
+  <title>Agreement Document</title>
   <style>
     
     /* ─── Fonts ─── */
@@ -273,6 +273,17 @@
     .resource-table th:nth-child(1), .resource-table td:nth-child(1) { width: 45% !important; }
     .resource-table th:nth-child(2), .resource-table td:nth-child(2) { width: 55% !important; }
 
+    .mermaid {
+      text-align: center;
+      margin: 2mm 0 4mm 0;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .mermaid svg {
+      max-width: 100% !important;
+      height: auto !important;
+    }
+
     @media print {
       @page { size: A4; margin: 25mm 20mm 25mm 25mm; }
       @page :first { margin-top: 20mm; }
@@ -359,14 +370,12 @@
 <th>#</th>
 <th>驗收項目</th>
 <th>驗收標準</th>
-<th>結果</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>P-01</td>
 <td>Landing Page 上線</td>
 <td>motise.net 可正常瀏覽；頁面包含公司名稱（Motise Inc）、服務簡介、聯絡資訊；版面設計以符合 Apple Developer 組織帳號申請審核要求為標準</td>
-<td>☐</td>
 </tr>
 </tbody></table>
 <blockquote>
@@ -411,68 +420,57 @@
 <th>#</th>
 <th>驗收項目</th>
 <th>驗收標準</th>
-<th>結果</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>A-01</td>
 <td>DB Schema</td>
 <td>courses、users、bookings、orders、attendance 五張核心資料表建置完成，欄位與附件 A 規格一致。驗收方式：開發方提供 Schema 截圖或 ER Diagram</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>A-02</td>
 <td>AWS Lightsail 環境</td>
 <td>Node.js Instance + PostgreSQL Managed Database 建置完成。驗收方式：客戶登入 AWS Console 確認資源存在</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>A-03</td>
 <td>Auth API</td>
 <td>Email 註冊 / 登入、Google OAuth、Apple Sign-In（JWT 驗證）、手機號碼綁定 API 全數可正常呼叫。驗收方式：Postman 測試報告，每個 endpoint 顯示 200 回應</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>A-04</td>
 <td>角色權限系統</td>
 <td>Teacher / Student / Admin 三種角色對應不同 API 存取權限；跨角色存取返回 403。驗收方式：Postman 測試報告</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>A-05</td>
 <td>課程 CRUD API</td>
 <td>課程新增、查詢、修改、下架 API 可正常呼叫，名額與截止時間欄位正確儲存</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>A-06</td>
 <td>預約邏輯 API</td>
 <td>名額鎖定機制正確（並發預約不超額）、預約時限超時後 API 返回對應錯誤碼</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>A-07</td>
 <td>Stripe Payment Intent</td>
 <td>呼叫後端 API 可建立 Stripe Payment Intent，返回 client_secret。驗收方式：Stripe Test Mode，Postman 確認回應</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>A-08</td>
 <td>Stripe Webhook</td>
 <td>付款成功事件（payment_intent.succeeded）觸發後，對應訂單狀態更新為已付款。驗收方式：Stripe CLI webhook trigger 測試</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>A-09</td>
 <td>QR Code 產生 API</td>
 <td>已購買課程學員可取得唯一 QR Code token，token 與學員帳號及課程綁定；課程開始後 15 分鐘 token 自動失效，失效後核銷 API 返回對應錯誤碼</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>A-10</td>
 <td>QR Code 核銷 API</td>
 <td>教師呼叫核銷 API 後標記出席；重複核銷返回「已簽到」；無效 token 返回錯誤碼</td>
-<td>☐</td>
 </tr>
 </tbody></table>
 <blockquote>
@@ -510,32 +508,27 @@
 <th>#</th>
 <th>驗收項目</th>
 <th>驗收標準</th>
-<th>結果</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>B-01</td>
 <td>Email 登入</td>
 <td>可完成註冊、登入、登出；密碼錯誤顯示對應錯誤訊息</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>B-02</td>
 <td>Google / Apple 登入</td>
 <td>授權頁正常跳出，授權後成功進入 App；Apple 登入自動支援 Face ID / Touch ID</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>B-03</td>
 <td>手機號碼綁定</td>
 <td>設定頁可綁定手機號碼，綁定後顯示成功狀態</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>B-04</td>
 <td>角色介面切換</td>
 <td>學員帳號登入看到學員介面；教師帳號登入看到教師介面</td>
-<td>☐</td>
 </tr>
 </tbody></table>
 <h3>課程功能</h3>
@@ -545,38 +538,32 @@
 <th>#</th>
 <th>驗收項目</th>
 <th>驗收標準</th>
-<th>結果</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>B-05</td>
 <td>課程列表</td>
 <td>顯示所有上架課程（名稱、時間、價格、剩餘名額），下架課程不顯示。測試：後台上架 3 門課程後前台確認顯示</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>B-06</td>
 <td>課程詳情頁</td>
 <td>顯示完整課程說明、時間、地點、名額；講師欄位包含姓名及個人介紹</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>B-07</td>
 <td>名額限制</td>
 <td>課程滿額後預約按鈕不可點擊。測試：名額設為 1，預約後確認第二人無法操作</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>B-08</td>
 <td>預約時限</td>
 <td>超過截止時間後預約按鈕自動關閉</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>B-09</td>
 <td>我的課程頁</td>
 <td>已預約、已購買、歷史紀錄三個分類資料正確；每筆已預約課程可於課程卡片直接查看與出示專屬 QR Code</td>
-<td>☐</td>
 </tr>
 </tbody></table>
 <h3>Stripe 付款</h3>
@@ -586,32 +573,27 @@
 <th>#</th>
 <th>驗收項目</th>
 <th>驗收標準</th>
-<th>結果</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>B-10</td>
 <td>付款流程</td>
 <td>輸入信用卡完成付款後，課程出現在「已購買」清單。測試：Stripe 測試卡 4242 4242 4242 4242</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>B-11</td>
 <td>付款失敗處理</td>
 <td>失敗卡號顯示明確錯誤訊息，課程不被開通。測試：Stripe 測試卡 4000 0000 0000 0002</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>B-12</td>
 <td>重複付款防護</td>
 <td>已購買課程的購買按鈕不再顯示，無法重複付款</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>B-13</td>
 <td>訂單狀態同步</td>
 <td>付款完成後，後台訂單管理頁即時顯示對應訂單與付款狀態</td>
-<td>☐</td>
 </tr>
 </tbody></table>
 <h3>QR Code 簽到</h3>
@@ -621,38 +603,32 @@
 <th>#</th>
 <th>驗收項目</th>
 <th>驗收標準</th>
-<th>結果</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>B-14</td>
 <td>學員 QR Code 顯示</td>
 <td>已預約課程學員可於課程卡片查看並出示專屬 QR Code；QR Code 下方顯示失效時間說明（課程開始後 15 分鐘失效）及「僅限本人使用」聲明</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>B-15</td>
 <td>QR Code 失效機制</td>
 <td>課程開始後 15 分鐘，QR Code 自動顯示為失效狀態，不可再用於簽到。測試：設定課程開始時間為當前時間 + 16 分鐘，確認 QR Code 失效</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>B-16</td>
 <td>教師掃描核銷</td>
 <td>教師介面提供相機掃描入口；掃描後顯示學員姓名、課程資訊及出席狀態，確認後標記已出席</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>B-17</td>
 <td>重複掃描防護</td>
 <td>已核銷 QR Code 再次掃描顯示「已簽到」提示，不重複計算出席</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>B-18</td>
 <td>無效 QR Code 處理</td>
 <td>掃描失效或非本系統 QR Code 時，顯示明確錯誤訊息</td>
-<td>☐</td>
 </tr>
 </tbody></table>
 <h3>後台管理（Web-based）</h3>
@@ -662,32 +638,27 @@
 <th>#</th>
 <th>驗收項目</th>
 <th>驗收標準</th>
-<th>結果</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>B-19</td>
 <td>課程上架 / 下架</td>
 <td>管理員可新增課程（名稱、時間、價格、名額、截止時間），上架後前台即時顯示；下架後前台消失</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>B-20</td>
 <td>會員管理</td>
 <td>可查詢會員、指派 / 移除教師角色、停用帳號</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>B-21</td>
 <td>訂單查詢</td>
 <td>可查詢所有訂單（學員姓名、課程名稱、付款狀態、金額）</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>B-22</td>
 <td>出席記錄</td>
 <td>可查詢各課程出席名單與簽到狀態</td>
-<td>☐</td>
 </tr>
 </tbody></table>
 <p><strong>軌道 B 驗收結果</strong></p>
@@ -734,74 +705,62 @@
 <th>#</th>
 <th>驗收項目</th>
 <th>驗收標準</th>
-<th>結果</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>C-01</td>
 <td>iOS App Store 上架</td>
 <td>App 通過 Apple 審核，可在 App Store 正式下載與安裝</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>C-02</td>
 <td>Android Google Play 上架</td>
 <td>App 通過 Google 審核，可在 Google Play 正式下載與安裝</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>C-03</td>
 <td>課程提醒推播</td>
 <td>已預約課程可於開始前 24 小時及 1 小時收到推播提醒（iOS + Android 均測試）；使用者可自行設定是否開啟各時間點提醒。測試：後台觸發測試推播，確認兩平台均收到；點擊通知跳轉至對應課程頁</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>C-04</td>
 <td>搶購提醒推播</td>
 <td>課程旁顯示「設提醒」選項，點擊後於課程開搶前收到推播；提醒可由使用者自行取消。測試：設定一門限時開搶課程，點擊設提醒後確認推播收到</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>C-05</td>
 <td>AWS 正式環境</td>
 <td>Node.js + PostgreSQL 完整部署於 AWS Lightsail Production 環境。驗收方式：提供 AWS Console 存取供客戶確認</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>C-06</td>
 <td>隱私政策 &amp; 首次同意</td>
 <td>首次進入 App 時，使用者須同意隱私權政策及資料使用條款方可繼續使用；連結可正常開啟，內容為雙方確認版本</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>C-07</td>
 <td>課程購買條款同意</td>
 <td>購買課程前顯示取消政策條款文字（內容由雙方書面確認），使用者須勾選同意後方可繼續付款。退款操作介面不列入 v1.0 範疇</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>C-08</td>
 <td>完整流程穩定性</td>
 <td>瀏覽 → 預約 → 付款（含同意條款）→ QR Code 簽到 完整流程操作 3 次，無閃退或無回應。測試：使用正式版 App（非 TestFlight）以 Stripe Live Mode 完整操作</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>C-09</td>
 <td>技術文件移交</td>
 <td>完整技術文件包含：API 文件、資料庫 Schema 說明、第三方服務設定說明（Firebase、Stripe、AWS）、系統交接說明文件</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>C-10</td>
 <td>AWS 環境移交</td>
 <td>AWS Lightsail Production 環境存取權與所有權，依主合約第 5.5 條於第三期款項結清後 3 個工作日內移交予客戶，並提供 README 說明部署流程；GitHub Repository 自始建立於客戶帳號下，開發方 Admin 權限之存續依主合約第 5.4.1 條處理</td>
-<td>☐</td>
 </tr>
 <tr>
 <td>C-11</td>
 <td>隱私政策與服務條款嵌入</td>
 <td>隱私政策（Privacy Policy）與服務條款（Terms of Service）已依雙方書面確認之版本，完整嵌入並部署於 Landing Page 及 App 對應區塊；連結可正常開啟，內容為雙方確認版本</td>
-<td>☐</td>
 </tr>
 </tbody></table>
 <blockquote>
@@ -835,45 +794,23 @@
 <tr>
 <th>項目</th>
 <th>驗收項目數</th>
-<th>通過數</th>
-<th>未通過數</th>
-<th>最終結果</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>前置工作（Landing Page）</td>
 <td>1</td>
-<td></td>
-<td></td>
-<td>☐ 通過 ☐ 未通過</td>
-</tr>
-<tr>
-<td>軌道 A</td>
-<td>10</td>
-<td></td>
-<td></td>
-<td>☐ 通過 ☐ 未通過</td>
 </tr>
 <tr>
 <td>軌道 B</td>
 <td>22</td>
-<td></td>
-<td></td>
-<td>☐ 通過 ☐ 未通過</td>
 </tr>
 <tr>
 <td>軌道 C</td>
 <td>11</td>
-<td></td>
-<td></td>
-<td>☐ 通過 ☐ 未通過</td>
 </tr>
 <tr>
 <td><strong>合計</strong></td>
 <td><strong>44</strong></td>
-<td></td>
-<td></td>
-<td></td>
 </tr>
 </tbody></table>
 <p><strong>專案交付最終確認</strong></p>
@@ -907,5 +844,19 @@
 
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        fontFamily: 'Noto Sans TC, Noto Sans, sans-serif',
+        primaryColor: '#eef3f8',
+        primaryBorderColor: '#1a3a5c',
+        primaryTextColor: '#1a1a1a',
+        lineColor: '#1a3a5c'
+      }
+    });
+  </script>
 </body>
 </html>
