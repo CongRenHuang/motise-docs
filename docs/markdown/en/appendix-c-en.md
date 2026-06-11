@@ -30,6 +30,11 @@ Acceptance is conducted in three tracks, each with an independent time window. O
 6. **App Store / Google Play Rejection Handling:** Metadata rejections will receive a fixed version within 2 working days; functional rejections will receive a fixed version within 5 working days.
 7. **Re-acceptance limits:** For the list of written modification suggestions submitted by the Client during the acceptance period, after the Developer completes the modifications, the Client can only perform re-acceptance on the modification results of the items originally listed in the list, and shall not propose new modification suggestions outside the original list during re-acceptance. The re-acceptance period is limited to 3 working days, and failure to submit re-acceptance results within this period is deemed as full acceptance.
 
+### C-1-3 Technical Criteria and Stability Standards
+
+1. **Technical Criteria for Determination:** Functional acceptance of each item shall be based on successful code compilation and operation, correct data return verified by API testing (e.g., Postman), or actual operational capability in a testing environment (e.g., Landing Page on a real browser, App on TestFlight), and "complete compliance with the corresponding Criteria description for that item in Appendix C" as the passing standard.
+2. **System Stability Requirements:** The core functions and processes under acceptance must not contain blocker bugs or major defects that cause system crashes or freeze (Critical Bugs) during testing. Operational testing of the main flow must exhibit continuous running stability to be considered as passing the acceptance.
+
 -----
 
 ## C-2 Preliminary Work Acceptance | Landing Page
