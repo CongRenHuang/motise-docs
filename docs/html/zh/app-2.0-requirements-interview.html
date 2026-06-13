@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agreement Document</title>
+  <style>
+    
+    /* ─── Fonts ─── */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500&display=swap');
+
+    :root {
+      --page-width: 210mm;
+      --page-height: 297mm;
+      --margin-top: 25mm;
+      --margin-right: 20mm;
+      --margin-bottom: 25mm;
+      --margin-left: 25mm;
+      --color-text: #1a1a1a;
+      --color-muted: #555;
+      --color-border: #bbb;
+      --color-border-light: #ddd;
+      --color-accent: #1a3a5c;
+      --font-serif: 'Noto Serif TC', 'STSong', '宋體', Georgia, serif;
+      --font-sans: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+      --size-base: 10.5pt;
+      --size-sm: 9pt;
+      --size-xs: 8pt;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #e8e8e8;
+      font-family: var(--font-serif);
+      font-size: var(--size-base);
+      color: var(--color-text);
+      line-height: 1.8;
+    }
+
+    .page-wrapper {
+      max-width: var(--page-width);
+      margin: 32px auto;
+      background: #fff;
+      box-shadow: 0 4px 32px rgba(0,0,0,.18);
+      padding: var(--margin-top) var(--margin-right) var(--margin-bottom) var(--margin-left);
+    }
+
+    .print-btn {
+      position: fixed;
+      top: 20px;
+      right: 24px;
+      background: var(--color-accent);
+      color: #fff;
+      border: none;
+      padding: 8px 20px;
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 4px;
+      letter-spacing: .04em;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25);
+    }
+    .print-btn:hover { background: #255a8a; }
+
+    .doc-header {
+      text-align: center;
+      margin-bottom: 10mm;
+      padding-bottom: 6mm;
+      border-bottom: 2px solid var(--color-accent);
+    }
+    .doc-header h1 {
+      font-size: 16pt;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: var(--color-accent);
+      margin-bottom: 3px;
+    }
+    .doc-meta {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      color: var(--color-muted);
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--color-border-light);
+      margin: 6mm 0;
+    }
+
+    .article {
+      margin-bottom: 7mm;
+    }
+    .article h1 {
+      text-align: center;
+      font-size: 16pt;
+      font-weight: 700;
+      letter-spacing: .12em;
+      color: var(--color-accent);
+      margin-bottom: 10mm;
+      padding-bottom: 6mm;
+      border-bottom: 2px solid var(--color-accent);
+    }
+    .article h2 {
+      font-family: var(--font-sans);
+      font-size: 10pt;
+      font-weight: 700;
+      color: var(--color-accent);
+      letter-spacing: .1em;
+      border-left: 3px solid var(--color-accent);
+      padding-left: 6px;
+      margin-bottom: 4mm;
+      page-break-after: avoid;
+    }
+    .article h3 {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-top: 6mm;
+      margin-bottom: 2mm;
+    }
+    .article p {
+      font-size: var(--size-base);
+      line-height: 1.85;
+      margin-bottom: 4mm;
+    }
+    .clause {
+      margin-bottom: 2.5mm;
+    }
+    .clause-num {
+      font-weight: 500;
+      color: var(--color-accent);
+      margin-right: 4px;
+    }
+
+    ul, ol {
+      margin-left: 2em;
+      margin-bottom: 4mm;
+      font-size: var(--size-sm);
+      color: var(--color-muted);
+      line-height: 1.75;
+    }
+
+    blockquote {
+      margin: 3mm 0 4mm;
+      padding: 3mm 6mm;
+      border-left: 3px solid var(--color-border);
+      background: #f9f9f9;
+      font-family: var(--font-sans);
+      font-size: var(--size-xs);
+      color: var(--color-muted);
+      line-height: 1.7;
+    }
+
+    pre {
+      background: #f4f4f4;
+      border: 1px solid var(--color-border-light);
+      border-left: 3px solid var(--color-accent);
+      padding: 4mm 6mm;
+      margin: 2mm 0 4mm 0;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: var(--size-sm);
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      margin: 2mm 0 4mm;
+    }
+    table th {
+      background: var(--color-accent);
+      color: #fff;
+      font-weight: 600;
+      padding: 4px 8px;
+      text-align: left;
+      letter-spacing: .04em;
+    }
+    table td {
+      padding: 4px 8px;
+      border-bottom: 1px solid var(--color-border-light);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    table tr:nth-child(even) td { background: #f7f8fa; }
+
+    .formula {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: var(--size-sm);
+      background: #f4f4f4;
+      border: 1px solid var(--color-border-light);
+      border-left: 3px solid var(--color-accent);
+      padding: 4mm 6mm;
+      margin: 2mm 0 3mm 2em;
+      line-height: 1.7;
+      page-break-inside: avoid;
+      white-space: pre-wrap;
+    }
+
+    .sig-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10mm;
+      margin-top: 6mm;
+    }
+    .sig-block {
+      border-top: 1.5px solid var(--color-accent);
+      padding-top: 4mm;
+    }
+    .sig-block h4 {
+      font-family: var(--font-sans);
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: var(--color-accent);
+      margin-bottom: 4mm;
+    }
+    .sig-field {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+      margin-bottom: 5mm;
+      color: var(--color-muted);
+    }
+    .sig-field span { white-space: normal; }
+    .sig-field span:first-child {
+      font-weight: 700;
+      color: var(--color-text);
+    }
+    .sig-line {
+      flex: 1;
+      border-bottom: 1px solid var(--color-border);
+      min-width: 40px;
+      height: 20px;
+    }
+
+    .appendix-disclaimer {
+      font-size: var(--size-xs);
+      color: var(--color-muted);
+      margin-top: 5mm;
+      font-family: var(--font-sans);
+      text-indent: 0 !important;
+    }
+
+    /* Fix table column wrapping */
+    .criteria-table { table-layout: fixed !important; width: 100% !important; }
+    .criteria-table th:nth-child(1), .criteria-table td:nth-child(1) { width: 10% !important; white-space: nowrap !important; }
+    .criteria-table th:nth-child(2), .criteria-table td:nth-child(2) { width: 30% !important; }
+    .criteria-table th:nth-child(3), .criteria-table td:nth-child(3) { width: 60% !important; }
+
+    .module-table { table-layout: fixed !important; width: 100% !important; }
+    .module-table th:nth-child(1), .module-table td:nth-child(1) { width: 10% !important; white-space: nowrap !important; }
+    .module-table th:nth-child(2), .module-table td:nth-child(2) { width: 25% !important; }
+    .module-table th:nth-child(3), .module-table td:nth-child(3) { width: 45% !important; }
+    .module-table th:nth-child(4), .module-table td:nth-child(4) { width: 20% !important; white-space: nowrap !important; }
+
+    .tech-table { table-layout: fixed !important; width: 100% !important; }
+    .tech-table th:nth-child(1), .tech-table td:nth-child(1) { width: 20% !important; white-space: nowrap !important; }
+    .tech-table th:nth-child(2), .tech-table td:nth-child(2) { width: 25% !important; }
+    .tech-table th:nth-child(3), .tech-table td:nth-child(3) { width: 55% !important; }
+
+    .resource-table { table-layout: fixed !important; width: 100% !important; }
+    .resource-table th:nth-child(1), .resource-table td:nth-child(1) { width: 45% !important; }
+    .resource-table th:nth-child(2), .resource-table td:nth-child(2) { width: 55% !important; }
+
+    .mermaid {
+      text-align: center;
+      margin: 2mm 0 4mm 0;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .mermaid svg {
+      max-width: 100% !important;
+      height: auto !important;
+    }
+
+    @media print {
+      @page { size: A4; margin: 25mm 20mm 25mm 25mm; }
+      @page :first { margin-top: 20mm; }
+      body { background: #fff; font-size: 10pt; color: #000; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page-wrapper { max-width: none; margin: 0; padding: 0; box-shadow: none; }
+      .print-btn { display: none !important; }
+      .pb-before { page-break-before: always; break-before: page; margin-top: 0; }
+      .article h2 { page-break-after: avoid; break-after: avoid; }
+      .party-block, .appendix-section, .payment-scenario, .sig-grid, .formula, .signature-section { page-break-inside: avoid; break-inside: avoid; }
+      thead { display: table-header-group; }
+      tfoot { display: table-footer-group; }
+      tr { page-break-inside: avoid; break-inside: avoid; }
+      p { orphans: 3; widows: 3; }
+      a { text-decoration: none; color: inherit; }
+      .parties { display: grid; }
+    }
+    
+  </style>
+</head>
+<body>
+  <button class="print-btn" onclick="window.print()">Print / Export PDF</button>
+  <div class="page-wrapper">
+    <div class="article">
+<h1>Motise 課程預約 App 2.0 — 需求訪談文件</h1>
+<p><strong>版本：</strong> v2.0 需求拆解（草案）
+<strong>日期：</strong> 2026-06-13
+<strong>承接框架：</strong> 附件 D 長期合作框架第一週期（2026/08/07 起）</p>
+<hr>
+<h2>1. 客戶明列需求</h2>
+<table class="criteria-table">
+<thead>
+<tr>
+<th>#</th>
+<th>需求</th>
+<th>客戶原始描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Admin 上傳線上影片</td>
+<td>Admin 端可上傳線上影片</td>
+</tr>
+<tr>
+<td>2</td>
+<td>學生付費觀看</td>
+<td>學生端看到線上影片、購買解鎖、進行收看</td>
+</tr>
+<tr>
+<td>3</td>
+<td>學生上傳練習影片</td>
+<td>看完可上傳練習影片，公開/私人模式，影片本地端處理</td>
+</tr>
+<tr>
+<td>4</td>
+<td>老師評論</td>
+<td>老師端可對學生影片評論</td>
+</tr>
+<tr>
+<td>5</td>
+<td>評論與對話</td>
+<td>學生端看到評論、可進行對話</td>
+</tr>
+<tr>
+<td>6</td>
+<td>退款操作介面</td>
+<td>退款相關功能頁面（購買條款文字已含於 v1.0）</td>
+</tr>
+<tr>
+<td>7</td>
+<td>進階搜尋篩選</td>
+<td>課程進階篩選、排序功能</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Apple Pay</td>
+<td>Apple Pay 功能開發與串接</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>2. 需求拆解</h2>
+<p>逐模組拆解實際需開發之元件。<strong>粗體</strong>為缺少將導致功能不可運行、可被盜用、或遭 App Store 退件之必要項目。</p>
+<h3>模組 A — 付費影片基礎設施（Admin 上傳 → 學生付費觀看）</h3>
+<ul>
+<li>Admin 影片上傳：分段上傳（chunked upload）、大檔處理</li>
+<li><strong>影片轉碼 pipeline：HLS 多碼率自適應串流、縮圖產生</strong></li>
+<li><strong>影片儲存與 CDN 派送（AWS S3 + CloudFront 或同級）</strong></li>
+<li>學生端播放器：HLS 自適應、斷點續看、播放進度記錄</li>
+<li><strong>付費權限門禁：Signed URL / token-based 存取控制（防止未付款抓取 URL 觀看）</strong></li>
+<li>購買解鎖流程：權限（entitlement）資料模型、串接 Stripe 付款、解鎖狀態、存取 gating</li>
+<li>影片目錄/列表：分類、列表 UI</li>
+</ul>
+<h3>模組 B — 學生練習影片（UGC，本地端處理，公開/私人）</h3>
+<ul>
+<li>本地端錄製/壓縮/裁切：裝置端（React Native）影片處理，公開/私人模式切換</li>
+<li>上傳與儲存：本地端處理後仍需伺服器端儲存與派送</li>
+<li><strong>公開/私人 access control 模型（權限資料模型，非單一布林 flag）</strong></li>
+<li>練習影片 feed/列表</li>
+<li><strong>UGC 內容審核：檢舉、下架、封鎖機制（DMCA／違法內容法律責任；Apple 對 UGC 強制要求）</strong></li>
+</ul>
+<h3>模組 C — 評論與對話（老師 ↔ 學生）</h3>
+<ul>
+<li>評論資料模型與 threading API</li>
+<li>對話 UI：老師評論、學生回覆、雙向往返</li>
+<li><strong>推播整合：新評論/新對話事件接 Firebase（v1.0 已建推播基礎）</strong></li>
+<li>已讀狀態、未讀紅點/badge</li>
+</ul>
+<h3>模組 D — 退款操作介面</h3>
+<ul>
+<li>學生端退款請求流程與 UI</li>
+<li>Admin 端退款審核/處理：串接 Stripe Refund API、退款狀態追蹤與顯示</li>
+<li>購買條款文字：已含於 v1.0，本版不重複開發</li>
+</ul>
+<h3>模組 E — 進階搜尋篩選</h3>
+<ul>
+<li>後端查詢/索引：依分類/價格/老師/日期篩選、排序</li>
+<li>篩選與排序 UI</li>
+</ul>
+<h3>模組 F — Apple Pay</h3>
+<ul>
+<li>Apple Pay 開發 + Stripe Apple Pay 串接</li>
+<li>Merchant ID、憑證、網域驗證設定</li>
+<li><strong>依賴：Apple Pay 啟用依賴 Apple Developer Merchant ID/憑證，與 D-U-N-S 審核同屬前置鏈（v1.0 已知議題），排程須置於依賴解除之後</strong></li>
+</ul>
+<h3>模組 X — 跨模組共用</h3>
+<ul>
+<li><strong>Admin 後台擴充：影片管理、退款審核、內容審核儀表板</strong></li>
+<li><strong>資料庫 schema 擴充與 migration：entitlement、評論、退款、影片 metadata</strong></li>
+<li><strong>AWS 基建設定：影片儲存、CDN、轉碼運算環境</strong></li>
+<li>觀看數/觀看時長 analytics</li>
+<li>QA/測試/缺陷修正</li>
+<li>整合、專案管理與緩衝</li>
+</ul>
+<hr>
+<h2>3. 非功能性風險與責任歸屬</h2>
+<h3>3.1 OpEx — 持續營運成本（客戶承擔）</h3>
+<p>影片功能引入持續性雲端成本，非一次性開發費，由客戶長期月付：</p>
+<ul>
+<li>影片儲存（隨影片數量累積）</li>
+<li>CDN 流量（隨觀看量上升）</li>
+<li>轉碼運算（每支上傳影片觸發）</li>
+</ul>
+<h3>3.2 App Store / Play Store 審核風險</h3>
+<ul>
+<li>UGC 影片 App 審核更嚴格，須具備檢舉、封鎖、內容過濾機制（見模組 B）</li>
+<li>付費數位內容須符合各平台內購/外部支付政策</li>
+<li>退件機率較 v1.0 高，平台審核緩衝期須拉長（比照主合約 4.7 緩衝機制）</li>
+</ul>
+<h3>3.3 法律/合規</h3>
+<ul>
+<li>UGC 內容需檢舉與下架流程（DMCA/違法內容）</li>
+<li>影片內容之隱私與授權條款須更新（沿用 v1.0 範本架構，文字另議）</li>
+</ul>
+<hr>
+<h2>4. 工時與費用</h2>
+<p><strong>費率：USD $50/hr（附件 D-5.4 國際遠端外包費率下限）　|　工作天：8 hr/day</strong></p>
+<p>App 2.0 為<strong>獨立大型開發案</strong>，非 v1.0 之微調或延伸。其核心為影片平台（上傳、轉碼、串流、付費牆、UGC、審核），工程量級遠高於 v1.0 課程預約功能。以下為完整範疇之工時與費用。</p>
+<h3>4.1 完整範疇工時與費用</h3>
+<p>開發（React Native + Node.js + PostgreSQL + AWS）。含整合，QA 已內含於各模組。</p>
+<table>
+<thead>
+<tr>
+<th>模組</th>
+<th>內容</th>
+<th>工時（低–高）</th>
+<th>工作天（低–高）</th>
+<th>費用 USD（低–高）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A 付費影片基建</td>
+<td>上傳 + HLS 轉碼 + CDN + 簽章門禁 + 播放器 + 解鎖 + 目錄</td>
+<td>88–124 h</td>
+<td>11–15.5 天</td>
+<td>$4,400–$6,200</td>
+</tr>
+<tr>
+<td>B 練習影片 UGC</td>
+<td>本地錄製/壓縮/裁切 + 上傳 + 公私模型 + feed + 審核</td>
+<td>57–81 h</td>
+<td>7–10 天</td>
+<td>$2,850–$4,050</td>
+</tr>
+<tr>
+<td>C 評論 + 對話</td>
+<td>資料模型 + 對話 UI + 推播 + 已讀</td>
+<td>36–48 h</td>
+<td>4.5–6 天</td>
+<td>$1,800–$2,400</td>
+</tr>
+<tr>
+<td>D 退款</td>
+<td>學生請求 UI + Admin 處理 + Stripe Refund API</td>
+<td>18–24 h</td>
+<td>2.25–3 天</td>
+<td>$900–$1,200</td>
+</tr>
+<tr>
+<td>E 進階搜尋篩選</td>
+<td>後端查詢/索引 + 篩選排序 UI</td>
+<td>16–24 h</td>
+<td>2–3 天</td>
+<td>$800–$1,200</td>
+</tr>
+<tr>
+<td>F Apple Pay</td>
+<td>開發 + Stripe 串接 + Merchant 設定驗證</td>
+<td>14–20 h</td>
+<td>1.75–2.5 天</td>
+<td>$700–$1,000</td>
+</tr>
+<tr>
+<td>X 跨模組共用</td>
+<td>Admin 後台擴充 + DB schema + AWS 基建 + 整合 buffer</td>
+<td>88–132 h</td>
+<td>11–16.5 天</td>
+<td>$4,400–$6,600</td>
+</tr>
+<tr>
+<td><strong>合計</strong></td>
+<td></td>
+<td><strong>317–453 h</strong></td>
+<td><strong>約 40–57 天</strong></td>
+<td><strong>$15,850–$22,650</strong></td>
+</tr>
+</tbody></table>
+<p><strong>中位：約 385 h ≈ 48 工作天 ≈ USD $19,250。</strong></p>
+<p>不含 OpEx（雲端持續成本，第 3.1 節，客戶承擔）。</p>
+<h3>4.2 市場行情對照</h3>
+<p>同類影片 App（含影片轉碼/CDN 串流/付費牆/UGC 上傳與審核）之國際遠端外包行情約 USD $40–80/hr，整案普遍落在 <strong>USD $25,000–$40,000 以上</strong>。</p>
+<p>本報價採 <strong>$50/hr（行情下緣，等同 v1.0 附件 D 既定費率，未上調）</strong>，<strong>整體 $15,850–$22,650 仍低於市場行情</strong>，非高報。</p>
+<h3>4.3 可選分期（降低單期現金負擔，非總價折讓）</h3>
+<p>若單期預算有限，可將高成本模組延後至附件 D 後續週期分批開發。<strong>分期僅改變付款節奏，總工程量與總費用不因此減少。</strong></p>
+<table>
+<thead>
+<tr>
+<th>可延後模組</th>
+<th>延後考量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A 影片轉碼 pipeline（HLS 多碼率 + CDN 最佳化）</td>
+<td>可先以漸進式 MP4 上線，流量/畫質需求成熟後再導入</td>
+</tr>
+<tr>
+<td>B 練習影片 UGC（本地端處理、公私模型、feed、UGC 審核）</td>
+<td>裝置端影片處理 + UGC 審核為最大成本與法律風險來源，宜獨立週期完整開發</td>
+</tr>
+<tr>
+<td>F Apple Pay</td>
+<td>卡 Apple Developer Merchant ID / D-U-N-S 前置鏈，先決條件未解除前無法串接</td>
+</tr>
+</tbody></table>
+
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        fontFamily: 'Noto Sans TC, Noto Sans, sans-serif',
+        primaryColor: '#eef3f8',
+        primaryBorderColor: '#1a3a5c',
+        primaryTextColor: '#1a1a1a',
+        lineColor: '#1a3a5c'
+      }
+    });
+  </script>
+</body>
+</html>
