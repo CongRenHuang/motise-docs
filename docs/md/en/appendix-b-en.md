@@ -1,7 +1,7 @@
 # Appendix B | Development Schedule
 
 Agreement No.: MTS-2026-001
-Date: June 11, 2026
+Date: June 15, 2026
 
 Parties: Motise Inc (Client) / HUANG CONG REN (Developer)
 
@@ -13,11 +13,11 @@ All timelines in this appendix are contingent upon the full completion of the fo
 
 | Prerequisite | Deadline | Note |
 |---|---|---|
-| Client provides all necessary access permissions | 2026/06/12 | See Appendix A, Section A-6 "Before Kickoff" listed items |
-| motise.net domain access provision | 2026/06/12 | DNS management access or assistance with DNS configuration, prerequisite for Landing Page deployment |
+| Client provides all necessary access permissions | 2026/06/16 | See Appendix A, Section A-6 "Before Kickoff" listed items |
+| motise.net domain access provision | 2026/06/16 | DNS management access or assistance with DNS configuration, prerequisite for Landing Page deployment |
 | Stripe Account KYC application initiation | Within 3 working days after receipt of first payment | KYC takes 3–5 working days, must be completed by the Client personally, Developer cannot act as a proxy |
-| Apple Developer Organization Account Activation (including D-U-N-S Number issuance) | 2026/07/06 | Prerequisite for Track C review submission. D-U-N-S issuance takes 5–30 working days, and Apple account review time is outside Developer's control. Submission delays due to issuance delays are not considered Developer's liability. |
-| Google Play Console Organization Account Activation | 2026/06/12 | Review times for newly established companies vary. Submission delays due to Google review delays are not considered Developer's liability. |
+| Apple Developer Organization Account Activation (including D-U-N-S Number issuance) | 2026/07/10 | Prerequisite for Track C review submission. D-U-N-S issuance takes 5–30 working days, and Apple account review time is outside Developer's control. Submission delays due to issuance delays are not considered Developer's liability. |
+| Google Play Console Organization Account Activation | 2026/06/16 | Review times for newly established companies vary. Submission delays due to Google review delays are not considered Developer's liability. |
 
 > ⚠️ For any delays in prerequisites, milestones and delivery dates will be proportionally postponed, and such delays are not considered the Developer's liability.
 
@@ -42,21 +42,21 @@ All timelines in this appendix are contingent upon the full completion of the fo
 
 | No. | Milestone | Target Date | Acceptance Track |
 |---|---|---|---|
-| M1 | Project Kickoff (All access granted) | 2026/06/12 | — |
-| M2 | DB Schema + API Skeleton Complete | 2026/06/17 | Track A |
-| M3 | Auth System Complete | 2026/06/19 | Track A |
-| M4 | Course Features + Stripe Integration Complete | 2026/06/26 | Track A |
-| M5 | QR Code + Push + Admin Panel Complete | 2026/07/03 | Track B |
-| M6 | TestFlight Testing + Bug Fixes Complete | 2026/07/09 | — |
-| M7 | iOS + Android Simultaneous Submission | 2026/07/10 | — |
-| M8 | iOS / Android Official Launch (Target) | 2026/07/21 | Track C Opens |
-| M9 | Formal Project Delivery | 2026/08/07 | Track C Complete |
+| M1 | Project Kickoff (All access granted) | 2026/06/16 | — |
+| M2 | DB Schema + API Skeleton Complete | 2026/06/21 | Track A |
+| M3 | Auth System Complete | 2026/06/23 | Track A |
+| M4 | Course Features + Stripe Integration Complete | 2026/06/30 | Track A |
+| M5 | QR Code + Push + Admin Panel Complete | 2026/07/07 | Track B |
+| M6 | TestFlight Testing + Bug Fixes Complete | 2026/07/13 | — |
+| M7 | iOS + Android Simultaneous Submission | 2026/07/14 | — |
+| M8 | iOS / Android Official Launch (Target) | 2026/07/25 | Track C Opens |
+| M9 | Formal Project Delivery | 2026/08/11 | Track C Complete |
 
 -----
 
 ## B-3 Development Track Description
 
-### Track A | Backend and Infrastructure (6/12 – 6/26)
+### Track A | Backend and Infrastructure (6/16 – 6/30)
 
 | Task | Description |
 |---|---|
@@ -68,7 +68,7 @@ All timelines in this appendix are contingent upon the full completion of the fo
 | Stripe Integration | Payment Intent creation, Webhook order status updates |
 | QR Code API | Token generation & binding, 15-min expiration, verification API |
 
-### Track B | Frontend App and Web-based Admin (6/22 – 7/3)
+### Track B | Frontend App and Web-based Admin (6/26 – 7/7)
 
 | Task | Description |
 |---|---|
@@ -78,18 +78,18 @@ All timelines in this appendix are contingent upon the full completion of the fo
 | Push Notifications | Firebase FCM course reminders, rush booking alert setup |
 | Web-based Admin | Course listing/unlisting, member management, order inquiry, attendance records |
 
-### Track C | Testing, Submission, and Launch (7/6 – 8/7)
+### Track C | Testing, Submission, and Launch (7/10 – 8/11)
 
 | Task | Description |
 |---|---|
 | TestFlight + Firebase Dist | iOS / Android E2E testing |
 | Bug Fixes | Fix issues discovered during testing |
 | App Store Asset Prep | Screenshots, descriptions, Privacy Policy |
-| iOS + Android Submission | Simultaneous submission on July 10 |
+| iOS + Android Submission | Simultaneous submission on July 14 |
 | Review Rejection Handling | Metadata rejections: fixed within 2 working days; Functional rejections: fixed within 5 working days |
-| Official Launch | Target July 21, includes 11-day Apple review buffer (7/10–7/21) |
-| Post-launch Maintenance + Bug Fixes | July 21 – August 07 |
-| Tech Docs + Complete Code Handover | August 07 |
+| Official Launch | Target July 25, includes 11-day Apple review buffer (7/14–7/25) |
+| Post-launch Maintenance + Bug Fixes | July 25 – August 11 |
+| Tech Docs + Complete Code Handover | August 11 |
 
 -----
 
@@ -105,26 +105,26 @@ gantt
     todayMarker off
 
     section Track A Backend & Infrastructure
-    Arch Design & Env Setup        :a1, 2026-06-12, 2026-06-14
-    DB Schema & API Skeleton       :a2, 2026-06-12, 2026-06-17
-    Auth System                    :a3, 2026-06-17, 2026-06-19
-    Backend API (Courses/Bookings) :a4, 2026-06-19, 2026-06-26
-    Stripe Payment & Webhook       :a5, 2026-06-19, 2026-06-26
-    QR Code Gen & Verification API :a6, 2026-06-19, 2026-06-26
+    Arch Design & Env Setup        :a1, 2026-06-16, 2026-06-18
+    DB Schema & API Skeleton       :a2, 2026-06-16, 2026-06-21
+    Auth System                    :a3, 2026-06-21, 2026-06-23
+    Backend API (Courses/Bookings) :a4, 2026-06-23, 2026-06-30
+    Stripe Payment & Webhook       :a5, 2026-06-23, 2026-06-30
+    QR Code Gen & Verification API :a6, 2026-06-23, 2026-06-30
 
     section Track B Frontend & Admin Panel
-    Course List & Detail Page      :b1, 2026-06-22, 2026-06-26
-    Booking & Purchase & Stripe UI :b2, 2026-06-24, 2026-07-03
-    QR Code & Push Notifications   :b3, 2026-06-26, 2026-07-03
-    Admin Panel (Courses/Members)  :b4, 2026-06-26, 2026-07-03
+    Course List & Detail Page      :b1, 2026-06-26, 2026-06-30
+    Booking & Purchase & Stripe UI :b2, 2026-06-28, 2026-07-07
+    QR Code & Push Notifications   :b3, 2026-06-30, 2026-07-07
+    Admin Panel (Courses/Members)  :b4, 2026-06-30, 2026-07-07
 
     section Track C Testing, Submission & Launch
-    TestFlight, E2E & Bug Fixes    :c1, 2026-07-06, 2026-07-09
-    Simultaneous iOS & Android Submission :milestone, m1, 2026-07-10, 0d
-    Review & Rejection Buffer      :c2, 2026-07-10, 2026-07-21
-    Official iOS & Android Launch  :milestone, m2, 2026-07-21, 0d
-    Post-launch Maintenance & Bug Fixes :c3, 2026-07-21, 2026-08-07
-    Formal Project Delivery        :milestone, m3, 2026-08-07, 0d
+    TestFlight, E2E & Bug Fixes    :c1, 2026-07-10, 2026-07-13
+    Simultaneous iOS & Android Submission :milestone, m1, 2026-07-14, 0d
+    Review & Rejection Buffer      :c2, 2026-07-14, 2026-07-25
+    Official iOS & Android Launch  :milestone, m2, 2026-07-25, 0d
+    Post-launch Maintenance & Bug Fixes :c3, 2026-07-25, 2026-08-11
+    Formal Project Delivery        :milestone, m3, 2026-08-11, 0d
 ```
 
 -----

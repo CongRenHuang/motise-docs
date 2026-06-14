@@ -1,7 +1,7 @@
 # Appendix C | Acceptance Criteria
 
 Agreement No.: MTS-2026-001
-Date: June 11, 2026
+Date: June 15, 2026
 
 Parties: Motise Inc (Client) / HUANG CONG REN (Developer)
 
@@ -15,19 +15,19 @@ Acceptance is conducted in three tracks, each with an independent time window. O
 
 | Track | Scope | Development Period | Acceptance Period |
 |---|---|---|---|
-| Track A | Backend and Infrastructure | 6/12 – 6/26 | 5 working days after completion |
-| Track B | Frontend App and Web-based Admin | 6/22 – 7/3 | 5 working days after completion |
-| Track C | Launch and Production Environment | 7/6 – 8/7 | 14 working days after launch |
+| Track A | Backend and Infrastructure | 6/16 – 6/30 | 5 working days after completion |
+| Track B | Frontend App and Web-based Admin | 6/26 – 7/7 | 5 working days after completion |
+| Track C | Launch and Production Environment | 7/10 – 8/11 | 14 working days after launch |
 
 ### C-1-2 Acceptance Protection Clauses
 
 1. **Acceptance standards rely on functional behavior.** Interface design must meet the minimum standards of written confirmed design drafts. Rejections based on subjective descriptions (e.g., "feels wrong") must be accompanied by specific functional issues; otherwise, they are deemed accepted.
-2. **Failure to reply in writing implies acceptance.** If the Client does not submit written acceptance results within the acceptance period, the track is fully accepted.
-3. **Weekly meeting confirmation mechanism.** If the Client does not raise written objections within 24 hours after a weekly sync, the stage progress is considered confirmed and cannot be challenged later.
+2. **Failure to reply in writing implies acceptance.** Upon the expiration of the acceptance period for each track, if the Client fails to submit written acceptance results, the Developer shall issue a reminder notice; if the Client still fails to submit written acceptance results more than 3 working days after the reminder is delivered, all items in that track shall be deemed to have passed acceptance.
+3. **Weekly meeting confirmation mechanism.** If the Client does not raise written objections within 48 hours after a weekly sync, the stage progress is considered confirmed and cannot be challenged later.
 4. **Track locking.** Once a track passes acceptance, it is locked and cannot be objected to during subsequent tracks or at formal delivery.
 5. **New requests quoted separately.** New requirements raised during acceptance are excluded from the current scope and will be quoted separately for the next version.
 6. **App Store / Google Play Rejection Handling:** Metadata rejections will receive a fixed version within 2 working days; functional rejections will receive a fixed version within 5 working days.
-7. **Re-acceptance limits:** For the list of written modification suggestions submitted by the Client during the acceptance period, after the Developer completes the modifications, the Client can only perform re-acceptance on the modification results of the items originally listed in the list, and shall not propose new modification suggestions outside the original list during re-acceptance. The re-acceptance period is limited to 3 working days, and failure to submit re-acceptance results within this period is deemed as full acceptance.
+7. **Re-acceptance limits:** For the list of written modification suggestions submitted by the Client during the acceptance period, after the Developer completes the modifications, the Client can only perform re-acceptance on the modification results of the items originally listed in the list, and shall not propose new modification suggestions outside the original list during re-acceptance. The re-acceptance period is limited to 3 working days; upon the expiration of the re-acceptance period, if the Client fails to submit re-acceptance results, the Developer shall issue a reminder notice, and if the Client still fails to submit re-acceptance results more than 3 working days after the reminder is delivered, all items in the list shall be deemed to have passed re-acceptance.
 8. **Regression Bug:** If the code changes made by the Developer to correct items in the current list directly cause new functional errors in other items within the same acceptance list, or in existing functions of items that have previously passed acceptance (subject to the standards of Section 1, with a clear explanation of the functional issue), the Client may raise them during the re-acceptance period together, free from the restriction of Section 7 "no new suggestions outside the original list" and without constituting a violation of Track Locking under Section 4. The Developer shall correct them together; for the additional correction time required, the re-acceptance period for that specific item may be extended by 3 working days, and the re-acceptance period for other items shall not be affected. The re-acceptance of regression bugs is strictly limited to confirming that the defect has been corrected, and no other new suggestions may be derived and proposed.
 
 ### C-1-3 Technical Criteria and Stability Standards
@@ -63,7 +63,7 @@ Acceptance is conducted in three tracks, each with an independent time window. O
 
 ## C-3 Track A Acceptance | Backend and Infrastructure
 
-**Development Period: 2026/06/12 – 2026/06/26**
+**Development Period: 2026/06/16 – 2026/06/30**
 **Method:** API Documentation + Postman Test Report. The Client does not operate an interface; Developer provides test results for confirmation.
 
 | # | Item | Criteria |
@@ -94,7 +94,7 @@ Acceptance is conducted in three tracks, each with an independent time window. O
 
 ## C-4 Track B Acceptance | Frontend App and Web Admin
 
-**Development Period: 2026/06/22 – 2026/07/03**
+**Development Period: 2026/06/26 – 2026/07/07**
 **Method:** Real-device testing via TestFlight (iOS) + Firebase Distribution (Android). The Client operates the full flow.
 
 ### Authentication
@@ -157,8 +157,8 @@ Acceptance is conducted in three tracks, each with an independent time window. O
 
 ## C-5 Track C Acceptance | Launch and Production
 
-**Development Period: 2026/07/06 – 2026/08/07**
-**Method:** Final validation using the official release App (Target acceptance start: July 21).
+**Development Period: 2026/07/10 – 2026/08/11**
+**Method:** Final validation using the official release App (Target acceptance start: July 25).
 **Acceptance Period:** 14 working days after official launch.
 
 **Platform Review Buffer and Acceptance Payment Trigger Instructions (in accordance with Sections 4.7.1 and 4.7.2 of the Main Agreement):**
@@ -176,10 +176,10 @@ Track C acceptance shall be established upon the earliest occurrence of any of t
 - From the day following the expiration of the buffer period mentioned in the preceding paragraph, the acceptance period calculated in accordance with Section 3.2 of the Main Agreement expires, and the Client does not raise written objections, which shall be deemed as passing acceptance.
 
 **Code Defect Warranty:**
-After the Client pays the final installment, if the App's subsequent official launch process is functionally rejected (Functional Rejection) by the platforms due to defects in the original source code delivered this time, the Developer is obligated to fix the code free of charge until review approval within 60 calendar days after the final payment is made.
+After the Client pays the final installment, if the App's subsequent official launch process is functionally rejected (Functional Rejection) by the platforms due to defects in the original source code delivered this time, the Developer is obligated to fix the code free of charge until review approval within 60 calendar days after the final payment is made. Bugs or crashes affecting the normal operation of the core functions set out in this Appendix shall be fixed before each track passes acceptance; such issues discovered after formal delivery acceptance is completed shall be handled under the maintenance services of Section D-5.6 of Appendix D (if Appendix D is not in effect or there is no corresponding SOW, they shall be quoted separately under Section 1.3 of the Main Agreement).
 
 **Major Platform Policy Changes:**
-If a functional rejection occurs due to a sudden and major change in platform policies, the Developer will assist free of charge if the modification takes less than 8 hours; for the portion exceeding 8 hours, both parties shall negotiate compensation separately.
+If a functional rejection occurs due to a sudden and major change in platform policies, the Developer will assist free of charge if the modification takes 12 hours or less; for the portion exceeding 12 hours, or for changes occurring after formal delivery acceptance is completed, both parties shall negotiate compensation separately.
 
 | # | Item | Criteria |
 |---|---|---|

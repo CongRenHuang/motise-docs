@@ -30,17 +30,14 @@ def main():
         raise ValueError("Could not locate <div class='page-wrapper'> in contract HTML")
     html_head = head_match[0].strip() + "\n  <div class=\"page-wrapper\">"
     
-    # Split after the last </div> before scripts
-    foot_match = re.split(r'</div>\s*</div>\s*(?=<script)', contract_full, maxsplit=1)
-    if len(foot_match) < 2:
-        # Fallback split
-        foot_match = re.split(r'</div>\s*</div>\s*<script', contract_full, maxsplit=1)
-        
+    # Split after the last </div> before scripts using the comment as target
+    foot_match = re.split(r'<!--\s*/page-wrapper\s*-->', contract_full, maxsplit=1)
+
     if len(foot_match) < 2:
         raise ValueError("Could not locate ending structures in contract HTML")
-    
+
     # We want everything starting from the script tags to </html>
-    html_foot = "\n    </div>\n  </div>\n  <script" + foot_match[1].strip()
+    html_foot = "\n    </div>\n  </div>\n  " + foot_match[1].strip()
 
     # 2. Extract contents of each document
     contract_body = extract_article(contract_path)

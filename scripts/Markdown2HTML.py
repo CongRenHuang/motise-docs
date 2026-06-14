@@ -449,8 +449,11 @@ def post_process_html(html_body):
     html_body = re.sub(disclaimer_pattern, r'<p class="appendix-disclaimer">\1</p>', html_body)
 
     # 4. 把雙方簽署的 Dropbox Sign 時間戳記註解括弧稍微整理成精美 span
-    html_body = html_body.replace('（由 Dropbox Sign 系統自動記錄）', '<span style="font-size:var(--size-xs);color:#aaa;font-style:italic;">(由 Dropbox Sign 系統自動記錄)</span>')
-    html_body = html_body.replace('(由 Dropbox Sign 系統自動記錄)', '<span style="font-size:var(--size-xs);color:#aaa;font-style:italic;">(由 Dropbox Sign 系統自動記錄)</span>')
+    #    （單次 regex 處理全形/半形括弧，避免兩次 replace 互相套疊產生巢狀 span）
+    html_body = re.sub(
+        r'[（(]由 Dropbox Sign 系統自動記錄[)）]',
+        '<span style="font-size:var(--size-xs);color:#aaa;font-style:italic;">(由 Dropbox Sign 系統自動記錄)</span>',
+        html_body)
 
     return html_body
 

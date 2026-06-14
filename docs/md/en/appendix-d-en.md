@@ -1,9 +1,9 @@
 # Appendix D | Long-Term Collaboration Framework Agreement
 
 Agreement No.: MTS-2026-001-LT
-Effective Date: August 07, 2026
-Expiration Date: August 07, 2027 (12 months)
-Date: June 11, 2026
+Effective Date: August 11, 2026
+Expiration Date: August 11, 2027 (12 months)
+Date: June 15, 2026
 
 Parties: Motise Inc. (Client) / HUANG CONG REN (Developer)
 
@@ -21,16 +21,16 @@ The signing of this Appendix serves as the written basis for the establishment o
 
 ## D-2 Period and Cycles of Collaboration
 
-**Collaboration Period:** August 07, 2026 to August 07, 2027, totaling 12 months.
+**Collaboration Period:** August 11, 2026 to August 11, 2027, totaling 12 months.
 
 The Collaboration Period is equally divided into four outsourcing cycles, as follows:
 
 | Cycle | Start Date | End Date |
 |---|---|---|
-| Cycle 1 | 2026/08/07 | 2026/11/07 |
-| Cycle 2 | 2026/11/07 | 2027/02/07 |
-| Cycle 3 | 2027/02/07 | 2027/05/07 |
-| Cycle 4 | 2027/05/07 | 2027/08/07 |
+| Cycle 1 | 2026/08/11 | 2026/11/11 |
+| Cycle 2 | 2026/11/11 | 2027/02/11 |
+| Cycle 3 | 2027/02/11 | 2027/05/11 |
+| Cycle 4 | 2027/05/11 | 2027/08/11 |
 
 -----
 
@@ -45,7 +45,7 @@ The Collaboration Period is equally divided into four outsourcing cycles, as fol
 
     If the failure to sign a SOW during a cycle is due to the Developer's reasons (such as explicit refusal to accept the project, failure to provide a quotation within the timeframe specified in Section D-4 Step 2, or the Developer's compensation quotation exceeding the rate cap specified in Section D-5.4 leading to a failure to reach a consensus), the Client is not required to pay the difference make-up amount for that cycle. However, if the Developer has proposed a quotation within the rate cap under Section D-5.4, and the parties still fail to sign a SOW due to a lack of consensus on compensation or schedule details, the aforementioned exemption shall not apply, and the cycle shall still be deemed unfulfilled in accordance with this Section.
 
-3.3 The payment method for the difference make-up amount shall be the same as in the Main Agreement, remitted to the Wise account designated by the Developer, and all remittance fees shall be borne by the Client.
+3.3 The payment method and fee allocation for the difference make-up amount shall be handled in accordance with Section 4.5 of the Main Agreement.
 
 3.4 The difference make-up payment does not affect the rights and obligations of both parties to continue cooperation in subsequent cycles. Each cycle is calculated independently and is not cumulative.
 
@@ -83,6 +83,33 @@ Upon the completion of signing the SOW by both parties, the Developer shall form
 
 5.5 In principle, the compensation of each SOW shall be negotiated and paid on a fixed total price basis based on deliverables or project stages (milestones), and both parties do not need to break down or disclose the calculation process of working hours and rate details in the SOW. The Rate Cap in the preceding section serves solely as an internal reference for both parties when negotiating compensation.
 
+5.6 **Maintenance-Only Services:** If, during a certain outsourcing cycle, the Client only requires the operation and maintenance of the existing system without new feature development, both parties may separately agree on a "Maintenance Service Fee" through a SOW.
+
+5.6.1 **In-Scope Maintenance:** Limited to the "scope of an engineer's responsibilities," referring to maintenance work arising from the following technical reasons with respect to the existing source code already accepted and delivered under the MTS-2026-001 Main Agreement:
+
+    - (a) Defect fixes and hotfixes for existing code caused by traffic, load growth, performance bottlenecks, or concurrency;
+    - (b) Compatibility patches for existing code that fails due to changes in third-party services, operating systems, SDKs, or runtime environments;
+    - (c) Security vulnerability patches;
+    - (d) Version updates of third-party services or packages;
+    - (e) Lightweight configuration adjustments not involving functional or architectural changes.
+
+    The above items do not include items within the warranty scope defined in Section 4.7.3 that the Developer must fix free of charge (the warranty scope is determined by the main text of Section 4.7.3, limited to the specific situation within 60 calendar days after the final payment where the App's subsequent re-launch process is functionally rejected by the platform, and does not extend to general issues discovered after formal acceptance is completed).
+
+5.6.2 **Out-of-Scope Maintenance:** The following items are not covered by this Maintenance Service Fee and must be separately negotiated under a SOW or the D-5.4 rate:
+
+    - (a) All business operations, including but not limited to: operating the backend on the Client's behalf, listing/unlisting and inputting courses/content, order and accounting processing, customer service, marketing or campaign setup, data import/export, and other non-engineering daily operational work;
+    - (b) Any new feature development, behavioral changes to existing features, or UI/UX redesign;
+    - (c) Scope changes as defined in Section 1.3 of the Main Agreement;
+    - (d) Troubleshooting of issues caused by the Client or third-party personnel modifying the code, configuration, or data themselves;
+    - (e) Charges by third-party platforms, services, or infrastructure themselves (such as fees or usage charges of AWS, Stripe, Apple, Google, etc.).
+
+5.6.3 **Billing and Working Hours:**
+
+    - The Maintenance Service Fee is billed monthly at a fixed amount of USD $500 per month, covering up to 12 hours of maintenance work within the scope of 5.6.1 per month.
+    - The portion of monthly maintenance work exceeding 12 hours, or work requested by the Client within the scope of 5.6.2, shall be separately billed at the D-5.4 rate cap baseline and executed after the Client's prior written consent.
+    - Unused monthly hours do not carry over to the next month and are not convertible to cash.
+    - Signing a maintenance service SOW still counts toward the D-3 minimum outsourcing obligation for that cycle.
+
 -----
 
 ## D-6 Non-Exclusivity Statement
@@ -95,13 +122,13 @@ Upon the completion of signing the SOW by both parties, the Developer shall form
 
 ## D-7 Termination
 
-7.1 The Client may terminate this Appendix at any time during the collaboration period upon 30 calendar days’ prior written notice; the Developer may terminate this Appendix at any time during the collaboration period upon 45 calendar days’ prior written notice.
+7.1 The Client or the Developer may terminate this Appendix upon 21 calendar days' prior written notice during the collaboration period.
 
 7.2 If there is an ongoing SOW when the termination notice is issued, such SOW shall continue to be executed until completion in accordance with its own terms, unaffected by the termination notice.
 
-7.3 If the Client terminates this Appendix early, and one or more cycles have been deemed "unfulfilled" prior to the termination date, the corresponding difference make-up amounts must still be settled within 10 working days after the termination date.
+7.3 If this Appendix is terminated early under Section 7.1, for each of the four cycles of the original collaboration period in which the written signing of a SOW was not completed (whether overdue and unsigned before the termination date, or a cycle not started due to termination), a long-term collaboration discount refund of $175 USD per cycle (calculated on the same basis as D-3.2: $699 USD ÷ 4) shall be paid as a proportional adjustment of the Scenario 1 discount, to be settled together within 10 working days after the termination date. Cycles with a signed SOW are not subject to this Section.
 
-7.4 If the Client terminates this Appendix early, the minimum outsourcing obligation shall no longer be calculated for the remaining cycles after the termination date, nor shall it trigger any difference make-up for the remaining cycles.
+7.4 If the Developer terminates this Appendix early under Section 7.1, the discount refund in the preceding section shall apply only to cycles already deemed unfulfilled before the termination date; cycles not yet started after the termination date shall not be subject to the discount refund in the preceding section, nor shall the minimum outsourcing obligation be calculated for them any longer.
 
 7.5 If the Developer terminates this Appendix early in accordance with Section 7.1, within 30 calendar days from the effective date of termination (handover warranty period), the Developer shall cooperate to provide handover of existing project documentation, knowledge transfer, and technical support to assist the Client in transitioning to subsequent development resources.
 
@@ -148,3 +175,46 @@ Electronic Signature Timestamp:
 -----
 
 *This Appendix, together with the Main Agreement (MTS-2026-001) and Appendices A, B, and C, consists of five documents. Both parties shall each hold one electronic copy, which shall have equal validity.*
+
+-----
+
+## Schedule 1 | Cycle 1 SOW Plan (App 2.0 Paid Video Feature)
+
+**Note:** This Schedule sets out the planned SOW scope and quotation basis for Cycle 1 of Appendix D (2026/08/11–2026/11/11). It takes effect upon completion of the written signing of the corresponding SOW by both parties in accordance with the workflow of Section D-4; the final scope, compensation, and details shall be subject to the formal SOW signed by both parties. The signing of this Schedule does not affect the scenario determination of the Main Agreement, nor does it replace the determination of the minimum outsourcing obligation under Section D-3.
+
+### S1-1 Project Objective
+
+To add a "paid online video" feature and Apple Pay payment to v1.0 of the System. Video hosting uses the third-party service Cloudflare Stream to reduce the development effort and platform-review risk of self-built transcoding/streaming; compensation is billed on a milestone-based fixed total price under Section D-5.5, and both parties do not need to break down working hours.
+
+### S1-2 Development Scope (Feature Items)
+
+1. Admin video upload (integration with the Cloudflare Stream hosting service)
+2. Video catalog and backend management
+3. Student paid unlock and viewing access control
+4. Student-side player (including viewing progress)
+5. Stripe Apple Pay API integration
+
+### S1-3 Milestones and Payment
+
+Fixed total price **USD $3,500**, paid in installments with reference to the three-installment model of the Main Agreement under Section D-5.2, upon delivery and acceptance of each milestone:
+
+| Milestone | Deliverables | Ratio | Amount |
+|---|---|---|---|
+| M1 | Cloudflare Stream hosting integration + Stripe Apple Pay API | 30% | $1,050 USD |
+| M2 | Admin video upload + video catalog and backend management | 30% | $1,050 USD |
+| M3 | Paid unlock + viewing access control + student-side player (with progress) | 40% | $1,400 USD |
+| **Total** | | **100%** | **$3,500 USD** |
+
+The aforementioned compensation already includes **3 months of basic maintenance** after the delivery of this SOW is completed, with the maintenance scope handled under Section D-5.6 (In-Scope / Out-of-Scope / Billing).
+
+### S1-4 Cloud Usage Fees (OpEx, Billed Separately)
+
+Cloudflare Stream storage at approximately USD $5 / 1,000 minutes, streaming at approximately USD $1 / 1,000 minutes, and S3 original file storage fees, estimated at approximately USD $10–40 per month, calculated based on actual usage and borne by the Client, are not included in the fixed total price of the preceding section.
+
+### S1-5 Exclusions from This Cycle
+
+The upload of student user-generated (UGC) practice videos, and the related content review, reporting, takedown, and DMCA handling processes, are deferred to a subsequent SOW cycle for separate evaluation and quotation due to higher legal risk and operational costs.
+
+### S1-6 Miscellaneous
+
+Matters not addressed in this Schedule (including the staged transfer of code intellectual property rights, acceptance mechanism, termination settlement, etc.) shall be handled in accordance with the corresponding provisions of Appendix D and the Main Agreement.

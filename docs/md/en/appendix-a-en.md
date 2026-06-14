@@ -1,7 +1,7 @@
 # Appendix A | Project Scope and Technical Specification
 
 Agreement No.: MTS-2026-001
-Date: June 11, 2026
+Date: June 15, 2026
 
 Parties: Motise Inc (Client) / HUANG CONG REN (Developer)
 
@@ -43,14 +43,23 @@ All the following modules are included in the development scope of v1.0.
 
 - Course list display: Name, time, price, remaining slots; unlisted courses are not displayed.
 - Course detail page: Full description, location, quota, instructor name, and personal introduction.
-- Slot locking: Concurrent bookings will not exceed capacity; booking button disabled when full.
-- Booking deadline: Booking button automatically disabled after the deadline has passed.
+- Slot locking: Slot updates use database atomic operations (such as pessimistic locking or atomic decrement) to ensure concurrent bookings do not exceed capacity; the booking button is disabled when full.
+- Booking deadline: The booking button automatically closes after the deadline has passed.
+- Flash Sale: A course may be configured with a sale start time and end time, and can only be booked within that time window; the booking button closes when full, sharing the same slot-locking mechanism as regular courses.
+- Slot release: If a user creates an order but does not complete payment within 10 minutes, the system automatically releases the slot they occupied for other users to book.
+- Oversell prevention and data consistency: Slot changes (deduction, release) are guaranteed based on database transaction-level locking / atomic operations, ensuring the displayed and actual inventory are consistent; if, after launch, the traffic scale requires an additional caching layer (such as Redis) to improve read performance, this is a technical implementation option to be separately evaluated and introduced as actually needed under the Appendix D long-term collaboration framework, and does not affect the oversell prevention guarantee set out in this section.
+- Cancellation policy (Class Pass mechanism):
+  - Cancellation is allowed more than 24 hours before the course starts, upon which the system automatically releases the slot, issues no refund, and instead grants a Class Pass; cancellation is not allowed within 24 hours before the course starts.
+  - A Class Pass is applicable to all courses; the credit value of one Class Pass equals the original purchase amount of the cancelled course.
+  - A Class Pass is non-transferable; the same account may hold multiple Class Passes simultaneously.
+  - Cancellation limit: Each account is limited to a maximum of 3 "cancellations made more than 24 hours in advance" per month (30 days); the same Class Pass (i.e., the credit issued from a cancellation) cannot be cancelled again.
+  - A Class Pass is valid for 1 month (30 days) from the date of issuance; it expires if unused, with no remedy or extension mechanism.
 - My Courses page: Three categories: Booked, Purchased, and History.
 
 ### A-3-3 Payment Process
 
 - Create payment requests via Stripe Payment Intent.
-- Webhook automatically updates order status upon successful payment.
+- Order status uses the Stripe Webhook as the sole basis for updates, and Webhook events are processed idempotently: even if the user disconnects immediately after completing payment, the backend can still correctly update the order status, deduct the slot, and generate the QR Code; after the user reconnects, the generated ticket is properly displayed in "My Courses."
 - Display clear error messages upon payment failure; course will not be unlocked.
 - Purchased courses will not show the purchase button to prevent duplicate payments.
 - Display cancellation policy terms before purchase; users must check to agree before making payment.
@@ -100,6 +109,16 @@ The Developer shall provide technical documentation in accordance with the follo
 - **Architecture Documentation:** Database schema description, API documentation (including key field definitions), and technical architecture and operational logic description for each module (M-01 to M-08) listed in Section A-2 of Appendix A.
 
 The document version shall be consistent with the source code delivered for the corresponding track. Documents updated along with the development progress shall be submitted in versions applicable to the current scope during the acceptance of each track; there is no need to provide the complete version during Tracks A and B. The complete version shall be handed over together during Track C (C-09).
+
+### A-3-10 Performance Baseline
+
+The following baselines serve as the basis for the objective determination of performance disputes under Section 3.6.1 of the Main Agreement. The testing environment is TestFlight (or an equivalent testing environment) on general consumer-grade devices (such as iPhone 12 or equivalent or above):
+
+- Course list page scrolling: FPS ≥ 30
+- Cold start load time for main pages (course list, course detail, My Courses): ≤ 3 seconds
+- Average response time between the App and the backend API: ≤ 1.5 seconds (excluding the network latency of third-party services such as Stripe and Firebase themselves, and already accounting for reasonable cloud service latency and high-load conditions)
+
+Performance items not listed in this section, or cases where the device/network environment does not meet the above testing prerequisites, are not subject to the objective determination under Section 3.6.1 of the Main Agreement and shall still be handled under the principle of invalidity of subjective rejection in Section 3.6.
 
 -----
 
@@ -169,7 +188,7 @@ Third-party Integrations
 
 ## A-6 Resources Provided by Client
 
-### Before Kickoff (By June 12, 2026)
+### Before Kickoff (By June 16, 2026)
 
 | Item | Delivery Method |
 |---|---|
@@ -184,7 +203,7 @@ Third-party Integrations
 |---|---|
 | Stripe Account API Keys | The Client shall apply for the Stripe account and provide the API keys after completing the KYC verification. The KYC must be completed by the Client personally (due to legal requirements, the Developer cannot act on their behalf), which takes about 3–5 working days for review. The application shall be initiated within 3 working days after the receipt of the first installment payment in accordance with Section 2.4 of the Main Agreement. If provided late, the acceptance items related to Stripe (A-07 / A-08 in Appendix C) shall be postponed, which will not be considered a delay by the Developer, nor will it trigger the delay compensation clause. |
 
-### Before Track B Kickoff (By June 22, 2026)
+### Before Track B Kickoff (By June 26, 2026)
 
 | Item | Delivery Method |
 |---|---|
@@ -199,7 +218,7 @@ Third-party Integrations
 
 > ⚠️ Failure to provide Landing Page assets will not affect the development schedule. The Developer will independently determine content and layout based on review requirements; once completed, it will be the final version.
 
-### Before Launch and Submission (Before Track C Kickoff, Target July 06, 2026)
+### Before Launch and Submission (Before Track C Kickoff, Target July 10, 2026)
 
 | Item | Description |
 |---|---|

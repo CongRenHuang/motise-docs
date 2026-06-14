@@ -306,11 +306,11 @@
 <body>
   <button class="print-btn" onclick="window.print()">Print / Export PDF</button>
   <div class="page-wrapper">
-    <div class="article">
+<div class="article">
 <h1>軟體開發服務合約</h1>
 <p><strong>SOFTWARE DEVELOPMENT SERVICES AGREEMENT</strong></p>
 <p>合約編號：MTS-2026-001
-合約日期：2026 年 06 月 11 日</p>
+合約日期：2026 年 06 月 15 日</p>
 <hr>
 <h2>當事人</h2>
 <p><strong>客戶方（以下簡稱「客戶」）</strong></p>
@@ -369,8 +369,8 @@
 <div class="clause"><span class="clause-num">1.5</span><strong>法律合規免責：</strong> 前條所提供之隱私政策與服務條款，係供客戶作為技術整合之參考基礎範本。其最終法律合規性、適用性及完整性，由客戶自行負責確認，必要時應自行諮詢合格法律專業人士。開發方不承擔任何因該等文本內容所生之法律合規責任。客戶確認內容後，視為已自行審查並承擔合規責任。</div>
 <hr>
 <h2>第二條｜時程與里程碑</h2>
-<div class="clause"><span class="clause-num">2.1</span>本系統開發時程依附件 B《開發時程規劃書》執行，開發工作預計自 <strong>2026 年 06 月 12 日</strong>起始，目標交付日期為 <strong>2026 年 08 月 07 日</strong>。</div>
-<div class="clause"><span class="clause-num">2.2</span>附件 B 所有時程，以客戶於 <strong>2026 年 06 月 12 日前</strong>提供附件 A 第 A-6 節所列全部必要資源為前提。每延遲提供一週，里程碑與交付日期等比例順延。</div>
+<div class="clause"><span class="clause-num">2.1</span>本系統開發時程依附件 B《開發時程規劃書》執行，開發工作預計自 <strong>2026 年 06 月 16 日</strong>起始，目標交付日期為 <strong>2026 年 08 月 11 日</strong>。</div>
+<div class="clause"><span class="clause-num">2.2</span>附件 B 所有時程，以客戶於 <strong>2026 年 06 月 16 日前</strong>提供附件 A 第 A-6 節所列全部必要資源為前提。每延遲提供一週，里程碑與交付日期等比例順延。</div>
 <div class="clause"><span class="clause-num">2.3</span>以下情況不計入開發方延遲責任：</div>
 <ul>
 <li>App Store / Google Play 審核期間及平台退件等待時間</li>
@@ -383,18 +383,19 @@
 <hr>
 <h2>第三條｜驗收機制</h2>
 <div class="clause"><span class="clause-num">3.1</span>本系統驗收依附件 C《驗收項目文件》分三個軌道進行，各軌道驗收標準以附件 C 之記載為準。</div>
-<div class="clause"><span class="clause-num">3.2</span>各軌道驗收期內，客戶方未提交書面驗收結果，逾期視同該軌道全數通過。</div>
-<div class="clause"><span class="clause-num">3.3</span>每週同步會議後 24 小時內，客戶方未提出書面異議，視同確認該階段進度，不得於後續驗收時重新提出。</div>
+<div class="clause"><span class="clause-num">3.2</span>各軌道驗收期屆滿，客戶方未提交書面驗收結果者，開發方應發出催告通知；催告送達後逾 3 個工作日，客戶方仍未提交書面驗收結果者，視為該軌道全數通過驗收。</div>
+<div class="clause"><span class="clause-num">3.3</span>每週同步會議後 48 小時內，客戶方未提出書面異議，視同確認該階段進度，不得於後續驗收時重新提出。</div>
 <div class="clause"><span class="clause-num">3.4</span>各軌道一旦驗收通過，該軌道項目即鎖定，不得於後續軌道或正式交付時重新提出異議。</div>
 <div class="clause"><span class="clause-num">3.5</span>驗收期間提出之新需求，不列入本次驗收範疇，另行評估報價後進入下一版本開發。</div>
 <div class="clause"><span class="clause-num">3.6</span><strong>主觀退件無效：</strong> 客戶方提出之驗收不通過或退件意見，須具備明確之功能性問題說明或與雙方確認之設計規格不符之具體事證。以主觀性描述（如「感覺不對」、「體驗不順暢」等）作為退件理由者，不生退件之效力，仍視同通過。</div>
-<div class="clause"><span class="clause-num">3.7</span><strong>複驗限制與時限：</strong> 針對客戶方於驗收期內提出之書面修改意見清單，開發方完成修正後，客戶方僅能就該清單內原列項目之修正結果進行複驗。客戶方不得於複驗時提出原清單外之新修改意見或重複挑剔，複驗時間以 3 個工作天為限，逾期未提交複驗結果視同全數通過。</div>
+<div class="clause"><span class="clause-num">3.6</span>.1 <strong>效能爭議之客觀判定：</strong> 若爭議涉及系統效能（如頁面載入時間、列表滾動流暢度、API 回應時間等），且雙方於 TestFlight 或同等測試環境，依附件 A 第 A-3-10 節所載測試前提實測之數據，未達該節所定效能基準者，視為功能性問題，適用第 3.7 條複驗機制處理。未達附件 A-3-10 基準之優化要求、或無附件規格依據之主觀體驗描述，仍適用本條（3.6）主觀退件無效原則，不生退件效力；開發方就此等要求應本於誠信原則評估是否優化，但無義務執行。客戶方得於本合約簽署前，以書面提出合理之商業標準驗收項目（如特定 UI/UX 互動、動畫或視覺呈現之具體可驗證標準），經雙方討論並書面同意後，納入附件 A 規格或附件 C 驗收項目，作為前述「附件規格依據」之一部；簽署後未經此程序納入者，不構成獨立之驗收標準。</div>
+<div class="clause"><span class="clause-num">3.7</span><strong>複驗限制與時限：</strong> 針對客戶方於驗收期內提出之書面修改意見清單，開發方完成修正後，客戶方僅能就該清單內原列項目之修正結果進行複驗。客戶方不得於複驗時提出原清單外之新修改意見或重複挑剔，複驗時間以 3 個工作天為限；複驗期限屆滿，客戶方未提交複驗結果者，開發方應發出催告通知，催告送達後逾 3 個工作日客戶方仍未提交複驗結果者，視為該清單全數複驗通過。</div>
 <div class="clause"><span class="clause-num">3.7</span>.1 <strong>回歸缺陷（Regression Bug）：</strong> 若開發方為修正本次清單項目所為之程式碼變更，直接導致同一驗收清單內其他項目、或先前已通過驗收項目之既有功能產生新的功能性錯誤（須符合第 3.6 條標準，具備明確功能性問題說明），客戶方得於複驗期間一併提出，不受第 3.7 條「不得提出清單外新意見」之限制，亦不構成違反第 3.4 條軌道鎖定。開發方應一併修正；因此所需之額外修正時間，複驗期限得就該項目順延 3 個工作天，其餘項目複驗期限不受影響。回歸缺陷之複驗僅限確認該缺陷已修正，不得再衍生提出其他新意見。</div>
 <div class="clause"><span class="clause-num">3.8</span><strong>每週同步會議：</strong> 雙方原則上於每週五 24:00 至翌日（週六）01:00（台灣時間，UTC+8；對應美國太平洋時間週五上午 09:00–10:00）進行線上同步會議，同步專案進度。如遇雙方無法於該時段進行會議，應提前告知並協調改期，但仍應於該週內完成一次同步會議。</div>
 <hr>
 <h2>第四條｜費用與付款</h2>
 <div class="clause"><span class="clause-num">4.1</span>本合約費用依雙方確認之合作情境計算，分三期支付：</div>
-<p><strong>情境一：全數通過驗收 + 確認長期合作（總費用 $1,800 USD）（長期合作服務期間：12 個月，自 2026 年 08 月 07 日至 2027 年 08 月 07 日）</strong></p>
+<p><strong>情境一：全數通過驗收 + 確認長期合作（總費用 $1,800 USD）（長期合作服務期間：12 個月，自 2026 年 08 月 11 日至 2027 年 08 月 11 日）</strong></p>
 <table>
 <thead>
 <tr>
@@ -449,7 +450,7 @@
 <div class="clause"><span class="clause-num">4.2</span><strong>情境判定方式：</strong> 情境一是否成立，以本合約完成雙方電子簽署之時點為準：若該時點附件 D《長期合作框架協議》已同步完成雙方書面簽署，即視為情境一成立，第三期款項依情境一金額（$720 USD）計算。若本合約完成雙方電子簽署時，附件 D 尚未完成雙方書面簽署，自動以情境二計算，第三期款項補足至 $2,499 USD 之差額，附件 D 視為未生效。</div>
 <div class="clause"><span class="clause-num">4.3</span><strong>長期合作定義：</strong> 「確認長期合作」指雙方依附件 D《長期合作框架協議》所定之專案制續約方式，於情境確認期限前完成附件 D 之書面簽署。長期合作之具體範疇、報酬與條款，悉依附件 D 及後續各別工作說明書（SOW）之約定。</div>
 <div class="clause"><span class="clause-num">4.4</span><strong>稅務條款：</strong> 所有金額均為未稅淨額（USD）。開發方將提供 W-8BEN 表格，客戶收到後不得對本合約款項進行美國預扣稅（Withholding Tax）扣減。</div>
-<div class="clause"><span class="clause-num">4.5</span><strong>匯款條款：</strong> 款項以美元（USD）支付至開發方指定 Wise 帳號。所有匯款手續費由客戶方承擔，開發方實收金額不得低於各期合約約定金額。</div>
+<div class="clause"><span class="clause-num">4.5</span><strong>匯款條款：</strong> 款項以美元（USD）支付至開發方指定 Wise 帳號。客戶方因匯出本筆款項而被其自身往來銀行收取之匯款或手續費，由客戶方自行負擔；開發方收款帳戶（Wise）端如產生任何費用，由開發方自行負擔。雙方應儘量透過 Wise 帳戶間轉帳完成付款，以避免傳統 SWIFT 中間行扣費問題。若因中間行扣款或其他非雙方各自銀行直接收取之費用，致開發方實收金額低於各期合約約定金額，差額由客戶於最近一期付款時一併補足；若該期已為最後一期款項，客戶應於開發方提出書面通知後 3 個工作日內，以原支付方式補足差額。</div>
 <div class="clause"><span class="clause-num">4.6</span><strong>上架費用：</strong> App Store 上架費用（Apple Developer Program 年費 $99 USD、Google Play 一次性 $25 USD）由客戶自行負擔，不列入本合約開發費用。</div>
 <div class="clause"><span class="clause-num">4.7</span><strong>交付測試起算驗收：</strong> 針對軌道 C 驗收，開發方將 App 提交至 TestFlight/Firebase Distribution 進行交付測試，或通過平台（App Store / Google Play）審核後，即視為驗收期起算日。若因客戶方未提供帳號、平台政策變更、或客戶方主觀決定暫緩上線等非開發方原因導致 App 無法對外正式發布，不影響軌道 C 驗收之進行，仍以交付測試或審核通過之日起算 14 個工作天。</div>
 <div class="clause"><span class="clause-num">4.7</span>.1 <strong>平台審核緩衝：</strong> 因不可歸責於開發方之事由（僅限於：客戶未及時提供有效之 Apple / Google 開發者帳號、客戶明示暫緩上架、或非因 App 程式碼缺陷所致之平台拒絕），導致 App 無法於 App Store 或 Google Play 正式公開上架時，自開發方交付完整 TestFlight（或同等測試環境）並提交雙平台審查之日起算，給予 14 個工作天之審查與平台溝通緩衝期。緩衝期間內，若因 App 程式碼缺陷或技術未符合附件 A 規格遭平台退件，開發方應免費修正並重新提交，不重新起算緩衝期。</div>
@@ -457,12 +458,12 @@
 <ul>
 <li>App 於 iOS、Android 雙平台均完成正式上架；</li>
 <li>雙方召開線上驗收會議，就附件 C 軌道 C 項目完成實機功能測試並確認通過，付款指示應於會議當日或次一工作日內發出；</li>
-<li>自前款緩衝期屆滿之翌日起，依第 3.2 條計算之驗收期限屆至，客戶未提出書面異議者，視同驗收合格。</li>
+<li>自前款緩衝期屆滿之翌日起，依第 3.2 條（含催告程序）計算之驗收期限屆至，客戶未提出書面異議者，視同驗收合格。</li>
 </ul>
-<div class="clause"><span class="clause-num">4.7</span>.3 <strong>程式碼缺陷保固：</strong> 若客戶已支付尾款，App 後續正式重啟上架流程時，如因本次交付之「原始程式碼缺陷」遭平台功能性拒絕（Functional Rejection），開發方仍有義務免費修正程式碼至審查通過為止。此保固義務自尾款支付後 60 個日曆天內有效。</div>
-<div class="clause"><span class="clause-num">4.7</span>.4 <strong>平台政策變更：</strong> 若因平台政策突發性重大變更導致功能性退件，且該變更涉及本專案核心功能之程式碼邏輯，開發方同意評估修改可行性並積極配合。修改工時在 8 小時以內者，開發方免費協助；超過 8 小時之部分，雙方另行協議合理報酬及延長之開發與驗收時程。</div>
+<div class="clause"><span class="clause-num">4.7</span>.3 <strong>程式碼缺陷保固：</strong> 若客戶已支付尾款，App 後續正式重啟上架流程時，如因本次交付之原始程式碼存在「驗收範圍外之問題」遭平台功能性拒絕（Functional Rejection），開發方仍有義務免費修正程式碼至審查通過為止。此保固義務自尾款支付後 60 個日曆天內有效。影響附件 A 所載核心功能正常運作之 Bug 或閃退，依第三條驗收標準（含第 3.6 條「功能完整可運行」之要求），應於各軌道驗收通過前完成修正；正式交付驗收完成後發現之此類問題，依附件 D 第 D-5.6 節維護服務辦理，不適用本條免費保固。</div>
+<div class="clause"><span class="clause-num">4.7</span>.4 <strong>平台政策變更：</strong> 若於專案正式交付驗收完成前，因平台政策突發性重大變更導致功能性退件，且該變更涉及本專案核心功能之程式碼邏輯，開發方同意評估修改可行性並積極配合。修改工時在 12 小時以內者，開發方免費協助；超過 12 小時之部分，或於正式交付驗收完成後發生之平台政策變更，雙方另行協議合理報酬及延長之開發與驗收時程。</div>
 <div class="clause"><span class="clause-num">4.8</span><strong>逾期付款與暫停服務：</strong> 各期款項支付時機屆至後，若客戶方逾期超過 7 個日曆天未付清，開發方有權暫停一切後續開發、送審、上線、維護、諮詢或所有權轉移服務。客戶方應自逾期之日起，就未付款項按月息百分之一（1%，年息 12%）計付滯納金，不足一個月者按日比例計算。</div>
-<div class="clause"><span class="clause-num">4.9</span><strong>控制權撤回與終止：</strong> 若客戶方逾期付款達 14 個日曆天，開發方有權單方面終止本合約，並得撤銷客戶方對程式碼庫（GitHub Repository）與伺服器（AWS Production）之存取與 Collaborator 權限，且開發方不負退還已收費用之義務。惟依第五條第 5.1 款已因前期款項到帳而完成著作財產權移轉之部分，其所有權歸屬不受影響，開發方僅得暫停存取權限，不得撤銷已移轉之著作財產權。</div>
+<div class="clause"><span class="clause-num">4.9</span><strong>逾期付款之後果：</strong> 若客戶方逾期付款達 21 個日曆天，視為客戶方依第 5.9 條提前終止本合約，雙方應依第 5.9 條終止結算公式計算終止日應付金額並辦理結算；逾期未結清之款項，自逾期之日起依第 4.8 條計付滯納金，至實際結清為止。自前述視為終止之日起至終止日應付金額實際結清前，開發方得暫停對 Repository 之維護義務及一切後續開發、送審、上線工作，但不得移除自身既有之 Admin 權限、關閉或破壞已上線之 AWS Production 環境，亦不得刪除既有資料；任何因本條所生之爭議，雙方應循商業協商或司法途徑解決。</div>
 <hr>
 <h2>第五條｜智慧財產權、程式碼移交與終止</h2>
 <div class="clause"><span class="clause-num">5.1</span>本專案著作財產權依開發里程碑與付款進度分階段移轉，各階段移轉條件如下：</div>
@@ -474,11 +475,16 @@
 <div class="clause"><span class="clause-num">5.2</span>各階段款項到帳前，對應軌道之交付物及程式碼著作財產權仍歸開發方持有。客戶於該階段取得獨家、不可轉讓之使用授權，僅得用於內部營運目的，但不得主張所有權、進行再授權或移轉予第三方。</div>
 <div class="clause"><span class="clause-num">5.3</span><strong>適用法律說明：</strong> 本合約適用中華民國（台灣）法律。美國著作權法之「受雇特定工作著作」（Work Made for Hire）概念於本合約不適用。著作財產權之移轉，依本條第 5.1 款於各期款項到帳時，以讓與方式自動生效，符合中華民國著作權法之規定。</div>
 <div class="clause"><span class="clause-num">5.4</span>GitHub Repository 於客戶帳號（或客戶指定之組織）下建立，開發方以 Collaborator 身分加入並取得 Admin 權限，以利分支保護規則、CI/CD 流程設定及第三方服務（如 Stripe、Firebase）金鑰與權限管理等開發所需操作。</div>
-<div class="clause"><span class="clause-num">5.4</span>.1 於本專案驗收通過並結清尾款前，非經本合約第 5.9 條或其他正式終止程序：</div>
+<div class="clause"><span class="clause-num">5.4</span>.1 於本專案驗收通過並結清尾款前，非經本合約第 5.9 條、第 5.9.1 條、本條第 5.4.2 款或其他正式終止程序：</div>
 <ul>
 <li>客戶不得限制或移除開發方之 Admin 權限；開發方亦不得利用 Admin 權限限制客戶之存取權限，或進行刪除、轉移 Repository 等影響專案進行之行為。</li>
-<li>若客戶違反前款規定，視為客戶依第 5.9 條提前終止本合約，客戶仍應依第 5.9 條終止結算公式計算之金額給付開發方，並於違反行為發生日起 10 個工作天內結清。</li>
-<li>若開發方違反前款規定，視為開發方依第 5.9 條提前終止本合作，開發方就終止日後尚未完成之驗收項目無權請求對應之報酬，雙方款項仍依第 5.9 條終止結算公式計算。</li>
+</ul>
+<div class="clause"><span class="clause-num">5.4</span>.2 <strong>緊急例外：</strong> 客戶基於資訊安全或智慧財產權保護之正當理由，於合理懷疑開發方有刪除生產環境資料、植入未經雙方確認之惡意程式碼或後門等行為時，得以書面通知開發方並檢附其所依據之具體技術證據（如版本控制紀錄、伺服器存取日誌、異常操作紀錄等），暫時限制開發方之相關存取權限。雙方應於通知送達後 3 個工作天內，共同檢視上述證據。</div>
+<ul>
+<li>若經檢視後認定指控不成立（誤判），客戶應立即恢復開發方原權限。因前述權限限制所影響之開發、驗收與付款時程，由開發方重新評估後順延，客戶不得異議。此情形下雙方均不負違約責任，亦不觸發第 5.9 條或第 5.9.1 條終止程序。</li>
+<li>若指控成立，依本合約第 5.9 條或第 5.9.1 條（如適用）終止程序處理。</li>
+<li>客戶限制開發方相關存取權限時，須依本款提供書面通知並檢附具體技術證據；若客戶未依本款提供書面通知（及檢附具體技術證據）即逕行限制或移除開發方權限者，視為客戶依第 5.9 條提前終止本合約，應依第 5.9 條終止結算公式計算終止日應付金額並辦理結算。</li>
+<li>開發方因日常開發所留存之本地端程式碼備份、版本控制複本或鏡像備份，不構成本款所稱惡意行為之證據基礎。</li>
 </ul>
 <div class="clause"><span class="clause-num">5.5</span>AWS Production 環境存取權與所有權的移交，將於第三期款結清後 3 個工作日內移交予客戶，開發方有義務協助完成轉移設定。</div>
 <div class="clause"><span class="clause-num">5.6</span>開發期間使用之第三方服務帳號（Stripe、Firebase、Apple Developer、Google Play）本身即登記於客戶名下，其所有權不受本條影響。</div>
@@ -493,7 +499,7 @@
 <p>開發方於收到上述終止日應付金額後，於 1 個工作天內，將截至終止日已完成之工作成果，以移轉 Repository 所有權或開放完整存取權之方式交付予客戶。若終止日應付金額計算結果為零或負數，開發方無需退還已收款項，並於確認後 1 個工作天內完成交付。通知期間內，開發方無義務開發新功能。未結清終止日應付金額前，對應之程式碼著作財產權不予移轉。</p>
 <div class="clause"><span class="clause-num">5.9</span>.1 <strong>客戶方加速終止權（可歸責於開發方之事由）：</strong> 若有下列任一客觀情形，客戶方得免除前項事先通知期間，逕以書面通知開發方終止本合約，並自通知送達之日起終止；終止結算金額仍依第 5.9 條公式計算：</div>
 <ul>
-<li>附件 C 任一驗收項目，逾該項目所屬軌道依附件 B 時程約定之完成期限超過 7 個工作天仍未完成，且開發方未就遲延提出書面說明；或</li>
+<li>附件 C 任一驗收項目，逾該項目所屬軌道依附件 B 時程約定之完成期限超過 7 個工作天仍未完成，且開發方未於該項目預定完成日 3 個工作天前提出書面合理說明；或</li>
 <li>開發方就專案相關事務（含 Email、即時通訊等書面聯繫管道），連續 5 個工作天完全未回應客戶方之聯繫，且事後未能說明合理原因或不可抗力事由。</li>
 </ul>
 <div class="clause"><span class="clause-num">5.10</span><strong>原創性保證：</strong> 開發方保證，交付之程式碼為原創，未侵害任何第三方智慧財產權，且未受任何留置權或權利負擔。</div>
@@ -540,18 +546,18 @@
 <p>公司名稱：Motise Inc</p>
 <p>簽約負責人：江青璇 (Founder / Director)</p>
 <p>簽署信箱：<a href="mailto:hello@motise.net">hello@motise.net</a></p>
-<p>電子簽名時間戳記：<span style="font-size:var(--size-xs);color:#aaa;font-style:italic;"><span style="font-size:var(--size-xs);color:#aaa;font-style:italic;">(由 Dropbox Sign 系統自動記錄)</span></span></p>
+<p>電子簽名時間戳記：<span style="font-size:var(--size-xs);color:#aaa;font-style:italic;">(由 Dropbox Sign 系統自動記錄)</span></p>
 <p>&nbsp;</p>
 <p><strong>Developer</strong></p>
 <p>姓名：HUANG CONG REN</p>
 <p>聯絡信箱：<a href="mailto:tzuchihuang0214@gmail.com">tzuchihuang0214@gmail.com</a></p>
-<p>電子簽名時間戳記：<span style="font-size:var(--size-xs);color:#aaa;font-style:italic;"><span style="font-size:var(--size-xs);color:#aaa;font-style:italic;">(由 Dropbox Sign 系統自動記錄)</span></span></p>
+<p>電子簽名時間戳記：<span style="font-size:var(--size-xs);color:#aaa;font-style:italic;">(由 Dropbox Sign 系統自動記錄)</span></p>
 <hr>
 <p><em>本合約連同附件 A、附件 B、附件 C、附件 D，共五份文件，雙方各執電子版一份，具同等效力。</em></p>
 
 
-    </div>
-  </div>
+</div>
+</div><!-- /page-wrapper -->
   <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
   <script>
     mermaid.initialize({
