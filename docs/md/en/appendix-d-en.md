@@ -186,13 +186,21 @@ Electronic Signature Timestamp:
 
 To add a "paid online video" feature and Apple Pay payment to v1.0 of the System. Video hosting uses the third-party service Cloudflare Stream to reduce the development effort and platform-review risk of self-built transcoding/streaming; compensation is billed on a milestone-based fixed total price under Section D-5.5, and both parties do not need to break down working hours.
 
-### S1-2 Development Scope (Feature Items)
+### S1-2 Development Scope (Two Phases by Submission Strategy)
 
-1. Admin video upload (integration with the Cloudflare Stream hosting service)
-2. Video catalog and backend management
+To accommodate the Client's expectation of completion within approximately 2 months, and to prevent backend development from slowing the App submission pace, the scope of this SOW is divided into two phases; **Phase 1 is the critical path for Apple/Google review and is prioritized for completion and submission; Phase 2 (backend) is developed in parallel after the submission is filed and does not affect the review process.**
+
+**Phase 1 (Review Critical Path, Prioritized for Submission):**
+
+1. Cloudflare Stream hosting integration
+2. Stripe Apple Pay API integration
 3. Student paid unlock and viewing access control
 4. Student-side player (including viewing progress)
-5. Stripe Apple Pay API integration
+
+**Phase 2 (Backend, Parallel After Submission):**
+
+5. Admin video upload
+6. Video catalog and backend management
 
 ### S1-3 Milestones and Payment
 
@@ -200,12 +208,18 @@ Fixed total price **USD $3,500**, paid in installments with reference to the thr
 
 | Milestone | Deliverables | Ratio | Amount |
 |---|---|---|---|
-| M1 | Cloudflare Stream hosting integration + Stripe Apple Pay API | 30% | $1,050 USD |
-| M2 | Admin video upload + video catalog and backend management | 30% | $1,050 USD |
-| M3 | Paid unlock + viewing access control + student-side player (with progress) | 40% | $1,400 USD |
+| M1 | Cloudflare Stream hosting integration + Stripe Apple Pay API integration, build completed and accepted | 30% | $1,050 USD |
+| M2 | Student paid unlock + viewing access control + student-side player (with progress) accepted, reaching "ready-to-submit" status, and the Developer has completed the **submission filing** to App Store/Google Play | 30% | $1,050 USD |
+| M3 | Admin video upload + video catalog and backend management completed and accepted (developed in parallel after submission, not affecting review) | 40% | $1,400 USD |
 | **Total** | | **100%** | **$3,500 USD** |
 
-The aforementioned compensation already includes **3 months of basic maintenance** after the delivery of this SOW is completed, with the maintenance scope handled under Section D-5.6 (In-Scope / Out-of-Scope / Billing).
+**S1-3.1 Responsibility Boundary for Submission and Launch:** The payment trigger for M2 is the Developer's "completion of the submission filing," **not Apple/Google's actual approval or launch**. The timing of the App's approval and launch is determined by the platform review mechanism and is beyond the Developer's control; launch delays caused by review queues, supplementary-material requests, or policy-based rejections shall not be deemed a Developer delay, nor shall they affect the M2 payment. Corrections for functional rejections shall be handled under Sections 4.7.1/4.7.2 of the Main Agreement and Point 6 of Appendix C, C-1-2.
+
+**S1-3.2 Apple Pay Prerequisites:** The activation of the Stripe Apple Pay API depends on the Merchant ID/certificate setup of the Client's Apple Developer account (the Client already completed D-U-N-S and organization account activation for v1.0, so no re-application is required). If the Client does not complete the Merchant ID/certificate setup in a timely manner, the acceptance of Apple Pay-related items within M1 shall be postponed and shall not be deemed a Developer delay (following the Stripe postponement logic of Appendix C, A-08).
+
+**S1-3.3 Target Schedule (Not a Hard Delivery Deadline):** The target is to start the build on 2026/08/11, with Phase 1 (M1–M2) completing testing and submission around early September 2026; Phase 2 (M3) proceeds in parallel after submission. The foregoing is a planning target; actual milestone dates shall be subject to the formal SOW; postponements caused by the Client's late provision of resources or by review delays shall be handled under the corresponding provisions.
+
+The aforementioned compensation already includes **3 months of basic maintenance after the acceptance of the final milestone (M3)**, with the maintenance scope handled under Section D-5.6 (In-Scope / Out-of-Scope / Billing); the maintenance period shall not begin early merely because Phase 1 is delivered first.
 
 ### S1-4 Cloud Usage Fees (OpEx, Billed Separately)
 

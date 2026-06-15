@@ -219,6 +219,20 @@
       color: var(--color-border);
     }
 
+    /* ─── Generic markdown lists ─── */
+    .article ul:not(.clause-list),
+    .article ol {
+      margin: 1.5mm 0 3mm;
+      padding-left: 2.5em;
+    }
+    .article ul:not(.clause-list) li,
+    .article ol li {
+      font-size: var(--size-sm);
+      line-height: 1.75;
+      margin-bottom: 1mm;
+      color: var(--color-muted);
+    }
+
     /* ─── Tables ─── */
     table {
       width: 100%;
@@ -246,6 +260,100 @@
       overflow-wrap: anywhere;
     }
     table tr:nth-child(even) td { background: #f7f8fa; }
+
+    /* ─── Code / formula blocks ─── */
+    pre, pre code {
+      white-space: pre-wrap;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    pre {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: var(--size-xs);
+      line-height: 1.5;
+      background: #f4f4f4;
+      border: 1px solid var(--color-border-light);
+      border-left: 3px solid var(--color-accent);
+      padding: 3mm 4mm;
+      margin: 2mm 0 4mm;
+      max-width: 100%;
+    }
+
+    /* ─── Acceptance criteria tables (Appendix C) ─── */
+    .criteria-table {
+      table-layout: fixed !important;
+      width: 100% !important;
+    }
+    .criteria-table th:nth-child(1),
+    .criteria-table td:nth-child(1) {
+      width: 14% !important;
+      white-space: nowrap !important;
+    }
+    .criteria-table th:nth-child(2),
+    .criteria-table td:nth-child(2) {
+      width: 32% !important;
+    }
+    .criteria-table th:nth-child(3),
+    .criteria-table td:nth-child(3) {
+      width: 54% !important;
+    }
+
+    /* ─── A-2 Module table (Appendix A) ─── */
+    .module-table {
+      table-layout: fixed !important;
+      width: 100% !important;
+    }
+    .module-table th:nth-child(1),
+    .module-table td:nth-child(1) {
+      width: 14% !important;
+      white-space: nowrap !important;
+    }
+    .module-table th:nth-child(2),
+    .module-table td:nth-child(2) {
+      width: 27% !important;
+    }
+    .module-table th:nth-child(3),
+    .module-table td:nth-child(3) {
+      width: 39% !important;
+    }
+    .module-table th:nth-child(4),
+    .module-table td:nth-child(4) {
+      width: 20% !important;
+      white-space: nowrap !important;
+    }
+
+    /* ─── A-5-2 Tech stack table (Appendix A) ─── */
+    .tech-table {
+      table-layout: fixed !important;
+      width: 100% !important;
+    }
+    .tech-table th:nth-child(1),
+    .tech-table td:nth-child(1) {
+      width: 24% !important;
+      white-space: nowrap !important;
+    }
+    .tech-table th:nth-child(2),
+    .tech-table td:nth-child(2) {
+      width: 27% !important;
+    }
+    .tech-table th:nth-child(3),
+    .tech-table td:nth-child(3) {
+      width: 49% !important;
+    }
+
+    /* ─── A-6 Resource table (Appendix A) ─── */
+    .resource-table {
+      table-layout: fixed !important;
+      width: 100% !important;
+    }
+    .resource-table th:nth-child(1),
+    .resource-table td:nth-child(1) {
+      width: 45% !important;
+    }
+    .resource-table th:nth-child(2),
+    .resource-table td:nth-child(2) {
+      width: 55% !important;
+    }
 
     /* sub-table inside payment section */
     .payment-scenario {
@@ -577,13 +685,19 @@ The above items do not include items within the warranty scope defined in Sectio
 <p><strong>Note:</strong> This Schedule sets out the planned SOW scope and quotation basis for Cycle 1 of Appendix D (2026/08/11–2026/11/11). It takes effect upon completion of the written signing of the corresponding SOW by both parties in accordance with the workflow of Section D-4; the final scope, compensation, and details shall be subject to the formal SOW signed by both parties. The signing of this Schedule does not affect the scenario determination of the Main Agreement, nor does it replace the determination of the minimum outsourcing obligation under Section D-3.</p>
 <h3>S1-1 Project Objective</h3>
 <p>To add a &quot;paid online video&quot; feature and Apple Pay payment to v1.0 of the System. Video hosting uses the third-party service Cloudflare Stream to reduce the development effort and platform-review risk of self-built transcoding/streaming; compensation is billed on a milestone-based fixed total price under Section D-5.5, and both parties do not need to break down working hours.</p>
-<h3>S1-2 Development Scope (Feature Items)</h3>
+<h3>S1-2 Development Scope (Two Phases by Submission Strategy)</h3>
+<p>To accommodate the Client&#39;s expectation of completion within approximately 2 months, and to prevent backend development from slowing the App submission pace, the scope of this SOW is divided into two phases; <strong>Phase 1 is the critical path for Apple/Google review and is prioritized for completion and submission; Phase 2 (backend) is developed in parallel after the submission is filed and does not affect the review process.</strong></p>
+<p><strong>Phase 1 (Review Critical Path, Prioritized for Submission):</strong></p>
 <ol>
-<li>Admin video upload (integration with the Cloudflare Stream hosting service)</li>
-<li>Video catalog and backend management</li>
+<li>Cloudflare Stream hosting integration</li>
+<li>Stripe Apple Pay API integration</li>
 <li>Student paid unlock and viewing access control</li>
 <li>Student-side player (including viewing progress)</li>
-<li>Stripe Apple Pay API integration</li>
+</ol>
+<p><strong>Phase 2 (Backend, Parallel After Submission):</strong></p>
+<ol start="5">
+<li>Admin video upload</li>
+<li>Video catalog and backend management</li>
 </ol>
 <h3>S1-3 Milestones and Payment</h3>
 <p>Fixed total price <strong>USD $3,500</strong>, paid in installments with reference to the three-installment model of the Main Agreement under Section D-5.2, upon delivery and acceptance of each milestone:</p>
@@ -598,19 +712,19 @@ The above items do not include items within the warranty scope defined in Sectio
 </thead>
 <tbody><tr>
 <td>M1</td>
-<td>Cloudflare Stream hosting integration + Stripe Apple Pay API</td>
+<td>Cloudflare Stream hosting integration + Stripe Apple Pay API integration, build completed and accepted</td>
 <td>30%</td>
 <td>$1,050 USD</td>
 </tr>
 <tr>
 <td>M2</td>
-<td>Admin video upload + video catalog and backend management</td>
+<td>Student paid unlock + viewing access control + student-side player (with progress) accepted, reaching &quot;ready-to-submit&quot; status, and the Developer has completed the <strong>submission filing</strong> to App Store/Google Play</td>
 <td>30%</td>
 <td>$1,050 USD</td>
 </tr>
 <tr>
 <td>M3</td>
-<td>Paid unlock + viewing access control + student-side player (with progress)</td>
+<td>Admin video upload + video catalog and backend management completed and accepted (developed in parallel after submission, not affecting review)</td>
 <td>40%</td>
 <td>$1,400 USD</td>
 </tr>
@@ -621,7 +735,10 @@ The above items do not include items within the warranty scope defined in Sectio
 <td><strong>$3,500 USD</strong></td>
 </tr>
 </tbody></table>
-<p>The aforementioned compensation already includes <strong>3 months of basic maintenance</strong> after the delivery of this SOW is completed, with the maintenance scope handled under Section D-5.6 (In-Scope / Out-of-Scope / Billing).</p>
+<p><strong>S1-3.1 Responsibility Boundary for Submission and Launch:</strong> The payment trigger for M2 is the Developer&#39;s &quot;completion of the submission filing,&quot; <strong>not Apple/Google&#39;s actual approval or launch</strong>. The timing of the App&#39;s approval and launch is determined by the platform review mechanism and is beyond the Developer&#39;s control; launch delays caused by review queues, supplementary-material requests, or policy-based rejections shall not be deemed a Developer delay, nor shall they affect the M2 payment. Corrections for functional rejections shall be handled under Sections 4.7.1/4.7.2 of the Main Agreement and Point 6 of Appendix C, C-1-2.</p>
+<p><strong>S1-3.2 Apple Pay Prerequisites:</strong> The activation of the Stripe Apple Pay API depends on the Merchant ID/certificate setup of the Client&#39;s Apple Developer account (the Client already completed D-U-N-S and organization account activation for v1.0, so no re-application is required). If the Client does not complete the Merchant ID/certificate setup in a timely manner, the acceptance of Apple Pay-related items within M1 shall be postponed and shall not be deemed a Developer delay (following the Stripe postponement logic of Appendix C, A-08).</p>
+<p><strong>S1-3.3 Target Schedule (Not a Hard Delivery Deadline):</strong> The target is to start the build on 2026/08/11, with Phase 1 (M1–M2) completing testing and submission around early September 2026; Phase 2 (M3) proceeds in parallel after submission. The foregoing is a planning target; actual milestone dates shall be subject to the formal SOW; postponements caused by the Client&#39;s late provision of resources or by review delays shall be handled under the corresponding provisions.</p>
+<p>The aforementioned compensation already includes <strong>3 months of basic maintenance after the acceptance of the final milestone (M3)</strong>, with the maintenance scope handled under Section D-5.6 (In-Scope / Out-of-Scope / Billing); the maintenance period shall not begin early merely because Phase 1 is delivered first.</p>
 <h3>S1-4 Cloud Usage Fees (OpEx, Billed Separately)</h3>
 <p>Cloudflare Stream storage at approximately USD $5 / 1,000 minutes, streaming at approximately USD $1 / 1,000 minutes, and S3 original file storage fees, estimated at approximately USD $10–40 per month, calculated based on actual usage and borne by the Client, are not included in the fixed total price of the preceding section.</p>
 <h3>S1-5 Exclusions from This Cycle</h3>

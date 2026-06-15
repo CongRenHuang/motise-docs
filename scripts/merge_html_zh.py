@@ -12,7 +12,7 @@ def extract_article(file_path):
         raise ValueError(f"Could not find article content in {file_path}")
 
 def main():
-    base_dir = "/Users/tzuchi/Project/Motise/docs/html/zh"
+    base_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "docs", "html", "zh")
     
     contract_path = os.path.join(base_dir, "contract-zh-print.html")
     app_a_path = os.path.join(base_dir, "appendix-a-zh-print.html")
