@@ -247,7 +247,7 @@ Compensation Cap = 20% of the Amount Paid
 
 8.6 **Entire Agreement:** This Agreement supersedes all prior oral or written communications and agreements between both parties regarding this project.
 
-8.7 **Definition of Time Periods:** As used in this Agreement and all Appendices, "working day" means a banking business day in the Republic of China (Taiwan), excluding Saturdays, Sundays, and Taiwan public holidays; "calendar day" means a continuous calendar day, including weekends and holidays. Where any document uses the term "working day(s)" or equivalent, it shall be construed in accordance with this Section.
+8.7 **Definition of Time Periods:** As used in this Agreement and all Appendices, "working day" means a banking business day in the Republic of China (Taiwan), excluding Saturdays, Sundays, and Taiwan public holidays; "calendar day" means a continuous calendar day, including weekends and holidays.
 
 -----
 
