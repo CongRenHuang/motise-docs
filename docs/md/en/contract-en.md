@@ -55,7 +55,7 @@ This Agreement includes the following appendices, each of which has the same leg
 
 ## ARTICLE 2 | SCHEDULE AND MILESTONES
 
-2.1 The development schedule of the System shall be executed according to Appendix B "Development Schedule," which is expected to commence on **June 16, 2026**, with a target delivery date of **August 11, 2026**.
+2.1 The development schedule of the System shall be executed according to Appendix B "Development Schedule," which is expected to commence on **June 16, 2026**, with a target delivery date of **August 11, 2026**. The aforementioned target delivery date is a milestone planning target; the Track C acceptance period is calculated independently from the commencement date defined in Clause 4.7 and may extend beyond such target delivery date. The acceptance and correction procedures conducted during such period shall not constitute the Developer's overdue performance or delayed delivery.
 
 2.2 All timelines in Appendix B are contingent upon the Client providing all necessary resources listed in Section A-5 of Appendix A by **June 16, 2026**. For every week of delay in providing the resources, the milestones and delivery dates shall be proportionally postponed.
 
@@ -126,6 +126,7 @@ The fee is calculated based on $2,499 USD, with deductions made according to the
 4.7.1 **Platform Review Buffer:** If the App cannot be officially published on the App Store or Google Play due to reasons not attributable to the Developer (limited to: Client failing to provide a valid Apple / Google Developer account in a timely manner, Client explicitly requesting to postpone launch, or platform rejection not caused by defects in the App code), a buffer period of 14 working days for review and platform communication will be given starting from the date the Developer delivers the complete TestFlight (or equivalent testing environment) and submits it for review to both platforms. During the buffer period, if the App is rejected by the platform due to App code defects or technical non-compliance with the specifications of Appendix A, the Developer shall correct it free of charge and resubmit it, and the buffer period shall not be recalculated.
 
 4.7.2 **Criteria for Passing Acceptance and Triggering Payment:** Track C acceptance shall be established upon the earliest occurrence of any of the following circumstances, which shall serve as the starting date for the 3-working-day payment instruction for the third installment:
+
 - The App completes official launch on both iOS and Android platforms;
 - Both parties hold an online acceptance meeting, complete real-device functional testing for the Track C items in Appendix C, and confirm approval. The payment instruction shall be issued on the day of the meeting or within the next working day;
 - From the day following the expiration of the buffer period mentioned in the preceding section, the acceptance period calculated in accordance with Section 3.2 (including the reminder procedure) expires, and the Client does not raise written objections, which shall be deemed as passing acceptance.
@@ -145,6 +146,7 @@ The fee is calculated based on $2,499 USD, with deductions made according to the
 ## ARTICLE 5 | INTELLECTUAL PROPERTY, CODE HANDOVER AND TERMINATION
 
 5.1 The intellectual property rights of this project shall be transferred in stages according to the development milestones and payment progress, and the transfer conditions for each stage are as follows:
+
 - Upon full receipt of the first installment payment ($540 USD), the intellectual property rights of all deliverables and codes corresponding to Track A shall be automatically transferred to the Client (Motise Inc.).
 - Upon full receipt of the second installment payment ($540 USD), the intellectual property rights of all deliverables and codes corresponding to Track B shall be automatically transferred to the Client (Motise Inc.).
 - Upon full receipt of the third installment payment, the intellectual property rights of all deliverables and codes corresponding to Track C shall be automatically transferred to the Client (Motise Inc.).
@@ -156,6 +158,7 @@ The fee is calculated based on $2,499 USD, with deductions made according to the
 5.4 The GitHub Repository shall be established under the Client's account (or an organization designated by the Client), and the Developer shall join as a Collaborator and obtain Admin permissions to facilitate development operations such as branch protection rules, CI/CD workflow settings, and key and permission management for third-party services (e.g., Stripe, Firebase).
 
 5.4.1 Prior to passing the acceptance of this project and settling the final payment, except through Section 5.9, Section 5.9.1, Section 5.4.2 of this Section, or other formal termination procedures of this Agreement:
+
 - The Client shall not restrict or remove the Developer's Admin permissions; nor shall the Developer use Admin permissions to restrict the Client's access permissions, or perform acts that affect the project progress such as deleting or transferring the Repository.
 
 5.4.2 **Emergency Exception:** Where the Client, for legitimate reasons of information security or intellectual property protection, reasonably suspects that the Developer has engaged in acts such as deleting production environment data or implanting malicious code or backdoors not confirmed by both parties, the Client may, by written notice to the Developer accompanied by the specific technical evidence relied upon (such as version control records, server access logs, abnormal operation records, etc.), temporarily restrict the Developer's relevant access permissions. Both parties shall jointly review the aforementioned evidence within 3 working days after the notice is delivered.
@@ -185,6 +188,7 @@ Amount Due on Termination Date
 Upon receipt of the aforementioned Amount Due on Termination Date, the Developer shall, within 1 working day, deliver the work results completed as of the termination date to the Client by transferring Repository ownership or granting full access rights. If the calculation of the Amount Due on Termination Date results in zero or a negative number, the Developer is not required to refund any fees received and shall complete the delivery within 1 working day after confirmation. During the notice period, the Developer is under no obligation to develop new features. Before the Amount Due on Termination Date is settled, the intellectual property rights of the corresponding code shall not be transferred.
 
 5.9.1 **Client's Accelerated Right of Termination (For Cause Attributable to Developer):** Upon the occurrence of any of the following objective circumstances, the Client may waive the prior notice period under the preceding section and immediately terminate this Agreement by written notice to the Developer, which shall terminate on the date of delivery of such notice; the termination settlement amount shall still be calculated according to the formula under Section 5.9:
+
 - Any acceptance item in Appendix C remains incomplete more than 7 working days beyond the completion deadline agreed for the track to which the item belongs under the Appendix B schedule, and the Developer has not provided a reasonable written explanation at least 3 working days before the item's scheduled completion date; or
 - The Developer completely fails to respond to the Client's contact regarding project-related matters (including written communication channels such as Email, instant messaging, etc.) for 5 consecutive working days without a reasonable explanation or force majeure afterward.
 
@@ -204,11 +208,14 @@ Compensation Cap = 20% of the Amount Paid
 6.2 Compensation is calculated solely at the time of formal delivery acceptance for Track C and does not accumulate track by track.
 
 6.3 The following circumstances shall not be included in the Developer's delay calculation and will not trigger compensation under this Article:
+
 - App Store / Google Play review waiting periods or platform rejection periods
 - Delays caused by the Client's failure to provide necessary resources, accounts, or access permissions on time
 - Delays in payment functions caused by the failure to complete Stripe KYC verification on time
 - Delays in submission dates caused by Apple Developer Organization Account D-U-N-S Number issuance delays
 - Force majeure events
+
+6.4 **Relationship with Termination Clauses:** For the same delay event, the Client may not simultaneously terminate this Agreement under Clause 5.9 or Clause 5.9.1 and claim delay compensation under this Article; the Client must elect one. If the Client elects to terminate under Clause 5.9 / 5.9.1, the termination settlement shall be handled under the formula of Clause 5.9, and no compensation under this Article shall be additionally calculated; if the Client elects to claim compensation under this Article and continue performance, the Client may not separately assert accelerated termination for the same event.
 
 -----
 
@@ -219,6 +226,7 @@ Compensation Cap = 20% of the Amount Paid
 7.2 The confidentiality obligation remains fully effective after the termination or expiration of this Agreement, with no time limit.
 
 7.3 The following information is not bound by the confidentiality obligations in this Article:
+
 - Information that was already public before exposure
 - Information legally provided by a third party without confidentiality obligations
 - Information required to be disclosed by law or orders from competent authorities
@@ -239,13 +247,15 @@ Compensation Cap = 20% of the Amount Paid
 
 8.6 **Entire Agreement:** This Agreement supersedes all prior oral or written communications and agreements between both parties regarding this project.
 
+8.7 **Definition of Time Periods:** As used in this Agreement and all Appendices, "working day" means a banking business day in the Republic of China (Taiwan), excluding Saturdays, Sundays, and Taiwan public holidays; "calendar day" means a continuous calendar day, including weekends and holidays. Where any document uses the term "working day(s)" or equivalent, it shall be construed in accordance with this Section.
+
 -----
 
 ## ARTICLE 9 | SIGNATURE
 
 Both parties have read and understood all the terms of this Agreement and the contents of all appendices and agree to be bound by them.
 
-9.1 **Method of Signing:** This Agreement is signed electronically via the Dropbox Sign platform. The signing invitation for the Client is sent to the company email (hello@motise.net) and must be completed by the signatory Chiang Ching-Hsuan personally. An electronic signature received and completed via the company email has the same legal effect as a handwritten signature.
+9.1 **Method of Signing:** This Agreement is signed electronically via the Dropbox Sign platform. The signing invitation for the Client is sent to the company email (<hello@motise.net>) and must be completed by the signatory Chiang Ching-Hsuan personally. An electronic signature received and completed via the company email has the same legal effect as a handwritten signature.
 
 9.2 **Time of Signing Completion:** After both parties have completed the electronic signatures, the timestamps and signing records automatically generated by the Dropbox Sign system shall serve as evidence of the entry into force of this Agreement.
 
@@ -259,7 +269,7 @@ Signatory: Chiang Ching-Hsuan (Founder / Director)
 
 Signing Email: <hello@motise.net>
 
-Electronic Signature Timestamp: 
+Electronic Signature Timestamp:
 
 &nbsp;
 
@@ -269,7 +279,7 @@ Name: HUANG CONG REN
 
 Contact Email: <tzuchihuang0214@gmail.com>
 
-Electronic Signature Timestamp: 
+Electronic Signature Timestamp:
 
 -----
 

@@ -17,7 +17,7 @@ Acceptance is conducted in three tracks, each with an independent time window. O
 |---|---|---|---|
 | Track A | Backend and Infrastructure | 6/16 – 6/30 | 5 working days after completion |
 | Track B | Frontend App and Web-based Admin | 6/26 – 7/7 | 5 working days after completion |
-| Track C | Launch and Production Environment | 7/10 – 8/11 | 14 working days after launch |
+| Track C | Launch and Production Environment | 7/10 – 8/11 | 14 working days from the commencement date defined in Main Contract Clause 4.7 |
 
 > **Acceptance Sign-off Document:** This Appendix contains only the acceptance standards and item checklist. The acceptance sign-off fields for each track (including acceptance date, signatures of both parties, notes, etc.) are not included in this Appendix; they will be provided separately by the Developer as a standalone acceptance sign-off document after formal development begins, for both parties to sign track by track.
 
@@ -135,7 +135,7 @@ Acceptance is conducted in three tracks, each with an independent time window. O
 
 **Development Period: 2026/07/10 – 2026/08/11**
 **Method:** Final validation using the official release App (Target acceptance start: July 25).
-**Acceptance Period:** 14 working days after official launch.
+**Acceptance Period:** 14 working days from the commencement date defined in Main Contract Clause 4.7 (the date the Developer delivers for testing or the platform review is approved, whichever occurs first); "official launch" is not the sole commencement point of the acceptance period.
 
 **Platform Review Buffer and Acceptance Payment Trigger Instructions (in accordance with Sections 4.7.1 and 4.7.2 of the Main Agreement):**
 
