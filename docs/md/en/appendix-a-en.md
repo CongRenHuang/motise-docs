@@ -11,6 +11,8 @@ Parties: Motise Inc (Client) / HUANG CONG REN (Developer)
 
 This document defines the development scope, functional modules, and technical specifications for version 1.0 of the "Course Booking Mobile Application" (hereinafter referred to as the "System"), serving as the technical basis for cooperation between both parties.
 
+**Scope Definition:** Only the functional items and their technical specifications explicitly listed in Section A-3 of this Appendix fall within the v1.0 development scope. Any function, item, or requirement not explicitly listed in A-3 is excluded from this development scope, and both parties shall separately evaluate whether to include it in a subsequent Statement of Work (SOW) or a future version, with separate quotation and scheduling. Other sections (the system module list, technical architecture, etc.) are auxiliary descriptions and do not expand the functional scope defined in A-3.
+
 -----
 
 ## A-2 System Module List
@@ -122,22 +124,9 @@ Performance items not listed in this section, or cases where the device/network 
 
 -----
 
-## A-4 Exclusions from v1.0
+## A-4 Technical Architecture
 
-The following items are explicitly excluded from the development scope of this Agreement and will be separately quoted and planned for subsequent versions:
-
-| Item | Description |
-|---|---|
-| Refund UI | Refund-related functional pages; course purchase term configuration is already included in v1.0. |
-| Advanced Search/Filtering | Advanced course filtering and sorting features. |
-| Custom Admin App | Custom requirements beyond the standard admin panel scope. |
-| Landing Page Modifications | Any layout design or content adjustments after delivery are excluded from this Agreement. |
-
------
-
-## A-5 Technical Architecture
-
-### A-5-1 System Layers
+### A-4-1 System Layers
 
 ```
 ┌─────────────────────────────────────────┐
@@ -163,7 +152,7 @@ Third-party Integrations
 └── Google OAuth    Google Sign-In
 ```
 
-### A-5-2 Technology Stack
+### A-4-2 Technology Stack
 
 | Technology | Purpose | Rationale |
 |---|---|---|
@@ -174,7 +163,7 @@ Third-party Integrations
 | Stripe | Online Payments | Industry standard, high compliance, mature API. |
 | Firebase FCM | Push Notifications | Supports both iOS / Android, generous free tier. |
 
-### A-5-3 Core Database Tables
+### A-4-3 Core Database Tables
 
 | Table | Description |
 |---|---|
@@ -186,7 +175,7 @@ Third-party Integrations
 
 -----
 
-## A-6 Resources Provided by Client
+## A-5 Resources Provided by Client
 
 ### Before Kickoff (By June 16, 2026)
 
@@ -201,7 +190,7 @@ Third-party Integrations
 
 | Item | Description |
 |---|---|
-| Stripe Account API Keys | The Client shall apply for the Stripe account and provide the API keys after completing the KYC verification. The KYC must be completed by the Client personally (due to legal requirements, the Developer cannot act on their behalf), which takes about 3–5 working days for review. The application shall be initiated within 3 working days after the receipt of the first installment payment in accordance with Section 2.4 of the Main Agreement. If provided late, the acceptance items related to Stripe (A-07 / A-08 in Appendix C) shall be postponed, which will not be considered a delay by the Developer, nor will it trigger the delay compensation clause. |
+| Stripe Account API Keys | The Client shall apply for the Stripe account and provide the API keys after completing the KYC verification. The KYC must be completed by the Client personally (due to legal requirements, the Developer cannot act on their behalf), which takes about 3–5 working days for review. The application shall be initiated within 3 working days after the receipt of the first installment payment in accordance with Section 2.3 of the Main Agreement. If provided late, the acceptance items related to Stripe (A-07 / A-08 in Appendix C) shall be postponed, which will not be considered a delay by the Developer, nor will it trigger the delay compensation clause. |
 
 ### Before Track B Kickoff (By June 26, 2026)
 

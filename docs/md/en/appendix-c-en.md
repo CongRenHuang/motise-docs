@@ -19,9 +19,11 @@ Acceptance is conducted in three tracks, each with an independent time window. O
 | Track B | Frontend App and Web-based Admin | 6/26 – 7/7 | 5 working days after completion |
 | Track C | Launch and Production Environment | 7/10 – 8/11 | 14 working days after launch |
 
+> **Acceptance Sign-off Document:** This Appendix contains only the acceptance standards and item checklist. The acceptance sign-off fields for each track (including acceptance date, signatures of both parties, notes, etc.) are not included in this Appendix; they will be provided separately by the Developer as a standalone acceptance sign-off document after formal development begins, for both parties to sign track by track.
+
 ### C-1-2 Acceptance Protection Clauses
 
-1. **Acceptance standards rely on functional behavior.** Interface design must meet the minimum standards of written confirmed design drafts; if the Client does not provide UI/UX design source files by the deadline set in Appendix A, Section A-6 (before the kickoff of Track B), the Developer's own initial interface design shall serve as the interface acceptance baseline, and the Client may not reject delivery on the grounds that the interface appearance differs from designs it subsequently provides. Rejections based on subjective descriptions (e.g., "feels wrong") must be accompanied by specific functional issues; otherwise, they are deemed accepted.
+1. **Acceptance standards rely on functional behavior.** Interface design must meet the minimum standards of written confirmed design drafts; if the Client does not provide UI/UX design source files by the deadline set in Appendix A, Section A-5 (before the kickoff of Track B), the Developer's own initial interface design shall serve as the interface acceptance baseline, and the Client may not reject delivery on the grounds that the interface appearance differs from designs it subsequently provides. Rejections based on subjective descriptions (e.g., "feels wrong") must be accompanied by specific functional issues; otherwise, they are deemed accepted.
 2. **Failure to reply in writing implies acceptance.** Upon the expiration of the acceptance period for each track, if the Client fails to submit written acceptance results, the Developer shall issue a reminder notice; if the Client still fails to submit written acceptance results more than 3 working days after the reminder is delivered, all items in that track shall be deemed to have passed acceptance.
 3. **Weekly meeting confirmation mechanism.** If the Client does not raise written objections within 48 hours after a weekly sync, the stage progress is considered confirmed and cannot be challenged later.
 4. **Track locking.** Once a track passes acceptance, it is locked and cannot be objected to during subsequent tracks or at formal delivery.
@@ -49,16 +51,6 @@ Acceptance is conducted in three tracks, each with an independent time window. O
 
 > **Layout Notes:** Final layout is determined by the Developer based on review needs. The Client may provide brand assets (Logo, brand colors, copy) for reference, but it is not mandatory. Post-delivery layout or content modifications are not covered by this Agreement.
 
-**Preliminary Work Acceptance Result**
-
-| Field | Value |
-|---|---|
-| Payment Receipt Date | |
-| Deadline | 3rd working day after payment |
-| Acceptance Date | |
-| Client Signature | |
-| Notes | |
-
 -----
 
 ## C-3 Track A Acceptance | Backend and Infrastructure
@@ -81,14 +73,6 @@ Acceptance is conducted in three tracks, each with an independent time window. O
 | A-11 | Track A Technical Documentation | Provide draft API documentation and database Schema description documents covering the completed modules of Track A, matching the specifications of Section A-3-9 of Appendix A |
 
 > ⚠️ **Stripe Prerequisite:** Client must start Stripe KYC within 3 working days of the first payment. Delays here will postpone A-07/A-08 acceptance without triggering Developer delay penalties.
-
-**Track A Acceptance Result**
-
-| Field | Value |
-|---|---|
-| Acceptance Date | |
-| Client Signature | |
-| Notes | |
 
 -----
 
@@ -145,14 +129,6 @@ Acceptance is conducted in three tracks, each with an independent time window. O
 | B-22 | Attendance Records | View attendance lists and check-in statuses |
 | B-23 | Track B Technical Documentation | Provide interface description documentation for the frontend App and Web-based backend, and draft setup instructions for third-party services (Firebase), matching the specifications of Section A-3-9 of Appendix A |
 
-**Track B Acceptance Result**
-
-| Field | Value |
-|---|---|
-| Acceptance Date | |
-| Client Signature | |
-| Notes | |
-
 -----
 
 ## C-5 Track C Acceptance | Launch and Production
@@ -197,14 +173,6 @@ If a functional rejection occurs due to a sudden and major change in platform po
 
 > ⚠️ **App Store and Google Play review times are outside Developer's control.** Delays non-attributable to code issues will not count as Developer failure. Functional rejections will be fixed until approved.
 
-**Track C Acceptance Result**
-
-| Field | Value |
-|---|---|
-| Acceptance Date | |
-| Client Signature | |
-| Notes | |
-
 -----
 
 ## C-6 Overall Acceptance Summary
@@ -216,14 +184,6 @@ If a functional rejection occurs due to a sudden and major change in platform po
 | Track B | 23 |
 | Track C | 11 |
 | **Total** | **46** |
-
-**Final Delivery Confirmation**
-
-| Field | Value |
-|---|---|
-| Delivery Date | |
-| Client Signature | |
-| Developer Signature | |
 
 -----
 

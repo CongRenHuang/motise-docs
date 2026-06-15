@@ -13,7 +13,7 @@ All timelines in this appendix are contingent upon the full completion of the fo
 
 | Prerequisite | Deadline | Note |
 |---|---|---|
-| Client provides all necessary access permissions | 2026/06/16 | See Appendix A, Section A-6 "Before Kickoff" listed items |
+| Client provides all necessary access permissions | 2026/06/16 | See Appendix A, Section A-5 "Before Kickoff" listed items |
 | motise.net domain access provision | 2026/06/16 | DNS management access or assistance with DNS configuration, prerequisite for Landing Page deployment |
 | Stripe Account KYC application initiation | Within 3 working days after receipt of first payment | KYC takes 3–5 working days, must be completed by the Client personally, Developer cannot act as a proxy |
 | Apple Developer Organization Account Activation (including D-U-N-S Number issuance) | 2026/07/10 | Prerequisite for Track C review submission. D-U-N-S issuance takes 5–30 working days, and Apple account review time is outside Developer's control. Submission delays due to issuance delays are not considered Developer's liability. |
@@ -93,43 +93,7 @@ All timelines in this appendix are contingent upon the full completion of the fo
 
 -----
 
-## B-4 Schedule Overview (Gantt Chart)
-
-```mermaid
-gantt
-    dateFormat YYYY-MM-DD
-    axisFormat %m/%d
-    tickInterval 1week
-    weekday monday
-    excludes weekends
-    todayMarker off
-
-    section Track A Backend & Infrastructure
-    Arch Design & Env Setup        :a1, 2026-06-16, 2026-06-18
-    DB Schema & API Skeleton       :a2, 2026-06-16, 2026-06-21
-    Auth System                    :a3, 2026-06-21, 2026-06-23
-    Backend API (Courses/Bookings) :a4, 2026-06-23, 2026-06-30
-    Stripe Payment & Webhook       :a5, 2026-06-23, 2026-06-30
-    QR Code Gen & Verification API :a6, 2026-06-23, 2026-06-30
-
-    section Track B Frontend & Admin Panel
-    Course List & Detail Page      :b1, 2026-06-26, 2026-06-30
-    Booking & Purchase & Stripe UI :b2, 2026-06-28, 2026-07-07
-    QR Code & Push Notifications   :b3, 2026-06-30, 2026-07-07
-    Admin Panel (Courses/Members)  :b4, 2026-06-30, 2026-07-07
-
-    section Track C Testing, Submission & Launch
-    TestFlight, E2E & Bug Fixes    :c1, 2026-07-10, 2026-07-13
-    Simultaneous iOS & Android Submission :milestone, m1, 2026-07-14, 0d
-    Review & Rejection Buffer      :c2, 2026-07-14, 2026-07-25
-    Official iOS & Android Launch  :milestone, m2, 2026-07-25, 0d
-    Post-launch Maintenance & Bug Fixes :c3, 2026-07-25, 2026-08-11
-    Formal Project Delivery        :milestone, m3, 2026-08-11, 0d
-```
-
------
-
-## B-5 Delay Clause Explanation
+## B-4 Delay Clause Explanation
 
 **Circumstances Not Constituting Developer's Liability:**
 

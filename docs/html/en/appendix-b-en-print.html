@@ -219,6 +219,20 @@
       color: var(--color-border);
     }
 
+    /* ─── Generic markdown lists ─── */
+    .article ul:not(.clause-list),
+    .article ol {
+      margin: 1.5mm 0 3mm;
+      padding-left: 2.5em;
+    }
+    .article ul:not(.clause-list) li,
+    .article ol li {
+      font-size: var(--size-sm);
+      line-height: 1.75;
+      margin-bottom: 1mm;
+      color: var(--color-muted);
+    }
+
     /* ─── Tables ─── */
     table {
       width: 100%;
@@ -246,6 +260,100 @@
       overflow-wrap: anywhere;
     }
     table tr:nth-child(even) td { background: #f7f8fa; }
+
+    /* ─── Code / formula blocks ─── */
+    pre, pre code {
+      white-space: pre-wrap;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+    }
+    pre {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: var(--size-xs);
+      line-height: 1.5;
+      background: #f4f4f4;
+      border: 1px solid var(--color-border-light);
+      border-left: 3px solid var(--color-accent);
+      padding: 3mm 4mm;
+      margin: 2mm 0 4mm;
+      max-width: 100%;
+    }
+
+    /* ─── Acceptance criteria tables (Appendix C) ─── */
+    .criteria-table {
+      table-layout: fixed !important;
+      width: 100% !important;
+    }
+    .criteria-table th:nth-child(1),
+    .criteria-table td:nth-child(1) {
+      width: 14% !important;
+      white-space: nowrap !important;
+    }
+    .criteria-table th:nth-child(2),
+    .criteria-table td:nth-child(2) {
+      width: 32% !important;
+    }
+    .criteria-table th:nth-child(3),
+    .criteria-table td:nth-child(3) {
+      width: 54% !important;
+    }
+
+    /* ─── A-2 Module table (Appendix A) ─── */
+    .module-table {
+      table-layout: fixed !important;
+      width: 100% !important;
+    }
+    .module-table th:nth-child(1),
+    .module-table td:nth-child(1) {
+      width: 14% !important;
+      white-space: nowrap !important;
+    }
+    .module-table th:nth-child(2),
+    .module-table td:nth-child(2) {
+      width: 27% !important;
+    }
+    .module-table th:nth-child(3),
+    .module-table td:nth-child(3) {
+      width: 39% !important;
+    }
+    .module-table th:nth-child(4),
+    .module-table td:nth-child(4) {
+      width: 20% !important;
+      white-space: nowrap !important;
+    }
+
+    /* ─── A-5-2 Tech stack table (Appendix A) ─── */
+    .tech-table {
+      table-layout: fixed !important;
+      width: 100% !important;
+    }
+    .tech-table th:nth-child(1),
+    .tech-table td:nth-child(1) {
+      width: 24% !important;
+      white-space: nowrap !important;
+    }
+    .tech-table th:nth-child(2),
+    .tech-table td:nth-child(2) {
+      width: 27% !important;
+    }
+    .tech-table th:nth-child(3),
+    .tech-table td:nth-child(3) {
+      width: 49% !important;
+    }
+
+    /* ─── A-6 Resource table (Appendix A) ─── */
+    .resource-table {
+      table-layout: fixed !important;
+      width: 100% !important;
+    }
+    .resource-table th:nth-child(1),
+    .resource-table td:nth-child(1) {
+      width: 45% !important;
+    }
+    .resource-table th:nth-child(2),
+    .resource-table td:nth-child(2) {
+      width: 55% !important;
+    }
 
     /* sub-table inside payment section */
     .payment-scenario {
@@ -460,7 +568,7 @@ Date: June 15, 2026</p>
 <tbody><tr>
 <td>Client provides all necessary access permissions</td>
 <td>2026/06/16</td>
-<td>See Appendix A, Section A-6 &quot;Before Kickoff&quot; listed items</td>
+<td>See Appendix A, Section A-5 &quot;Before Kickoff&quot; listed items</td>
 </tr>
 <tr>
 <td>motise.net domain access provision</td>
@@ -689,41 +797,7 @@ Date: June 15, 2026</p>
 </tr>
 </tbody></table>
 <hr>
-<h2>B-4 Schedule Overview (Gantt Chart)</h2>
-<div class="mermaid">
-gantt
-    dateFormat YYYY-MM-DD
-    axisFormat %m/%d
-    tickInterval 1week
-    weekday monday
-    excludes weekends
-    todayMarker off
-
-    section Track A Backend & Infrastructure
-    Arch Design & Env Setup        :a1, 2026-06-16, 2026-06-18
-    DB Schema & API Skeleton       :a2, 2026-06-16, 2026-06-21
-    Auth System                    :a3, 2026-06-21, 2026-06-23
-    Backend API (Courses/Bookings) :a4, 2026-06-23, 2026-06-30
-    Stripe Payment & Webhook       :a5, 2026-06-23, 2026-06-30
-    QR Code Gen & Verification API :a6, 2026-06-23, 2026-06-30
-
-    section Track B Frontend & Admin Panel
-    Course List & Detail Page      :b1, 2026-06-26, 2026-06-30
-    Booking & Purchase & Stripe UI :b2, 2026-06-28, 2026-07-07
-    QR Code & Push Notifications   :b3, 2026-06-30, 2026-07-07
-    Admin Panel (Courses/Members)  :b4, 2026-06-30, 2026-07-07
-
-    section Track C Testing, Submission & Launch
-    TestFlight, E2E & Bug Fixes    :c1, 2026-07-10, 2026-07-13
-    Simultaneous iOS & Android Submission :milestone, m1, 2026-07-14, 0d
-    Review & Rejection Buffer      :c2, 2026-07-14, 2026-07-25
-    Official iOS & Android Launch  :milestone, m2, 2026-07-25, 0d
-    Post-launch Maintenance & Bug Fixes :c3, 2026-07-25, 2026-08-11
-    Formal Project Delivery        :milestone, m3, 2026-08-11, 0d
-
-</div>
-<hr>
-<h2>B-5 Delay Clause Explanation</h2>
+<h2>B-4 Delay Clause Explanation</h2>
 <p><strong>Circumstances Not Constituting Developer&#39;s Liability:</strong></p>
 <ul>
 <li>App Store / Google Play review waiting times or platform rejection periods.</li>

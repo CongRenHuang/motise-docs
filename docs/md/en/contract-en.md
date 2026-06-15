@@ -7,22 +7,22 @@ Date: June 15, 2026
 
 ## PARTIES
 
-**Client (hereinafter referred to as the "Client")**
+**Client**
 
-Company Name: Motise Inc
-Company Type: C Corporation (Registered in Delaware, USA)
-Registered Address: 8 The Green STE R, Dover, Kent, Delaware 19901, USA
-Signatory: Chiang Ching-Hsuan (Founder / Director)
-Company Email: <hello@motise.net>
-Authorized Project Communication Representative: Chiang Ching-Hsuan (<cchiang1124@gmail.com>)
+- Company Name: Motise Inc
+- Company Type: C Corporation
+- Registered Address: 8 The Green STE R, Dover, Kent, Delaware 19901, USA
+- Signatory: Chiang Ching-Hsuan (Founder / Director)
+- Company Email: <hello@motise.net>
+- Authorized Project Communication Representative: Chiang Ching-Hsuan (<cchiang1124@gmail.com>)
 
 > The Client designates Chiang Ching-Hsuan as the authorized communication representative for this project, representing the Client in daily project communications, requirement confirmations, and submitting written objections. Written confirmations from the aforementioned representative shall have equal binding force on the Client. Any change of representative must be notified to the Developer in writing by the Client via the company email (@motise.net).
 
-**Developer (hereinafter referred to as the "Developer")**
+**Developer**
 
-Name: HUANG CONG REN
-Nationality: Republic of China (Taiwan)
-Contact Email: <tzuchihuang0214@gmail.com>
+- Name: HUANG CONG REN
+- Nationality: Republic of China (Taiwan)
+- Contact Email: <tzuchihuang0214@gmail.com>
 
 Both parties agree to cooperate on the software development services specified in this Agreement subject to the terms and conditions herein.
 
@@ -34,9 +34,9 @@ This Agreement includes the following appendices, each of which has the same leg
 
 | Appendix | Name | Description |
 |---|---|---|
-| Appendix A | Project Scope and Technical Specification | List of functional modules, technical architecture, exclusions from v1.0, and resources to be provided by the Client |
-| Appendix B | Development Schedule | Key milestones, Gantt chart, prerequisites, and explanation of delay clauses |
-| Appendix C | Acceptance Criteria | Three-track acceptance standards, acceptance checklist, and sign-off sections |
+| Appendix A | Project Scope and Technical Specification | List of functional modules, technical architecture, and resources to be provided by the Client |
+| Appendix B | Development Schedule | Key milestones, prerequisites, and explanation of delay clauses |
+| Appendix C | Acceptance Criteria | Three-track acceptance standards and acceptance checklist |
 | Appendix D | Long-Term Cooperation Framework Agreement | Project-based renewal, four-cycle outsourcing obligation, and difference make-up mechanism |
 
 -----
@@ -45,13 +45,11 @@ This Agreement includes the following appendices, each of which has the same leg
 
 1.1 The Developer agrees to develop version 1.0 of the course booking mobile application (hereinafter referred to as the "System") for the Client, according to the scope specified in Appendix A "Project Scope and Technical Specification."
 
-1.2 The primary modules, detailed functions, and technical specifications included in version 1.0 shall be subject to the provisions in Appendix A.
+1.2 The v1.0 development scope shall be subject to the functional items and their technical specifications explicitly listed in Section A-3 of Appendix A. **Only the items explicitly listed in A-3 fall within the v1.0 development scope**; the other sections of Appendix A (the system module list, technical architecture, etc.) are auxiliary descriptions and do not expand the functional scope defined in A-3.
 
-1.3 Items listed in Section A-4 of Appendix A are explicitly excluded from the development scope of v1.0. Any changes to the scope must be confirmed in writing by both parties before taking effect and will require a separate evaluation of their impact on the schedule and fees.
+1.3 Any function, item, or requirement not explicitly listed in Section A-3 of Appendix A is excluded from the v1.0 development scope, and both parties shall separately evaluate whether to include it in a subsequent Statement of Work (SOW) or a future version, with separate quotation and scheduling. Any changes to the scope must be confirmed in writing by both parties before taking effect and will require a separate evaluation of their impact on the schedule and fees.
 
-1.4 **Responsibility for Providing Legal Text:** The Developer agrees to provide a basic English template (Basic Template) of the Privacy Policy and Terms of Service that complies with general US regulatory compliance frameworks (such as GDPR, CCPA basic frameworks) before the end of Track A for the Client's confirmation. The Client shall confirm or provide modifications within 3 working days; failure to reply within the time limit will be deemed as confirmation of the template content, and the Developer may directly use the original template for embedding and deployment. After confirmation by the Client, the Developer is responsible for completely embedding, deploying, and linking it in the corresponding sections of the Landing Page and the App.
-
-1.5 **Legal Compliance Disclaimer:** The Privacy Policy and Terms of Service provided in the preceding section are basic reference templates for technical integration purposes. The Client is solely responsible for confirming their final legal compliance, applicability, and completeness, and should consult qualified legal professionals if necessary. The Developer shall not bear any legal compliance responsibility arising from the content of these texts. The Client's confirmation of the content is deemed as having conducted its own review and assuming compliance responsibility.
+1.4 **Privacy Policy and Terms of Service Template and Compliance Disclaimer:** Before the end of Track A, the Developer shall provide a basic English template of the Privacy Policy and Terms of Service complying with general US regulatory compliance frameworks (GDPR, CCPA basic frameworks) for the Client's confirmation; the Client shall confirm or provide modifications within 3 working days, and failure to reply within the time limit shall be deemed confirmation, whereupon the Developer may directly embed, deploy, and link it in the corresponding sections of the Landing Page and the App. The template serves only as a basic reference for technical integration; the Client is solely responsible for confirming its final legal compliance, applicability, and completeness (and should consult qualified legal professionals if necessary), and the Developer shall not bear any legal compliance responsibility arising from the content of these texts; the Client's confirmation of the content is deemed as having conducted its own review and assuming compliance responsibility.
 
 -----
 
@@ -59,16 +57,9 @@ This Agreement includes the following appendices, each of which has the same leg
 
 2.1 The development schedule of the System shall be executed according to Appendix B "Development Schedule," which is expected to commence on **June 16, 2026**, with a target delivery date of **August 11, 2026**.
 
-2.2 All timelines in Appendix B are contingent upon the Client providing all necessary resources listed in Section A-6 of Appendix A by **June 16, 2026**. For every week of delay in providing the resources, the milestones and delivery dates shall be proportionally postponed.
+2.2 All timelines in Appendix B are contingent upon the Client providing all necessary resources listed in Section A-5 of Appendix A by **June 16, 2026**. For every week of delay in providing the resources, the milestones and delivery dates shall be proportionally postponed.
 
-2.3 The following circumstances shall not be counted towards the Developer's delay liability:
-- App Store / Google Play review periods and waiting times for platform rejections
-- Delays caused by the Client's failure to provide necessary resources, accounts, or access permissions on time
-- Delays in payment functions caused by the failure to complete Stripe KYC verification on time
-- Delays in submission dates caused by Apple Developer Organization Account D-U-N-S Number issuance delays
-- Force majeure events (natural disasters, sudden changes in platform policies, etc.)
-
-2.4 **Stripe Account Prerequisite:** The Client must initiate the Stripe account KYC application **within 3 working days after the signing of this Agreement and receipt of the first installment payment**. KYC must be completed by the Client personally (due to legal requirements, the Developer cannot act on their behalf). If not initiated before the deadline, the development of Stripe-related functions will be postponed, which will not be considered a delay by the Developer, nor will it trigger the delay compensation clause in Article 6.
+2.3 **Circumstances Not Counted as Developer Delay:** The following circumstances shall not be counted towards the Developer's delay liability, nor shall they trigger the delay compensation under Article 6: App Store / Google Play review and platform rejection waiting periods; the Client's failure to provide necessary resources, accounts, or access permissions on time; delays in payment functions caused by the failure to complete Stripe KYC verification on time; postponement of submission dates caused by Apple Developer Organization Account D-U-N-S Number issuance delays; and force majeure events (natural disasters, sudden changes in platform policies, etc.). Among these, the Client must initiate the Stripe account KYC application within 3 working days after the signing of this Agreement and receipt of the first installment payment, and it must be completed by the Client personally (due to legal requirements, the Developer cannot act on their behalf); if not initiated before the deadline, the development of Stripe-related functions will be postponed.
 
 -----
 
