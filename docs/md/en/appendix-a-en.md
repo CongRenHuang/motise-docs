@@ -190,7 +190,7 @@ Third-party Integrations
 
 | Item | Description |
 |---|---|
-| Stripe Account API Keys | The Client shall apply for the Stripe account and provide the API keys after completing the KYC verification. The KYC must be completed by the Client personally (due to legal requirements, the Developer cannot act on their behalf), which takes about 3–5 working days for review. The application shall be initiated within 3 working days after the receipt of the first installment payment in accordance with Section 2.3 of the Main Agreement. If provided late, the acceptance items related to Stripe (A-07 / A-08 in Appendix C) shall be postponed, which will not be considered a delay by the Developer, nor will it trigger the delay compensation clause. |
+| Stripe Account API Keys | The Client shall apply for the Stripe account and provide the API keys after completing the KYC verification. The KYC must be completed by the Client personally (due to legal requirements, the Developer cannot act on their behalf), which takes about 3–5 working days for review. The application shall be initiated within 3 working days after the receipt of the first installment payment. If provided late, the acceptance items related to Stripe (A-07 / A-08 in Appendix C) shall be postponed, which will not be considered a delay by the Developer, nor will it trigger the delay compensation clause (for the exemption principle, see Section 2.3 of the Main Agreement). |
 
 ### Before Track B Kickoff (By June 26, 2026)
 
