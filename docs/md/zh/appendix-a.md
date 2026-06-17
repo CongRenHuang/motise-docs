@@ -1,7 +1,5 @@
 # 附件 A｜專案範疇與技術規格書
 
-**Project Scope and Technical Specification**
-
 合約編號：MTS-2026-001
 日期：2026 年 06 月 17 日
 

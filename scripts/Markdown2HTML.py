@@ -293,6 +293,14 @@ def get_html_skeleton(template_path=None):
       color: var(--color-accent);
       margin-bottom: 4mm;
     }
+    .sig-grid-2 { grid-template-columns: 1fr 1fr !important; gap: 8mm !important; }
+    .sig-block p {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      color: var(--color-muted);
+      line-height: 1.7;
+      margin-bottom: 2mm;
+    }
     .sig-field {
       font-family: var(--font-sans);
       font-size: var(--size-sm);
@@ -328,6 +336,12 @@ def get_html_skeleton(template_path=None):
     .criteria-table th:nth-child(1), .criteria-table td:nth-child(1) { width: 10% !important; white-space: nowrap !important; }
     .criteria-table th:nth-child(2), .criteria-table td:nth-child(2) { width: 30% !important; }
     .criteria-table th:nth-child(3), .criteria-table td:nth-child(3) { width: 60% !important; }
+
+    .criteria-table-4 { table-layout: fixed !important; width: 100% !important; }
+    .criteria-table-4 th:nth-child(1), .criteria-table-4 td:nth-child(1) { width: 8% !important; white-space: nowrap !important; }
+    .criteria-table-4 th:nth-child(2), .criteria-table-4 td:nth-child(2) { width: 20% !important; }
+    .criteria-table-4 th:nth-child(3), .criteria-table-4 td:nth-child(3) { width: 24% !important; }
+    .criteria-table-4 th:nth-child(4), .criteria-table-4 td:nth-child(4) { width: 48% !important; }
 
     .module-table { table-layout: fixed !important; width: 100% !important; }
     .module-table th:nth-child(1), .module-table td:nth-child(1) { width: 10% !important; white-space: nowrap !important; }
@@ -431,6 +445,8 @@ def post_process_html(html_body):
     )
 
     # 1. 注入表格類別
+    # 4 欄驗收表（#／驗收項目／完成期限／驗收標準）需先於通用 criteria-table 比對，套用專用欄寬類別
+    html_body = re.sub(r'<table>(\s*<thead>\s*<tr>\s*<th>#</th>\s*<th>驗收項目</th>\s*<th>完成期限</th>)', r'<table class="criteria-table-4">\1', html_body)
     html_body = re.sub(r'<table>(\s*<thead>\s*<tr>\s*<th>#</th>)', r'<table class="criteria-table">\1', html_body)
     html_body = re.sub(r'<table>(\s*<thead>\s*<tr>\s*<th>No\.</th>\s*<th>Module Name</th>)', r'<table class="module-table">\1', html_body)
     html_body = re.sub(r'<table>(\s*<thead>\s*<tr>\s*<th>Technology</th>)', r'<table class="tech-table">\1', html_body)

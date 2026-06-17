@@ -4,8 +4,9 @@ import os
 def extract_article(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         content = f.read()
-    # Match the content inside <div class="article"> ... </div> before the closing page-wrapper div
-    match = re.search(r'<div class="article">([\s\S]*?)</div>\s*</div>', content)
+    # Match the content inside <div class="article"> ... </div> before the closing page-wrapper div.
+    # Greedy to the LAST </div></div> so inner nested double-closes (e.g. .sig-grid > .sig-block) don't truncate the body.
+    match = re.search(r'<div class="article">([\s\S]*)</div>\s*</div>', content)
     if match:
         return match.group(1).strip()
     else:

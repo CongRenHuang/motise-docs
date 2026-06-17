@@ -258,6 +258,12 @@
     .criteria-table th:nth-child(2), .criteria-table td:nth-child(2) { width: 30% !important; }
     .criteria-table th:nth-child(3), .criteria-table td:nth-child(3) { width: 60% !important; }
 
+    .criteria-table-4 { table-layout: fixed !important; width: 100% !important; }
+    .criteria-table-4 th:nth-child(1), .criteria-table-4 td:nth-child(1) { width: 8% !important; white-space: nowrap !important; }
+    .criteria-table-4 th:nth-child(2), .criteria-table-4 td:nth-child(2) { width: 20% !important; }
+    .criteria-table-4 th:nth-child(3), .criteria-table-4 td:nth-child(3) { width: 24% !important; }
+    .criteria-table-4 th:nth-child(4), .criteria-table-4 td:nth-child(4) { width: 48% !important; }
+
     .module-table { table-layout: fixed !important; width: 100% !important; }
     .module-table th:nth-child(1), .module-table td:nth-child(1) { width: 10% !important; white-space: nowrap !important; }
     .module-table th:nth-child(2), .module-table td:nth-child(2) { width: 25% !important; }
@@ -310,7 +316,7 @@
 <h1>附件 C｜驗收項目文件</h1>
 <p><strong>Acceptance Criteria</strong></p>
 <p>合約編號：MTS-2026-001
-日期：2026 年 06 月 15 日</p>
+日期：2026 年 06 月 17 日</p>
 <p>當事人：Motise Inc（客戶方）／ HUANG CONG REN（開發方）</p>
 <hr>
 <h2>C-1 驗收原則</h2>
@@ -328,19 +334,19 @@
 <tbody><tr>
 <td>軌道 A</td>
 <td>後端與基礎建設</td>
-<td>6/16 – 6/30</td>
+<td>6/18 – 7/20</td>
 <td>完成後 5 個工作天</td>
 </tr>
 <tr>
 <td>軌道 B</td>
 <td>前端 App 與 Web-based 後台</td>
-<td>6/26 – 7/7</td>
+<td>7/16 – 7/27</td>
 <td>完成後 5 個工作天</td>
 </tr>
 <tr>
 <td>軌道 C</td>
 <td>上架與正式環境</td>
-<td>7/10 – 8/11</td>
+<td>7/30 – 8/31</td>
 <td>依主合約第 4.7 條所定起算日起算 14 個工作天</td>
 </tr>
 </tbody></table>
@@ -364,30 +370,44 @@
 <li><strong>系統穩定度要求：</strong> 驗收之核心功能與流程，於測試時不得含有阻礙性錯誤（Blocker Bug）或導致系統閃退、崩潰之重大缺陷（Critical Bug）；主流程之操作測試需具備連續運行之穩定度，方視為通過該項驗收。</li>
 </ol>
 <hr>
-<h2>C-2 前置工作驗收｜Landing Page</h2>
-<p><strong>性質：</strong> 獨立前置工作，不附屬於任何軌道，一旦通過即鎖定，不受後續軌道驗收影響
-<strong>完成期限：</strong> 第一期款項到帳後 3 個工作天內
-<strong>驗收方式：</strong> 客戶以瀏覽器開啟 motise.net 確認頁面可正常瀏覽</p>
-<table class="criteria-table">
+<h2>C-2 前置工作驗收</h2>
+<p><strong>性質：</strong> 獨立前置工作，不附屬於任何開發軌道；各項一旦完成即鎖定，不受後續軌道驗收影響。
+<strong>終止結算之計入：</strong> 前置工作項目各自於完成時點即視為「已通過驗收」並計入主合約第 5.9 條終止結算公式之分子，不待所屬開發階段整體驗收通過。</p>
+<table class="criteria-table-4">
 <thead>
 <tr>
 <th>#</th>
 <th>驗收項目</th>
+<th>完成期限</th>
 <th>驗收標準</th>
 </tr>
 </thead>
 <tbody><tr>
 <td>P-01</td>
 <td>Landing Page 上線</td>
+<td>第一期款項到帳後 3 個工作天內</td>
 <td>motise.net 可正常瀏覽；頁面包含公司名稱（Motise Inc）、服務簡介、聯絡資訊；版面設計以符合 Apple Developer 組織帳號申請審核要求為標準</td>
+</tr>
+<tr>
+<td>P-02</td>
+<td>架構設計與雲端環境建置</td>
+<td>軌道 A 開發期間內，完成即鎖定</td>
+<td>AWS Lightsail Node.js Instance + PostgreSQL Managed Database 建置完成且可連線；後端專案基礎架構（API 框架、目錄結構、環境變數機制）建立完成。驗收方式：客戶登入 AWS Console 確認資源存在，開發方提供架構說明</td>
+</tr>
+<tr>
+<td>P-03</td>
+<td>資料庫 Schema 設計</td>
+<td>軌道 A 開發期間內，完成即鎖定</td>
+<td>核心資料表（users、courses、bookings、orders、attendance、user_pass_packages）Schema 設計與建置完成，欄位與附件 A 規格一致。驗收方式：開發方提供 Schema 截圖或 ER Diagram</td>
 </tr>
 </tbody></table>
 <blockquote>
-<p><strong>版面設計說明：</strong> 最終版面呈現由開發方依審核需求決定。客戶可提供品牌素材（Logo、品牌色、文案）供參考，但不構成對版面設計之強制要求。Landing Page 交付後，任何版面或內容修改不列入本合約範疇。</p>
+<p><strong>版面設計說明：</strong> Landing Page 最終版面呈現由開發方依審核需求決定。客戶可提供品牌素材（Logo、品牌色、文案）供參考，但不構成對版面設計之強制要求。Landing Page 交付後，任何版面或內容修改不列入本合約範疇。</p>
+<p><strong>P-02／P-03 與軌道 A 之關係：</strong> P-02、P-03 係就「環境建置」與「Schema 設計」之前置交付成果於早期完成時點即予鎖定；軌道 A 之 A-01、A-02 仍就對應之功能性與運行結果獨立驗收，兩者目的不同，不互相取代。</p>
 </blockquote>
 <hr>
 <h2>C-3 軌道 A 驗收｜後端與基礎建設</h2>
-<p><strong>開發期間：2026/06/16 – 2026/06/30</strong>
+<p><strong>開發期間：2026/06/18 – 2026/07/20</strong>
 <strong>驗收方式：</strong> API 文件 + Postman 測試報告，客戶無需操作介面，由開發方提供測試結果供確認。</p>
 <table class="criteria-table">
 <thead>
@@ -400,7 +420,7 @@
 <tbody><tr>
 <td>A-01</td>
 <td>DB Schema</td>
-<td>courses、users、bookings、orders、attendance 五張核心資料表建置完成，欄位與附件 A 規格一致。驗收方式：開發方提供 Schema 截圖或 ER Diagram</td>
+<td>courses、users、bookings、orders、attendance、user_pass_packages 六張核心資料表建置完成，欄位與附件 A 規格一致。驗收方式：開發方提供 Schema 截圖或 ER Diagram</td>
 </tr>
 <tr>
 <td>A-02</td>
@@ -440,12 +460,22 @@
 <tr>
 <td>A-09</td>
 <td>QR Code 產生 API</td>
-<td>已購買課程學員可取得唯一 QR Code token，token 與學員帳號及課程綁定；課程開始後 15 分鐘 token 自動失效，失效後核銷 API 返回對應錯誤碼</td>
+<td>已預約課程之學員（以堂數預約成功）可取得唯一 QR Code token，token 與學員帳號及課程綁定；課程開始後 15 分鐘 token 自動失效，失效後核銷 API 返回對應錯誤碼</td>
 </tr>
 <tr>
 <td>A-10</td>
 <td>QR Code 核銷 API</td>
 <td>教師呼叫核銷 API 後標記出席；重複核銷返回「已簽到」；無效 token 返回錯誤碼</td>
+</tr>
+<tr>
+<td>A-12</td>
+<td>課包購買與堂數扣抵 API</td>
+<td>可建立獨立課包實例（user_pass_packages，含 total_passes／remaining_passes／activated_at／expired_at／status）；預約時依 FIFO（最快到期先扣）扣減 1 堂，歸零轉 USED_UP；定時任務將逾期課包轉 EXPIRED 並凍結剩餘堂數；預約目標課程開始時間晚於課包 expired_at 時 API 攔截；取消／課程下架退回 1 堂至原課包（學員合規取消退回有效；課程被下架之被動退堂若原課包已過期則維持失效、不展延）。驗收方式：Postman 測試報告涵蓋上述情境（依附件 A A-3-2／A-3-11）</td>
+</tr>
+<tr>
+<td>A-13</td>
+<td>課包 Admin 管理與稽核 API</td>
+<td>後台可手動延長到期日、手動調整堂數；每筆手動修改強制寫入 Audit Log（操作人、時間、原因）。驗收方式：Postman 測試報告，確認修改後 Audit Log 正確產生</td>
 </tr>
 <tr>
 <td>A-11</td>
@@ -458,7 +488,7 @@
 </blockquote>
 <hr>
 <h2>C-4 軌道 B 驗收｜前端 App 與 Web-based 後台</h2>
-<p><strong>開發期間：2026/06/26 – 2026/07/07</strong>
+<p><strong>開發期間：2026/07/16 – 2026/07/27</strong>
 <strong>驗收方式：</strong> TestFlight（iOS）+ Firebase Distribution（Android）實機測試，客戶方實際操作完整流程。</p>
 <h3>帳號認證</h3>
 <table class="criteria-table">
@@ -522,7 +552,27 @@
 <tr>
 <td>B-09</td>
 <td>我的課程頁</td>
-<td>已預約、已購買、歷史紀錄三個分類資料正確；每筆已預約課程可於課程卡片直接查看與出示專屬 QR Code</td>
+<td>已預約、已購買（課包）、課包與剩餘堂數、歷史紀錄分類資料正確；每筆已預約課程可於課程卡片直接查看與出示專屬 QR Code</td>
+</tr>
+</tbody></table>
+<h3>課包購買（Class Pass）</h3>
+<table class="criteria-table">
+<thead>
+<tr>
+<th>#</th>
+<th>驗收項目</th>
+<th>驗收標準</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>B-24</td>
+<td>課包購買流程</td>
+<td>學員可選擇課包規格（如 1／5／10 堂）並以 Stripe 完成付款；結帳頁顯示且須勾選「30 天限時、逾期失效不退費」同意條款後方可付款；購買成功後生成對應課包實例。測試：Stripe 測試卡 4242 4242 4242 4242 完成購買，確認堂數入帳</td>
+</tr>
+<tr>
+<td>B-25</td>
+<td>堂數約課與課包顯示</td>
+<td>學員以堂數預約課程，系統依 FIFO 扣抵並更新剩餘堂數；「我的課包」顯示各課包剩餘堂數與到期時間，並以醒目方式提示剩餘天數（如「請於 YYYY/MM/DD HH:MM 前使用完畢」）。測試：持多個課包時確認最快到期者先扣</td>
 </tr>
 </tbody></table>
 <h3>Stripe 付款</h3>
@@ -536,23 +586,23 @@
 </thead>
 <tbody><tr>
 <td>B-10</td>
-<td>付款流程</td>
-<td>輸入信用卡完成付款後，課程出現在「已購買」清單。測試：Stripe 測試卡 4242 4242 4242 4242</td>
+<td>課包購買付款</td>
+<td>以 Stripe 完成課包購買付款後，購得堂數正確入帳、課包顯示於「我的課包」。測試：Stripe 測試卡 4242 4242 4242 4242</td>
 </tr>
 <tr>
 <td>B-11</td>
 <td>付款失敗處理</td>
-<td>失敗卡號顯示明確錯誤訊息，課程不被開通。測試：Stripe 測試卡 4000 0000 0000 0002</td>
+<td>失敗卡號顯示明確錯誤訊息，堂數不入帳、課包不生成。測試：Stripe 測試卡 4000 0000 0000 0002</td>
 </tr>
 <tr>
 <td>B-12</td>
-<td>重複付款防護</td>
-<td>已購買課程的購買按鈕不再顯示，無法重複付款</td>
+<td>重複扣款／重複預約防護</td>
+<td>同一課包購買訂單以冪等處理不重複扣款；已預約之課程不再顯示預約按鈕，無法重複扣抵堂數</td>
 </tr>
 <tr>
 <td>B-13</td>
 <td>訂單狀態同步</td>
-<td>付款完成後，後台訂單管理頁即時顯示對應訂單與付款狀態</td>
+<td>課包購買付款完成後，後台訂單管理頁即時顯示對應訂單與付款狀態</td>
 </tr>
 </tbody></table>
 <h3>QR Code 簽到</h3>
@@ -627,8 +677,8 @@
 </tbody></table>
 <hr>
 <h2>C-5 軌道 C 驗收｜上架與正式環境</h2>
-<p><strong>開發期間：2026/07/10 – 2026/08/11</strong>
-<strong>驗收時機：</strong> iOS / Android 正式上線後，以正式版 App 進行最終確認（目標 7/25 開啟驗收）。
+<p><strong>開發期間：2026/07/30 – 2026/08/31</strong>
+<strong>驗收時機：</strong> iOS / Android 正式上線後，以正式版 App 進行最終確認（目標 8/14 開啟驗收）。
 <strong>驗收期：</strong> 依主合約第 4.7 條所定起算日（開發方交付測試或平台審核通過之日，孰先發生者）起算 14 個工作天；「正式上線」非驗收期之唯一起算點。</p>
 <p><strong>平台審核緩衝與驗收付款觸發說明（依主合約 4.7.1、4.7.2）：</strong></p>
 <p>若因下列不可歸責於開發方之事由，導致 App 無法於 App Store 或 Google Play 正式公開上架，驗收期起算點調整如下：</p>
@@ -644,6 +694,7 @@
 <li>雙方召開線上驗收會議，就本節軌道 C 項目完成實機功能測試並確認通過，付款指示應於會議當日或次一工作天內發出；</li>
 <li>自前款緩衝期屆滿之翌日起，依主合約第 3.2 條（含催告程序）計算之驗收期限屆至，客戶未提出書面異議者，視同驗收合格。</li>
 </ul>
+<p>App 於雙平台均完成正式上架者，即視為軌道 C 驗收合格通過，14 個工作天驗收期提前終止，客戶不得於上架後再以驗收期未屆滿為由要求延後付款或提出新驗收意見（依主合約第 4.7.2 條），惟不影響程式碼缺陷保固。</p>
 <p><strong>程式碼缺陷保固：</strong>
 客戶支付尾款後，App 後續正式重啟上架流程時，若因本次交付之原始程式碼缺陷遭平台功能性拒絕（Functional Rejection），開發方於尾款支付後 60 個日曆天內，有義務免費修正程式碼至審查通過為止。影響本附件所載核心功能正常運作之 Bug 或閃退，應於各軌道驗收通過前完成修正；正式交付驗收完成後發現之此類問題，依附件 D 第 D-5.6 節維護服務辦理（若附件 D 未生效或無對應 SOW，依主合約第 1.3 條另行報價）。</p>
 <p><strong>平台政策重大變更：</strong>
@@ -688,13 +739,13 @@
 </tr>
 <tr>
 <td>C-07</td>
-<td>課程購買條款同意</td>
-<td>購買課程前顯示取消政策條款文字（內容由雙方書面確認），使用者須勾選同意後方可繼續付款。退款操作介面不列入 v1.0 範疇</td>
+<td>課包購買條款同意</td>
+<td>購買課包前顯示取消政策（含 30 天到期失效、逾期不退費）條款文字（內容由雙方書面確認），使用者須勾選同意後方可付款。退款操作介面不列入 v1.0 範疇</td>
 </tr>
 <tr>
 <td>C-08</td>
 <td>完整流程穩定性</td>
-<td>瀏覽 → 預約 → 付款（含同意條款）→ QR Code 簽到 完整流程操作 3 次，無閃退或無回應。測試：使用正式版 App（非 TestFlight）以 Stripe Live Mode 完整操作</td>
+<td>購買課包（付款＋同意條款）→ 瀏覽 → 以堂數預約 → QR Code 簽到 完整流程操作 3 次，無閃退或無回應。測試：使用正式版 App（非 TestFlight）以 Stripe Live Mode 完整操作</td>
 </tr>
 <tr>
 <td>C-09</td>
@@ -725,16 +776,16 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>前置工作（Landing Page）</td>
-<td>1</td>
+<td>前置工作（Landing Page、架構與環境、DB Schema）</td>
+<td>3</td>
 </tr>
 <tr>
 <td>軌道 A</td>
-<td>11</td>
+<td>13</td>
 </tr>
 <tr>
 <td>軌道 B</td>
-<td>23</td>
+<td>25</td>
 </tr>
 <tr>
 <td>軌道 C</td>
@@ -742,7 +793,7 @@
 </tr>
 <tr>
 <td><strong>合計</strong></td>
-<td><strong>46</strong></td>
+<td><strong>52</strong></td>
 </tr>
 </tbody></table>
 <hr>
