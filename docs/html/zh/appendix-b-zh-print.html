@@ -222,6 +222,14 @@
       color: var(--color-accent);
       margin-bottom: 4mm;
     }
+    .sig-grid-2 { grid-template-columns: 1fr 1fr !important; gap: 8mm !important; }
+    .sig-block p {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      color: var(--color-muted);
+      line-height: 1.7;
+      margin-bottom: 2mm;
+    }
     .sig-field {
       font-family: var(--font-sans);
       font-size: var(--size-sm);
@@ -487,7 +495,7 @@
 </tr>
 <tr>
 <td>課包系統（Class Pass）</td>
-<td>user_pass_packages 課包實例、FIFO 堂數扣抵、Cron 自動過期、預約防呆、Admin 手動調整 + Audit Log</td>
+<td>user_pass_packages 課包實例、FIFO 堂數扣抵、即時過期判定（讀取/預約時比對 expired_at，不採 Cron）、預約防呆、取消／下架退堂</td>
 </tr>
 <tr>
 <td>QR Code API</td>

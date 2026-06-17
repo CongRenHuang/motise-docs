@@ -222,6 +222,14 @@
       color: var(--color-accent);
       margin-bottom: 4mm;
     }
+    .sig-grid-2 { grid-template-columns: 1fr 1fr !important; gap: 8mm !important; }
+    .sig-block p {
+      font-family: var(--font-sans);
+      font-size: var(--size-sm);
+      color: var(--color-muted);
+      line-height: 1.7;
+      margin-bottom: 2mm;
+    }
     .sig-field {
       font-family: var(--font-sans);
       font-size: var(--size-sm);
@@ -470,12 +478,7 @@
 <tr>
 <td>A-12</td>
 <td>課包購買與堂數扣抵 API</td>
-<td>可建立獨立課包實例（user_pass_packages，含 total_passes／remaining_passes／activated_at／expired_at／status）；預約時依 FIFO（最快到期先扣）扣減 1 堂，歸零轉 USED_UP；定時任務將逾期課包轉 EXPIRED 並凍結剩餘堂數；預約目標課程開始時間晚於課包 expired_at 時 API 攔截；取消／課程下架退回 1 堂至原課包（學員合規取消退回有效；課程被下架之被動退堂若原課包已過期則維持失效、不展延）。驗收方式：Postman 測試報告涵蓋上述情境（依附件 A A-3-2／A-3-11）</td>
-</tr>
-<tr>
-<td>A-13</td>
-<td>課包 Admin 管理與稽核 API</td>
-<td>後台可手動延長到期日、手動調整堂數；每筆手動修改強制寫入 Audit Log（操作人、時間、原因）。驗收方式：Postman 測試報告，確認修改後 Audit Log 正確產生</td>
+<td>可建立獨立課包實例（user_pass_packages，含 total_passes／remaining_passes／activated_at／expired_at／status）；預約時依 FIFO（最快到期先扣）扣減 1 堂，歸零轉 USED_UP；逾期課包於查詢與預約時即時判定為失效（不採定時任務）；預約目標課程開始時間晚於課包 expired_at 時 API 攔截；取消／課程下架退回 1 堂至原課包（學員合規取消退回有效；課程被下架之被動退堂若原課包已過期則維持失效、不展延）。驗收方式：Postman 測試報告涵蓋上述情境（依附件 A A-3-2／A-3-11）</td>
 </tr>
 <tr>
 <td>A-11</td>
@@ -781,7 +784,7 @@
 </tr>
 <tr>
 <td>軌道 A</td>
-<td>13</td>
+<td>12</td>
 </tr>
 <tr>
 <td>軌道 B</td>
@@ -793,7 +796,7 @@
 </tr>
 <tr>
 <td><strong>合計</strong></td>
-<td><strong>52</strong></td>
+<td><strong>51</strong></td>
 </tr>
 </tbody></table>
 <hr>

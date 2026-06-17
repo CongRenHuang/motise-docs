@@ -703,7 +703,7 @@
 <li>會員管理：查詢會員、指派或移除教師角色、停用帳號</li>
 <li>訂單查詢：學員姓名、課程名稱、付款狀態、金額</li>
 <li>出席記錄：各課程出席名單與簽到狀態</li>
-<li>課包管理：查詢學員課包與剩餘堂數、手動延長到期日、手動調整堂數；所有手動修改強制寫入 Audit Log（操作人、時間、原因）</li>
+<li>課包管理：查詢學員課包與剩餘堂數、到期狀態（唯讀查詢）。手動延長到期日／手動調整堂數及其稽核紀錄（Audit Log）不列入 v1.0 範疇，順延至附件 D 或後續 SOW；MVP 階段如遇特例由開發方以人工方式調整資料庫紀錄處理，依實際工時另計，不含於附件 D 第 D-5.6 節維護服務時數</li>
 </ul>
 <h3>A-3-6 推播通知</h3>
 <ul>
@@ -762,26 +762,27 @@
 <li>學員預約課程時，系統自 <code>status = ACTIVE</code> 之課包中，優先扣抵 <code>expired_at</code> 最接近現在者（最快到期先扣）。</li>
 <li>預約成功扣減 1 堂；<code>remaining_passes</code> 歸零時，該課包 <code>status</code> 轉為 <code>USED_UP</code>。</li>
 </ul>
-<p><strong>自動過期（Cron Job）</strong></p>
+<p><strong>過期判定（即時判定，不採定時任務）</strong></p>
 <ul>
-<li>系統以定時任務（每日或每小時）自動將超過 <code>expired_at</code> 且未用罄之課包 <code>status</code> 轉為 <code>EXPIRED</code>，並凍結其剩餘堂數。</li>
+<li>系統不另設背景定時任務（Cron Job）批次標記過期。課包是否過期，於「預約」與「查詢課包」時，以當下時間與 <code>expired_at</code> 即時比對判定；超過 <code>expired_at</code> 之課包不得用於預約，其剩餘堂數即時視為失效。</li>
+<li>後台課包列表之 <code>status</code> 於讀取（fetch）時即時反映實際過期狀態；DB 中 <code>status</code> 欄之背景批次更新不屬 v1.0 範疇，不影響功能正確性——過期課包於任何讀取或預約時均正確判定為失效，學員無法以過期課包預約。</li>
 </ul>
 <p><strong>預約與取消之時空防呆</strong></p>
 <ul>
 <li>禁止預約過期課：預約時若「目標課程開始時間」晚於所扣抵課包之 <code>expired_at</code>，系統須攔截並提示。</li>
 <li>取消退回校驗：依 A-3-2 各取消情境退回之 1 堂，回到原扣抵之課包。學員合規取消（必早於到期）退回後仍為有效；因課程被下架／平台端取消之被動退堂，若原課包已過期，退回之堂數維持失效狀態、不展延（與 A-3-2 一致）。</li>
 </ul>
-<p><strong>Admin 例外調整與稽核</strong></p>
+<p><strong>Admin 例外調整（不列入 v1.0 範疇）</strong></p>
 <ul>
-<li>後台提供「手動延長到期日」與「手動調整堂數」功能，供處理特例（如學員生病）。</li>
-<li>凡手動修改課包，系統強制寫入一筆 Audit Log，記錄操作人、修改時間與原因。</li>
+<li>後台「手動延長到期日」「手動調整堂數」功能，及其對應之 Audit Log 稽核紀錄，不列入 v1.0 開發範疇，順延至附件 D 或後續 SOW 評估。</li>
+<li>MVP 階段如遇特例（如學員生病、爭議），暫由開發方以人工方式調整資料庫紀錄處理；該等人工處理依實際工時另計，不含於附件 D 第 D-5.6 節維護服務時數。</li>
 </ul>
 <p><strong>前端告知義務</strong></p>
 <ul>
 <li>課包卡片須以醒目方式（高亮或紅色）顯示到期時間與剩餘天數，例如「請於 YYYY/MM/DD HH:MM 前使用完畢（剩餘 X 天）」。</li>
 </ul>
 <blockquote>
-<p>⚠️ <strong>合規免責：</strong> 上述功能之規則及其商業設計，由客戶決定並自行確認其於目標市場之合法性與合規性。開發方僅依客戶確認之規則進行技術實作，不就以上功能所生之任何爭議、罰款或集體訴訟風險負任何責任。客戶確認採用本規則，即視為已自行審查並承擔相關合規責任。</p>
+<p>⚠️ <strong>課包到期規則之合規免責：</strong> 「課包堂數自購買日起 30 天到期、逾期失效且不予退費」之規則及其商業設計，由客戶決定並自行確認其於目標市場（含美國聯邦 CARD Act 及各州，如加州、華盛頓州關於儲值金、禮券／gift card 到期之規範，及消費者保護法令）之合法性與合規性。開發方僅依客戶確認之規則進行技術實作，不就該規則之合法性、「到期不退」設計所生之任何爭議、罰款或集體訴訟風險負任何責任。客戶確認採用本規則，即視為已自行審查並承擔相關合規責任。</p>
 </blockquote>
 <hr>
 <h2>A-4 技術架構</h2>
@@ -790,24 +791,24 @@
                   ┌─────────────────────────────────────────┐
                   │           React Native App              │
                   │        iOS + Android 行動應用程式         │
-                  └──────────────────┬──────────────────────┘
-                                     ↕ HTTPS / REST API
-                  ┌─────────────────────────────────────────┐
+└──────────────────┬──────────────────────┘
+                   ↕ HTTPS / REST API
+┌─────────────────────────────────────────┐
                   │     Node.js — AWS Lightsail Instance    │
                   │            後端 API 與商業邏輯            │
-                  └──────────────────┬──────────────────────┘
-                                     ↕
-                  ┌─────────────────────────────────────────┐
+└──────────────────┬──────────────────────┘
+                   ↕
+┌─────────────────────────────────────────┐
                   │              PostgreSQL                 │
                   │     AWS Lightsail Managed Database      │
-                  │      + Lightsail Object Storage         │
-                  └─────────────────────────────────────────┘
+│      + Lightsail Object Storage         │
+└─────────────────────────────────────────┘
 
-                  第三方服務整合
-                  ├── Stripe          線上付款
-                  ├── Firebase FCM    推播通知
-                  ├── Apple OAuth     Apple Sign-In
-                  └── Google OAuth    Google 登入
+第三方服務整合
+├── Stripe          線上付款
+├── Firebase FCM    推播通知
+├── Apple OAuth     Apple Sign-In
+└── Google OAuth    Google 登入
 </code></pre>
 <h3>A-4-2 技術選型</h3>
 <table>
@@ -1172,7 +1173,7 @@
 </tr>
 <tr>
 <td>課包系統（Class Pass）</td>
-<td>user_pass_packages 課包實例、FIFO 堂數扣抵、Cron 自動過期、預約防呆、Admin 手動調整 + Audit Log</td>
+<td>user_pass_packages 課包實例、FIFO 堂數扣抵、即時過期判定（讀取/預約時比對 expired_at，不採 Cron）、預約防呆、取消／下架退堂</td>
 </tr>
 <tr>
 <td>QR Code API</td>
@@ -1428,12 +1429,7 @@
 <tr>
 <td>A-12</td>
 <td>課包購買與堂數扣抵 API</td>
-<td>可建立獨立課包實例（user_pass_packages，含 total_passes／remaining_passes／activated_at／expired_at／status）；預約時依 FIFO（最快到期先扣）扣減 1 堂，歸零轉 USED_UP；定時任務將逾期課包轉 EXPIRED 並凍結剩餘堂數；預約目標課程開始時間晚於課包 expired_at 時 API 攔截；取消／課程下架退回 1 堂至原課包（學員合規取消退回有效；課程被下架之被動退堂若原課包已過期則維持失效、不展延）。驗收方式：Postman 測試報告涵蓋上述情境（依附件 A A-3-2／A-3-11）</td>
-</tr>
-<tr>
-<td>A-13</td>
-<td>課包 Admin 管理與稽核 API</td>
-<td>後台可手動延長到期日、手動調整堂數；每筆手動修改強制寫入 Audit Log（操作人、時間、原因）。驗收方式：Postman 測試報告，確認修改後 Audit Log 正確產生</td>
+<td>可建立獨立課包實例（user_pass_packages，含 total_passes／remaining_passes／activated_at／expired_at／status）；預約時依 FIFO（最快到期先扣）扣減 1 堂，歸零轉 USED_UP；逾期課包於查詢與預約時即時判定為失效（不採定時任務）；預約目標課程開始時間晚於課包 expired_at 時 API 攔截；取消／課程下架退回 1 堂至原課包（學員合規取消退回有效；課程被下架之被動退堂若原課包已過期則維持失效、不展延）。驗收方式：Postman 測試報告涵蓋上述情境（依附件 A A-3-2／A-3-11）</td>
 </tr>
 <tr>
 <td>A-11</td>
@@ -1739,7 +1735,7 @@
 </tr>
 <tr>
 <td>軌道 A</td>
-<td>13</td>
+<td>12</td>
 </tr>
 <tr>
 <td>軌道 B</td>
@@ -1751,7 +1747,7 @@
 </tr>
 <tr>
 <td><strong>合計</strong></td>
-<td><strong>52</strong></td>
+<td><strong>51</strong></td>
 </tr>
 </tbody></table>
 <hr>

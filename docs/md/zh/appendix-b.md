@@ -68,7 +68,7 @@
 | 課程 CRUD API | 新增、查詢、修改、下架、名額與截止時間管理 |
 | 預約邏輯 API | 並發名額鎖定、預約時限控制 |
 | Stripe 整合 | Payment Intent 建立、Webhook 訂單狀態更新、課包購買付款 |
-| 課包系統（Class Pass） | user_pass_packages 課包實例、FIFO 堂數扣抵、Cron 自動過期、預約防呆、Admin 手動調整 + Audit Log |
+| 課包系統（Class Pass） | user_pass_packages 課包實例、FIFO 堂數扣抵、即時過期判定（讀取/預約時比對 expired_at，不採 Cron）、預約防呆、取消／下架退堂 |
 | QR Code API | Token 產生與綁定、15 分鐘失效機制、核銷 API |
 
 ### 軌道 B｜前端 App 與 Web-based 後台（7/16 – 7/27）
